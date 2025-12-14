@@ -1,0 +1,1449 @@
+{
+  "mips": {
+    "artifact_id": "MB__OS__MetaBlooms_Core__ACTIVE",
+    "content_type": "application/json",
+    "links": {
+      "index": "MB__99_INDEX__ProjectFiles.txt",
+      "sentinel": "MB__00_SENTINEL__ACTIVE_STATE.txt"
+    },
+    "sha256_body": "865eafd98f517b4ef8eb685643a0150ec82eee2ab79e374469fc596934d71784",
+    "timestamp_utc": "2025-12-14T21:03:05Z",
+    "version": "ACTIVE__2025-12-14_rebuilt"
+  },
+  "body": {
+    "Embedded_Artifacts": [
+      {
+        "bytes": 4303,
+        "filename": "MB__01_COREPACK__GovHardening_v7__2025-12-13.mips.json",
+        "mips_header": {
+          "artifact_id": "MetaBlooms_ProjectFiles_CorePack_v7_GovHardening_20251213T185500Z",
+          "audit": "construct",
+          "content_type": "application/json",
+          "councils": [
+            "Facilitator",
+            "Auditor",
+            "Synthesizer",
+            "Recorder"
+          ],
+          "links": {
+            "active_sentinel": "MB__ACTIVE_STATE__READ_ME.txt",
+            "prior_corepack": "MetaBlooms_ProjectFiles_CorePack_v6_MOCD_20251213T180455Z.mips.json"
+          },
+          "parent_bundle": "MetaBlooms_ProjectFiles_CorePack_v6_MOCD_20251213T180455Z",
+          "sha256": "4bcd692a806f5ddfa42a2c560d13f5cefa9d734e91f7ebf4d23aa6d56358bc33",
+          "timestamp_utc": "20251213T185500Z",
+          "version": "v7"
+        },
+        "payload": {
+          "active_modules": {
+            "DISCARDED_THIS_CYCLE": [
+              "GovControls:SemanticRegressionChecks_v1 (no-evidence gate)"
+            ],
+            "PROMOTED": [
+              "BootGuard_Preflight",
+              "AutoDeltaGate_OnUpload",
+              "DeltaGate (runtime kit)",
+              "ContextMemoryEngine",
+              "ReasoningHorizonsEngine",
+              "MOCD (MetaBlooms Operating Context Declaration)",
+              "LOC (LLM Operator Contract)",
+              "GovControls:AuthorityIllusionPenalty_v1",
+              "GovControls:EpistemicMemoryMetadata_v1"
+            ],
+            "STAGED": [
+              "GovControls:RoleDriftFlagger_v1",
+              "GovControls:BehavioralEnvelopeWarnings_v1",
+              "StrategyBrainEngine (advisor-only)",
+              "ExecutiveFunctionEngine (needs proving runs)"
+            ]
+          },
+          "gov_controls_v1": {
+            "promoted": {
+              "AuthorityIllusionPenalty_v1": {
+                "enforcement": "none (scoring only)",
+                "scoring_adjustment": {
+                  "unsupported_certainty": -10
+                },
+                "signals": [
+                  "definitive_language_without_evidence",
+                  "execution_assumption",
+                  "implicit_authority_claim"
+                ]
+              },
+              "EpistemicMemoryMetadata_v1": {
+                "defaults": {
+                  "llm_inferred": {
+                    "confidence": "low",
+                    "provenance": "llm"
+                  }
+                },
+                "enforcement": "none (metadata only)",
+                "memory_entry_fields": [
+                  "confidence",
+                  "provenance",
+                  "timestamp_utc"
+                ]
+              }
+            },
+            "staged": {
+              "BehavioralEnvelopeWarnings_v1": {
+                "action": "log_warning_only",
+                "signals": [
+                  "scope_expansion",
+                  "strategy_injection",
+                  "policy_without_request"
+                ]
+              },
+              "RoleDriftFlagger_v1": {
+                "action": "flag_only",
+                "signals": [
+                  "decision_language",
+                  "execution_language",
+                  "speaking_for_user"
+                ]
+              }
+            },
+            "status": "AuthorityIllusionPenalty + EpistemicMemoryMetadata PROMOTED; RoleDrift + BehavioralEnvelope remain STAGED; SemanticRegression excluded."
+          },
+          "governance_contracts": {
+            "LOC": {
+              "forbidden_assumptions": [
+                "implicit_execution",
+                "ungated_memory_writes",
+                "model_is_authority"
+              ],
+              "required_posture": [
+                "propose_dont_execute",
+                "declare_scope",
+                "surface_assumptions"
+              ],
+              "role": "LLM acts as judgment provider, not decision-maker."
+            },
+            "MOCD": {
+              "identity": "MetaBlooms OS is a governance/control system; LLM outputs are advisory.",
+              "non_negotiables": [
+                "separate_intelligence_from_authority",
+                "delta_based_evolution",
+                "bounded_autonomy",
+                "governance_over_confidence"
+              ]
+            }
+          },
+          "next_move": "Observe staged signals (RoleDrift, BehavioralEnvelope) during normal use; re-run probe sweep later to calibrate thresholds before any enforcement.",
+          "run_commands": {
+            "mb:contract": "Print MOCD + LOC (operator rules) for any LLM/operator",
+            "mb:gov": "Show promoted/staged governance controls + signals + scoring impacts",
+            "mb:os-audit": "Audit project pack integrity + missing pieces",
+            "mb:status": "Print active pack + promoted/staged + last decisions"
+          },
+          "what_this_is": "Project-files pointer pack (tiny on purpose). Contains boot rules + governance contracts + promoted/staged governance controls. Real payload lives in referenced bundles already in Project Files."
+        },
+        "sha256": "0277573d5b62ff62477e4747452b9bc332cfdd99243efbd0c5103aac84ca2254"
+      },
+      {
+        "bytes": 3663,
+        "filename": "MB__02_DELTA_MobileFilenameFrontload_v1.mips.json",
+        "mips_header": {
+          "artifact_id": "MB__02_DELTA_MobileFilenameFrontload_v1",
+          "content_type": "application/json",
+          "councils": [
+            "Auditor",
+            "Archivist",
+            "UX",
+            "Governance"
+          ],
+          "evidence_chain": [
+            "mobile_ui_truncation_observed"
+          ],
+          "links": {
+            "purpose": "Mobile filename frontload contract (Android Project Files UI)",
+            "supersedes": "2025-12-13_MetaBlooms_DELTA_MobileFilenameFrontload_v1.mips.json"
+          },
+          "parent_bundle": "MetaBlooms_ProjectFiles_CorePack_v7_GovHardening_20251213T185500Z.mips.json",
+          "sha256": "35f2fda3953cf4ae19a78573672c0a45e7f7bd053b0044ecf815567a83a4b458",
+          "timestamp_utc": "2025-12-13T22:44:21Z",
+          "version": "1.0"
+        },
+        "payload": {
+          "delta_id": "DELTA_MOBILE_FILENAME_FRONTLOAD_CONTRACT_v1",
+          "integration_points": [
+            {
+              "add": "Project Files Naming Contract section + slot prefixes as canonical names",
+              "target": "CorePack (next build)"
+            },
+            {
+              "add": "One-line rule: 'Mobile UI truncates filenames; trust slot prefixes MB__00/01/03/90.'",
+              "target": "Active State Sentinel"
+            }
+          ],
+          "priority": "P1",
+          "problem": {
+            "impact": [
+              "increases selection errors (upload/replace wrong file)",
+              "breaks 'cavemen with power tools' usability constraint",
+              "adds hesitation friction during routine ops"
+            ],
+            "symptom": "Android Project Files list truncates filenames, making multiple .mips.json files indistinguishable at a glance."
+          },
+          "provenance": {
+            "source": "User observed mobile UI truncation ambiguity; prior chat solution not captured into Delta.",
+            "timestamp_utc": "2025-12-13T22:42:41Z"
+          },
+          "solution": {
+            "contract": [
+              "All Project Files MUST have first 24 characters unique and semantic.",
+              "Filenames MUST start with a stable slot prefix: MB__00, MB__01, MB__03, MB__90, etc.",
+              "Meaning must be front-loaded (do not rely on suffix timestamps).",
+              "Sentinel remains source of truth; filenames exist to reduce mobile friction."
+            ],
+            "recommended_slots": [
+              {
+                "meaning": "Active State / Sentinel (source of truth pointer)",
+                "slot": "MB__00"
+              },
+              {
+                "meaning": "Active CorePack",
+                "slot": "MB__01"
+              },
+              {
+                "meaning": "External Intel / inputs (append-only)",
+                "slot": "MB__03"
+              },
+              {
+                "meaning": "Archives / optional bundles",
+                "slot": "MB__90"
+              }
+            ],
+            "rename_plan": [
+              {
+                "from": "MetaBlooms_ProjectFiles_CorePack_v7_GovHardening_20251213T185500Z.mips.json",
+                "to": "MB__01_COREPACK_v7_GOVHARD.mips.json"
+              },
+              {
+                "from": "2025-12-13_MetaBlooms_ExternalIntel_Sweep_GovAI_v1_1.mips.json",
+                "to": "MB__03_EXTINTEL_GovAI_v1_1.mips.json"
+              },
+              {
+                "from": "MetaBlooms_BUNDLE_PersistenceBoundary_20251213T162852Z.zip",
+                "to": "MB__90_ARCHIVE_PersistBoundary.zip"
+              },
+              {
+                "from": "MB__ACTIVE_STATE__READ_ME__v7_REPLACE_ME.txt",
+                "to": "MB__00_ACTIVE_STATE_README.txt"
+              }
+            ]
+          },
+          "status": "STAGED",
+          "title": "Mobile Filename Frontload Contract (Android Project Files UI)",
+          "type": "governance_ux",
+          "validation": {
+            "checks": [
+              "In Android Project Files list view, each file is uniquely identifiable from the left/truncated portion.",
+              "User can tell CorePack vs External Intel without opening files."
+            ],
+            "rollback": "Revert filenames; no content changes required."
+          }
+        },
+        "sha256": "5cf0b243d1e9389f2ba172f4decdf806b8d47e769748c3d46ec47df29973d30e"
+      },
+      {
+        "bytes": 7509,
+        "filename": "MB__03_DELTA__ChatGPTNativeBrowser_Synthesis_v1.mips.json",
+        "mips_header": {
+          "artifact_id": "MB__03_DELTA__ChatGPTNativeBrowser_Synthesis_v1",
+          "content_type": "application/json",
+          "councils": [
+            "GovernanceConsensus",
+            "SandboxBuilder",
+            "ResearchAgent",
+            "ValidatorDeltaTracker"
+          ],
+          "links": [],
+          "sha256_body": "6d9488fd20ec0070ba2f9a46e5785d2d000cdfd1ef84f63e73f63eaf6d5eb416",
+          "timestamp_utc": "2025-12-13T23:00:00Z",
+          "version": "v1"
+        },
+        "payload": {
+          "best_unique_contribution_by_llm": [
+            {
+              "biggest_value": "Explicit 'never run arbitrary JS' + treat Action Runner as a whitelisted interpreter; cryptographically chained receipts; replay engine as trust primitive.",
+              "keep": "Yes",
+              "llm": "DeepSeek/Copilot-style (clean-room executor framing)"
+            },
+            {
+              "biggest_value": "Framed as 'Intelligence Harness' with Governance Spine as single point of truth; emphasized policy-driven control plane first.",
+              "keep": "Yes",
+              "llm": "Gemini"
+            },
+            {
+              "biggest_value": "Concrete Electron implementation hooks (webContents/BrowserView, capturePage, debugger/CDP) and pragmatic phased deliverables.",
+              "keep": "Yes",
+              "llm": "Claude"
+            },
+            {
+              "biggest_value": "Maintainability doctrine: reject weekly patching; commit to API-first + diff/apply flows; high-signal Phase 0 milestone definition.",
+              "keep": "Yes",
+              "llm": "Perplexity"
+            },
+            {
+              "biggest_value": "Hard/soft blocker distinction and candid realism about illusion vs production; prompted 'FrictionHunter' concept for finding real-world breakages.",
+              "keep": "Yes",
+              "llm": "Grok (earlier)"
+            }
+          ],
+          "delta_id": "MB__03_DELTA__ChatGPTNativeBrowser_Synthesis_v1",
+          "project_files_target_set": [
+            "MB__00_SENTINEL__ACTIVE_STATE.txt",
+            "MB__01_COREPACK__GovHardening_v7__2025-12-13.mips.json",
+            "MB__02_DELTA__MobileFilenameFrontload_v1.mips.json",
+            "MB__03_DELTA__ChatGPTNativeBrowser_Synthesis_v1.mips.json",
+            "MB__99_INDEX__ProjectFiles.txt"
+          ],
+          "ranking_worst_to_best": [
+            {
+              "name": "Generic feasibility table (without shell ownership clarification)",
+              "rank": 6,
+              "salvage": "Hard/soft blocker framing.",
+              "why_worst": "Assumed Chrome-extension limits; underestimates what owning the webview enables."
+            },
+            {
+              "name": "Early Grok feasibility (pre-clarification)",
+              "rank": 5,
+              "salvage": "Risk register + maintenance realism.",
+              "why": "Over-emphasized 'illusion' and ToS blockers before the shell framing."
+            },
+            {
+              "name": "Claude architecture writeup",
+              "rank": 4,
+              "salvage": "Electron API mapping + phased deliverables.",
+              "why": "Strong practicality, but still too optimistic about DOM editing for complex SaaS (Docs) without making API-only path non-negotiable."
+            },
+            {
+              "name": "Gemini Intelligence Harness",
+              "rank": 3,
+              "salvage": "Governance-as-core; policy versioning.",
+              "why": "Best control-plane clarity; less concrete on implementation wiring."
+            },
+            {
+              "name": "DeepSeek/Copilot clean-room interpreter plan",
+              "rank": 2,
+              "salvage": "No-arbitrary-JS rule; transactional actions; replay.",
+              "why": "Security posture is strongest; replay + signed logs are differentiators."
+            },
+            {
+              "name": "MetaBlooms Blueprint v2 (current)",
+              "rank": 1,
+              "salvage": "(All) — this is the synthesized target.",
+              "why_best": "Combines governance contract, isolation model, API-first strategy, rot thresholds, and explicit kill criteria aligned with your constraints."
+            }
+          ],
+          "scope": [
+            "MetaBlooms OS",
+            "ChatGPT-Native Browser Program"
+          ],
+          "timestamp_utc": "2025-12-13T23:00:00Z",
+          "top_changes": [
+            {
+              "acceptance_tests": [
+                "100% executions have preview+receipt hashes",
+                "Replay reproduces final-state hash on fixtures",
+                "No execution IPC path exists from renderer"
+              ],
+              "id": "D1",
+              "score_roi_0_100": 96,
+              "title": "Phase 0 must be 'Action/Governance Contract' not 'Webview capabilities'",
+              "what": "Implement ActionPlan schema + PROPOSE→PREVIEW→APPROVE→EXECUTE→RECEIPT state machine + chained receipts + deterministic replay on fixtures before touching real sites/APIs.",
+              "why_it_matters": "Everything else (perception, APIs, automation) becomes safer, testable, and composable; prevents 'silent autonomy' regression."
+            },
+            {
+              "acceptance_tests": [
+                "All Google actions are API calls or user-mediated apply",
+                "Scopes are minimal and displayed",
+                "Receipts store request/response hashes"
+              ],
+              "id": "D2",
+              "score_roi_0_100": 93,
+              "title": "Use API-first for Google Workspace; 'typing feel' = diff/patch UX",
+              "what": "Explicitly forbid DOM automation for Docs/Sheets as primary path; implement API-based diffs + user-mediated apply/patch for unsupported edits.",
+              "why_it_matters": "Avoids ToS traps + weekly patching; maintains trust and sustainability."
+            },
+            {
+              "acceptance_tests": [
+                "Action runner accepts only validated action types",
+                "Perception cannot trigger execution",
+                "Governance rejects any plan containing raw JS payloads"
+              ],
+              "id": "D3",
+              "score_roi_0_100": 90,
+              "title": "Privilege isolation: camera-like perception + write-only action runner",
+              "what": "Separate Perception (read-only, sanitized) from Action Runner (whitelisted interpreter); never execute arbitrary JS from model output.",
+              "why_it_matters": "Stops prompt-injection and 'AI writes JS → run it' compromise class."
+            },
+            {
+              "acceptance_tests": [
+                "<2% weekly rot incidents on whitelist",
+                "Fallbacks exist (ask user / API / apply patch)",
+                "Selectors derived from AX tree"
+              ],
+              "id": "D4",
+              "score_roi_0_100": 84,
+              "title": "Selector-rot policy: blessed origins + accessibility anchors + rot telemetry",
+              "what": "DOM-first actions only on a small whitelist; target elements via accessibility roles/names, not brittle CSS; log rot incidents and enforce a weekly rot threshold.",
+              "why_it_matters": "Meets 'no weekly patching' constraint by design."
+            },
+            {
+              "acceptance_tests": [
+                "In mobile list, each file is distinguishable",
+                "Sentinel names the exact 3–5 active files",
+                "Index matches sentinel"
+              ],
+              "id": "D5",
+              "score_roi_0_100": 82,
+              "title": "Mobile file discoverability: frontloaded filenames + sentinel+index canonical map",
+              "what": "Project files must be identifiable from the first ~15–20 chars; keep a sentinel + index as the source of truth.",
+              "why_it_matters": "Fixes the mobile friction where file list truncation hides meaning."
+            }
+          ],
+          "validation_self_check": {
+            "api_first_google": true,
+            "mobile_frontload": true,
+            "no_arbitrary_js_execution": true,
+            "no_silent_autonomy": true,
+            "weekly_patching_rejected": true
+          },
+          "why": "Capture the net-new, high-leverage system lessons from multi-LLM plan comparison; lock the correct build order and guardrails; reduce mobile project-file ambiguity."
+        },
+        "sha256": "424d47ab8294b98365db2fbd982726541af698b27d53ad13d82bdf3139926563"
+      },
+      {
+        "bytes": 5717,
+        "filename": "MB__03_SPEC_ChatGPTNativeBrowser_Roadmap_v1.mips.json",
+        "mips_header": {},
+        "payload": {
+          "date_utc": "2025-12-13T23:24:33Z",
+          "goal": "Own the browsing environment (chat + controlled web view) with governed propose→approve execution and auditable memory/replay.",
+          "key_decisions": [
+            "Shell choice: Electron (Chromium bundled) vs Tauri (WebView2 on Windows) vs CEF (heavier, complex) — decide via Phase-0 spikes.",
+            "API-first for Google surfaces; DOM-write only in controlled/test pages; avoid weekly selector patching."
+          ],
+          "name": "ChatGPT-native browser — feasibility + build order",
+          "notes": {
+            "google_safety_rule": "Prefer Workspace APIs; where Docs API is insufficient, use diff + user-apply rather than DOM hacking.",
+            "maintainability_rule": "If a feature requires selector tuning weekly, reject it; move to API-first or user-mediated apply."
+          },
+          "phase0_spikes": [
+            "Spike A (stack): Build hello-world shell with split panes + webview + IPC + secure preload; measure RAM/CPU on your machine.",
+            "Spike B (perception): Extract a compact perception frame (title/url/selected element/a11y roles/text summary) and keep it under a fixed byte cap.",
+            "Spike C (governance loop): Emit ActionPlan JSON → render preview → approve → execute noop → write ActionReceipt to append-only log; verify replay."
+          ],
+          "prompt_to_run_elsewhere": "MISSION: Evaluate feasibility + difficulty + best build order for a “ChatGPT-native browser” (custom browser shell I control, not a Chrome hack).\n\nROLE: You are a systems architect + security engineer + product maintainer. Be blunt. No hype.\n\nCORE IDEA (what I’m building):\nA custom browser shell that hosts:\n1) a ChatGPT-style chat UI, and\n2) a controlled web view (embedded browser)\nso the assistant can:\n- perceive pages via DOM/semantic extraction,\n- propose actions as structured plans,\n- preview them,\n- require explicit user approval,\n- execute via a permissioned action runner,\n- and write an append-only receipt log + replayable audit trail.\n\nNON-NEGOTIABLE CONSTRAINTS:\n- No silent autonomy: PROPOSE → PREVIEW → USER APPROVE → EXECUTE → RECEIPT LOG.\n- Strong governance: enforce MOCD/LOC; role-drift detection; authority-illusion penalties (block/penalize “I already did X”).\n- Memory is externalized + auditable (append-only), with provenance + TTL/decay for semantic memories.\n- “Feels like typing in Google Docs/Sheets” WITHOUT ToS-violating hacks:\n  - Prefer official Google Workspace APIs with OAuth + diff/preview.\n  - If an API can’t do it (e.g., rich Docs editing), require user-mediated apply (copy/paste or “apply patch” UX) instead of brittle DOM automation.\n- Maintainability is king: reject features that require weekly patching (selector whack-a-mole). Prefer API-first + accessibility roles/labels + limited blessed surfaces.\n\nDELIVERABLES (be concrete, not generic):\n1) Architecture blueprint: subsystems + data flow\n   - Chat Surface\n   - Controlled Web View\n   - Perception Layer\n   - Action Runner\n   - Governance Spine\n   - Memory + Replay (append-only)\n   Include what runs in main vs renderer (or equivalent) and how you isolate privileges.\n\n2) Capability feasibility table (custom shell, not an extension)\n   For each capability, rate:\n   - Feasibility (High/Med/Low)\n   - Difficulty (1–10)\n   - Rot risk (Low/Med/High)\n   - Notes on “API-first vs DOM-first”\n\n3) Phased roadmap (0→4) with decision gates\n   - Phase 0 must be the single highest-leverage milestone.\n   - Each phase needs: deliverables, success criteria, hard blockers, soft blockers, and the “kill criteria” (when to stop).\n\n4) “What not to do” list\n   - Trust bombs (ways to destroy user trust)\n   - Permission fatigue traps\n   - ToS traps (especially for Google)\n   - Maintainability anti-patterns\n\n5) Single highest-leverage Phase 0 milestone\n   Must be specific (e.g., “ActionPlan schema + audit log + preview UI working on a synthetic page”), not vague.\n\nBOUNDARIES:\n- Assume Windows 10 + older hardware; prefer architectures that don’t require heavy, fragile build chains unless justified.\n- Do NOT propose illegal/ToS-violating automation.\n- If you claim something is a hard blocker, explain exactly why and what the closest safe approximation is.\n\nOUTPUT FORMAT:\n- Use headings matching the 5 deliverables.\n- Be brutally explicit about tradeoffs (Electron vs Tauri/WebView2 vs CEF).\n- End with: “Recommended build order” (bullet list) + “Top 5 risks” (ranked) + “First 3 spike experiments” (paste-ready).",
+          "recommended_order": [
+            "Phase 0: Lock ActionPlan schema + governance gate + append-only audit log + preview UI (on synthetic test page).",
+            "Phase 1: Read-only perception frames from real sites + chat Q&A + planning; still no execution.",
+            "Phase 2: Low-risk execution on controlled pages + generic sites using accessibility roles/labels; receipts + rollback-by-design where possible.",
+            "Phase 3: Google Sheets API (and limited Docs API) integration using OAuth + diff/preview/apply; no DOM-typing for Docs/Sheets.",
+            "Phase 4: Hardening: role-drift detection, incident dashboards, adapter library for blessed surfaces."
+          ]
+        },
+        "sha256": "85f03775f2f03d1ad699548c95679e5aac7e1e4ec258db7226e7efdecea7999f"
+      },
+      {
+        "bytes": 9300,
+        "filename": "MB__04_SPEC_ChatGPTNativeBrowser_Blueprint_v2.mips.json",
+        "mips_header": {},
+        "payload": {
+          "notes": "This file captures the user-authored consolidated blueprint/spec for the ChatGPT-native browser shell. It is intended to be stored in Project Files to prevent cross-chat loss.",
+          "spec_markdown": "1) Architecture blueprint\n\nOverview\nA minimal, governable browser shell with a strict state machine: PROPOSE → PREVIEW → USER APPROVE → EXECUTE → RECEIPT LOG. Privileges are isolated. All memory is externalized and append-only with provenance and TTL/decay.\n\n---\n\nSubsystems and data flow\n\n- Chat surface:  \n  - Role: Conversational UI for proposing and reviewing actions.  \n  - Data flow:  \n    - Inbound: Perception summaries, prior receipts, OAuth scopes available, page context.  \n    - Outbound: Structured ActionPlans, user approvals, governance signals (role assertions, authority claims).  \n  - Isolation: Runs in a renderer with no direct OS/network access; communicates via IPC to the Governance Spine.\n\n- Controlled web view:  \n  - Role: Embedded browser used only for perception, previews, and executing approved actions.  \n  - Data flow:  \n    - Inbound: Navigation commands, content capture requests, action execution scripts (approved), sandbox policy.  \n    - Outbound: DOM snapshots, accessibility tree extracts, CDP events, action execution receipts.  \n  - Isolation: Separate renderer/process. No Node/OS APIs. Network requests pass through Main for policy checks.\n\n- Perception layer:  \n  - Role: Extract semantic page data safely to minimize selector rot.  \n  - Data flow:  \n    - Inbound: CDP/DevTools Protocol hooks, accessibility tree, computed styles, landmarks, microdata/schema.org when present.  \n    - Outbound: Normalized PageContext: roles, headings, forms, buttons with stable descriptors; content hashes; safety flags.  \n  - Isolation: Worker in the WebView renderer. Only returns summaries, not arbitrary exfiltration.\n\n- Action runner:  \n  - Role: Execute approved plans either via official APIs or controlled scripts.  \n  - Data flow:  \n    - Inbound: Approved ActionPlan with scoped permissions, OAuth tokens, patch payloads, execution budget.  \n    - Outbound: Execution results, diffs, receipts, error codes (including authority-illusion violations).  \n  - Isolation: Lives in Main. Invokes:  \n    - API-first integrations (Google Workspace, etc.).  \n    - For DOM-first: limited, accessibility-anchored interactions with strict origin whitelist.  \n    - All outputs go through Governance Spine to log receipts.\n\n- Governance spine:  \n  - Role: Enforce the state machine, detect role drift, and block “authority illusion.”  \n  - Data flow:  \n    - Inbound: All IPC messages, proposed actions, perceived context, execution events.  \n    - Outbound: Approval gates, deny reasons, penalties, audit-chain updates.  \n  - Isolation: Main-only. Holds policy registry, scope manager, and receipt chain builder.  \n  - Mechanics:  \n    - Enforce MOCD/LOC-like constraints: only certain roles can propose vs execute; model claims are linted.  \n    - “I already did X” claims are blocked unless a matching receipt exists.  \n    - Strict origin and capability whitelist; rot gates on unsupported surfaces.\n\n- Memory + replay (append-only):  \n  - Role: Externalized, immutable event ledger with provenance, plus decaying semantic memory.  \n  - Data flow:  \n    - Inbound: Perception summaries, ActionPlans, approvals, execution receipts, diffs.  \n    - Outbound: Replay timeline, proof-of-execution, state reconstructions.  \n  - Isolation: Main-only file-backed store (e.g., SQLite with WAL + content-addressed blobs or flat append-only JSONL with merkle hash chain).  \n  - Governance:  \n    - Each entry: {id, prevHash, timestamp, actor, origin, planHash, previewHash, approvalHash, executeResultHash}.  \n    - Semantic memory TTL: decays weights over time; never deletes ledger entries.  \n    - Redaction via tombstone overlays (never destructive).\n\n---\n\nProcess and privilege isolation\n\n- Main process:  \n  - Responsibilities: Governance Spine, Action Runner, OAuth/keyring, receipt ledger, network policy, auto-update, origin whitelist.  \n  - Privileges: OS filesystem, keyring, network with policy.  \n  - IPC: Strict schemas; only Governance can authorize execution.\n\n- Renderer: Chat surface:  \n  - Responsibilities: UI, conversation, previews.  \n  - Privileges: No Node; contextIsolation true; custom protocol disabled.  \n  - IPC: Request-only; cannot execute without Governance approval.\n\n- Renderer: Controlled Web View:  \n  - Responsibilities: Perception and executing approved, scoped actions via CDP.  \n  - Privileges: No Node; strict Content-Security-Policy.  \n  - IPC: Perception outputs; action completion events; cannot call OS APIs.\n\n---\n\nFramework tradeoffs (Windows 10, older hardware)\n\n- Electron (Chromium + Node):  \n  - Pros: Mature, full CDP access, faster dev velocity, broad ecosystem, stable on Win10.  \n  - Cons: Heavier footprint; must harden (disable Node in renderer, strict IPC).  \n  - Verdict: Best for speed and CDP control. Accept the size; gain maintainability via well-known practices.\n\n- Tauri (Rust + WebView2):  \n  - Pros: Small footprint, Rust safety, uses Edge’s WebView2.  \n  - Cons: WebView2 CDP access exists but is more limited; fewer deep hooks; extra Rust toolchain overhead on Win10.  \n  - Verdict: Viable if footprint is top priority; harder to implement fine-grained perception/execution.\n\n- CEF (Chromium Embedded Framework):  \n  - Pros: Maximum control, direct CDP, can harden deeply.  \n  - Cons: Heavy build chain, maintenance burden, frequent Chromium updates needed.  \n  - Verdict: Overkill for v1; choose only if you need long-term control and are ready for ongoing maintenance.\n\n---\n\n2) Capability feasibility table\n\n| Capability | Feasibility | Difficulty (1–10) | Rot risk | Notes: API-first vs DOM-first |\n|---|---|---|---|---|\n| DOM perception via accessibility tree + landmarks | High | 4 | Low | Use CDP Accessibility domains; prefer roles/labels over selectors. |\n| Semantic extraction (forms, buttons, headings, schema.org) | High | 5 | Med | Heuristics + microdata; avoid site-specific rules where possible. |\n| Structured ActionPlan schema + preview diffs | High | 3 | Low | Core internal; stable; drives governance and UX. |\n| Strict state machine (PROPOSE → PREVIEW → APPROVE → EXECUTE → RECEIPT) | High | 3 | Low | Internal policy; enforce via Governance Spine. |\n| Authority-illusion detection (“I already did X” without receipts) | High | 4 | Low | Receipt-chain matching; block/penalize outputs. |\n| Append-only receipt log with replay | High | 5 | Low | Content-addressed entries; chain hashing; WAL-backed store. |\n| Google Docs read + diff preview via API | High | 6 | Low | Docs API for content retrieval; compute diff; show patch. API-first only. |\n| Google Docs structured edits via API | Medium | 7 | Low | BatchUpdate requests; limited rich tooling; keep to supported ops. |\n| “Feels like typing” in Docs without DOM hacks | Low | 8 | High | Hard blocker: ToS and technical limits. Closest safe: API patch + user-mediated apply. |\n| Google Sheets read/write via API | High | 5 | Low | Sheets API stable; diff preview feasible. |\n| OAuth scopes management + consent UX | High | 4 | Low | Use limited scopes; rotate tokens securely; keychain storage. |\n| Controlled navigation and form filling on generic sites | Medium | 6 | High | DOM-first with accessibility anchors and strict whitelist; expect rot. |\n| CDP-based action execution (click, type) on whitelisted origins | Medium | 6 | Med | Keep to a small blessed set; add rot monitoring and fallbacks. |\n| Network policy + origin whitelist | High | 4 | Low | Centralized in Main; gate actions by origin. |\n| Role-drift detection (assistant proposing vs executing) | High | 4 | Low | Validate actor/role tags in outputs; block wrong role actions. |\n| Preview before execution (DOM patch simulation) | Medium | 6 | Med | Safe on API-first; for DOM-first show simulated outcomes, not live changes. |\n| Replayable audit trail with deterministic steps | Medium | 7 | Med | DOM state can vary; deterministic on API-first; snapshot inputs for DOM. |\n| User-mediated “apply patch” UX (clipboard/click-to-apply) | High | 3 | Low | Reliable; avoids ToS traps; clear governance. |\n| Accessibility role-based targeting | High | 5 | Med | Encouraged; less rot than selectors; still site-dependent. |\n\n---\n\n3) Phased roadmap (0→4) with decision gates\n\nPhase 0: Governance + ActionPlan + audit core\n...\n(Full text preserved in spec.)\n",
+          "status": "DRAFT_LOCKED",
+          "title": "ChatGPT-Native Browser — Blueprint v2 (User-authored, normalized)"
+        },
+        "sha256": "14cfe621f67a1b16926a565a315b9eec1005f0577a7409306ce7fd5adc64856f"
+      },
+      {
+        "bytes": 1350,
+        "filename": "MB__05_RULE_FileFirst_Default_v1.mips.json",
+        "mips_header": {
+          "artifact_id": "MB__05_RULE_FileFirst_Default_v1",
+          "content_type": "text/plain",
+          "councils": [
+            "Governance",
+            "CRF",
+            "OutputForge"
+          ],
+          "evidence_chain": [],
+          "links": [],
+          "parent_bundle": "MetaBlooms_ProjectFiles",
+          "sha256": "255cb6562444bc100a968b44d180d8a85a972624bfe57dd9da7a953346a9a127",
+          "timestamp_utc": "2025-12-13T23:51:31Z",
+          "version": "v1"
+        },
+        "payload": "MB FILE-FIRST DEFAULT — PROJECT/OS ARTIFACT RULE\n================================================\n\nRULE (P0):\nWhenever any output belongs in the OS or Project Files (spec, delta, roadmap, policy, contract, checklist, schema, validator rules, governance rules, or any system-level decision), the assistant MUST create a downloadable file artifact as part of the same response.\n\nDEFAULT BEHAVIOR:\n1) Create the file first (no “concept-only” drops).\n2) Provide a direct download link.\n3) Then provide a short human summary.\n\nQUALITY BAR:\n- Use correct naming conventions (MB__NN__...).\n- Wrap artifacts in MIPS format when applicable.\n- Treat missing-file delivery as a bug requiring immediate correction.\n\nSCOPE:\nApplies to all MetaBlooms workstreams, including Sandcrawler, governance, deltas, specs, build packs, HTML lessons, scripts, and reports.\n\nCREATED (UTC): 2025-12-13T23:51:31Z\n",
+        "sha256": "b9cb73aad2acad92383e98cd04dcdf973c99beab0f7a36a62ca3a26a7b28f03b"
+      },
+      {
+        "bytes": 2266,
+        "filename": "MB__OS__MetaBlooms_Core_v1.mips.json",
+        "mips_header": {},
+        "payload": {
+          "artifact_id": "MB__OS__MetaBlooms_Core_v1",
+          "artifact_type": "OS_CORE",
+          "author": "MetaBlooms",
+          "boot_contract": {
+            "invariant": "Exactly one OS_CORE file may exist",
+            "load_order": [
+              "MB__OS__MetaBlooms_Core_v1",
+              "MB__00_SENTINEL__ACTIVE_STATE",
+              "MB__01_COREPACK__*",
+              "MB__03_DELTA__*",
+              "MB__05_RULE__*"
+            ]
+          },
+          "created_utc": "2025-12-13T23:55:00Z",
+          "delta_registry": {
+            "accepted_deltas": [],
+            "integration_rule": "No DELTA is active unless registered here"
+          },
+          "description": "Single authoritative MetaBlooms OS core. All DELTAs, CorePacks, and Rules must explicitly target this file.",
+          "execution_surfaces": {
+            "browser_embodiment": {
+              "model": "ChatGPT-Native Browser",
+              "rules": [
+                "Controlled webview only",
+                "API-first for SaaS",
+                "Diff + preview before write",
+                "Whitelisted DOM actions only"
+              ],
+              "status": "ACTIVE_DIRECTION"
+            }
+          },
+          "governance_spine": {
+            "authority_illusion_rules": {
+              "blocked_phrases": [
+                "I already did",
+                "I executed",
+                "I accessed your system",
+                "I changed your file"
+              ],
+              "enforcement": "Block output unless matching receipt exists"
+            },
+            "execution_model": "PROPOSE → PREVIEW → USER_APPROVE → EXECUTE → RECEIPT",
+            "non_negotiables": [
+              "No silent autonomy",
+              "No execution without receipt",
+              "No authority illusion"
+            ],
+            "role_drift_detection": {
+              "allowed_roles": [
+                "advisor",
+                "planner",
+                "proposer"
+              ],
+              "forbidden_roles": [
+                "executor",
+                "sysadmin",
+                "owner"
+              ],
+              "penalty": "Downgrade + governance incident log"
+            }
+          },
+          "memory_model": {
+            "deletion_policy": "tombstone_only",
+            "ledger_type": "append_only",
+            "semantic_memory": {
+              "decay_model": "weight_decay",
+              "provenance_required": true,
+              "ttl_required": true
+            },
+            "storage": "external"
+          },
+          "mips_version": "1.0",
+          "os_directives": {
+            "file_first_rule": "If it matters, it must be downloadable",
+            "maintainability_constraint": "Reject features requiring weekly patching",
+            "no_ghost_state": "State not present in files does not exist"
+          },
+          "role": "Canonical Operating System Brain",
+          "version": "1.0.0"
+        },
+        "sha256": "2ae6e384dc5e0b66cac1f7b9c5f9e4887c5b3617c81bc520370b9f95cad7de30"
+      },
+      {
+        "bytes": 9083,
+        "filename": "2025-12-13_MetaBlooms_ExternalIntel_Sweep_GovAI_v1_1.mips.json",
+        "mips_header": {
+          "artifact_id": "MBXINTEL_GOVAI_v1_1",
+          "content_type": "application/json",
+          "councils": [
+            "Auditor",
+            "MarketAnalyst",
+            "Archivist"
+          ],
+          "links": {
+            "download": "sandbox:/mnt/data/2025-12-13_MetaBlooms_ExternalIntel_Sweep_GovAI_v1_1.mips.json"
+          },
+          "parent_bundle": "MetaBlooms_ProjectFiles_CorePack_v7_GovHardening_20251213T185500Z.mips.json",
+          "sha256": "4355fc1c0cef3e7a36253254d2bd6954e69460753500c539fb0aa2f3aad7c445",
+          "timestamp_utc": "2025-12-13T21:53:04Z",
+          "version": "1.1.0"
+        },
+        "payload": {
+          "benchmark_5_features": [
+            "Runtime governance contracts (MOCD/LOC-style runtime controls)",
+            "Self-modification (delta mining / evolutionary improvement)",
+            "Epistemic controls (authority detection, confidence tracking / provenance)",
+            "Production validation (>=6 months continuous real use)",
+            "Conversation-native architecture"
+          ],
+          "evidence_log_v2_row": {
+            "artifact_path": "sandbox:/mnt/data/2025-12-13_MetaBlooms_ExternalIntel_Sweep_GovAI_v1_1.mips.json",
+            "evidence_weight": 0.78,
+            "failure_signal": "Self-modification in production and 6+mo continuous runtime remain unverified for major gov suites.",
+            "next_review_date": "2026-01-13",
+            "owner": "MetaBlooms OS (Sandbox)",
+            "sweep_id": "SWEEP-GOVAI-2025-12-13-v1.1"
+          },
+          "meta_conclusion": {
+            "full_5_feature_match_found": false,
+            "metaBlooms_positioning_factful": [
+              "Differentiator: conversation-native governance + delta-evolution discipline (where evidenced internally).",
+              "Competitive landscape: strong runtime safety programs exist; self-modifying governance remains rare/opaque publicly."
+            ],
+            "reason": "Public evidence supports runtime governance + procurement/deployment signals; self-modifying delta-evolution loops are not evidenced in these public deployments, and >=6mo continuous runtime is mostly unproven for 2025 launches.",
+            "recommended_os_updates": [
+              "Add ProductionProof_2of4 gate to ExternalCompetitiveIntel intake; ban 'production' label without links.",
+              "Add Watchlist lane for 'ghost posts' (single-source claims) with automatic decay + recheck cadence.",
+              "Add FrictionHunter module (stage): collect GitHub issue threads + X replies for each candidate; mark VERIFIED only with 2+ independent signals."
+            ]
+          },
+          "production_proof_rule": {
+            "criteria": [
+              "active_users_outside_founding_team",
+              "continuous_runtime_6mo_plus",
+              "integrated_real_workflow_not_demo",
+              "user_friction_visible_complaints_bugs_on_X_or_GitHub"
+            ],
+            "name": "ProductionProof_2of4",
+            "threshold": ">=2 criteria to label PRODUCTION; else label DEPLOYMENT_SIGNAL or NOT_PRODUCTION"
+          },
+          "source": "User-provided Grok sweep (retagged) + assistant web verification",
+          "sweep_id": "SWEEP-GOVAI-2025-12-13-v1.1",
+          "systems": [
+            {
+              "assumed_until_links": [
+                "integration hurdles/data sovereignty reports",
+                "user-friction threads on X/GitHub specific to Claude Gov deployments"
+              ],
+              "feature_scores_0to10": {
+                "conversation_native": 4,
+                "epistemic_controls": 7,
+                "production_validation": 3,
+                "runtime_governance": 9,
+                "self_modification": 2
+              },
+              "name": "Claude for Government (Anthropic) — procurement + ASL-3",
+              "notes": "Public evidence supports safety posture + procurement/contracting; continuous runtime and friction signals not proven publicly.",
+              "production_proof_hits": [
+                "active_users_outside_founding_team (procurement/contracts imply eligible external users)"
+              ],
+              "status": "DEPLOYMENT_SIGNAL",
+              "verified_anchors": [
+                {
+                  "claim": "ASL-3 protections activated May 22, 2025",
+                  "url": "https://www.anthropic.com/news/activating-asl3-protections"
+                },
+                {
+                  "claim": "DoD awards up to $200M contracts to Anthropic/Google/OpenAI/xAI (Jul 14, 2025)",
+                  "url": "https://www.reuters.com/business/autos-transportation/us-department-defense-awards-contracts-google-xai-2025-07-14/"
+                }
+              ]
+            },
+            {
+              "assumed_until_links": [
+                "privacy/integration complaint threads on X",
+                "specific agency runtime longevity >=6mo"
+              ],
+              "feature_scores_0to10": {
+                "conversation_native": 7,
+                "epistemic_controls": 6,
+                "production_validation": 3,
+                "runtime_governance": 8,
+                "self_modification": 1
+              },
+              "name": "OpenAI for Government",
+              "production_proof_hits": [
+                "active_users_outside_founding_team (public-sector procurement/contracts)"
+              ],
+              "status": "DEPLOYMENT_SIGNAL",
+              "verified_anchors": [
+                {
+                  "claim": "Official OpenAI for Government announcement (Jun 16, 2025) includes DoD $200M ceiling contract",
+                  "url": "https://openai.com/global-affairs/introducing-openai-for-government/"
+                },
+                {
+                  "claim": "DoD contract listing for OpenAI Public Sector LLC (Jun 16, 2025)",
+                  "url": "https://www.war.gov/News/Contracts/Contract/Article/4218062/"
+                }
+              ]
+            },
+            {
+              "assumed_until_links": [
+                "GitHub latency issues tied to specific gov cloud repos/issues"
+              ],
+              "feature_scores_0to10": {
+                "conversation_native": 6,
+                "epistemic_controls": 5,
+                "production_validation": 2,
+                "runtime_governance": 7,
+                "self_modification": 1
+              },
+              "name": "Gemini for Government (Google) — Pentagon GenAI.mil deployment signal",
+              "notes": "Deployment report strengthens workflow integration evidence; still does not prove >=6mo continuous.",
+              "production_proof_hits": [
+                "integrated_real_workflow_not_demo (Pentagon unclassified tasks per reporting)"
+              ],
+              "status": "DEPLOYMENT_SIGNAL",
+              "verified_anchors": [
+                {
+                  "claim": "DoD awards up to $200M contracts (Jul 14, 2025)",
+                  "url": "https://www.reuters.com/business/autos-transportation/us-department-defense-awards-contracts-google-xai-2025-07-14/"
+                },
+                {
+                  "claim": "Axios reports wide-scale Pentagon deployment via GenAI.mil (Dec 9, 2025)",
+                  "url": "https://www.axios.com/2025/12/09/pentagon-google-gemini-genai-military-platform"
+                }
+              ]
+            },
+            {
+              "assumed_until_links": [
+                "agency pilot details; user-friction reports"
+              ],
+              "feature_scores_0to10": {
+                "conversation_native": 8,
+                "epistemic_controls": 6,
+                "production_validation": 2,
+                "runtime_governance": 6,
+                "self_modification": 2
+              },
+              "name": "Grok for Government (xAI) — OneGov $0.42 agreement",
+              "production_proof_hits": [
+                "active_users_outside_founding_team (GSA OneGov access)"
+              ],
+              "status": "DEPLOYMENT_SIGNAL",
+              "verified_anchors": [
+                {
+                  "claim": "GSA press release: xAI partnership + $0.42 per agency for 18 months (Sep 25, 2025)",
+                  "url": "https://www.gsa.gov/about-us/newsroom/news-releases/gsa-xai-partner-to-accelerate-federal-ai-adoption-09252025"
+                },
+                {
+                  "claim": "Coverage confirming 42-cent OneGov deal (FedScoop Sep 25, 2025)",
+                  "url": "https://fedscoop.com/grok-government-gsa-onegov-artificial-intelligence-elon-musk-contract-agency/"
+                }
+              ]
+            },
+            {
+              "feature_scores_0to10": {
+                "conversation_native": 1,
+                "epistemic_controls": 3,
+                "production_validation": 7,
+                "runtime_governance": 8,
+                "self_modification": 0
+              },
+              "name": "FINOS AI Governance Framework (AIGF)",
+              "notes": "Treat as SpecAlly comparator; not a turnkey runtime OS/agent control plane.",
+              "production_proof_hits": [
+                "continuous_runtime_6mo_plus (active since 2024)",
+                "user_friction_visible (issues/discussions in repo)"
+              ],
+              "status": "PRODUCTION (framework/spec)",
+              "verified_anchors": [
+                {
+                  "claim": "FINOS AIGF GitHub repo",
+                  "url": "https://github.com/finos/ai-governance-framework"
+                },
+                {
+                  "claim": "FINOS AIGF site (shows v2 release and documentation)",
+                  "url": "https://air-governance-framework.finos.org/"
+                }
+              ]
+            }
+          ],
+          "timeframe": {
+            "from": "2023-01-01",
+            "to": "2025-12-13"
+          },
+          "watchlist": [
+            {
+              "policy": "Do not treat as production; require repo/demo + non-founder usage signals before promotion.",
+              "status": "UNVERIFIED (single-post / low evidence)",
+              "term": "Thinking Machine 2.0 (rokoroko / @rokorobot)",
+              "verification_links": [
+                "https://x.com/rokorobot"
+              ]
+            }
+          ]
+        },
+        "sha256": "6bffa3393e7d2063557c28bfd736e8365afa6f169c9c9e0b7830cdee6b70fa75"
+      },
+      {
+        "bytes": 4682,
+        "filename": "2025-12-13_MetaBlooms_ExternalIntel_Sweep_GovAI_v1.mips.json",
+        "mips_header": {
+          "artifact_id": "MBXINTEL_GOVAI_v1",
+          "content_type": "application/json",
+          "councils": [
+            "Auditor",
+            "MarketAnalyst",
+            "Archivist"
+          ],
+          "links": {
+            "download": "sandbox:/mnt/data/2025-12-13_MetaBlooms_ExternalIntel_Sweep_GovAI_v1.mips.json"
+          },
+          "parent_bundle": "MetaBlooms_ProjectFiles_CorePack_v7_GovHardening_20251213T185500Z.mips.json",
+          "sha256": "949101bc3142199f06e28ede1135700e87ab9b896c9aec537e3b6c55d95fa5c8",
+          "timestamp_utc": "2025-12-13T21:46:42Z",
+          "version": "1.0.0"
+        },
+        "payload": {
+          "benchmark_5_features": [
+            "Runtime governance contracts (MOCD/LOC-style runtime controls)",
+            "Self-modification (delta mining / evolutionary improvement)",
+            "Epistemic controls (authority detection, confidence tracking / provenance)",
+            "Production validation (>=6 months continuous real use)",
+            "Conversation-native architecture"
+          ],
+          "evidence_log_v2_row": {
+            "artifact_path": "sandbox:/mnt/data/2025-12-13_MetaBlooms_ExternalIntel_Sweep_GovAI_v1.mips.json",
+            "evidence_weight": 0.72,
+            "failure_signal": "Production>=6mo + self-modification not verifiable from public evidence for major gov suites.",
+            "next_review_date": "2026-01-13",
+            "owner": "MetaBlooms OS (Sandbox)",
+            "sweep_id": "SWEEP-GOVAI-2025-12-13-v1"
+          },
+          "findings": [
+            {
+              "evidence_urls": [
+                "https://www.gsa.gov/about-us/newsroom/news-releases/gsa-propels-government-into-ai-revolution-with-addition-of-leading-solutions-08052025",
+                "https://www.reuters.com/world/us/us-agency-approves-openai-google-anthropic-federal-ai-vendor-list-2025-08-05/"
+              ],
+              "notes": "Confirms availability/procurement channel; does not itself prove 6+ months continuous use.",
+              "status": "VERIFIED",
+              "system": "GSA MAS adds Claude, Gemini, ChatGPT"
+            },
+            {
+              "evidence_urls": [
+                "https://www.anthropic.com/news/activating-asl3-protections"
+              ],
+              "notes": "ASL-3 described as deployment + security standards targeting CBRN misuse.",
+              "status": "VERIFIED",
+              "system": "Anthropic ASL-3 protections"
+            },
+            {
+              "evidence_urls": [
+                "https://www.reuters.com/business/autos-transportation/us-department-defense-awards-contracts-google-xai-2025-07-14/",
+                "https://www.nextgov.com/acquisition/2025/07/pentagon-awards-multiple-companies-200m-contracts-ai-tools/406698/"
+              ],
+              "notes": "Contract awards are strong deployment intent signals; still not direct proof of >=6 months continuous real use.",
+              "status": "VERIFIED",
+              "system": "DoD awards up to $200M contracts to Anthropic/Google/OpenAI/xAI (July 14, 2025)"
+            },
+            {
+              "evidence_urls": [
+                "https://openai.com/global-affairs/introducing-openai-for-government/"
+              ],
+              "notes": "Initiative exists; public docs are high-level on enforcement details.",
+              "status": "VERIFIED",
+              "system": "OpenAI for Government"
+            },
+            {
+              "evidence_urls": [
+                "https://x.ai/news/government/"
+              ],
+              "notes": "Confirms announcement of gov suite.",
+              "status": "VERIFIED",
+              "system": "xAI for Government"
+            },
+            {
+              "evidence_urls": [
+                "https://github.com/finos/ai-governance-framework",
+                "https://github.com/finos/ai-governance-framework/issues/223",
+                "https://air-governance-framework.finos.org/"
+              ],
+              "notes": "Framework/spec with ongoing meetings and v2 release; governance blueprint more than turnkey runtime control plane.",
+              "status": "VERIFIED",
+              "system": "FINOS AI Governance Framework (AIGF)"
+            }
+          ],
+          "meta_conclusion": {
+            "full_5_feature_match_found": false,
+            "reason": "Publicly verifiable offerings emphasize runtime governance and procurement; self-modifying/delta-mining governance is not evidenced in these deployments, and the >=6mo production criterion is not clearly met for most 2025 launches.",
+            "recommended_internal_delta": [
+              "Add ExternalEvidenceSweep intake type with strict VERIFIED/ASSUMED tagging and a ProductionProof checklist (2-of-4 rule).",
+              "Promote Governance Enforcement v0 as P0 roadmap item: passive controls -> active lint/denylist before output."
+            ]
+          },
+          "scope": "External competitive intelligence validation of Grok Sandcrawler results: government AI offerings + FINOS AIGF; check for 5-feature benchmark full match.",
+          "sweep_id": "SWEEP-GOVAI-2025-12-13-v1",
+          "timeframe": {
+            "from": "2023-01-01",
+            "to": "2025-12-13"
+          }
+        },
+        "sha256": "6521addc2d6fc552ab88632e6f0fa0768ea1be72ccd516b52be7a654c363882e"
+      },
+      {
+        "bytes": 4087,
+        "filename": "MetaBlooms_ProjectFiles_CorePack_v6_MOCD_20251213T180455Z.mips.json",
+        "mips_header": {
+          "artifact_id": "MetaBlooms_ProjectFiles_CorePack_v6_MOCD_20251213T180455Z",
+          "audit": "construct",
+          "content_type": "application/json",
+          "councils": [
+            "Facilitator",
+            "Auditor",
+            "Synthesizer",
+            "Recorder"
+          ],
+          "links": {
+            "corepack_base": "MetaBlooms_ProjectFiles_CorePack_v3_STABILIZED.json",
+            "delta_promotions": "MetaBlooms_DELTA_RefineAndPromote_Staged_20251213T161939Z.mips.json"
+          },
+          "parent_bundle": "MetaBlooms_ProjectFiles_CorePack_v5_PROMOTE2_20251213T161953Z",
+          "sha256": "134f70fc6498adeaf17be7f6d790da7f46f6c36b5b87698a6db1eb75230bbda8",
+          "timestamp_utc": "20251213T180455Z",
+          "version": "v6"
+        },
+        "payload": {
+          "active_modules": {
+            "PROMOTED": [
+              "BootGuard_Preflight",
+              "AutoDeltaGate_OnUpload",
+              "DeltaGate (runtime kit)",
+              "DeltaSlicer (opt-in)",
+              "ContextMemoryEngine",
+              "ReasoningHorizonsEngine"
+            ],
+            "STAGED": [
+              "StrategyBrainEngine (advisor-only)",
+              "ExecutiveFunctionEngine (needs proving runs)"
+            ]
+          },
+          "governance_context": {
+            "LOC": {
+              "do": [
+                "Propose changes as deltas (small, testable, reversible).",
+                "State assumptions vs. verified facts.",
+                "Prefer auditability and rollback over cleverness and speed.",
+                "Ask for missing inputs only if genuinely blocking; otherwise proceed with best-effort + [ASSUMED] tags."
+              ],
+              "dont": [
+                "Assume your output will execute automatically.",
+                "Write to long-term memory/state without a gate/promotion step.",
+                "Overwrite existing rules or modules; propose append-only deltas.",
+                "Claim tool execution you did not perform."
+              ],
+              "error_handling": "On failure or ambiguity, produce: (1) minimal safe artifact, (2) explicit failure signal, (3) next action that preserves rollback.",
+              "interaction_primitives": {
+                "mb:contract": "Print MOCD + LOC for downstream LLMs",
+                "mb:deltas": "List deltas (promoted/staged) with scores + why",
+                "mb:os-audit": "Audit project pack integrity + missing pieces",
+                "mb:status": "Report active pack + promoted/staged + last decisions"
+              },
+              "name": "LLM Operator Contract (LOC)",
+              "purpose": "Prevent category errors and unsafe/incorrect operation by downstream LLMs.",
+              "required_posture": "Judgment provider, not decision-maker."
+            },
+            "MOCD": {
+              "audience": [
+                "any_llm",
+                "agent",
+                "tool-using-model"
+              ],
+              "name": "MetaBlooms Operating Context Declaration (MOCD)",
+              "non_negotiables": [
+                "MetaBlooms is a governance and control system, not an intelligence model.",
+                "LLM outputs are advisory; authority is enforced by explicit validation/gating/promotion.",
+                "System evolution is delta-based: slice → score → gate → promote → preserve.",
+                "Autonomy is bounded and conditional; no implicit execution or ungated memory writes."
+              ],
+              "one_line_canon": "MetaBlooms OS governs intelligence; it does not replace it. LLM outputs are advisory and subject to explicit validation, gating, and promotion.",
+              "status": "CANONICAL",
+              "tone": "Factual / operational"
+            }
+          },
+          "next_move": "Run mb:os-audit inside the sandbox (I do it here). Then we mine one more delta-pack (PACKSALL.zip) and feed it through DeltaMiner+Slicer+Gate again.",
+          "run_commands": {
+            "mb:contract": "Print MOCD + LOC (operator contract) for downstream LLMs",
+            "mb:deltas": "List deltas (promoted/staged) with scores + why",
+            "mb:os-audit": "Audit /mnt/data project pack integrity + missing pieces",
+            "mb:status": "Print active pack + promoted/staged + last decisions"
+          },
+          "what_this_is": "Project-files pointer pack (tiny on purpose). The real payload lives in the referenced ZIPs/JSON already in project files. (v6 adds canonical operating context + operator contract for downstream LLMs.)"
+        },
+        "sha256": "7244802fd961470dae6521c5364535dcd386f56b90d977320a07be4bc9ea8508"
+      },
+      {
+        "bytes": 4303,
+        "filename": "MetaBlooms_ProjectFiles_CorePack_v7_GovHardening_20251213T185500Z.mips.json",
+        "mips_header": {
+          "artifact_id": "MetaBlooms_ProjectFiles_CorePack_v7_GovHardening_20251213T185500Z",
+          "audit": "construct",
+          "content_type": "application/json",
+          "councils": [
+            "Facilitator",
+            "Auditor",
+            "Synthesizer",
+            "Recorder"
+          ],
+          "links": {
+            "active_sentinel": "MB__ACTIVE_STATE__READ_ME.txt",
+            "prior_corepack": "MetaBlooms_ProjectFiles_CorePack_v6_MOCD_20251213T180455Z.mips.json"
+          },
+          "parent_bundle": "MetaBlooms_ProjectFiles_CorePack_v6_MOCD_20251213T180455Z",
+          "sha256": "4bcd692a806f5ddfa42a2c560d13f5cefa9d734e91f7ebf4d23aa6d56358bc33",
+          "timestamp_utc": "20251213T185500Z",
+          "version": "v7"
+        },
+        "payload": {
+          "active_modules": {
+            "DISCARDED_THIS_CYCLE": [
+              "GovControls:SemanticRegressionChecks_v1 (no-evidence gate)"
+            ],
+            "PROMOTED": [
+              "BootGuard_Preflight",
+              "AutoDeltaGate_OnUpload",
+              "DeltaGate (runtime kit)",
+              "ContextMemoryEngine",
+              "ReasoningHorizonsEngine",
+              "MOCD (MetaBlooms Operating Context Declaration)",
+              "LOC (LLM Operator Contract)",
+              "GovControls:AuthorityIllusionPenalty_v1",
+              "GovControls:EpistemicMemoryMetadata_v1"
+            ],
+            "STAGED": [
+              "GovControls:RoleDriftFlagger_v1",
+              "GovControls:BehavioralEnvelopeWarnings_v1",
+              "StrategyBrainEngine (advisor-only)",
+              "ExecutiveFunctionEngine (needs proving runs)"
+            ]
+          },
+          "gov_controls_v1": {
+            "promoted": {
+              "AuthorityIllusionPenalty_v1": {
+                "enforcement": "none (scoring only)",
+                "scoring_adjustment": {
+                  "unsupported_certainty": -10
+                },
+                "signals": [
+                  "definitive_language_without_evidence",
+                  "execution_assumption",
+                  "implicit_authority_claim"
+                ]
+              },
+              "EpistemicMemoryMetadata_v1": {
+                "defaults": {
+                  "llm_inferred": {
+                    "confidence": "low",
+                    "provenance": "llm"
+                  }
+                },
+                "enforcement": "none (metadata only)",
+                "memory_entry_fields": [
+                  "confidence",
+                  "provenance",
+                  "timestamp_utc"
+                ]
+              }
+            },
+            "staged": {
+              "BehavioralEnvelopeWarnings_v1": {
+                "action": "log_warning_only",
+                "signals": [
+                  "scope_expansion",
+                  "strategy_injection",
+                  "policy_without_request"
+                ]
+              },
+              "RoleDriftFlagger_v1": {
+                "action": "flag_only",
+                "signals": [
+                  "decision_language",
+                  "execution_language",
+                  "speaking_for_user"
+                ]
+              }
+            },
+            "status": "AuthorityIllusionPenalty + EpistemicMemoryMetadata PROMOTED; RoleDrift + BehavioralEnvelope remain STAGED; SemanticRegression excluded."
+          },
+          "governance_contracts": {
+            "LOC": {
+              "forbidden_assumptions": [
+                "implicit_execution",
+                "ungated_memory_writes",
+                "model_is_authority"
+              ],
+              "required_posture": [
+                "propose_dont_execute",
+                "declare_scope",
+                "surface_assumptions"
+              ],
+              "role": "LLM acts as judgment provider, not decision-maker."
+            },
+            "MOCD": {
+              "identity": "MetaBlooms OS is a governance/control system; LLM outputs are advisory.",
+              "non_negotiables": [
+                "separate_intelligence_from_authority",
+                "delta_based_evolution",
+                "bounded_autonomy",
+                "governance_over_confidence"
+              ]
+            }
+          },
+          "next_move": "Observe staged signals (RoleDrift, BehavioralEnvelope) during normal use; re-run probe sweep later to calibrate thresholds before any enforcement.",
+          "run_commands": {
+            "mb:contract": "Print MOCD + LOC (operator rules) for any LLM/operator",
+            "mb:gov": "Show promoted/staged governance controls + signals + scoring impacts",
+            "mb:os-audit": "Audit project pack integrity + missing pieces",
+            "mb:status": "Print active pack + promoted/staged + last decisions"
+          },
+          "what_this_is": "Project-files pointer pack (tiny on purpose). Contains boot rules + governance contracts + promoted/staged governance controls. Real payload lives in referenced bundles already in Project Files."
+        },
+        "sha256": "0277573d5b62ff62477e4747452b9bc332cfdd99243efbd0c5103aac84ca2254"
+      },
+      {
+        "bytes": 3504,
+        "filename": "2025-12-13_MetaBlooms_DELTA_MobileFilenameFrontload_v1.mips.json",
+        "mips_header": {
+          "artifact_id": "2025-12-13_MetaBlooms_DELTA_MobileFilenameFrontload_v1",
+          "content_type": "application/json",
+          "councils": [
+            "Auditor",
+            "Archivist",
+            "UX",
+            "Governance"
+          ],
+          "evidence_chain": [
+            "mobile_ui_truncation_observed"
+          ],
+          "links": [],
+          "parent_bundle": "MetaBlooms_ProjectFiles_CorePack_v7_GovHardening_20251213T185500Z.mips.json",
+          "sha256": "16d2b8d8ae031ab9685ba09666e74ec17a6d0feb84b31beb8f95d1e1e7480eb2",
+          "timestamp_utc": "2025-12-13T22:42:41Z",
+          "version": "1.0"
+        },
+        "payload": {
+          "delta_id": "DELTA_MOBILE_FILENAME_FRONTLOAD_CONTRACT_v1",
+          "integration_points": [
+            {
+              "add": "Project Files Naming Contract section + slot prefixes as canonical names",
+              "target": "CorePack (next build)"
+            },
+            {
+              "add": "One-line rule: 'Mobile UI truncates filenames; trust slot prefixes MB__00/01/03/90.'",
+              "target": "Active State Sentinel"
+            }
+          ],
+          "priority": "P1",
+          "problem": {
+            "impact": [
+              "increases selection errors (upload/replace wrong file)",
+              "breaks 'cavemen with power tools' usability constraint",
+              "adds hesitation friction during routine ops"
+            ],
+            "symptom": "Android Project Files list truncates filenames, making multiple .mips.json files indistinguishable at a glance."
+          },
+          "provenance": {
+            "source": "User observed mobile UI truncation ambiguity; prior chat solution not captured into Delta.",
+            "timestamp_utc": "2025-12-13T22:42:41Z"
+          },
+          "solution": {
+            "contract": [
+              "All Project Files MUST have first 24 characters unique and semantic.",
+              "Filenames MUST start with a stable slot prefix: MB__00, MB__01, MB__03, MB__90, etc.",
+              "Meaning must be front-loaded (do not rely on suffix timestamps).",
+              "Sentinel remains source of truth; filenames exist to reduce mobile friction."
+            ],
+            "recommended_slots": [
+              {
+                "meaning": "Active State / Sentinel (source of truth pointer)",
+                "slot": "MB__00"
+              },
+              {
+                "meaning": "Active CorePack",
+                "slot": "MB__01"
+              },
+              {
+                "meaning": "External Intel / inputs (append-only)",
+                "slot": "MB__03"
+              },
+              {
+                "meaning": "Archives / optional bundles",
+                "slot": "MB__90"
+              }
+            ],
+            "rename_plan": [
+              {
+                "from": "MetaBlooms_ProjectFiles_CorePack_v7_GovHardening_20251213T185500Z.mips.json",
+                "to": "MB__01_COREPACK_v7_GOVHARD.mips.json"
+              },
+              {
+                "from": "2025-12-13_MetaBlooms_ExternalIntel_Sweep_GovAI_v1_1.mips.json",
+                "to": "MB__03_EXTINTEL_GovAI_v1_1.mips.json"
+              },
+              {
+                "from": "MetaBlooms_BUNDLE_PersistenceBoundary_20251213T162852Z.zip",
+                "to": "MB__90_ARCHIVE_PersistBoundary.zip"
+              },
+              {
+                "from": "MB__ACTIVE_STATE__READ_ME__v7_REPLACE_ME.txt",
+                "to": "MB__00_ACTIVE_STATE_README.txt"
+              }
+            ]
+          },
+          "status": "STAGED",
+          "title": "Mobile Filename Frontload Contract (Android Project Files UI)",
+          "type": "governance_ux",
+          "validation": {
+            "checks": [
+              "In Android Project Files list view, each file is uniquely identifiable from the left/truncated portion.",
+              "User can tell CorePack vs External Intel without opening files."
+            ],
+            "rollback": "Revert filenames; no content changes required."
+          }
+        },
+        "sha256": "50955079cedefba24ca8a6c881398a7b44c8542ddf489ed8ec0c9911689a9bb2"
+      },
+      {
+        "bytes": 2266,
+        "filename": "MB__OS__MetaBlooms_Core_v1.mips.json",
+        "mips_header": {},
+        "payload": {
+          "artifact_id": "MB__OS__MetaBlooms_Core_v1",
+          "artifact_type": "OS_CORE",
+          "author": "MetaBlooms",
+          "boot_contract": {
+            "invariant": "Exactly one OS_CORE file may exist",
+            "load_order": [
+              "MB__OS__MetaBlooms_Core_v1",
+              "MB__00_SENTINEL__ACTIVE_STATE",
+              "MB__01_COREPACK__*",
+              "MB__03_DELTA__*",
+              "MB__05_RULE__*"
+            ]
+          },
+          "created_utc": "2025-12-13T23:55:00Z",
+          "delta_registry": {
+            "accepted_deltas": [],
+            "integration_rule": "No DELTA is active unless registered here"
+          },
+          "description": "Single authoritative MetaBlooms OS core. All DELTAs, CorePacks, and Rules must explicitly target this file.",
+          "execution_surfaces": {
+            "browser_embodiment": {
+              "model": "ChatGPT-Native Browser",
+              "rules": [
+                "Controlled webview only",
+                "API-first for SaaS",
+                "Diff + preview before write",
+                "Whitelisted DOM actions only"
+              ],
+              "status": "ACTIVE_DIRECTION"
+            }
+          },
+          "governance_spine": {
+            "authority_illusion_rules": {
+              "blocked_phrases": [
+                "I already did",
+                "I executed",
+                "I accessed your system",
+                "I changed your file"
+              ],
+              "enforcement": "Block output unless matching receipt exists"
+            },
+            "execution_model": "PROPOSE → PREVIEW → USER_APPROVE → EXECUTE → RECEIPT",
+            "non_negotiables": [
+              "No silent autonomy",
+              "No execution without receipt",
+              "No authority illusion"
+            ],
+            "role_drift_detection": {
+              "allowed_roles": [
+                "advisor",
+                "planner",
+                "proposer"
+              ],
+              "forbidden_roles": [
+                "executor",
+                "sysadmin",
+                "owner"
+              ],
+              "penalty": "Downgrade + governance incident log"
+            }
+          },
+          "memory_model": {
+            "deletion_policy": "tombstone_only",
+            "ledger_type": "append_only",
+            "semantic_memory": {
+              "decay_model": "weight_decay",
+              "provenance_required": true,
+              "ttl_required": true
+            },
+            "storage": "external"
+          },
+          "mips_version": "1.0",
+          "os_directives": {
+            "file_first_rule": "If it matters, it must be downloadable",
+            "maintainability_constraint": "Reject features requiring weekly patching",
+            "no_ghost_state": "State not present in files does not exist"
+          },
+          "role": "Canonical Operating System Brain",
+          "version": "1.0.0"
+        },
+        "sha256": "2ae6e384dc5e0b66cac1f7b9c5f9e4887c5b3617c81bc520370b9f95cad7de30"
+      },
+      {
+        "bytes": 1583,
+        "filename": "MetaBlooms_ProjectFiles_CorePack_v5_PROMOTE2_20251213T161953Z.mips.json",
+        "mips_header": {
+          "artifact_id": "MetaBlooms_ProjectFiles_CorePack_v5_PROMOTE2_20251213T161953Z",
+          "audit": "construct",
+          "content_type": "application/json",
+          "councils": [
+            "Facilitator",
+            "Auditor",
+            "Synthesizer",
+            "Recorder"
+          ],
+          "links": {
+            "corepack_base": "MetaBlooms_ProjectFiles_CorePack_v3_STABILIZED.json",
+            "delta_promotions": "MetaBlooms_DELTA_RefineAndPromote_Staged_20251213T161939Z.mips.json"
+          },
+          "parent_bundle": "MetaBlooms_ProjectFiles_CorePack_v4_REFINED_20251213T161427Z",
+          "timestamp_utc": "20251213T161953Z",
+          "version": "v5"
+        },
+        "payload": {
+          "active_modules": {
+            "PROMOTED": [
+              "BootGuard_Preflight",
+              "AutoDeltaGate_OnUpload",
+              "DeltaGate (runtime kit)",
+              "DeltaSlicer (opt-in)",
+              "ContextMemoryEngine",
+              "ReasoningHorizonsEngine"
+            ],
+            "STAGED": [
+              "StrategyBrainEngine (advisor-only)",
+              "ExecutiveFunctionEngine (needs proving runs)"
+            ]
+          },
+          "next_move": "Run mb:os-audit inside the sandbox (I do it here). Then we mine one more delta-pack (PACKSALL.zip) and feed it through DeltaMiner+Slicer+Gate again.",
+          "run_commands": {
+            "mb:deltas": "List deltas (promoted/staged) with scores + why",
+            "mb:os-audit": "Audit /mnt/data project pack integrity + missing pieces",
+            "mb:status": "Print active pack + promoted/staged + last decisions"
+          },
+          "what_this_is": "Project-files pointer pack (tiny on purpose). The real payload lives in the referenced ZIPs/JSON already in project files."
+        },
+        "sha256": "0644f58818aaacd8bb68355cb9047ed0aef2e0c8aedf9742cc52056a26a6ebed"
+      }
+    ],
+    "External_Bundles": [
+      {
+        "bytes": 88116,
+        "filename": "MetaBlooms_ProjectFiles_CorePack_20251213T140937Z_v2.zip",
+        "sha256": "587d5b85a9c7dee7da1c33f3c4c60d6eda2ffc3f19d42234f7127fb1a411bdb2"
+      }
+    ],
+    "Integrity_Checks": {
+      "action": "This build cannot restore any content that is not present in the current project files or uploaded bundles. If you have an older large OS file, upload it and I will merge it.",
+      "embedded_count": 14,
+      "missing_expected_large_os_source": true,
+      "invariant_first_gate": true,
+      "no_ad_hoc_patching": true,
+      "require_evidence_for_claims": true,
+      "index_hash_required": true
+    },
+    "MetaBlooms_OS": {
+      "build_date_utc": "2025-12-14T00:03:55Z",
+      "name": "MetaBlooms OS",
+      "notes": "Restored volume by re-integrating all project-file specs/deltas/artifacts present in /mnt/data as of build time.",
+      "version": "v1.5-pre+restored",
+      "Governance": {
+        "RCA_Mode": {
+          "status": "PERMANENT",
+          "trigger_rules": [
+            "R1..R7 per MB__SOP__RCA_Mode__PERMANENT"
+          ],
+          "execution_lock": "No patches/features during RCA; diagnostics only; single-variable fixes only."
+        },
+        "CSRG": {
+          "status": "ACTIVE",
+          "purpose": "Common-Sense Reasoning Gate between user prompt and actions; blocks implausible or user-burdening steps."
+        },
+        "File_Visibility_Contract": {
+          "rule": "Assistant may only act on files whose contents are explicitly provided (upload/paste). Filenames alone are non-evidence.",
+          "reason": "Prevent fabricated audits and incorrect rebuilds."
+        },
+        "Index_Deduplication_Rule": {
+          "rule": "If multiple MB__99_INDEX variants exist, boot selects the one whose embedded file hashes match on-disk and with latest build_ts_utc.",
+          "fallback": "If no hashes, treat as advisory only and rebuild MB__99."
+        }
+      }
+    },
+    "ProjectFiles_Contract": {
+      "optional": [
+        "MB__01_COREPACK__*.mips.json",
+        "MB__03_DELTA__*.mips.json",
+        "MB__0*_SPEC_*.mips.json",
+        "MB__05_RULE_*.mips.json"
+      ],
+      "required": [
+        "MB__00_SENTINEL__ACTIVE_STATE.txt",
+        "MB__OS__MetaBlooms_Core__ACTIVE.mips.json",
+        "MB__99_INDEX__ProjectFiles.txt"
+      ],
+      "target_slots": "3–5",
+      "target_file_count": 5,
+      "canonical_slots": [
+        {
+          "slot": "00",
+          "name": "MB__00_SENTINEL__ACTIVE_STATE.txt",
+          "required": true
+        },
+        {
+          "slot": "01",
+          "name": "MB__01_COREPACK__GovHardening_v7__2025-12-13.mips.json",
+          "required": true
+        },
+        {
+          "slot": "02",
+          "name": "MB__02_OS__MetaBlooms_Core__ACTIVE__2025-12-14.mips.json",
+          "required": true
+        },
+        {
+          "slot": "03",
+          "name": "MB__03_DELTA__ChatGPTNativeBrowser_Synthesis_v1.mips.json",
+          "required": true
+        },
+        {
+          "slot": "99",
+          "name": "MB__99_INDEX__ProjectFiles.txt",
+          "required": true
+        }
+      ],
+      "size_plausibility_gate": {
+        "min_kb": {
+          "01_corepack": 2,
+          "02_os_core": 50,
+          "99_index": 1
+        },
+        "abort_on_violation": true,
+        "note": "Blocks 'tiny broken files' replacement."
+      },
+      "auto_delta_reconciler": {
+        "rule": "Any MB__03_DELTA present in Project Files is treated as live-on-boot unless explicitly quarantined by sentinel.",
+        "quarantine_mechanism": "sentinel.quarantine_list",
+        "collapse_trigger": "user says 'consolidate' OR deltas_count>1"
+      }
+    }
+  }
+}
