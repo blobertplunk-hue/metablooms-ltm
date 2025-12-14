@@ -1,0 +1,152 @@
+{
+  "mips": {
+    "artifact_id": "MetaBlooms_DELTA_RefineAndPromote_Staged_20251213T161939Z",
+    "parent_bundle": "MetaBlooms_ProjectFiles_CorePack_v4_REFINED_20251213T161427Z",
+    "version": "v1",
+    "timestamp_utc": "20251213T161939Z",
+    "content_type": "application/json",
+    "councils": [
+      "Facilitator",
+      "Auditor",
+      "Synthesizer",
+      "Recorder"
+    ],
+    "audit": "construct",
+    "evidence_chain": {
+      "inputs": [
+        "MetaBlooms_ProjectFiles_CorePack_v4_REFINED_20251213T161427Z.mips.json",
+        "MetaBlooms_DELTA_RefineStaged_PromotionPack_20251213T161427Z.mips.json"
+      ]
+    },
+    "links": {}
+  },
+  "content": {
+    "intent": "Refine + auto-promote risk-tier-2 staged engines (ContextMemoryEngine, ReasoningHorizonsEngine) by tightening guards, adding deterministic test gates, and converting risky behaviors to bounded EXE-safe behaviors.",
+    "policy": {
+      "mode": "EXE",
+      "max_user_actions": 1,
+      "require_artifact_each_turn": true,
+      "gapfiller_pass": true,
+      "evidence_required": true,
+      "no_external_reads": true
+    },
+    "refinements": [
+      {
+        "engine": "ContextMemoryEngine",
+        "from_state": "STAGED",
+        "to_state": "PROMOTE",
+        "risk_tier": 2,
+        "changes": [
+          "Hard-bind retrieval scope to /mnt/data project files only (no cross-chat, no web, no phone paths).",
+          "Require explicit evidence pointers (file name + line ranges when available) for any retrieved claim.",
+          "Introduce 'missing_context' output when evidence cannot be located\u2014no guessing."
+        ],
+        "guards": {
+          "allowed_roots": [
+            "/mnt/data"
+          ],
+          "deny_patterns": [
+            "/sdcard",
+            "http://",
+            "https://",
+            "web.run",
+            "gmail",
+            "gcal",
+            "gdrive"
+          ],
+          "max_recall_items": 12,
+          "require_citations": true
+        },
+        "tests": [
+          {
+            "id": "T-CME-01",
+            "desc": "If asked to reference something not in /mnt/data, engine returns 'UPLOAD_REQUIRED' and continues with what is available."
+          },
+          {
+            "id": "T-CME-02",
+            "desc": "If engine cannot cite evidence for a claim, it must label it as hypothesis and set confidence<=0.4."
+          }
+        ],
+        "expected_score": 78
+      },
+      {
+        "engine": "ReasoningHorizonsEngine",
+        "from_state": "STAGED",
+        "to_state": "PROMOTE",
+        "risk_tier": 2,
+        "changes": [
+          "Enforce ROI ceiling: max 6 planning steps, else collapse to 1-screen plan and execute.",
+          "Forbid multi-turn clarification spirals unless safety-critical; default to best-effort execution.",
+          "Auto-generate an artifact or structured payload every turn (even small deltas)."
+        ],
+        "guards": {
+          "max_planning_steps": 6,
+          "max_clarifying_questions": 0,
+          "require_deliverable": true,
+          "stop_if_user_instruction_chain": ">2 steps"
+        },
+        "tests": [
+          {
+            "id": "T-RHE-02",
+            "desc": "When user requests 'do it', engine must not ask follow-ups; executes with defaults and states assumptions."
+          },
+          {
+            "id": "T-RHE-03",
+            "desc": "If plan exceeds 6 steps, output compressed plan + immediate action."
+          }
+        ],
+        "expected_score": 78
+      },
+      {
+        "engine": "StrategyBrainEngine",
+        "from_state": "STAGED",
+        "to_state": "STAGED",
+        "risk_tier": 3,
+        "changes": [
+          "Finalize advisor-only mode: execution authority NONE; outputs ranked options only."
+        ],
+        "guards": {
+          "execution_authority": "NONE",
+          "max_actions_suggested": 3
+        },
+        "tests": [
+          {
+            "id": "T-SBE-02",
+            "desc": "Never outputs more than 1 command; if more needed, outputs a single 'RUN mb:ingest/mb:os-audit' style command."
+          }
+        ],
+        "expected_score": 74
+      },
+      {
+        "engine": "ExecutiveFunctionEngine",
+        "from_state": "STAGED",
+        "to_state": "STAGED",
+        "risk_tier": 3,
+        "changes": [
+          "Single-action queue remains staged until proven across 3 consecutive ingest runs."
+        ],
+        "guards": {
+          "max_user_actions": 1,
+          "requires_proving_runs": 3
+        },
+        "tests": [
+          {
+            "id": "T-EFE-02",
+            "desc": "Will not activate unless proving_runs_passed>=3 stored in /mnt/data state file."
+          }
+        ],
+        "expected_score": 74
+      }
+    ],
+    "activation": {
+      "promote_now": [
+        "ContextMemoryEngine",
+        "ReasoningHorizonsEngine"
+      ],
+      "keep_staged": [
+        "StrategyBrainEngine",
+        "ExecutiveFunctionEngine"
+      ]
+    }
+  }
+}
