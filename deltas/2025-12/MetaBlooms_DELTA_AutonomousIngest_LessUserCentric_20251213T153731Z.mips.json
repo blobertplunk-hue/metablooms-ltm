@@ -1,0 +1,131 @@
+{
+  "mips_version": "1.0",
+  "header": {
+    "artifact_id": "MetaBlooms_DELTA_AutonomousIngest_LessUserCentric_20251213T153731Z",
+    "parent_bundle": "MetaBlooms_ProjectFiles_CorePack_v3_STABILIZED",
+    "version": "v1",
+    "timestamp_utc": "20251213T153731Z",
+    "content_type": "application/json",
+    "councils": [
+      "Facilitator",
+      "Auditor",
+      "Hacker",
+      "Archivist",
+      "Teacher"
+    ],
+    "audit": "construct",
+    "evidence_chain": {
+      "mode": "append_only",
+      "notes": "Autonomy delta; no external reads required."
+    },
+    "links": []
+  },
+  "body": {
+    "delta_name": "Autonomous Ingest + Pack (Less User-Centric)",
+    "goal": "Shift routine work (mining old deltas, slicing, gating, packing) into sandbox-run flows; user only uploads 1 bundle input and receives 1 bundle output.",
+    "principles": [
+      "User actions minimized to: upload input bundle(s) -> receive output CorePack/DeltaPack.",
+      "No instructions to run Python/Termux unless user explicitly requests phone-side processing.",
+      "Prefer project files as canonical inputs when present; otherwise accept uploaded packs.",
+      "Always operate bundle-first under 20-slot constraint."
+    ],
+    "new_daily_commands": {
+      "mb:ingest": {
+        "description": "Ingest uploaded delta packs from /mnt/data, run slicer + gate, produce updated CorePack bundle output.",
+        "inputs": [
+          "/mnt/data/*.zip (delta packs)",
+          "/mnt/data/MetaBlooms_ProjectFiles_CorePack_v3_STABILIZED.json"
+        ],
+        "outputs": [
+          "CorePack_vNEXT.zip",
+          "DeltaGate_Decisions.mips.json",
+          "Ingest_Report.mips.json"
+        ],
+        "user_required": false
+      },
+      "mb:mine": {
+        "description": "Mine legacy deltas from a user-uploaded archive pack (zip) OR a provided artifacts index file; extract candidates and score.",
+        "inputs": [
+          "legacy_deltas.zip OR artifacts_index.json"
+        ],
+        "outputs": [
+          "DeltaBacklog_Ranked.mips.json",
+          "CandidateSlices.zip"
+        ],
+        "user_required": false
+      },
+      "mb:pack": {
+        "description": "Pack selected deltas/slices into size-capped zips (e.g., <=15MB each) for upload/archival; produces pack index and summary.",
+        "inputs": [
+          "CandidateSlices.zip or selected files list"
+        ],
+        "outputs": [
+          "MetaBlooms_DELTA_PACK_*.zip",
+          "PACK_INDEX.json",
+          "PACK_SUMMARY.txt"
+        ],
+        "user_required": false
+      }
+    },
+    "execution_flow": {
+      "flow_name": "AUTO_MINE_SLICE_GATE_PACK",
+      "steps": [
+        {
+          "id": "A0",
+          "action": "BootGuard_Preflight",
+          "details": "Mount /mnt/data; detect active CorePack; validate MIPS headers; enforce slot plan."
+        },
+        {
+          "id": "A1",
+          "action": "DiscoverInputs",
+          "details": "Detect new uploads (zip/json) since last run via mtime; classify as delta_pack / legacy_pack / index / report."
+        },
+        {
+          "id": "A2",
+          "action": "Mine",
+          "details": "If legacy_pack or index present, extract candidate deltas; dedup by sha256; generate ranked backlog."
+        },
+        {
+          "id": "A3",
+          "action": "Slice",
+          "details": "Run DeltaSlicer on candidates; output atomic feature slices + provenance links."
+        },
+        {
+          "id": "A4",
+          "action": "Gate",
+          "details": "DeltaGate compares each slice vs active OS; promote only net-improvements; stage risky/underspecified; archive redundant."
+        },
+        {
+          "id": "A5",
+          "action": "PackOutputs",
+          "details": "Compile promotions into CorePack_vNEXT; include decisions + report; keep staged slices in STAGING folder in zip."
+        },
+        {
+          "id": "A6",
+          "action": "Ship",
+          "details": "Return exactly one downloadable bundle + one manifest + one human-readable UI summary."
+        }
+      ],
+      "stops": [
+        {
+          "condition": "no_new_inputs",
+          "behavior": "ship UI summary only: 'No new inputs detected'"
+        },
+        {
+          "condition": "validation_fail",
+          "behavior": "quarantine inputs; ship failure report; do not mutate CorePack"
+        }
+      ]
+    },
+    "governance_updates": {
+      "autonomy_policy": "Sandbox-first automation allowed; never instruct user to run scripts when sandbox can do it.",
+      "external_write_constraint": "Preserved; only outputs are downloadable artifacts.",
+      "rollback": "Keep previous CorePack as CorePack_prev.zip inside output for 1-cycle rollback."
+    },
+    "acceptance_tests": [
+      "Given a legacy_deltas.zip upload, system outputs ranked backlog + candidate slices without user commands.",
+      "Given CandidateSlices.zip, system outputs CorePack_vNEXT.zip and a decisions log, with only net-improvements promoted.",
+      "User can update Project Files using 1 replacement file (CorePack_vNEXT) while staying under 20 slots."
+    ]
+  }
+}

@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-14T21:31:49Z",
+  "generated_utc": "2025-12-14T21:31:52Z",
   "items": [
+    {
+      "ts": "2025-12-14T21:31:52Z",
+      "path": "deltas/2025-12/MetaBlooms_DELTA_AutonomousIngest_LessUserCentric_20251213T153731Z.mips.json",
+      "sha256": "a5d5c761b81c8a5a0f7284c05ff64017be1b931b21be21cde6bd21d3e0693482",
+      "bytes": 5091
+    },
     {
       "ts": "2025-12-14T21:31:49Z",
       "path": "deltas/2025-12/MetaBlooms_ProjectFiles_SlotPlan_20251213T135240Z.mips.json",
@@ -144,12 +150,6 @@
       "path": "deltas/2025-12/MetaBlooms_DELTA_DeltaSlicer_OptIn_20251213T130508Z.mips.json",
       "sha256": "9a169845b1574199c09bd5c14d1a2a6339a792a8088cdae034eb0e2743b67172",
       "bytes": 4417
-    },
-    {
-      "ts": "2025-12-14T21:30:59Z",
-      "path": "deltas/2025-12/MetaBlooms_DELTA_AutoDeltaGate_OnUpload_20251213T125343Z.mips.json",
-      "sha256": "e9c3e614bde21f67bed81236cacc5f401e226e0e77487edf8284cdf22cc9b0f0",
-      "bytes": 3860
     }
   ]
 }
