@@ -26,3 +26,4 @@
 {"ts":"2025-12-14T21:31:41Z","path":"deltas/2025-12/MB__99_INDEX__ProjectFiles__2025-12-14.txt","sha256":"f908609eafcb03f3df2d33c9240ba71782f47b4366e67d65ad211b1c77e90858","bytes":354}
 {"ts":"2025-12-14T21:31:43Z","path":"deltas/2025-12/MB__00_SENTINEL__ACTIVE_STATE__2025-12-14.txt","sha256":"1aff381e0f2d0be75a798c7ea99348e19301ab5a093d13423180f6ce19e8b309","bytes":573}
 {"ts":"2025-12-14T21:31:45Z","path":"deltas/2025-12/MetaBlooms_Core_Consolidated_2025-12-14T17_05_40Z.mips.json","sha256":"8665bac7a5a812ed4c3f2370f31718e7a367adb095ba3602e6411d37de0903a5","bytes":761}
+{"ts":"2025-12-14T21:31:47Z","path":"deltas/2025-12/MetaBlooms_DeltaGate_Decisions_20251213T133109Z.mips.json","sha256":"581b8e70546d705710b60c81fe2119883138744bd743f0b3d99980dcdae8dda2","bytes":27983}

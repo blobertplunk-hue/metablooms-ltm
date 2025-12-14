@@ -1,0 +1,591 @@
+{
+  "mips_header": {
+    "artifact_id": "MetaBlooms_DeltaGate_Decisions_20251213T133109Z.mips.json",
+    "version": "v1",
+    "parent_bundle": null,
+    "timestamp": "2025-12-13T13:31:09Z",
+    "content_type": "application/json+metablooms-decisionlog",
+    "description": "Auto-DeltaGate decision log for each recovered delta object.",
+    "councils": [
+      "Rationality",
+      "Auditor",
+      "Engineer"
+    ],
+    "sha256": "997baef23cd1fa0d849f74ef4d40ff6379e65a74f7f7c6fd91a8b53e436082bd"
+  },
+  "content": {
+    "generated_utc": "20251213T133109Z",
+    "decisions": [
+      {
+        "artifact_id": "MetaBlooms_OS_v17_1_MetaAwarenessEngine.delta",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_OS_v17_6_DeltaPack_Full.mips.json",
+        "status": "staged",
+        "reason": "large architectural module; enable after integration test",
+        "delta_type": "meta_awareness_upgrade",
+        "version": "v17.1-delta",
+        "timestamp": "2025-11-30T04:59:07Z",
+        "title": "Delta 10 — Install Meta-Awareness Engine: recursive introspection, runtime self-modeling, predictive stability heuristics, and execution-con"
+      },
+      {
+        "artifact_id": "MetaBlooms_OS_v17_2_ContextMemoryEngine.delta",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_OS_v17_6_DeltaPack_Full.mips.json",
+        "status": "staged",
+        "reason": "large architectural module; enable after integration test",
+        "delta_type": "context_memory_upgrade",
+        "version": "v17.2-delta",
+        "timestamp": "2025-11-30T05:00:03Z",
+        "title": "Delta 11 — Install Context Memory Engine (CME): cross-session awareness bridge, snapshot loader, and reconstruction logic."
+      },
+      {
+        "artifact_id": "MetaBlooms_OS_v17_3_LongTermContinuityEngine.delta",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_OS_v17_6_DeltaPack_Full.mips.json",
+        "status": "staged",
+        "reason": "large architectural module; enable after integration test",
+        "delta_type": "long_term_continuity_upgrade",
+        "version": "v17.3-delta",
+        "timestamp": "2025-11-30T05:01:24Z",
+        "title": "Delta 12 — Install Long-Term Continuity Engine (LCE): multi-snapshot lineage stitching, drift prevention, state compression, and long-horizo"
+      },
+      {
+        "artifact_id": "MetaBlooms_OS_v17_4_ReasoningHorizonsEngine.delta",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_OS_v17_6_DeltaPack_Full.mips.json",
+        "status": "staged",
+        "reason": "large architectural module; enable after integration test",
+        "delta_type": "reasoning_horizons_upgrade",
+        "version": "v17.4-delta",
+        "timestamp": "2025-11-30T05:03:51Z",
+        "title": "Delta 13 — Install Reasoning Horizons Engine (RHE): long-horizon goal maintenance, multi-turn cognitive stability, and deep-sequence reasoni"
+      },
+      {
+        "artifact_id": "MetaBlooms_OS_v17_5_StrategyBrainEngine.delta",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_OS_v17_6_DeltaPack_Full.mips.json",
+        "status": "staged",
+        "reason": "large architectural module; enable after integration test",
+        "delta_type": "strategy_brain_upgrade",
+        "version": "v17.5-delta",
+        "timestamp": "2025-11-30T05:19:09Z",
+        "title": "Delta 14 — Install Strategy Brain Engine (SBE): branching futures, multi-path planning, decision trees, prioritization engine, and strategic"
+      },
+      {
+        "artifact_id": "MetaBlooms_OS_v17_6_ExecutiveFunctionEngine.delta",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_OS_v17_6_DeltaPack_Full.mips.json",
+        "status": "staged",
+        "reason": "large architectural module; enable after integration test",
+        "delta_type": "executive_function_upgrade",
+        "version": "v17.6-delta",
+        "timestamp": "2025-11-30T05:20:36Z",
+        "title": "Delta 15 — Install Executive Function Engine (EFE): execution control, guardrails, action scheduling, and consistency enforcement for plans "
+      },
+      {
+        "artifact_id": "2025-12-12_MetaBlooms_DeltaPack_CONSOLIDATED_WiringManifest_P0.mips.json",
+        "source_file": "DELTAS/DELTAS/2025-12-12_MetaBlooms_DeltaPack_CONSOLIDATED_WiringManifest_P0.mips.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": null,
+        "version": "1.0.0",
+        "timestamp": "2025-12-13T00:25:05Z",
+        "title": ""
+      },
+      {
+        "artifact_id": "DeltaPack_HTML_MegaLesson_RuntimeShell",
+        "source_file": "DELTAS/DELTAS/DeltaPack_HTML_MegaLesson_RuntimeShell.mips.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": null,
+        "version": "v2025-12-04",
+        "timestamp": "2025-12-04T19:10:00Z",
+        "title": ""
+      },
+      {
+        "artifact_id": "DELTAS/DELTAS/MetaBlooms_DeltaPack_v16_7_to_v16_15.mips.json#0",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_DeltaPack_v16_7_to_v16_15.mips.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": null,
+        "version": null,
+        "timestamp": null,
+        "title": ""
+      },
+      {
+        "artifact_id": "DELTAS/DELTAS/MetaBlooms_DeltaPack_v16_7_to_v16_15.mips.json#1",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_DeltaPack_v16_7_to_v16_15.mips.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": null,
+        "version": null,
+        "timestamp": null,
+        "title": ""
+      },
+      {
+        "artifact_id": "DELTAS/DELTAS/MetaBlooms_DeltaPack_v16_7_to_v16_15.mips.json#2",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_DeltaPack_v16_7_to_v16_15.mips.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": null,
+        "version": null,
+        "timestamp": null,
+        "title": ""
+      },
+      {
+        "artifact_id": "DELTAS/DELTAS/MetaBlooms_DeltaPack_v16_7_to_v16_15.mips.json#3",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_DeltaPack_v16_7_to_v16_15.mips.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": null,
+        "version": null,
+        "timestamp": null,
+        "title": ""
+      },
+      {
+        "artifact_id": "DELTAS/DELTAS/MetaBlooms_DeltaPack_v16_7_to_v16_15.mips.json#4",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_DeltaPack_v16_7_to_v16_15.mips.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": null,
+        "version": null,
+        "timestamp": null,
+        "title": ""
+      },
+      {
+        "artifact_id": "DELTAS/DELTAS/MetaBlooms_DeltaPack_v16_7_to_v16_15.mips.json#5",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_DeltaPack_v16_7_to_v16_15.mips.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": null,
+        "version": null,
+        "timestamp": null,
+        "title": ""
+      },
+      {
+        "artifact_id": "DELTAS/DELTAS/MetaBlooms_DeltaPack_v16_7_to_v16_15.mips.json#6",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_DeltaPack_v16_7_to_v16_15.mips.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": null,
+        "version": null,
+        "timestamp": null,
+        "title": ""
+      },
+      {
+        "artifact_id": "DELTAS/DELTAS/MetaBlooms_DeltaPack_v16_7_to_v16_15.mips.json#7",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_DeltaPack_v16_7_to_v16_15.mips.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": null,
+        "version": null,
+        "timestamp": null,
+        "title": ""
+      },
+      {
+        "artifact_id": "OSDelta_CoreImprovements_v2",
+        "source_file": "DELTAS/DELTAS/2025-11-30_OSDelta_CoreImprovements_v2.mips.json",
+        "status": "activated",
+        "reason": "relevant to current delta ingestion/runtime stability goals",
+        "delta_type": null,
+        "version": "2.0.0",
+        "timestamp": "2025-11-30T16:29:16.561462Z",
+        "title": "Revised core improvements delta (v2). Corrects profile naming to Shaye and extends DeltaConflictResolver_v1 with explicit integration guidan"
+      },
+      {
+        "artifact_id": "OSDelta_CoreImprovements_v1",
+        "source_file": "DELTAS/DELTAS/.trashed-1767112262-2025-11-30_OSDelta_CoreImprovements_v1.mips.json",
+        "status": "activated",
+        "reason": "relevant to current delta ingestion/runtime stability goals",
+        "delta_type": null,
+        "version": "1.0.0",
+        "timestamp": "2025-11-30T16:26:09.820235Z",
+        "title": "Adds DeltaConflictResolver_v1, R20FI_RunProfiles_v1, SandCrawler_JobTypes_v1, RuntimeModeEngine_v1, OSHealthStatus_v1, and ProfileEngine_v1 "
+      },
+      {
+        "artifact_id": "MetaBlooms_OS_v11_Delta_AllIntegrated",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_OS_v11_Delta_AllIntegrated.mips.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": null,
+        "version": "11.0.0",
+        "timestamp": "2025-12-02T03:00:00Z",
+        "title": "MetaBlooms OS v11 integrated delta pack — merges governance, pedagogy, HTML/TTS, Bingo, ArtFusion, AlgorithmicEfficiency, CurriculumPipeline"
+      },
+      {
+        "artifact_id": "2025-11-26_MetaBlooms_OS_DeltaBundle_MultiRepHTML",
+        "source_file": "DELTAS/DELTAS/2025-11-26_MetaBlooms_OS_DeltaBundle_MultiRepHTML_v1.mips.json",
+        "status": "activated",
+        "reason": "relevant to current delta ingestion/runtime stability goals",
+        "delta_type": null,
+        "version": "v1.0",
+        "timestamp": null,
+        "title": ""
+      },
+      {
+        "artifact_id": "MetaBlooms_CSM_v1_1_Delta",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_CSM_v1_1_Delta.mips.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": null,
+        "version": "1.1.0",
+        "timestamp": "2025-12-04T02:19:23.597930",
+        "title": ""
+      },
+      {
+        "artifact_id": "OSDelta_ToolEvaluators_Mega_v1",
+        "source_file": "DELTAS/DELTAS/2025-11-30_OSDelta_ToolEvaluators_Mega_v1.mips.json",
+        "status": "activated",
+        "reason": "relevant to current delta ingestion/runtime stability goals",
+        "delta_type": null,
+        "version": "1.0.0",
+        "timestamp": "2025-11-30T15:26:57.042378Z",
+        "title": "Adds a family of Evaluator modules for major external tools (Tasker, PowerShell, WSL2, Docker, Rclone, FFmpeg, Obsidian) and a ToolSelection"
+      },
+      {
+        "artifact_id": "2025-12-12_ToolEngine_ValidatorReporter_ManifestValidator_Integration_Delta_P0",
+        "source_file": "DELTAS/DELTAS/2025-12-12_ToolEngine_ValidatorReporter_ManifestValidator_Integration_Delta_P0.mips.json",
+        "status": "blocked",
+        "reason": "contains placeholder/todo/stub",
+        "delta_type": null,
+        "version": "1.0.0",
+        "timestamp": "2025-12-12T11:50:00-06:00",
+        "title": ""
+      },
+      {
+        "artifact_id": "MetaBlooms_OS_Delta_PythonEngine_v1.1_vOmegaC",
+        "source_file": "DELTAS/DELTAS/2025-12-01_MetaBlooms_OS_Delta_PythonEngine_v1.1_vOmegaC.mips.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": null,
+        "version": "1.0.0",
+        "timestamp": null,
+        "title": ""
+      },
+      {
+        "artifact_id": "MetaBlooms_OS_v2_37_TwoLayer_CognitiveFusion.delta",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_OS_v2_37_TwoLayer_CognitiveFusion.delta.mips.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": "two_layer_cognitive_fusion",
+        "version": "v2.37-delta",
+        "timestamp": "2025-11-30T05:50:12Z",
+        "title": "Delta v2.37 — Convert v2.36 NSV4 Unified OS into explicit two-layer logic: StructureLayer (governance/schema/context/evidence) + CognitiveLa"
+      },
+      {
+        "artifact_id": "2025-12-02_BridgeEngine_v1_Delta",
+        "source_file": "DELTAS/DELTAS/2025-12-02_BridgeEngine_v1_Delta.mips.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": null,
+        "version": "1.0",
+        "timestamp": "2025-12-02T23:59:00",
+        "title": ""
+      },
+      {
+        "artifact_id": "DeltaPack_UniversalLearningEngine_vNext",
+        "source_file": "DELTAS/DELTAS/DeltaPack_UniversalLearningEngine_vNext.mips.json",
+        "status": "activated",
+        "reason": "relevant to current delta ingestion/runtime stability goals",
+        "delta_type": null,
+        "version": "v2025-12-04-C2",
+        "timestamp": "2025-12-04T17:10:00Z",
+        "title": ""
+      },
+      {
+        "artifact_id": "MetaBlooms_OS_vOmega24_5_Delta_ToolAutoRegister_RiskAware",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_OS_vOmega24_5_Delta_ToolAutoRegister_RiskAware.mips.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": null,
+        "version": "vOmega24_5_delta_tool_autoregister_riskaware",
+        "timestamp": 1765329901.1554563,
+        "title": ""
+      },
+      {
+        "artifact_id": "2025-12-06_MTSS_SystemPatterns_Unification_DeltaPack",
+        "source_file": "DELTAS/DELTAS/2025-12-06_MTSS_SystemPatterns_Unification_DeltaPack.mips.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": null,
+        "version": "v1",
+        "timestamp": "2025-12-06T00:00:00Z",
+        "title": ""
+      },
+      {
+        "artifact_id": "DeltaPack_HTML_LearningEngine_DeepUpgrade_vNext",
+        "source_file": "DELTAS/DELTAS/DeltaPack_HTML_LearningEngine_DeepUpgrade_vNext.mips.json",
+        "status": "activated",
+        "reason": "relevant to current delta ingestion/runtime stability goals",
+        "delta_type": null,
+        "version": "v2025-12-04-C",
+        "timestamp": "2025-12-04T17:28:00Z",
+        "title": ""
+      },
+      {
+        "artifact_id": "MetaBlooms_OS_vOmega24_4_Delta_PythonToolEngine_TimeEngines",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_OS_vOmega24_4_Delta_PythonToolEngine_TimeEngines.mips.json",
+        "status": "blocked",
+        "reason": "contains placeholder/todo/stub",
+        "delta_type": null,
+        "version": "vOmega24_4_delta_python_tool_engine_time_engines",
+        "timestamp": 1765329450.9731903,
+        "title": ""
+      },
+      {
+        "artifact_id": "OSDelta_OSExportEngine_v1",
+        "source_file": "DELTAS/DELTAS/2025-11-30_OSDelta_OSExportEngine_v1.mips.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": null,
+        "version": "1.0.0",
+        "timestamp": "2025-11-30T15:07:24.639096Z",
+        "title": "Adds OSExportEngine_v1 and ExportSOP so the OS can generate full, updated OS snapshots by applying deltas to the canonical base OS, then emi"
+      },
+      {
+        "artifact_id": "OSDelta_DealIntelligenceEngine_v1_0",
+        "source_file": "DELTAS/DELTAS/2025-11-30_OSDelta_DealIntelligenceEngine_v1_0.mips.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": null,
+        "version": "1.0.0",
+        "timestamp": "2025-11-30T20:22:32.542001Z",
+        "title": "Adds DealIntelligenceEngine_v1_0 cognitive module for global deal discovery and real-time price intelligence."
+      },
+      {
+        "artifact_id": "MetaBlooms_OS_v2_39_TwoLayer_BaseRule.delta",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_OS_v2_39_TwoLayer_BaseRule.delta.mips.json",
+        "status": "activated",
+        "reason": "relevant to current delta ingestion/runtime stability goals",
+        "delta_type": "two_layer_governance_rule",
+        "version": "v2.39-delta",
+        "timestamp": "2025-11-30T06:10:40Z",
+        "title": "Delta v2.39 — Establish hard base rule that the Two-Layer OS (StructureLayer + CognitiveLayer with R20FI/SandCrawler integration) is the can"
+      },
+      {
+        "artifact_id": "DeltaPack_DiagnosticBehavior_v1",
+        "source_file": "DELTAS/DELTAS/DeltaPack_DiagnosticBehavior_v1.mips.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": null,
+        "version": "v2025-12-04",
+        "timestamp": "2025-12-04T18:55:00Z",
+        "title": ""
+      },
+      {
+        "artifact_id": "2025-12-11_MetaBlooms_OS_vOmega25_Calibrated_Delta",
+        "source_file": "DELTAS/DELTAS/2025-12-11_MetaBlooms_OS_vOmega25_Calibrated_Delta.mips.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": null,
+        "version": "25.1-calibrated",
+        "timestamp": "2025-12-11T09:15:00-06:00",
+        "title": ""
+      },
+      {
+        "artifact_id": "MetaBlooms_OS_v10_TeachingEngine_Delta_2025-12-01",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_OS_v10_TeachingEngine_Delta_2025-12-01.mips.json",
+        "status": "blocked",
+        "reason": "contains placeholder/todo/stub",
+        "delta_type": null,
+        "version": "v10.1-TeachingEngine",
+        "timestamp": "2025-12-01T17:36:51Z",
+        "title": "Teaching Engine + HTML/Bingo upgrade delta: integrates external Δ1–Δ15 HTML teaching rules and adds second-opinion deltas for Bingo gameplay"
+      },
+      {
+        "artifact_id": "MetaBlooms_OS_v16_11_AgentRing_KGE20_DeepBind.delta",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_OS_v16_11_AgentRing_KGE20_DeepBind.delta.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": "agent_integration",
+        "version": "v16.11-delta",
+        "timestamp": "2025-11-30T01:40:00Z",
+        "title": "Delta 4 — Deep integration of AgentRing with KGE-20 atoms, WCI scoring, and Juicer pipeline."
+      },
+      {
+        "artifact_id": "MetaBlooms_OS_v2.37_Fusion_Delta",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_OS_v2.37_Fusion_Delta.mips.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": "fusion_extension",
+        "version": "2.37-delta",
+        "timestamp": "2025-11-30T00:20:00Z",
+        "title": "Lean, honest fusion delta that extends v2.36 with vNext CORE modules without padding."
+      },
+      {
+        "artifact_id": "MetaBlooms_OS_v17_6_ExecutiveFunctionEngine.delta",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_OS_v17_6_ExecutiveFunctionEngine.delta.mips.json",
+        "status": "staged",
+        "reason": "large architectural module; enable after integration test",
+        "delta_type": "executive_function_upgrade",
+        "version": "v17.6-delta",
+        "timestamp": "2025-11-30T05:20:36Z",
+        "title": "Delta 15 — Install Executive Function Engine (EFE): execution control, guardrails, action scheduling, and consistency enforcement for plans "
+      },
+      {
+        "artifact_id": "MetaBlooms_OS_v17_5_StrategyBrainEngine.delta",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_OS_v17_5_StrategyBrainEngine.delta.mips.json",
+        "status": "staged",
+        "reason": "large architectural module; enable after integration test",
+        "delta_type": "strategy_brain_upgrade",
+        "version": "v17.5-delta",
+        "timestamp": "2025-11-30T05:19:09Z",
+        "title": "Delta 14 — Install Strategy Brain Engine (SBE): branching futures, multi-path planning, decision trees, prioritization engine, and strategic"
+      },
+      {
+        "artifact_id": "MetaBlooms_OS_DeltaAutoload_Spec_v1",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_OS_DeltaAutoload_Spec_v1.mips.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": null,
+        "version": "1.0",
+        "timestamp": "2025-12-02T23:49:02.789573Z",
+        "title": ""
+      },
+      {
+        "artifact_id": "OS_Delta_IgnoreDeprecatedMyFilesBrowserWarnings_v1",
+        "source_file": "DELTAS/DELTAS/2025-12-02_OS_Delta_IgnoreDeprecatedMyFilesBrowserWarnings_v1.mips.json",
+        "status": "activated",
+        "reason": "relevant to current delta ingestion/runtime stability goals",
+        "delta_type": null,
+        "version": "1.0.0",
+        "timestamp": null,
+        "title": ""
+      },
+      {
+        "artifact_id": "MetaBlooms_OS_v17_4_ReasoningHorizonsEngine.delta",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_OS_v17_4_ReasoningHorizonsEngine.delta.mips.json",
+        "status": "staged",
+        "reason": "large architectural module; enable after integration test",
+        "delta_type": "reasoning_horizons_upgrade",
+        "version": "v17.4-delta",
+        "timestamp": "2025-11-30T05:03:51Z",
+        "title": "Delta 13 — Install Reasoning Horizons Engine (RHE): long-horizon goal maintenance, multi-turn cognitive stability, and deep-sequence reasoni"
+      },
+      {
+        "artifact_id": "OSDelta_TermuxEvaluator_v1",
+        "source_file": "DELTAS/DELTAS/2025-11-30_OSDelta_TermuxEvaluator_v1b.mips.json",
+        "status": "activated",
+        "reason": "relevant to current delta ingestion/runtime stability goals",
+        "delta_type": null,
+        "version": "1.0.0",
+        "timestamp": "2025-11-30T15:05:06.377668Z",
+        "title": "Adds Termux Expert Reasoning Module. Enables automatic inference of Termux-based capabilities whenever the user requests any task."
+      },
+      {
+        "artifact_id": "OSDelta_TermuxEvaluator_v1",
+        "source_file": "DELTAS/DELTAS/2025-11-30_OSDelta_TermuxEvaluator_v1.mips.json",
+        "status": "activated",
+        "reason": "relevant to current delta ingestion/runtime stability goals",
+        "delta_type": null,
+        "version": "1.0.0",
+        "timestamp": "2025-11-30T15:01:20.825094Z",
+        "title": "Adds Termux Expert Reasoning Module. Enables automatic inference of Termux-based capabilities whenever the user requests any task."
+      },
+      {
+        "artifact_id": "DeltaPack_LearningEngine_OSMerge",
+        "source_file": "DELTAS/DELTAS/DeltaPack_LearningEngine_OSMerge.mips.json",
+        "status": "activated",
+        "reason": "relevant to current delta ingestion/runtime stability goals",
+        "delta_type": null,
+        "version": "v2025-12-04",
+        "timestamp": "2025-12-04T19:15:00Z",
+        "title": ""
+      },
+      {
+        "artifact_id": "ExternalMemory_DriveSync_Delta_v1",
+        "source_file": "DELTAS/DELTAS/ExternalMemory_DriveSync_Delta_v1.mips.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": null,
+        "version": "1.0",
+        "timestamp": "2025-12-02T19:14:00-06:00",
+        "title": ""
+      },
+      {
+        "artifact_id": "MetaBlooms_OS_v17_1_MetaAwarenessEngine.delta",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_OS_v17_1_MetaAwarenessEngine.delta.mips.json",
+        "status": "staged",
+        "reason": "large architectural module; enable after integration test",
+        "delta_type": "meta_awareness_upgrade",
+        "version": "v17.1-delta",
+        "timestamp": "2025-11-30T04:59:07Z",
+        "title": "Delta 10 — Install Meta-Awareness Engine: recursive introspection, runtime self-modeling, predictive stability heuristics, and execution-con"
+      },
+      {
+        "artifact_id": "MetaBlooms_OS_v17_2_ContextMemoryEngine.delta",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_OS_v17_2_ContextMemoryEngine.delta.mips.json",
+        "status": "staged",
+        "reason": "large architectural module; enable after integration test",
+        "delta_type": "context_memory_upgrade",
+        "version": "v17.2-delta",
+        "timestamp": "2025-11-30T05:00:03Z",
+        "title": "Delta 11 — Install Context Memory Engine (CME): cross-session awareness bridge, snapshot loader, and reconstruction logic."
+      },
+      {
+        "artifact_id": "MetaBlooms_HybridKernel_v11_Omega20_Delta_v1",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_HybridKernel_v11_Omega20_Delta_v1.mips.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": null,
+        "version": "1.0.0",
+        "timestamp": "2025-12-04T01:44:48.597214",
+        "title": ""
+      },
+      {
+        "artifact_id": "MetaBlooms_OS_v16_9_KGE20_StrategicAtoms.delta",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_OS_v16_9_KGE20_StrategicAtoms.delta.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": "knowledge_integration",
+        "version": "v16.9-delta",
+        "timestamp": "2025-11-30T01:10:00Z",
+        "title": "Delta 2 — Validate and bind Strategic Nexus KnowledgeAtoms to KGE-20 runtime and corpus."
+      },
+      {
+        "artifact_id": "OSDelta_Manifest_v2_37Engines_v1",
+        "source_file": "DELTAS/DELTAS/2025-11-30_OSDelta_Manifest_v2_37Engines_v1.mips.json",
+        "status": "activated",
+        "reason": "relevant to current delta ingestion/runtime stability goals",
+        "delta_type": null,
+        "version": "1.0.0",
+        "timestamp": "2025-11-30T16:16:30.095402Z",
+        "title": "Documents that CRF_Runtime_v1_2 and the v2_37 continuity/meta engines have been added to Manifest.load_order, and that unversioned meta modu"
+      },
+      {
+        "artifact_id": "MetaBlooms_OS_v16_10_WCI_KGE20_Link.delta",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_OS_v16_10_WCI_KGE20_Link.delta.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": "evaluator_integration",
+        "version": "v16.10-delta",
+        "timestamp": "2025-11-30T01:25:30Z",
+        "title": "Delta 3 — Bind WCI evaluator to KGE-20 KnowledgeAtom metrics."
+      },
+      {
+        "artifact_id": "MetaBlooms_OS_v16_8_KGE20_Install.delta",
+        "source_file": "DELTAS/DELTAS/MetaBlooms_OS_v16_8_KGE20_Install.delta.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": "os_module_integration",
+        "version": "v16.8-delta",
+        "timestamp": "2025-11-30T01:25:00Z",
+        "title": "Delta 1 — Install and wire KGE-20 into OS v16.7."
+      },
+      {
+        "artifact_id": "MetaBlooms_OS_DeltaBundle_fromChat",
+        "source_file": "DELTAS/DELTAS/OS_DeltaBundle.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": null,
+        "version": "1.0",
+        "timestamp": "2025-11-27T01:09:02.870084Z",
+        "title": ""
+      },
+      {
+        "artifact_id": "OSDelta_LayeredBuildProtocol_v1",
+        "source_file": "DELTAS/DELTAS/OSDelta_LayeredBuildProtocol_v1.json",
+        "status": "recorded",
+        "reason": "not directly tied to current goal; kept for future mining",
+        "delta_type": null,
+        "version": "v10.0-LBP",
+        "timestamp": "2025-12-01T14:03:25Z",
+        "title": ""
+      }
+    ]
+  }
+}
