@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-14T21:30:51Z",
+  "generated_utc": "2025-12-14T21:30:53Z",
   "items": [
+    {
+      "ts": "2025-12-14T21:30:53Z",
+      "path": "deltas/2025-12/MetaBlooms_DeltaRecovery_Report_20251213T133109Z.mips.json",
+      "sha256": "a454ea1e6f2c6b94295176d0b9804ace689f8f76196c8f7216dc680325a7e9d2",
+      "bytes": 14874
+    },
     {
       "ts": "2025-12-14T21:30:51Z",
       "path": "deltas/2025-12/MetaBlooms_DELTA_DOTA_Runtime_20251213T122649Z.mips.json",
