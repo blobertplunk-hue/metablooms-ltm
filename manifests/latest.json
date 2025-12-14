@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-14T21:32:23Z",
+  "generated_utc": "2025-12-14T21:32:26Z",
   "items": [
+    {
+      "ts": "2025-12-14T21:32:26Z",
+      "path": "deltas/2025-12/2025-12-14_MB_MVP_LTM_loop_mechanics_v1.mips.md",
+      "sha256": "cfb241ab5e3ee042070f8ccc6ee2cb08ba72ea4e01908deb76115d9e3bd0f118",
+      "bytes": 10280
+    },
     {
       "ts": "2025-12-14T21:32:23Z",
       "path": "deltas/2025-12/MB__01_DELTA__AutoDeltaReconciler_v1.mips.json",
@@ -144,12 +150,6 @@
       "path": "deltas/2025-12/MB__03_DELTA__ChatGPTNativeBrowser_Synthesis_v1.mips.json",
       "sha256": "424d47ab8294b98365db2fbd982726541af698b27d53ad13d82bdf3139926563",
       "bytes": 7509
-    },
-    {
-      "ts": "2025-12-14T21:31:29Z",
-      "path": "deltas/2025-12/MB__01_COREPACK__GovHardening_v7__2025-12-13.mips.json",
-      "sha256": "0277573d5b62ff62477e4747452b9bc332cfdd99243efbd0c5103aac84ca2254",
-      "bytes": 4303
     }
   ]
 }
