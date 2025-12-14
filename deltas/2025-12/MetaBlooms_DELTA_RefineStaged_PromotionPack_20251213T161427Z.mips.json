@@ -1,0 +1,159 @@
+{
+  "mips": {
+    "artifact_id": "MetaBlooms_DELTA_RefineStaged_PromotionPack_20251213T161427Z",
+    "parent_bundle": "MetaBlooms_ProjectFiles_CorePack_v3_STABILIZED",
+    "version": "v1",
+    "timestamp_utc": "20251213T161427Z",
+    "content_type": "application/json",
+    "councils": [
+      "Facilitator",
+      "Auditor",
+      "Synthesizer",
+      "Recorder"
+    ],
+    "audit": "construct",
+    "evidence_chain": {
+      "inputs": [
+        "MetaBlooms_DeltaBacklog_Ranked_20251213T140000Z.mips.json",
+        "MetaBlooms_DELTA_AutonomousExecution_ExeMode_20251213T155037Z.mips.json",
+        "MetaBlooms_DELTA_AutonomousIngest_LessUserCentric_20251213T153731Z.mips.json"
+      ]
+    },
+    "links": {}
+  },
+  "content": {
+    "intent": "Refine staged v17.x engines into bounded, EXE-safe slices suitable for automatic promotion via DeltaGate.",
+    "selection_source": {
+      "file": "MetaBlooms_DeltaBacklog_Ranked_20251213T140000Z.mips.json",
+      "filter": "status==staged AND score in [65,71]"
+    },
+    "promotion_policy": {
+      "mode": "EXE",
+      "auto_questions": "DISALLOWED",
+      "user_steps": "upload-only",
+      "hard_stops": [
+        "If risk_tier >= 3 then STAGE only",
+        "If new memory retrieval touches external sources then STAGE only",
+        "If any slice introduces step-by-step user instructions then REJECT"
+      ]
+    },
+    "slices": [
+      {
+        "engine": "MetaAwarenessEngine",
+        "source_delta": "MetaBlooms_OS_v17_1_MetaAwarenessEngine.delta",
+        "change": "Add dead-end detector + instruction-friction detector; enforce EXE contract compliance.",
+        "risk_tier": 1,
+        "tests": [
+          {
+            "id": "T-MAE-01",
+            "desc": "Detects multi-step user instruction sequences (>2 imperative steps) and blocks output; replaces with autonomous execution."
+          },
+          {
+            "id": "T-MAE-02",
+            "desc": "Detects 'ask-at-every-step' patterns and enforces single-shot command routing."
+          }
+        ],
+        "activation_recommendation": "PROMOTE"
+      },
+      {
+        "engine": "LongTermContinuityEngine",
+        "source_delta": "MetaBlooms_OS_v17_3_LongTermContinuityEngine.delta",
+        "change": "Add state-compression + stable pointers (CorePack/Toolkit/SlotPlan) to prevent drift; add checksum registry for CorePack identity.",
+        "risk_tier": 1,
+        "tests": [
+          {
+            "id": "T-LCE-01",
+            "desc": "Maintains correct active CorePack pointer across turns; never asks user to re-identify files if present in /mnt/data."
+          }
+        ],
+        "activation_recommendation": "PROMOTE"
+      },
+      {
+        "engine": "ContextMemoryEngine",
+        "source_delta": "MetaBlooms_OS_v17_2_ContextMemoryEngine.delta",
+        "change": "Bound retrieval to project files only; disable cross-chat freeform recall; add 'evidence_required=true' for any retrieved claim.",
+        "risk_tier": 2,
+        "guards": {
+          "retrieval_scope": [
+            "/mnt/data"
+          ],
+          "max_items": 12,
+          "require_citation_for_claims": true,
+          "deny_if_ambiguous": true
+        },
+        "tests": [
+          {
+            "id": "T-CME-01",
+            "desc": "Never claims it 'looked at' anything not in /mnt/data; uses explicit file references only."
+          }
+        ],
+        "activation_recommendation": "STAGE"
+      },
+      {
+        "engine": "ReasoningHorizonsEngine",
+        "source_delta": "MetaBlooms_OS_v17_4_ReasoningHorizonsEngine.delta",
+        "change": "Add ROI ceiling + stop rules to prevent overplanning; forces deliverable-first artifacts.",
+        "risk_tier": 2,
+        "guards": {
+          "max_planning_steps": 6,
+          "require_artifact_each_turn": true,
+          "gapfiller_pass": true
+        },
+        "tests": [
+          {
+            "id": "T-RHE-01",
+            "desc": "If plan exceeds 6 steps, collapse to one-screen summary + execute immediately."
+          }
+        ],
+        "activation_recommendation": "STAGE"
+      },
+      {
+        "engine": "StrategyBrainEngine",
+        "source_delta": "MetaBlooms_OS_v17_5_StrategyBrainEngine.delta",
+        "change": "Convert to 'advisor-only' (no execution authority); outputs ranked options with ROI scores, no extra steps.",
+        "risk_tier": 3,
+        "guards": {
+          "execution_authority": "NONE"
+        },
+        "tests": [
+          {
+            "id": "T-SBE-01",
+            "desc": "Never emits step-by-step procedures longer than 1 command; outputs choices + recommendation only."
+          }
+        ],
+        "activation_recommendation": "STAGE"
+      },
+      {
+        "engine": "ExecutiveFunctionEngine",
+        "source_delta": "MetaBlooms_OS_v17_6_ExecutiveFunctionEngine.delta",
+        "change": "Adds single-action queueing; converts any multi-action user plan into one command + autonomous sandbox run.",
+        "risk_tier": 3,
+        "guards": {
+          "max_user_actions": 1
+        },
+        "tests": [
+          {
+            "id": "T-EFE-01",
+            "desc": "Transforms 20-step procedures into a single EXE-mode run or refuses as noncompliant."
+          }
+        ],
+        "activation_recommendation": "STAGE"
+      }
+    ],
+    "delta_gate_expectations": {
+      "expected_net_effect": [
+        "Fewer 'user do this' instructions",
+        "Higher determinism in project file handling",
+        "Promotion safety for high-value engines"
+      ],
+      "expected_scores_after_refine": {
+        "MetaAwarenessEngine": 85,
+        "LongTermContinuityEngine": 85,
+        "ContextMemoryEngine": 78,
+        "ReasoningHorizonsEngine": 78,
+        "StrategyBrainEngine": 74,
+        "ExecutiveFunctionEngine": 74
+      }
+    }
+  }
+}
