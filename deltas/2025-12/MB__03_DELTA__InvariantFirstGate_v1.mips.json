@@ -1,0 +1,14 @@
+{
+  "delta_id": "MB__03_DELTA__InvariantFirstGate_v1",
+  "type": "validator_gate",
+  "status": "STAGED",
+  "description": "Require explicit identification of global invariants before deep optimization or CRT-style reasoning.",
+  "checks": [
+    "List global invariants before solution attempts.",
+    "Flag shared-factor CRT risks.",
+    "Separate local vs global constraints."
+  ],
+  "activation_condition": "Hard or highly constrained tasks only",
+  "timestamp_utc": "2025-12-14T14:28:30Z",
+  "sha256": "16d4bc6e3811bbb80cda391dd7cc27c3efb50edae8c9b4c0715d7a3fb8b36513"
+}
