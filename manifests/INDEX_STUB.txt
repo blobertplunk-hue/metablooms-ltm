@@ -1,0 +1,2 @@
+MetaBlooms LTM repo index stub.
+Populate with canonical pointers later (OS collapses, stable pack listings, etc.).
