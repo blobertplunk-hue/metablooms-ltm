@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-14T21:32:51Z",
+  "generated_utc": "2025-12-14T21:32:53Z",
   "items": [
+    {
+      "ts": "2025-12-14T21:32:53Z",
+      "path": "deltas/2025-12/2025-12-14_MB__SPEC__CSRG_v1.mips.md",
+      "sha256": "3e2989b2aa819c8db9f890af9df597b7d95ebd7b679f7b0184c40826dd8a3c24",
+      "bytes": 5972
+    },
     {
       "ts": "2025-12-14T21:32:51Z",
       "path": "deltas/2025-12/2025-12-14_MB_Termux_GitHub_AuthFix_v1.mips.md",
@@ -144,12 +150,6 @@
       "path": "deltas/2025-12/MetaBlooms_OldOS_MineReport_20251213T171845Z.mips.json",
       "sha256": "05f06b304dc7ed6d523da393e0fcc2fa5617fc2f1ba3426150d3aac1aa05c5e9",
       "bytes": 10815
-    },
-    {
-      "ts": "2025-12-14T21:31:57Z",
-      "path": "deltas/2025-12/MetaBlooms_DELTA_RefineAndPromote_Staged_20251213T161939Z.mips.json",
-      "sha256": "db415c496744978ecb65ea4172393ca147e4965799026373be0836569ab6b61b",
-      "bytes": 4940
     }
   ]
 }

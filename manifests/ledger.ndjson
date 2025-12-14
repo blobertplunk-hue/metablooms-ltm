@@ -55,3 +55,4 @@
 {"ts":"2025-12-14T21:32:47Z","path":"deltas/2025-12/2025-12-14_MB__SOP__RCA_Mode__PERMANENT.mips.md","sha256":"21f692ad2a94a4b6436b77d05b4a65a2deb683ed1418ec09cc686ae0f84ae599","bytes":4806}
 {"ts":"2025-12-14T21:32:49Z","path":"deltas/2025-12/2025-12-14_MB__AUDIT__Findings_RCA_PROVISIONAL.mips.md","sha256":"5aa28dbe5ecf9124ec2e059de071ec8441cb96be92334d8d4175885c4d080c4b","bytes":4495}
 {"ts":"2025-12-14T21:32:51Z","path":"deltas/2025-12/2025-12-14_MB_Termux_GitHub_AuthFix_v1.mips.md","sha256":"e097d2a12ca5a869098abbd5d5641e97d2f43e6b5534fa2a58c77ffebd897b8e","bytes":2550}
+{"ts":"2025-12-14T21:32:53Z","path":"deltas/2025-12/2025-12-14_MB__SPEC__CSRG_v1.mips.md","sha256":"3e2989b2aa819c8db9f890af9df597b7d95ebd7b679f7b0184c40826dd8a3c24","bytes":5972}
