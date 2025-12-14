@@ -45,3 +45,4 @@
 {"ts":"2025-12-14T21:32:26Z","path":"deltas/2025-12/2025-12-14_MB_MVP_LTM_loop_mechanics_v1.mips.md","sha256":"cfb241ab5e3ee042070f8ccc6ee2cb08ba72ea4e01908deb76115d9e3bd0f118","bytes":10280}
 {"ts":"2025-12-14T21:32:28Z","path":"deltas/2025-12/MB__00_SENTINEL__ACTIVE_STATE__RECOMPILED_2025-12-14.txt","sha256":"6d0fc0a31fc9f567535226af4eacc1d4d6f24a21c13fe3e9aabb891c9b6bd3e7","bytes":1246}
 {"ts":"2025-12-14T21:32:30Z","path":"deltas/2025-12/MB__03_DELTA__SELFTEST_v1.mips.json","sha256":"d6670af843ac06b376c9d43aad8ba7cdd1ca22c841a0e74e05bc6f8324a82456","bytes":18}
+{"ts":"2025-12-14T21:32:32Z","path":"deltas/2025-12/MB__99_INDEX__ProjectFiles__RECOMPILED_2025-12-14.txt","sha256":"c73fc2facee3f8d8b8fbd90ffb03abd3dd89e88625f2640dd002ab9c825003eb","bytes":1069}

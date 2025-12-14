@@ -1,0 +1,22 @@
+PROJECT FILES — CANONICAL INDEX
+==============================
+Generated (UTC): 2025-12-14T17:09:22Z
+
+KEEP (CANONICAL 4 FILES):
+- MB__00_SENTINEL__ACTIVE_STATE.txt  (1.11 KB)
+- MB__01_COREPACK__GovHardening_v7__2025-12-13.mips.json  (4.2 KB)
+- MB__OS__MetaBlooms_Core__ACTIVE.mips.json  (93.16 KB)
+- MB__99_INDEX__ProjectFiles.txt  (1.01 KB)
+
+EMBEDDED IN CORE (safe to remove as separate files if you want minimal set):
+- MB__01_DELTA__AutoDeltaReconciler_v1.mips.json  (1.44 KB)
+- MB__03_DELTA__NegativeKnowledgeCapture_v1.mips.json  (0.73 KB)
+- MB__03_DELTA__DDSR_ReasoningMode_v1.mips.json  (0.73 KB)
+- MB__03_DELTA__ChatGPTNativeBrowser_Synthesis_v1.mips.json  (7.33 KB)
+- 2025-12-14_MB__DELTA__COLO_WallPosters_FromWeeklyOutline_v1.mips.json  (4.99 KB)
+- 2025-12-14_MB__DELTA__IPS_OnePager_MaxFont_OnePage_v1.mips.json  (5.07 KB)
+- MB__03_DELTA__WeeklyDriveExportAndZip_v1.mips.json  (1.8 KB)
+- MB__03_DELTA__InvariantFirstGate_v1.mips.json  (0.56 KB)
+
+INTEGRITY CHECK:
+- If MB__OS__MetaBlooms_Core__ACTIVE.mips.json is <10 KB, ABORT replacement (invalid build).
