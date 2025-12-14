@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-14T21:31:23Z",
+  "generated_utc": "2025-12-14T21:31:25Z",
   "items": [
+    {
+      "ts": "2025-12-14T21:31:25Z",
+      "path": "deltas/2025-12/2025-12-13_MetaBlooms_ExternalIntel_Sweep_GovAI_v1.mips.json",
+      "sha256": "6521addc2d6fc552ab88632e6f0fa0768ea1be72ccd516b52be7a654c363882e",
+      "bytes": 4682
+    },
     {
       "ts": "2025-12-14T21:31:23Z",
       "path": "deltas/2025-12/MetaBlooms_ProjectFiles_CorePack_v6_MOCD_20251213T180455Z.mips.json",

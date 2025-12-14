@@ -1,0 +1,103 @@
+{
+  "MIPS": {
+    "artifact_id": "MBXINTEL_GOVAI_v1",
+    "parent_bundle": "MetaBlooms_ProjectFiles_CorePack_v7_GovHardening_20251213T185500Z.mips.json",
+    "version": "1.0.0",
+    "timestamp_utc": "2025-12-13T21:46:42Z",
+    "councils": [
+      "Auditor",
+      "MarketAnalyst",
+      "Archivist"
+    ],
+    "content_type": "application/json",
+    "links": {
+      "download": "sandbox:/mnt/data/2025-12-13_MetaBlooms_ExternalIntel_Sweep_GovAI_v1.mips.json"
+    },
+    "sha256": "949101bc3142199f06e28ede1135700e87ab9b896c9aec537e3b6c55d95fa5c8"
+  },
+  "body": {
+    "sweep_id": "SWEEP-GOVAI-2025-12-13-v1",
+    "scope": "External competitive intelligence validation of Grok Sandcrawler results: government AI offerings + FINOS AIGF; check for 5-feature benchmark full match.",
+    "timeframe": {
+      "from": "2023-01-01",
+      "to": "2025-12-13"
+    },
+    "benchmark_5_features": [
+      "Runtime governance contracts (MOCD/LOC-style runtime controls)",
+      "Self-modification (delta mining / evolutionary improvement)",
+      "Epistemic controls (authority detection, confidence tracking / provenance)",
+      "Production validation (>=6 months continuous real use)",
+      "Conversation-native architecture"
+    ],
+    "findings": [
+      {
+        "system": "GSA MAS adds Claude, Gemini, ChatGPT",
+        "status": "VERIFIED",
+        "evidence_urls": [
+          "https://www.gsa.gov/about-us/newsroom/news-releases/gsa-propels-government-into-ai-revolution-with-addition-of-leading-solutions-08052025",
+          "https://www.reuters.com/world/us/us-agency-approves-openai-google-anthropic-federal-ai-vendor-list-2025-08-05/"
+        ],
+        "notes": "Confirms availability/procurement channel; does not itself prove 6+ months continuous use."
+      },
+      {
+        "system": "Anthropic ASL-3 protections",
+        "status": "VERIFIED",
+        "evidence_urls": [
+          "https://www.anthropic.com/news/activating-asl3-protections"
+        ],
+        "notes": "ASL-3 described as deployment + security standards targeting CBRN misuse."
+      },
+      {
+        "system": "DoD awards up to $200M contracts to Anthropic/Google/OpenAI/xAI (July 14, 2025)",
+        "status": "VERIFIED",
+        "evidence_urls": [
+          "https://www.reuters.com/business/autos-transportation/us-department-defense-awards-contracts-google-xai-2025-07-14/",
+          "https://www.nextgov.com/acquisition/2025/07/pentagon-awards-multiple-companies-200m-contracts-ai-tools/406698/"
+        ],
+        "notes": "Contract awards are strong deployment intent signals; still not direct proof of >=6 months continuous real use."
+      },
+      {
+        "system": "OpenAI for Government",
+        "status": "VERIFIED",
+        "evidence_urls": [
+          "https://openai.com/global-affairs/introducing-openai-for-government/"
+        ],
+        "notes": "Initiative exists; public docs are high-level on enforcement details."
+      },
+      {
+        "system": "xAI for Government",
+        "status": "VERIFIED",
+        "evidence_urls": [
+          "https://x.ai/news/government/"
+        ],
+        "notes": "Confirms announcement of gov suite."
+      },
+      {
+        "system": "FINOS AI Governance Framework (AIGF)",
+        "status": "VERIFIED",
+        "evidence_urls": [
+          "https://github.com/finos/ai-governance-framework",
+          "https://github.com/finos/ai-governance-framework/issues/223",
+          "https://air-governance-framework.finos.org/"
+        ],
+        "notes": "Framework/spec with ongoing meetings and v2 release; governance blueprint more than turnkey runtime control plane."
+      }
+    ],
+    "meta_conclusion": {
+      "full_5_feature_match_found": false,
+      "reason": "Publicly verifiable offerings emphasize runtime governance and procurement; self-modifying/delta-mining governance is not evidenced in these deployments, and the >=6mo production criterion is not clearly met for most 2025 launches.",
+      "recommended_internal_delta": [
+        "Add ExternalEvidenceSweep intake type with strict VERIFIED/ASSUMED tagging and a ProductionProof checklist (2-of-4 rule).",
+        "Promote Governance Enforcement v0 as P0 roadmap item: passive controls -> active lint/denylist before output."
+      ]
+    },
+    "evidence_log_v2_row": {
+      "artifact_path": "sandbox:/mnt/data/2025-12-13_MetaBlooms_ExternalIntel_Sweep_GovAI_v1.mips.json",
+      "sweep_id": "SWEEP-GOVAI-2025-12-13-v1",
+      "evidence_weight": 0.72,
+      "failure_signal": "Production>=6mo + self-modification not verifiable from public evidence for major gov suites.",
+      "owner": "MetaBlooms OS (Sandbox)",
+      "next_review_date": "2026-01-13"
+    }
+  }
+}
