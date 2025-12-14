@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-14T21:31:29Z",
+  "generated_utc": "2025-12-14T21:31:31Z",
   "items": [
+    {
+      "ts": "2025-12-14T21:31:31Z",
+      "path": "deltas/2025-12/MB__03_DELTA__ChatGPTNativeBrowser_Synthesis_v1.mips.json",
+      "sha256": "424d47ab8294b98365db2fbd982726541af698b27d53ad13d82bdf3139926563",
+      "bytes": 7509
+    },
     {
       "ts": "2025-12-14T21:31:29Z",
       "path": "deltas/2025-12/MB__01_COREPACK__GovHardening_v7__2025-12-13.mips.json",

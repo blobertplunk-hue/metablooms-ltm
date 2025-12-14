@@ -1,0 +1,166 @@
+{
+  "MIPS": {
+    "artifact_id": "MB__03_DELTA__ChatGPTNativeBrowser_Synthesis_v1",
+    "version": "v1",
+    "timestamp_utc": "2025-12-13T23:00:00Z",
+    "content_type": "application/json",
+    "councils": [
+      "GovernanceConsensus",
+      "SandboxBuilder",
+      "ResearchAgent",
+      "ValidatorDeltaTracker"
+    ],
+    "sha256_body": "6d9488fd20ec0070ba2f9a46e5785d2d000cdfd1ef84f63e73f63eaf6d5eb416",
+    "links": []
+  },
+  "body": {
+    "delta_id": "MB__03_DELTA__ChatGPTNativeBrowser_Synthesis_v1",
+    "timestamp_utc": "2025-12-13T23:00:00Z",
+    "scope": [
+      "MetaBlooms OS",
+      "ChatGPT-Native Browser Program"
+    ],
+    "why": "Capture the net-new, high-leverage system lessons from multi-LLM plan comparison; lock the correct build order and guardrails; reduce mobile project-file ambiguity.",
+    "top_changes": [
+      {
+        "id": "D1",
+        "title": "Phase 0 must be 'Action/Governance Contract' not 'Webview capabilities'",
+        "score_roi_0_100": 96,
+        "what": "Implement ActionPlan schema + PROPOSE\u2192PREVIEW\u2192APPROVE\u2192EXECUTE\u2192RECEIPT state machine + chained receipts + deterministic replay on fixtures before touching real sites/APIs.",
+        "why_it_matters": "Everything else (perception, APIs, automation) becomes safer, testable, and composable; prevents 'silent autonomy' regression.",
+        "acceptance_tests": [
+          "100% executions have preview+receipt hashes",
+          "Replay reproduces final-state hash on fixtures",
+          "No execution IPC path exists from renderer"
+        ]
+      },
+      {
+        "id": "D2",
+        "title": "Use API-first for Google Workspace; 'typing feel' = diff/patch UX",
+        "score_roi_0_100": 93,
+        "what": "Explicitly forbid DOM automation for Docs/Sheets as primary path; implement API-based diffs + user-mediated apply/patch for unsupported edits.",
+        "why_it_matters": "Avoids ToS traps + weekly patching; maintains trust and sustainability.",
+        "acceptance_tests": [
+          "All Google actions are API calls or user-mediated apply",
+          "Scopes are minimal and displayed",
+          "Receipts store request/response hashes"
+        ]
+      },
+      {
+        "id": "D3",
+        "title": "Privilege isolation: camera-like perception + write-only action runner",
+        "score_roi_0_100": 90,
+        "what": "Separate Perception (read-only, sanitized) from Action Runner (whitelisted interpreter); never execute arbitrary JS from model output.",
+        "why_it_matters": "Stops prompt-injection and 'AI writes JS \u2192 run it' compromise class.",
+        "acceptance_tests": [
+          "Action runner accepts only validated action types",
+          "Perception cannot trigger execution",
+          "Governance rejects any plan containing raw JS payloads"
+        ]
+      },
+      {
+        "id": "D4",
+        "title": "Selector-rot policy: blessed origins + accessibility anchors + rot telemetry",
+        "score_roi_0_100": 84,
+        "what": "DOM-first actions only on a small whitelist; target elements via accessibility roles/names, not brittle CSS; log rot incidents and enforce a weekly rot threshold.",
+        "why_it_matters": "Meets 'no weekly patching' constraint by design.",
+        "acceptance_tests": [
+          "<2% weekly rot incidents on whitelist",
+          "Fallbacks exist (ask user / API / apply patch)",
+          "Selectors derived from AX tree"
+        ]
+      },
+      {
+        "id": "D5",
+        "title": "Mobile file discoverability: frontloaded filenames + sentinel+index canonical map",
+        "score_roi_0_100": 82,
+        "what": "Project files must be identifiable from the first ~15\u201320 chars; keep a sentinel + index as the source of truth.",
+        "why_it_matters": "Fixes the mobile friction where file list truncation hides meaning.",
+        "acceptance_tests": [
+          "In mobile list, each file is distinguishable",
+          "Sentinel names the exact 3\u20135 active files",
+          "Index matches sentinel"
+        ]
+      }
+    ],
+    "best_unique_contribution_by_llm": [
+      {
+        "llm": "DeepSeek/Copilot-style (clean-room executor framing)",
+        "biggest_value": "Explicit 'never run arbitrary JS' + treat Action Runner as a whitelisted interpreter; cryptographically chained receipts; replay engine as trust primitive.",
+        "keep": "Yes"
+      },
+      {
+        "llm": "Gemini",
+        "biggest_value": "Framed as 'Intelligence Harness' with Governance Spine as single point of truth; emphasized policy-driven control plane first.",
+        "keep": "Yes"
+      },
+      {
+        "llm": "Claude",
+        "biggest_value": "Concrete Electron implementation hooks (webContents/BrowserView, capturePage, debugger/CDP) and pragmatic phased deliverables.",
+        "keep": "Yes"
+      },
+      {
+        "llm": "Perplexity",
+        "biggest_value": "Maintainability doctrine: reject weekly patching; commit to API-first + diff/apply flows; high-signal Phase 0 milestone definition.",
+        "keep": "Yes"
+      },
+      {
+        "llm": "Grok (earlier)",
+        "biggest_value": "Hard/soft blocker distinction and candid realism about illusion vs production; prompted 'FrictionHunter' concept for finding real-world breakages.",
+        "keep": "Yes"
+      }
+    ],
+    "ranking_worst_to_best": [
+      {
+        "rank": 6,
+        "name": "Generic feasibility table (without shell ownership clarification)",
+        "why_worst": "Assumed Chrome-extension limits; underestimates what owning the webview enables.",
+        "salvage": "Hard/soft blocker framing."
+      },
+      {
+        "rank": 5,
+        "name": "Early Grok feasibility (pre-clarification)",
+        "why": "Over-emphasized 'illusion' and ToS blockers before the shell framing.",
+        "salvage": "Risk register + maintenance realism."
+      },
+      {
+        "rank": 4,
+        "name": "Claude architecture writeup",
+        "why": "Strong practicality, but still too optimistic about DOM editing for complex SaaS (Docs) without making API-only path non-negotiable.",
+        "salvage": "Electron API mapping + phased deliverables."
+      },
+      {
+        "rank": 3,
+        "name": "Gemini Intelligence Harness",
+        "why": "Best control-plane clarity; less concrete on implementation wiring.",
+        "salvage": "Governance-as-core; policy versioning."
+      },
+      {
+        "rank": 2,
+        "name": "DeepSeek/Copilot clean-room interpreter plan",
+        "why": "Security posture is strongest; replay + signed logs are differentiators.",
+        "salvage": "No-arbitrary-JS rule; transactional actions; replay."
+      },
+      {
+        "rank": 1,
+        "name": "MetaBlooms Blueprint v2 (current)",
+        "why_best": "Combines governance contract, isolation model, API-first strategy, rot thresholds, and explicit kill criteria aligned with your constraints.",
+        "salvage": "(All) \u2014 this is the synthesized target."
+      }
+    ],
+    "project_files_target_set": [
+      "MB__00_SENTINEL__ACTIVE_STATE.txt",
+      "MB__01_COREPACK__GovHardening_v7__2025-12-13.mips.json",
+      "MB__02_DELTA__MobileFilenameFrontload_v1.mips.json",
+      "MB__03_DELTA__ChatGPTNativeBrowser_Synthesis_v1.mips.json",
+      "MB__99_INDEX__ProjectFiles.txt"
+    ],
+    "validation_self_check": {
+      "no_silent_autonomy": true,
+      "api_first_google": true,
+      "no_arbitrary_js_execution": true,
+      "mobile_frontload": true,
+      "weekly_patching_rejected": true
+    }
+  }
+}
