@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-14T22:50:15Z",
+  "generated_utc": "2025-12-14T22:51:52Z",
   "items": [
+    {
+      "ts": "2025-12-14T22:51:52Z",
+      "path": "deltas/2025-12/MB__03_DELTA__SMOKETEST__20251214T225149Z.mips.json",
+      "sha256": "948a13da14d0e5f3c61e115d0613bba4153d647613c9dacd43d16d7b8a230638",
+      "bytes": 105
+    },
     {
       "ts": "2025-12-14T22:50:15Z",
       "path": "deltas/2025-12/MB__03_DELTA__SMOKETEST__20251214T225007Z.mips.json",
@@ -144,12 +150,6 @@
       "path": "deltas/2025-12/MB__07_DELTA__BootHeader_LintAndRewrite_v1.mips.json",
       "sha256": "959a1a7ffb99e7a9e3a0577733da6c5426f12f9a4b541fea772388acf5107b1b",
       "bytes": 3649
-    },
-    {
-      "ts": "2025-12-14T21:32:15Z",
-      "path": "deltas/2025-12/MB__OS__MetaBlooms_Core_v1.mips.json",
-      "sha256": "2ae6e384dc5e0b66cac1f7b9c5f9e4887c5b3617c81bc520370b9f95cad7de30",
-      "bytes": 2266
     }
   ]
 }
