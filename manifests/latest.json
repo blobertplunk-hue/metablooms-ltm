@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-14T21:31:37Z",
+  "generated_utc": "2025-12-14T21:31:39Z",
   "items": [
+    {
+      "ts": "2025-12-14T21:31:39Z",
+      "path": "deltas/2025-12/MB__03_DELTA__DDSR_ReasoningMode_v1.mips.json",
+      "sha256": "d1bd1f7802d4035a719f6a0d16378cea822ac68529d8459ef566db32257d9ac2",
+      "bytes": 744
+    },
     {
       "ts": "2025-12-14T21:31:37Z",
       "path": "deltas/2025-12/MB__03_DELTA__NegativeKnowledgeCapture_v1.mips.json",

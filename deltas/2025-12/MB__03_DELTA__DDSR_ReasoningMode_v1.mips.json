@@ -1,0 +1,21 @@
+{
+  "delta_id": "MB__03_DELTA__DDSR_ReasoningMode_v1",
+  "type": "reasoning_mode",
+  "status": "PROMOTED",
+  "description": "Divergence-Driven Structural Reasoning: progress measured by elimination of impossibilities and isolation of bottlenecks.",
+  "principles": [
+    "Progress equals reduction of viable strategy space.",
+    "Failure is harvested as structural information.",
+    "Obstructions must be named explicitly.",
+    "Pivots preserve valid machinery and discard invalid objectives."
+  ],
+  "activation": [
+    "Hard problems",
+    "Research",
+    "Systems design",
+    "Strategy",
+    "Deep debugging"
+  ],
+  "timestamp_utc": "2025-12-14T14:28:30Z",
+  "sha256": "20daeb0112f61adbdd44d8397a8d3f3d171251acbccff8607b478997c89364cb"
+}
