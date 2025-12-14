@@ -1,0 +1,183 @@
+{
+  "mips": {
+    "artifact_id": "MetaBlooms_DELTA_PromoteLegacyStaged_Core3_20251213T173832Z",
+    "parent_bundle": "MetaBlooms_ProjectFiles_CorePack_v5_PROMOTE2 (assumed active)",
+    "version": "1.0.0",
+    "timestamp_utc": "20251213T173832Z",
+    "content_type": "metablooms.delta.bundle",
+    "councils": [
+      "Facilitator",
+      "Auditor",
+      "Synth",
+      "Recorder"
+    ],
+    "audit": "construct",
+    "evidence_chain": {
+      "provenance": [
+        {
+          "source": "User directive",
+          "note": "Promote only legacy staged items that truly belong in core; minimize cognitive load and slot usage."
+        },
+        {
+          "source": "Chat context",
+          "note": "Legacy staged list: Validator hardening, DeltaMiner expansion, Compiler-style builders; Sandcrawler/Termux staged but optional."
+        }
+      ],
+      "evidence_weight": 0.72,
+      "failure_signals": [
+        "Mobile UI truncation causes ambiguity",
+        "Short-term memory under load",
+        "Download instability in app"
+      ]
+    },
+    "links": [],
+    "sha256": "0f5fcaeedd9ee3c00c6d0c1458044c2a961ddccccf6bd7dd2fdb55898fa41aa2"
+  },
+  "delta": {
+    "name": "PromoteLegacyStaged_Core3",
+    "intent": "Promote only the highest-ROI legacy staged upgrades into core as a single cohesive patch set, optimized for mobile truncation + STM constraints.",
+    "promoted_components": [
+      {
+        "id": "VAL_Gate_v1_Simple3",
+        "title": "Validator Gate v1 (Simple 3-State)",
+        "why_now": "Prevents regressions and dead-ends with minimal cognitive overhead; aligns with EXE-mode.",
+        "spec": {
+          "outcomes": [
+            "PROMOTE",
+            "STAGE",
+            "REJECT"
+          ],
+          "required_outputs": [
+            "ONE_SCREEN_VERDICT",
+            "TOP_3_REASONS",
+            "RISK_FLAGS",
+            "ROLLBACK_HINT"
+          ],
+          "forbidden": [
+            "multi-page verbose rationales",
+            "ambiguous language (probably/maybe) in verdict"
+          ],
+          "verdict_format": {
+            "header": "VERDICT: <PROMOTE|STAGE|REJECT>",
+            "lines_max": 12,
+            "fields_order": [
+              "VERDICT",
+              "WHY",
+              "RISKS",
+              "NEXT",
+              "ROLLBACK"
+            ]
+          }
+        }
+      },
+      {
+        "id": "MINER_Caps_v1_Top3",
+        "title": "DeltaMiner Caps v1 (Top-3, Bounded)",
+        "why_now": "Lets you keep mining without flooding outputs or slots; makes legacy recovery repeatable.",
+        "spec": {
+          "caps": {
+            "max_candidates_per_run": 3,
+            "max_files_scanned": 500,
+            "max_zip_mb": 12,
+            "max_runtime_seconds": 40
+          },
+          "selection": {
+            "rank_signal": [
+              "novelty",
+              "user_friction_reduction",
+              "safety",
+              "integration_cost"
+            ],
+            "output_only_top": 3
+          },
+          "output": {
+            "summary_lines_max": 15,
+            "emit_pack_index": true,
+            "emit_pack_zip": true
+          }
+        }
+      },
+      {
+        "id": "COMP_PointerCore_v1_Safe",
+        "title": "Pointer-Core Compiler v1 (Safe Rollforward/Rollback)",
+        "why_now": "Solves slot bloat sustainably by compiling changes into pointer-based core overlays (no monolith).",
+        "spec": {
+          "inputs": [
+            "corepack_pointer_file",
+            "promoted_deltas[]"
+          ],
+          "outputs": [
+            "corepack_pointer_file_updated",
+            "rollback_pointer_file"
+          ],
+          "rules": [
+            "Never emit a full monolithic OS rewrite",
+            "Always preserve rollback pointer",
+            "Only mutate pointers/registries, not embedded content blobs"
+          ],
+          "rollback": {
+            "strategy": "Keep previous pointer file as MB[CORE][ROLLBACK]__prev.json and reference it in sentinel.",
+            "trigger": "If any validator outcome flips to REJECT within next run, revert pointer."
+          }
+        }
+      }
+    ],
+    "explicitly_not_promoted": [
+      {
+        "id": "SANDCRAWLER_LegacyVariants",
+        "reason": "High variance + noise risk; keep opt-in until a dedicated research sprint with stop conditions."
+      },
+      {
+        "id": "TERMUX_LegacyTooling",
+        "reason": "Useful but conflicts with 'upload-only' ergonomics; keep as optional accelerator, not core."
+      }
+    ],
+    "integration_hooks": {
+      "commands": {
+        "mb:status": [
+          "must print ONE_SCREEN_VERDICT block when changes were applied in this session",
+          "must show ACTIVE/ STAGED counts and SAFE_TO_STOP"
+        ],
+        "mb:deltas": [
+          "must list only PROMOTED deltas by default; staged available via --staged"
+        ],
+        "mb:mine": [
+          "uses MINER_Caps_v1_Top3 defaults unless overridden"
+        ]
+      },
+      "sentinel_update": {
+        "file": "MB__ACTIVE_STATE__READ_ME.txt",
+        "must_include": [
+          "ACTIVE_COREPACK",
+          "ACTIVE_DELTAS",
+          "STAGED_DELTAS",
+          "SAFE_TO_STOP",
+          "ROLLBACK_POINTER"
+        ]
+      }
+    },
+    "tests": [
+      {
+        "name": "VerdictBlockLength",
+        "expect": "ONE_SCREEN_VERDICT <= 12 lines"
+      },
+      {
+        "name": "MinerTop3",
+        "expect": "<=3 candidates output"
+      },
+      {
+        "name": "ZipSizeCap",
+        "expect": "pack zip <= 12MB"
+      },
+      {
+        "name": "RollbackPointerExists",
+        "expect": "rollback pointer emitted on any core update"
+      }
+    ],
+    "migration": {
+      "apply_mode": "overlay",
+      "rollback": "swap pointer file to MB[CORE][ROLLBACK]__prev.json and update sentinel ROLLBACK_POINTER",
+      "validation_status": "DESIGN_APPROVED (construct); runtime validation pending next mb:mine run"
+    }
+  }
+}
