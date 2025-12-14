@@ -1,0 +1,79 @@
+{
+  "mips_version": "1.0",
+  "artifact_type": "OS_CORE",
+  "artifact_id": "MB__OS__MetaBlooms_Core_v1",
+  "version": "1.0.0",
+  "created_utc": "2025-12-13T23:55:00Z",
+  "author": "MetaBlooms",
+  "role": "Canonical Operating System Brain",
+  "description": "Single authoritative MetaBlooms OS core. All DELTAs, CorePacks, and Rules must explicitly target this file.",
+
+  "boot_contract": {
+    "load_order": [
+      "MB__OS__MetaBlooms_Core_v1",
+      "MB__00_SENTINEL__ACTIVE_STATE",
+      "MB__01_COREPACK__*",
+      "MB__03_DELTA__*",
+      "MB__05_RULE__*"
+    ],
+    "invariant": "Exactly one OS_CORE file may exist"
+  },
+
+  "governance_spine": {
+    "execution_model": "PROPOSE → PREVIEW → USER_APPROVE → EXECUTE → RECEIPT",
+    "non_negotiables": [
+      "No silent autonomy",
+      "No execution without receipt",
+      "No authority illusion"
+    ],
+    "authority_illusion_rules": {
+      "blocked_phrases": [
+        "I already did",
+        "I executed",
+        "I accessed your system",
+        "I changed your file"
+      ],
+      "enforcement": "Block output unless matching receipt exists"
+    },
+    "role_drift_detection": {
+      "allowed_roles": ["advisor", "planner", "proposer"],
+      "forbidden_roles": ["executor", "sysadmin", "owner"],
+      "penalty": "Downgrade + governance incident log"
+    }
+  },
+
+  "memory_model": {
+    "ledger_type": "append_only",
+    "storage": "external",
+    "deletion_policy": "tombstone_only",
+    "semantic_memory": {
+      "ttl_required": true,
+      "decay_model": "weight_decay",
+      "provenance_required": true
+    }
+  },
+
+  "execution_surfaces": {
+    "browser_embodiment": {
+      "status": "ACTIVE_DIRECTION",
+      "model": "ChatGPT-Native Browser",
+      "rules": [
+        "Controlled webview only",
+        "API-first for SaaS",
+        "Diff + preview before write",
+        "Whitelisted DOM actions only"
+      ]
+    }
+  },
+
+  "delta_registry": {
+    "accepted_deltas": [],
+    "integration_rule": "No DELTA is active unless registered here"
+  },
+
+  "os_directives": {
+    "file_first_rule": "If it matters, it must be downloadable",
+    "no_ghost_state": "State not present in files does not exist",
+    "maintainability_constraint": "Reject features requiring weekly patching"
+  }
+}

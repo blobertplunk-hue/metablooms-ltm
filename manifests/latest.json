@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-14T21:32:12Z",
+  "generated_utc": "2025-12-14T21:32:15Z",
   "items": [
+    {
+      "ts": "2025-12-14T21:32:15Z",
+      "path": "deltas/2025-12/MB__OS__MetaBlooms_Core_v1.mips.json",
+      "sha256": "2ae6e384dc5e0b66cac1f7b9c5f9e4887c5b3617c81bc520370b9f95cad7de30",
+      "bytes": 2266
+    },
     {
       "ts": "2025-12-14T21:32:12Z",
       "path": "deltas/2025-12/MB__00_SENTINEL__ACTIVE_STATE.txt",
@@ -144,12 +150,6 @@
       "path": "deltas/2025-12/MB__99_INDEX__ProjectFiles (1).txt",
       "sha256": "e18093dcf6595c7b9e2e0b53cf80cd4a45a17a114235de973e6c78eb14d0328a",
       "bytes": 1797
-    },
-    {
-      "ts": "2025-12-14T21:31:19Z",
-      "path": "deltas/2025-12/MB__OS__MetaBlooms_Core__ACTIVE.mips.json",
-      "sha256": "5bdfa8b4fe2fdef18ba194c62a57790ea58125e3f06e2b5f7912bd8dd5c3f9f0",
-      "bytes": 75361
     }
   ]
 }
