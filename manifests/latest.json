@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-14T21:31:08Z",
+  "generated_utc": "2025-12-14T21:31:10Z",
   "items": [
+    {
+      "ts": "2025-12-14T21:31:10Z",
+      "path": "deltas/2025-12/MetaBlooms_DELTA_AutonomousExecution_ExeMode_20251213T155037Z.mips.json",
+      "sha256": "8ef2c443a9adc01424522767e3cf31327daa41c24445aa19e2aeba356b3ab222",
+      "bytes": 3615
+    },
     {
       "ts": "2025-12-14T21:31:08Z",
       "path": "deltas/2025-12/MetaBlooms_ProjectFiles_CorePack_v4_REFINED_20251213T161427Z.mips.json",

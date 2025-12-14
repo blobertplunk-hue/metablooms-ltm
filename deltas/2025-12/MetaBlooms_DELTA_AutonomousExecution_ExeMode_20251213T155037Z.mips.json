@@ -1,0 +1,97 @@
+{
+  "mips": {
+    "artifact_id": "MetaBlooms_DELTA_AutonomousExecution_ExeMode_20251213T155037Z",
+    "parent_bundle": "MetaBlooms_ProjectFiles_CorePack_v3_STABILIZED",
+    "version": "1.0",
+    "timestamp_utc": "2025-12-13T15:50:37.973858+00:00",
+    "content_type": "application/json",
+    "councils": [
+      "Facilitator",
+      "Auditor",
+      "Synthesist"
+    ],
+    "evidence_chain": {
+      "mode": "append_only",
+      "references": [
+        "MetaBlooms_ProjectFiles_CorePack_v3_STABILIZED.json"
+      ]
+    },
+    "links": [],
+    "audit": "construct"
+  },
+  "delta": {
+    "name": "ExeMode Autonomous Execution Contract",
+    "priority": "P0",
+    "goal": "Convert multi-step interactive procedures into executable-style one-shot commands: user issues a command, system runs autonomously in sandbox and returns artifacts.",
+    "rules_added": [
+      {
+        "id": "EXE_MODE_01",
+        "rule": "When the user issues a MetaBlooms command (mb:*), execute the full pipeline autonomously inside /mnt/data without asking intermediate questions unless a hard ambiguity blocks execution.",
+        "hard_stop": "If an input artifact is missing, request exactly one upload, then resume automatically."
+      },
+      {
+        "id": "EXE_MODE_02",
+        "rule": "Never provide multi-step user instructions by default. Provide at most ONE user action: upload input OR replace CorePack output.",
+        "exception": "If user explicitly asks for step-by-step."
+      },
+      {
+        "id": "EXE_MODE_03",
+        "rule": "Outputs must be: (a) artifact bundle (<=3 files unless user requests more), (b) UI report listing what changed and why, (c) 1-line burndown."
+      },
+      {
+        "id": "EXE_MODE_04",
+        "rule": "Prefer using already-mounted Project Files (/mnt/data) over any phone-side execution. Termux scripts are optional accelerators, never requirements."
+      }
+    ],
+    "command_router": {
+      "namespace": "mb",
+      "commands": {
+        "mb:ingest": {
+          "intent": "Ingest newly uploaded deltas/packs, slice + gate, then ship CorePack vNEXT.",
+          "inputs": [
+            "any delta *.mips.json",
+            "delta packs *.zip",
+            "indexes *.json"
+          ],
+          "outputs": [
+            "CorePack_vNEXT (single file)",
+            "Decisions receipt (small JSON)"
+          ],
+          "default_mode": "autonomous"
+        },
+        "mb:os-audit": {
+          "intent": "Bulk read-only audit of old OS versions; extract missing high-value concepts; no promotions.",
+          "inputs": [
+            "old OS bundles *.zip/*.json (optional)"
+          ],
+          "outputs": [
+            "Archaeology report (JSON/MIPS)",
+            "Optional shortlist delta candidates (staged only)"
+          ]
+        },
+        "mb:mine": {
+          "intent": "Mine legacy deltas for recoverable features; produce ranked backlog; no changes applied unless followed by mb:ingest.",
+          "inputs": [
+            "delta archive pack *.zip",
+            "artifacts_index*.json (optional)"
+          ],
+          "outputs": [
+            "Ranked backlog report (JSON/MIPS)"
+          ]
+        },
+        "mb:status": {
+          "intent": "Report active CorePack version + active/staged engines + last decisions.",
+          "inputs": [],
+          "outputs": [
+            "Status report (JSON/MIPS)"
+          ]
+        }
+      },
+      "prompt_contract": {
+        "no_intermediate_questions": true,
+        "single_user_action_max": 1,
+        "retry_on_delivery_failure": "Offer inline fallback only if user requests it."
+      }
+    }
+  }
+}
