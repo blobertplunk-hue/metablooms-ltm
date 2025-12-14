@@ -1,0 +1,31 @@
+META BLOOMS — ACTIVE STATE SENTINEL
+=================================
+THIS FILE IS THE SOURCE OF TRUTH.
+
+ACTIVE DATE (UTC): 2025-12-14
+BOOT CONTRACT:
+• Project Files are executable truth.
+• On boot: scan ALL DELTAs → reconcile states → apply PROMOTED → list STAGED → regenerate Index.
+• Consolidation sanity: core must not be tiny (<10KB) or it is considered FAILED.
+
+ACTIVE CORE:
+• MB__OS__MetaBlooms_Core__ACTIVE.mips.json  (93.16 KB)
+• CorePack: MB__01_COREPACK__GovHardening_v7__2025-12-13.mips.json
+
+ACTIVE (PROMOTED) DELTAS:
+• MB__01_DELTA__AutoDeltaReconciler_v1.mips.json
+• MB__03_DELTA__NegativeKnowledgeCapture_v1.mips.json
+• MB__03_DELTA__DDSR_ReasoningMode_v1.mips.json
+• MB__03_DELTA__ChatGPTNativeBrowser_Synthesis_v1.mips.json
+• 2025-12-14_MB__DELTA__COLO_WallPosters_FromWeeklyOutline_v1.mips.json
+• 2025-12-14_MB__DELTA__IPS_OnePager_MaxFont_OnePage_v1.mips.json
+• MB__03_DELTA__WeeklyDriveExportAndZip_v1.mips.json
+
+STAGED DELTAS:
+• MB__03_DELTA__InvariantFirstGate_v1.mips.json
+
+CANONICAL PROJECT FILES (KEEP 4):
+• MB__00_SENTINEL__ACTIVE_STATE.txt
+• MB__01_COREPACK__GovHardening_v7__2025-12-13.mips.json
+• MB__OS__MetaBlooms_Core__ACTIVE.mips.json
+• MB__99_INDEX__ProjectFiles.txt
