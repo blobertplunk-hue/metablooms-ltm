@@ -1,0 +1,17 @@
+{
+  "delta_id": "MB__03_DELTA__NegativeKnowledgeCapture_v1",
+  "type": "governance_reasoning",
+  "status": "PROMOTED",
+  "description": "Persist proven-impossible strategies as first-class negative knowledge to shrink future search spaces.",
+  "rules": [
+    "If a strategy class is proven impossible, log it as negative knowledge.",
+    "Negative knowledge must include invariant or contradiction proof.",
+    "Negative knowledge permanently prunes future reasoning paths."
+  ],
+  "acceptance_tests": [
+    "System lists eliminated strategies explicitly.",
+    "System does not retry logged impossible approaches."
+  ],
+  "timestamp_utc": "2025-12-14T14:28:30Z",
+  "sha256": "a0a2053b927469456d60faa9898dc278d34e3f18cad60db959e449944a27aab2"
+}

@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-14T21:31:35Z",
+  "generated_utc": "2025-12-14T21:31:37Z",
   "items": [
+    {
+      "ts": "2025-12-14T21:31:37Z",
+      "path": "deltas/2025-12/MB__03_DELTA__NegativeKnowledgeCapture_v1.mips.json",
+      "sha256": "7a64c80fef19e17128ea8423d1fe5ecf1e7a3e36cc7bb39dc2a317b9a62b278f",
+      "bytes": 744
+    },
     {
       "ts": "2025-12-14T21:31:35Z",
       "path": "deltas/2025-12/MB__90_TOOL__Termux_PublishSh_v1.mips.json",
