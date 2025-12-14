@@ -1,0 +1,30 @@
+MB ACTIVE STATE SENTINEL (AUTHORITATIVE)
+====================================
+THIS FILE IS THE SOURCE OF TRUTH.
+DO NOT TRUST FILENAMES WITHOUT THIS FILE.
+
+BUILD_TS_UTC: 2025-12-14T21:03:36Z
+MODE: RCA+CSRG ENFORCED
+PROJECT_FILES_CONTRACT: 5 files, fixed slots 00/01/02/03/99
+
+ACTIVE SET (LOAD ORDER):
+00  MB__00_SENTINEL__ACTIVE_STATE.txt
+01  MB__01_COREPACK__GovHardening_v7__2025-12-13.mips.json
+02  MB__02_OS__MetaBlooms_Core__ACTIVE__2025-12-14_REBUILT.mips.json
+03  MB__03_DELTA__ChatGPTNativeBrowser_Synthesis_v1.mips.json
+99  MB__99_INDEX__ProjectFiles.txt
+
+DELTA POLICY (LIVE-ON-BOOT):
+- Any MB__03_DELTA present is ACTIVE unless listed in QUARANTINE_LIST below.
+- If more than one delta exists, system enters RCA and requires consolidation.
+
+QUARANTINE_LIST:
+- (none)
+
+SIZE PLAUSIBILITY GATE:
+- Abort replacement if 01 < 2 KB or 02 < 50 KB or 99 < 1 KB.
+
+INDEX DEDUPE RULE:
+- If multiple MB__99 variants exist, prefer the one whose embedded hashes match the active set and newest BUILD_TS_UTC.
+- If hashes absent, MB__99 is advisory only and must be regenerated.
+
