@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-14T21:31:21Z",
+  "generated_utc": "2025-12-14T21:31:23Z",
   "items": [
+    {
+      "ts": "2025-12-14T21:31:23Z",
+      "path": "deltas/2025-12/MetaBlooms_ProjectFiles_CorePack_v6_MOCD_20251213T180455Z.mips.json",
+      "sha256": "7244802fd961470dae6521c5364535dcd386f56b90d977320a07be4bc9ea8508",
+      "bytes": 4087
+    },
     {
       "ts": "2025-12-14T21:31:21Z",
       "path": "deltas/2025-12/MB__99_INDEX__ProjectFiles (1).txt",

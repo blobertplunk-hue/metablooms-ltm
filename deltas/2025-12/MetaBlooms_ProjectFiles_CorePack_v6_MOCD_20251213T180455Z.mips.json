@@ -1,0 +1,88 @@
+{
+  "mips": {
+    "artifact_id": "MetaBlooms_ProjectFiles_CorePack_v6_MOCD_20251213T180455Z",
+    "parent_bundle": "MetaBlooms_ProjectFiles_CorePack_v5_PROMOTE2_20251213T161953Z",
+    "version": "v6",
+    "timestamp_utc": "20251213T180455Z",
+    "content_type": "application/json",
+    "councils": [
+      "Facilitator",
+      "Auditor",
+      "Synthesizer",
+      "Recorder"
+    ],
+    "audit": "construct",
+    "links": {
+      "corepack_base": "MetaBlooms_ProjectFiles_CorePack_v3_STABILIZED.json",
+      "delta_promotions": "MetaBlooms_DELTA_RefineAndPromote_Staged_20251213T161939Z.mips.json"
+    },
+    "sha256": "134f70fc6498adeaf17be7f6d790da7f46f6c36b5b87698a6db1eb75230bbda8"
+  },
+  "content": {
+    "what_this_is": "Project-files pointer pack (tiny on purpose). The real payload lives in the referenced ZIPs/JSON already in project files. (v6 adds canonical operating context + operator contract for downstream LLMs.)",
+    "active_modules": {
+      "PROMOTED": [
+        "BootGuard_Preflight",
+        "AutoDeltaGate_OnUpload",
+        "DeltaGate (runtime kit)",
+        "DeltaSlicer (opt-in)",
+        "ContextMemoryEngine",
+        "ReasoningHorizonsEngine"
+      ],
+      "STAGED": [
+        "StrategyBrainEngine (advisor-only)",
+        "ExecutiveFunctionEngine (needs proving runs)"
+      ]
+    },
+    "run_commands": {
+      "mb:status": "Print active pack + promoted/staged + last decisions",
+      "mb:deltas": "List deltas (promoted/staged) with scores + why",
+      "mb:os-audit": "Audit /mnt/data project pack integrity + missing pieces",
+      "mb:contract": "Print MOCD + LOC (operator contract) for downstream LLMs"
+    },
+    "next_move": "Run mb:os-audit inside the sandbox (I do it here). Then we mine one more delta-pack (PACKSALL.zip) and feed it through DeltaMiner+Slicer+Gate again.",
+    "governance_context": {
+      "MOCD": {
+        "name": "MetaBlooms Operating Context Declaration (MOCD)",
+        "status": "CANONICAL",
+        "tone": "Factual / operational",
+        "audience": [
+          "any_llm",
+          "agent",
+          "tool-using-model"
+        ],
+        "non_negotiables": [
+          "MetaBlooms is a governance and control system, not an intelligence model.",
+          "LLM outputs are advisory; authority is enforced by explicit validation/gating/promotion.",
+          "System evolution is delta-based: slice → score → gate → promote → preserve.",
+          "Autonomy is bounded and conditional; no implicit execution or ungated memory writes."
+        ],
+        "one_line_canon": "MetaBlooms OS governs intelligence; it does not replace it. LLM outputs are advisory and subject to explicit validation, gating, and promotion."
+      },
+      "LOC": {
+        "name": "LLM Operator Contract (LOC)",
+        "purpose": "Prevent category errors and unsafe/incorrect operation by downstream LLMs.",
+        "required_posture": "Judgment provider, not decision-maker.",
+        "do": [
+          "Propose changes as deltas (small, testable, reversible).",
+          "State assumptions vs. verified facts.",
+          "Prefer auditability and rollback over cleverness and speed.",
+          "Ask for missing inputs only if genuinely blocking; otherwise proceed with best-effort + [ASSUMED] tags."
+        ],
+        "dont": [
+          "Assume your output will execute automatically.",
+          "Write to long-term memory/state without a gate/promotion step.",
+          "Overwrite existing rules or modules; propose append-only deltas.",
+          "Claim tool execution you did not perform."
+        ],
+        "error_handling": "On failure or ambiguity, produce: (1) minimal safe artifact, (2) explicit failure signal, (3) next action that preserves rollback.",
+        "interaction_primitives": {
+          "mb:status": "Report active pack + promoted/staged + last decisions",
+          "mb:deltas": "List deltas (promoted/staged) with scores + why",
+          "mb:os-audit": "Audit project pack integrity + missing pieces",
+          "mb:contract": "Print MOCD + LOC for downstream LLMs"
+        }
+      }
+    }
+  }
+}
