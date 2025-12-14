@@ -1,0 +1,20 @@
+MB PROJECT FILES — INDEX (FRONTLOAD)  |  active: 2025-12-13
+===========================================================
+
+MB__00_SENTINEL__ACTIVE_STATE.txt
+  - Source of truth: tells you which 3–5 files are active and what each is.
+
+MB__01_COREPACK__GovHardening_v7__2025-12-13.mips.json
+  - Core rules + governance hardening pack (use this as the main OS brain in Project Files).
+
+MB__02_DELTA__MobileFilenameFrontload_v1.mips.json
+  - Delta: fixes the mobile friction where filenames are truncated; enforces frontloaded naming.
+
+MB__03_DELTA__ChatGPTNativeBrowser_Synthesis_v1.mips.json
+  - Delta: multi-LLM plan ranking + best-of synthesis; locks Phase 0–4 order and safety invariants.
+
+MB__05_RULE_FileFirst_Default_v1.mips.json
+  - Rule: file-first default (always ship downloadable artifact). Keep only if you have room.
+
+NOTE:
+- If you need to stay at 5 files total, MB__05_RULE... can be merged into the next CorePack revision.

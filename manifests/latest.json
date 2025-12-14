@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-14T21:31:03Z",
+  "generated_utc": "2025-12-14T21:31:06Z",
   "items": [
+    {
+      "ts": "2025-12-14T21:31:06Z",
+      "path": "deltas/2025-12/MB__99_INDEX__ProjectFiles.txt",
+      "sha256": "79cbb6a36df4c507cb3336ae8b0b699c2f4861020778aac6da23476490f9640d",
+      "bytes": 940
+    },
     {
       "ts": "2025-12-14T21:31:03Z",
       "path": "deltas/2025-12/MetaBlooms_DeltaBacklog_Ranked_20251213T140000Z.mips.json",
