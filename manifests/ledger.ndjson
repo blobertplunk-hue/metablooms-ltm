@@ -41,3 +41,4 @@
 {"ts":"2025-12-14T21:32:17Z","path":"deltas/2025-12/MB__07_DELTA__BootHeader_LintAndRewrite_v1.mips.json","sha256":"959a1a7ffb99e7a9e3a0577733da6c5426f12f9a4b541fea772388acf5107b1b","bytes":3649}
 {"ts":"2025-12-14T21:32:18Z","path":"deltas/2025-12/MB__90_TOOL__Termux_OneShot_Publish_v1.mips.md","sha256":"ad572266ccb13c223c79bb2daf2c25ee19a777934c7219d963b7bb71d293ca0d","bytes":2436}
 {"ts":"2025-12-14T21:32:21Z","path":"deltas/2025-12/MB__03_DELTA__InvariantFirstGate_v1.mips.json","sha256":"e149e85ecc0b03bf37b1506ebd4374a1c60f7ff4bd78173946ee4cc77230f62c","bytes":573}
+{"ts":"2025-12-14T21:32:23Z","path":"deltas/2025-12/MB__01_DELTA__AutoDeltaReconciler_v1.mips.json","sha256":"4c6b203085fa1264f5212cfc76beb1913b01fa779dcc0f1daa5d3c2583a30a69","bytes":1471}

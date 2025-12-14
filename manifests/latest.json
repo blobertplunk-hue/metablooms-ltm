@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-14T21:32:21Z",
+  "generated_utc": "2025-12-14T21:32:23Z",
   "items": [
+    {
+      "ts": "2025-12-14T21:32:23Z",
+      "path": "deltas/2025-12/MB__01_DELTA__AutoDeltaReconciler_v1.mips.json",
+      "sha256": "4c6b203085fa1264f5212cfc76beb1913b01fa779dcc0f1daa5d3c2583a30a69",
+      "bytes": 1471
+    },
     {
       "ts": "2025-12-14T21:32:21Z",
       "path": "deltas/2025-12/MB__03_DELTA__InvariantFirstGate_v1.mips.json",
@@ -144,12 +150,6 @@
       "path": "deltas/2025-12/MB__01_COREPACK__GovHardening_v7__2025-12-13.mips.json",
       "sha256": "0277573d5b62ff62477e4747452b9bc332cfdd99243efbd0c5103aac84ca2254",
       "bytes": 4303
-    },
-    {
-      "ts": "2025-12-14T21:31:26Z",
-      "path": "deltas/2025-12/MB__02_DELTA_MobileFilenameFrontload_v1.mips.json",
-      "sha256": "5cf0b243d1e9389f2ba172f4decdf806b8d47e769748c3d46ec47df29973d30e",
-      "bytes": 3663
     }
   ]
 }

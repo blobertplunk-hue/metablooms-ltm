@@ -1,0 +1,34 @@
+{
+  "delta_id": "MB__01_DELTA__AutoDeltaReconciler_v1",
+  "type": "governance_automation",
+  "status": "PROMOTED",
+  "description": "Automatically reconcile all DELTA files in Project Files, determine correct states, and regenerate Sentinel and Index without human intervention.",
+  "core_rule": "Project Files are the source of truth. Any DELTA present must be reconciled into a valid OS state.",
+  "behavior": {
+    "scan": "On any Project Files change, scan all MB__*_DELTA__*.mips.json files",
+    "classify": {
+      "PROMOTED": "Activate automatically",
+      "STAGED": "List but do not activate",
+      "DEPRECATED": "Exclude from active state but retain in index",
+      "MISSING_OR_INVALID": "Auto-repair or demote to STAGED with warning"
+    },
+    "auto_fix": [
+      "If a DELTA has no status, infer from scope and recency",
+      "If Sentinel is missing a PROMOTED delta, add it",
+      "If Index disagrees with Sentinel, regenerate Index",
+      "If multiple states conflict, choose the most conservative valid state"
+    ],
+    "outputs": [
+      "Regenerated MB__00_SENTINEL__ACTIVE_STATE.txt",
+      "Regenerated MB__99_INDEX__ProjectFiles.txt",
+      "Delta reconciliation diff log"
+    ]
+  },
+  "guarantees": [
+    "No ghost deltas",
+    "No manual reconciliation required",
+    "OS state always derivable from files alone"
+  ],
+  "timestamp_utc": "2025-12-14T14:44:23Z",
+  "sha256": "4d8efb8419e815b4446807fba08c91167f828b6199d4df17ae921ccb0326b39c"
+}
