@@ -1,0 +1,118 @@
+{
+  "mips_header": {
+    "artifact_id": "MetaBlooms_DELTA_DeltaSlicer_OptIn",
+    "version": "1.0",
+    "timestamp_utc": "2025-12-13T13:05:08Z",
+    "content_type": "application/json",
+    "parent_bundle": "ACTIVE_PROJECT_FILES",
+    "councils": [
+      "Audit",
+      "Governance",
+      "Execution"
+    ],
+    "sha256": "d043607e9329697353a3a43e56d9a2a8903ef72d611586f81078a2806ca57e1d",
+    "evidence_chain": [
+      "paper_weakness:axiom_judgment_requires_decomposition",
+      "user_goal:salvage_good_from_old_deltas",
+      "dependency:AutoDeltaGate_OnUpload"
+    ],
+    "links": []
+  },
+  "delta_kind": "RUNTIME_DELTA",
+  "delta_name": "Delta Slicer (Opt-In Partial Delta Admission)",
+  "intent": "Enable safe, opt-in partial acceptance of a delta: admit good change-slices, reject bad ones, and emit receipts that record exactly what was applied vs rejected. This supports delta archaeology (salvage gold, quarantine junk).",
+  "applies_to": {
+    "deltas": "MetaBlooms_DELTA_*.mips.json",
+    "gate": "DeltaGate (receipt-backed)",
+    "interface": "MetaBlooms_UI_DailyInterface_v1",
+    "authority_source": "/mnt/data Project Files"
+  },
+  "changes": [
+    {
+      "id": "DS-0",
+      "type": "policy",
+      "name": "Opt-in Slice Policy",
+      "details": {
+        "rule": "A delta may be partially admitted ONLY if it declares slice_policy='ALLOW_PARTIAL'. Otherwise deltas remain atomic.",
+        "default": "DENY_PARTIAL"
+      }
+    },
+    {
+      "id": "DS-1",
+      "type": "schema",
+      "name": "Per-change Validation + Rollback Requirement",
+      "details": {
+        "rule": "When slice_policy='ALLOW_PARTIAL', every changes[i] MUST include: change_id, touched_modules/applies_to, validation, rollback.",
+        "why": "Prevents half-applied dependencies and keeps rollback unambiguous."
+      }
+    },
+    {
+      "id": "DS-2",
+      "type": "governance",
+      "name": "Change-level DeltaGate Scoring",
+      "details": {
+        "rule": "DeltaGate evaluates each change as its own unit: DG-1..DG-5 + score. Overall delta decision becomes a vector: ACCEPTED[], REJECTED[], HOLD[].",
+        "thresholds": {
+          "auto_accept_change": 80,
+          "auto_reject_change": 49
+        }
+      }
+    },
+    {
+      "id": "DS-3",
+      "type": "receipt",
+      "name": "Slice Receipt Format",
+      "details": {
+        "receipt_name_pattern": "MetaBlooms_RECEIPT_DeltaGateSlices_<delta>_<timestamp>.json",
+        "receipt_fields": [
+          "delta_file",
+          "delta_sha256",
+          "slice_policy",
+          "accepted_change_ids",
+          "rejected_change_ids",
+          "hold_change_ids",
+          "scores_by_change",
+          "reasons_by_change",
+          "operator_override (optional)"
+        ],
+        "invariant": "No silent partial apply; receipts must be generated and referenced by mb:deltas."
+      }
+    },
+    {
+      "id": "DS-4",
+      "type": "interface",
+      "name": "Daily Interface Integration",
+      "details": {
+        "mb:deltas": "Show slice_policy plus accepted/rejected/hold counts (when sliceable).",
+        "mb:apply-delta": "If sliceable: returns BAM for accepted slices + references slice receipt; explains rejected slices in 1–3 bullets."
+      }
+    },
+    {
+      "id": "DS-5",
+      "type": "safety",
+      "name": "Dependency Guard",
+      "details": {
+        "rule": "A change slice may declare depends_on:[change_id,...]. If any dependency is rejected/hold, dependent slice cannot be accepted.",
+        "note": "Keeps partial admission safe when deltas bundle linked edits."
+      }
+    }
+  ],
+  "validation": {
+    "self_check": [
+      "Non-destructive: creates receipts only; does not mutate packs.",
+      "Opt-in: only activates when slice_policy='ALLOW_PARTIAL'.",
+      "Deterministic: slice receipts include per-change sha-like fingerprints and reasons."
+    ],
+    "expected_behavior": {
+      "atomic_default": "Existing deltas without slice_policy remain all-or-nothing.",
+      "sliceable_delta": "When slice_policy='ALLOW_PARTIAL', DeltaGate produces slice receipt with accepted/rejected/hold lists."
+    }
+  },
+  "rollback": {
+    "how": [
+      "Remove this DELTA from Project Files to disable partial admission and revert to atomic deltas only.",
+      "Slice receipts are evidence artifacts; deleting them is optional and does not affect authority."
+    ],
+    "risk": "Low. Policy/tooling overlay only."
+  }
+}
