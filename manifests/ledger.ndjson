@@ -19,3 +19,4 @@
 {"ts":"2025-12-14T21:31:26Z","path":"deltas/2025-12/MB__02_DELTA_MobileFilenameFrontload_v1.mips.json","sha256":"5cf0b243d1e9389f2ba172f4decdf806b8d47e769748c3d46ec47df29973d30e","bytes":3663}
 {"ts":"2025-12-14T21:31:29Z","path":"deltas/2025-12/MB__01_COREPACK__GovHardening_v7__2025-12-13.mips.json","sha256":"0277573d5b62ff62477e4747452b9bc332cfdd99243efbd0c5103aac84ca2254","bytes":4303}
 {"ts":"2025-12-14T21:31:31Z","path":"deltas/2025-12/MB__03_DELTA__ChatGPTNativeBrowser_Synthesis_v1.mips.json","sha256":"424d47ab8294b98365db2fbd982726541af698b27d53ad13d82bdf3139926563","bytes":7509}
+{"ts":"2025-12-14T21:31:33Z","path":"deltas/2025-12/MB__06_RULE__ExecutionSurface_Clarification_v1.mips.json","sha256":"3b32de89057906ea80f47ae4ee6fa46b8352967120909fce4ffa30117589e403","bytes":3977}
