@@ -1,0 +1,18 @@
+{
+  "MIPS": {
+    "artifact_id": "MB__05_RULE_FileFirst_Default_v1",
+    "parent_bundle": "MetaBlooms_ProjectFiles",
+    "version": "v1",
+    "councils": [
+      "Governance",
+      "CRF",
+      "OutputForge"
+    ],
+    "sha256": "255cb6562444bc100a968b44d180d8a85a972624bfe57dd9da7a953346a9a127",
+    "timestamp_utc": "2025-12-13T23:51:31Z",
+    "evidence_chain": [],
+    "content_type": "text/plain",
+    "links": []
+  },
+  "BODY": "MB FILE-FIRST DEFAULT — PROJECT/OS ARTIFACT RULE\n================================================\n\nRULE (P0):\nWhenever any output belongs in the OS or Project Files (spec, delta, roadmap, policy, contract, checklist, schema, validator rules, governance rules, or any system-level decision), the assistant MUST create a downloadable file artifact as part of the same response.\n\nDEFAULT BEHAVIOR:\n1) Create the file first (no “concept-only” drops).\n2) Provide a direct download link.\n3) Then provide a short human summary.\n\nQUALITY BAR:\n- Use correct naming conventions (MB__NN__...).\n- Wrap artifacts in MIPS format when applicable.\n- Treat missing-file delivery as a bug requiring immediate correction.\n\nSCOPE:\nApplies to all MetaBlooms workstreams, including Sandcrawler, governance, deltas, specs, build packs, HTML lessons, scripts, and reports.\n\nCREATED (UTC): 2025-12-13T23:51:31Z\n"
+}

@@ -35,3 +35,4 @@
 {"ts":"2025-12-14T21:32:02Z","path":"deltas/2025-12/MetaBlooms_DELTA_StagedFromOldOS_Slices_20251213T172423Z.mips.json","sha256":"c97a938671a165bfca9fa7bdd0276c04050a53bc454143e197184b2aac383c57","bytes":1326}
 {"ts":"2025-12-14T21:32:04Z","path":"deltas/2025-12/MetaBlooms_DeltaSlicer_Report_20251213T172423Z.mips.json","sha256":"66a87fd86b34373eb484b0e33dd3d4e53ce8cf43242c69d25bd3669ad7aac915","bytes":7705}
 {"ts":"2025-12-14T21:32:08Z","path":"deltas/2025-12/2025-12-13_MetaBlooms_DELTA_MobileFilenameFrontload_v1.mips.json","sha256":"50955079cedefba24ca8a6c881398a7b44c8542ddf489ed8ec0c9911689a9bb2","bytes":3504}
+{"ts":"2025-12-14T21:32:10Z","path":"deltas/2025-12/MB__05_RULE_FileFirst_Default_v1.mips.json","sha256":"b9cb73aad2acad92383e98cd04dcdf973c99beab0f7a36a62ca3a26a7b28f03b","bytes":1350}
