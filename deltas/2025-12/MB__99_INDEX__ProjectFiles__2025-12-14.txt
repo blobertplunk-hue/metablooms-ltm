@@ -1,0 +1,11 @@
+PROJECT FILES — CANONICAL SET
+==============================
+As of 2025-12-14
+
+KEEP ONLY:
+- MB__00_SENTINEL__ACTIVE_STATE__2025-12-14.txt
+- MB__01_COREPACK__GovHardening_v7__2025-12-13.mips.json
+- MB__02_OS__MetaBlooms_Core__ACTIVE__2025-12-14.mips.json
+- MB__99_INDEX__ProjectFiles__2025-12-14.txt
+
+All other deltas are consolidated into the OS core.

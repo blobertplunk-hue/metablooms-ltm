@@ -23,3 +23,4 @@
 {"ts":"2025-12-14T21:31:35Z","path":"deltas/2025-12/MB__90_TOOL__Termux_PublishSh_v1.mips.json","sha256":"46fdc855c76213a99709881d32e18b4e9b77434aa3f3a7f6896dd7731cb059d9","bytes":5593}
 {"ts":"2025-12-14T21:31:37Z","path":"deltas/2025-12/MB__03_DELTA__NegativeKnowledgeCapture_v1.mips.json","sha256":"7a64c80fef19e17128ea8423d1fe5ecf1e7a3e36cc7bb39dc2a317b9a62b278f","bytes":744}
 {"ts":"2025-12-14T21:31:39Z","path":"deltas/2025-12/MB__03_DELTA__DDSR_ReasoningMode_v1.mips.json","sha256":"d1bd1f7802d4035a719f6a0d16378cea822ac68529d8459ef566db32257d9ac2","bytes":744}
+{"ts":"2025-12-14T21:31:41Z","path":"deltas/2025-12/MB__99_INDEX__ProjectFiles__2025-12-14.txt","sha256":"f908609eafcb03f3df2d33c9240ba71782f47b4366e67d65ad211b1c77e90858","bytes":354}

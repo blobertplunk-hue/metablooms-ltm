@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-14T21:31:39Z",
+  "generated_utc": "2025-12-14T21:31:41Z",
   "items": [
+    {
+      "ts": "2025-12-14T21:31:41Z",
+      "path": "deltas/2025-12/MB__99_INDEX__ProjectFiles__2025-12-14.txt",
+      "sha256": "f908609eafcb03f3df2d33c9240ba71782f47b4366e67d65ad211b1c77e90858",
+      "bytes": 354
+    },
     {
       "ts": "2025-12-14T21:31:39Z",
       "path": "deltas/2025-12/MB__03_DELTA__DDSR_ReasoningMode_v1.mips.json",
@@ -144,12 +150,6 @@
       "path": "deltas/2025-12/MetaBlooms_DELTA_DOTA_Runtime_20251213T122649Z.mips.json",
       "sha256": "648af700d7a1cf779d19a5c2eb88b37ff9379df110c98cec9b3a4d832830c16e",
       "bytes": 2245
-    },
-    {
-      "ts": "2025-12-14T21:30:49Z",
-      "path": "deltas/2025-12/2025-12-13_metablooms_boot_snapshot_P0.mips.json",
-      "sha256": "5498ec01e5844e3fb2428bcddcee870c8c0fca992cbc218324ca3920981a4ca7",
-      "bytes": 17601
     }
   ]
 }
