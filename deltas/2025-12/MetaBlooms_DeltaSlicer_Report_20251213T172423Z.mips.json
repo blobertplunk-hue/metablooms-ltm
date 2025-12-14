@@ -1,0 +1,264 @@
+{
+  "mips_header": {
+    "artifact_id": "MetaBlooms_DeltaSlicer_Report_20251213T172423Z",
+    "parent_bundle": "MetaBlooms_OldOS_MinedTop_20251213T171845Z.zip",
+    "version": "1.0",
+    "timestamp_utc": "2025-12-13T17:25:34Z",
+    "content_type": "metablooms.deltaslicer.report",
+    "councils": [
+      "Facilitator",
+      "Auditor",
+      "Recorder",
+      "Teacher",
+      "Hacker"
+    ],
+    "audit": "construct",
+    "links": []
+  },
+  "body": {
+    "objective": "DeltaSlicer pass on mined legacy OS artifacts (extract net-positive features, stage risky/unclear parts, quarantine stale/bad parts).",
+    "inputs": {
+      "mine_report": "MetaBlooms_OldOS_MineReport_20251213T171845Z.mips.json",
+      "top_bundle": "MetaBlooms_OldOS_MinedTop_20251213T171845Z.zip"
+    },
+    "slicer_policy": {
+      "method": "rank-slice-promote",
+      "promote_top_n": 3,
+      "stage_next_n": 4,
+      "quarantine_rest_n": 3,
+      "note": "Legacy scores were low/confounded; used relative ranking within INTEGRATE tier."
+    },
+    "decisions": [
+      {
+        "outer": "PACKSALL.zip",
+        "inner": "2025-11-27_MetaBlooms_ChatSnapshot_Burndown_HostileSOP_v1.mips.json",
+        "score": 41,
+        "hits": {
+          "persistence": 2,
+          "delta_gate": 2,
+          "sandcrawler": 3,
+          "validators": 3,
+          "termux": 3,
+          "ux_mobile": 3
+        },
+        "size_bytes": 6349,
+        "priority": null,
+        "class": "INTEGRATE",
+        "decision": "PROMOTE"
+      },
+      {
+        "outer": "2025-12-12_MetaBlooms_PackSmith_Compiler_v1_bundle.zip",
+        "inner": "2025-12-12_MetaBlooms_OS_CORE_PACK_P0.mips.json",
+        "score": 36,
+        "hits": {
+          "persistence": 3,
+          "delta_gate": 4,
+          "sandcrawler": 3,
+          "validators": 5,
+          "termux": 1
+        },
+        "size_bytes": 158775,
+        "priority": null,
+        "class": "INTEGRATE",
+        "decision": "PROMOTE"
+      },
+      {
+        "outer": "MetaBlooms_OS_v10_CompleteBundle.zip",
+        "inner": "MetaBlooms_OS_v10_FULL.mips.json",
+        "score": 35,
+        "hits": {
+          "persistence": 1,
+          "delta_gate": 3,
+          "sandcrawler": 3,
+          "validators": 5,
+          "termux": 3
+        },
+        "size_bytes": 87609,
+        "priority": null,
+        "class": "INTEGRATE",
+        "decision": "PROMOTE"
+      },
+      {
+        "outer": "MetaBlooms_OS_v11_IntegratedBundle_v1.zip",
+        "inner": "artifacts/MetaBlooms_OS_v11_FULL_Bundle.mips.json",
+        "score": 35,
+        "hits": {
+          "persistence": 1,
+          "delta_gate": 3,
+          "sandcrawler": 3,
+          "validators": 5,
+          "termux": 3
+        },
+        "size_bytes": 160204,
+        "priority": null,
+        "class": "INTEGRATE",
+        "decision": "STAGE"
+      },
+      {
+        "outer": "2025-12-12_MetaBlooms_PackSmith_Compiler_v1_bundle.zip",
+        "inner": "2025-12-12_MetaBlooms_REASONING_PACK_P0.mips.json",
+        "score": 32,
+        "hits": {
+          "persistence": 1,
+          "delta_gate": 4,
+          "sandcrawler": 2,
+          "validators": 4,
+          "termux": 1,
+          "ux_mobile": 1
+        },
+        "size_bytes": 8240,
+        "priority": null,
+        "class": "INTEGRATE",
+        "decision": "STAGE"
+      },
+      {
+        "outer": "2025-12-12_MetaBlooms_PackSmith_Compiler_v1_bundle.zip",
+        "inner": "2025-12-12_MetaBlooms_DOMAIN_BENCHMARKS_PACK_P1.mips.json",
+        "score": 30,
+        "hits": {
+          "persistence": 2,
+          "delta_gate": 2,
+          "sandcrawler": 2,
+          "validators": 5,
+          "termux": 1
+        },
+        "size_bytes": 17742,
+        "priority": null,
+        "class": "INTEGRATE",
+        "decision": "STAGE"
+      },
+      {
+        "outer": "2025-12-12_MetaBlooms_PackSmith_Compiler_v1_bundle.zip",
+        "inner": "2025-12-12_MetaBlooms_GOVERNANCE_PACK_P0.mips.json",
+        "score": 29,
+        "hits": {
+          "persistence": 1,
+          "delta_gate": 2,
+          "sandcrawler": 3,
+          "validators": 5,
+          "termux": 1
+        },
+        "size_bytes": 20249,
+        "priority": null,
+        "class": "INTEGRATE",
+        "decision": "STAGE"
+      },
+      {
+        "outer": "MetaBlooms_TermuxTools_v1_bundle (1).zip",
+        "inner": "mbos_bundle/mips/mbos_build_batchpacks.mips.json",
+        "score": 27,
+        "hits": {
+          "sandcrawler": 3,
+          "validators": 3,
+          "termux": 4,
+          "ux_mobile": 1
+        },
+        "size_bytes": 5050,
+        "priority": null,
+        "class": "INTEGRATE",
+        "decision": "QUARANTINE"
+      },
+      {
+        "outer": "MetaBlooms_OS_v7_2_Bundle_1764338453.zip",
+        "inner": "MetaBlooms_MetaRuleEngine_v1.2_FULL.mips.json",
+        "score": 25,
+        "hits": {
+          "persistence": 1,
+          "delta_gate": 2,
+          "sandcrawler": 3,
+          "validators": 3,
+          "termux": 1
+        },
+        "size_bytes": 12608,
+        "priority": null,
+        "class": "INTEGRATE",
+        "decision": "QUARANTINE"
+      },
+      {
+        "outer": "MetaBlooms_TermuxTools_v1_bundle (1).zip",
+        "inner": "mbos_bundle/mips/mbos_extract_functions.mips.json",
+        "score": 24,
+        "hits": {
+          "sandcrawler": 3,
+          "validators": 4,
+          "termux": 3
+        },
+        "size_bytes": 6552,
+        "priority": null,
+        "class": "INTEGRATE",
+        "decision": "QUARANTINE"
+      }
+    ],
+    "promoted_features": [
+      {
+        "id": "PERSISTENCE_BOUNDARY_ENFORCE",
+        "why": "Eliminates project-files vs runtime confusion; prevents dead ends.",
+        "risk": "low"
+      },
+      {
+        "id": "STABLE_SENTINEL_CURRENT_TRUTH",
+        "why": "Compensates for mobile truncation + STM load; one source of truth.",
+        "risk": "low"
+      },
+      {
+        "id": "MOBILE_SAFE_NAMING_PREFIXES",
+        "why": "You can recognize files instantly; eliminates mis-uploads.",
+        "risk": "low"
+      },
+      {
+        "id": "SLOT_DISCIPLINE_3_TO_5",
+        "why": "Stops project-files bloat; reduces cognitive load.",
+        "risk": "low"
+      },
+      {
+        "id": "EXE_MODE_MB_COMMANDS",
+        "why": "No more multi-step user instructions; deterministic flows.",
+        "risk": "low"
+      }
+    ],
+    "staged_features": [
+      {
+        "id": "VALIDATOR_HARDENING",
+        "why": "Good ROI but may break flows if merged blindly; stage for A/B.",
+        "risk": "medium"
+      },
+      {
+        "id": "DELTAMINER_EXPANSION",
+        "why": "Useful but can increase runtime load; stage with caps.",
+        "risk": "medium"
+      },
+      {
+        "id": "SANDCRAWLER_SAFER_PROFILE",
+        "why": "Potentially high value but needs policy gates; stage.",
+        "risk": "medium"
+      },
+      {
+        "id": "TERMUX_PACKING_TOOLCHAIN",
+        "why": "Helpful but phone env variability; stage.",
+        "risk": "medium"
+      }
+    ],
+    "quarantined": [
+      {
+        "id": "USER_CENTRIC_STEPLISTS",
+        "why": "Directly conflicts with EXE-mode requirement.",
+        "risk": "low"
+      },
+      {
+        "id": "PLACEHOLDER_STUB_ENGINES",
+        "why": "Adds noise and false confidence.",
+        "risk": "low"
+      },
+      {
+        "id": "STALE_COMPILER_VARIANTS",
+        "why": "Likely redundant/old; keep as archive.",
+        "risk": "low"
+      }
+    ],
+    "outputs": {
+      "promotion_delta": "MetaBlooms_DELTA_PromotedFromOldOS_Slices_20251213T172423Z.mips.json",
+      "staged_delta": "MetaBlooms_DELTA_StagedFromOldOS_Slices_20251213T172423Z.mips.json",
+      "bundle_zip": "MetaBlooms_BUNDLE_OldOS_Slices_20251213T172423Z.zip"
+    }
+  }
+}
