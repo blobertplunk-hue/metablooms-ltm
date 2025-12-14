@@ -1,0 +1,43 @@
+{
+  "mips": {
+    "artifact_id": "MetaBlooms_ProjectFiles_CorePack_v5_PROMOTE2_20251213T161953Z",
+    "parent_bundle": "MetaBlooms_ProjectFiles_CorePack_v4_REFINED_20251213T161427Z",
+    "version": "v5",
+    "timestamp_utc": "20251213T161953Z",
+    "content_type": "application/json",
+    "councils": [
+      "Facilitator",
+      "Auditor",
+      "Synthesizer",
+      "Recorder"
+    ],
+    "audit": "construct",
+    "links": {
+      "corepack_base": "MetaBlooms_ProjectFiles_CorePack_v3_STABILIZED.json",
+      "delta_promotions": "MetaBlooms_DELTA_RefineAndPromote_Staged_20251213T161939Z.mips.json"
+    }
+  },
+  "content": {
+    "what_this_is": "Project-files pointer pack (tiny on purpose). The real payload lives in the referenced ZIPs/JSON already in project files.",
+    "active_modules": {
+      "PROMOTED": [
+        "BootGuard_Preflight",
+        "AutoDeltaGate_OnUpload",
+        "DeltaGate (runtime kit)",
+        "DeltaSlicer (opt-in)",
+        "ContextMemoryEngine",
+        "ReasoningHorizonsEngine"
+      ],
+      "STAGED": [
+        "StrategyBrainEngine (advisor-only)",
+        "ExecutiveFunctionEngine (needs proving runs)"
+      ]
+    },
+    "run_commands": {
+      "mb:status": "Print active pack + promoted/staged + last decisions",
+      "mb:deltas": "List deltas (promoted/staged) with scores + why",
+      "mb:os-audit": "Audit /mnt/data project pack integrity + missing pieces"
+    },
+    "next_move": "Run mb:os-audit inside the sandbox (I do it here). Then we mine one more delta-pack (PACKSALL.zip) and feed it through DeltaMiner+Slicer+Gate again."
+  }
+}
