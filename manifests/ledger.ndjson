@@ -32,3 +32,4 @@
 {"ts":"2025-12-14T21:31:54Z","path":"deltas/2025-12/MetaBlooms_DELTA_RefineStaged_PromotionPack_20251213T161427Z.mips.json","sha256":"96f0ccea1c85eb166f615952cbf4d047b541e4cf78916a1c33e9b2e03d0baa0e","bytes":5779}
 {"ts":"2025-12-14T21:31:57Z","path":"deltas/2025-12/MetaBlooms_DELTA_RefineAndPromote_Staged_20251213T161939Z.mips.json","sha256":"db415c496744978ecb65ea4172393ca147e4965799026373be0836569ab6b61b","bytes":4940}
 {"ts":"2025-12-14T21:31:59Z","path":"deltas/2025-12/MetaBlooms_OldOS_MineReport_20251213T171845Z.mips.json","sha256":"05f06b304dc7ed6d523da393e0fcc2fa5617fc2f1ba3426150d3aac1aa05c5e9","bytes":10815}
+{"ts":"2025-12-14T21:32:02Z","path":"deltas/2025-12/MetaBlooms_DELTA_StagedFromOldOS_Slices_20251213T172423Z.mips.json","sha256":"c97a938671a165bfca9fa7bdd0276c04050a53bc454143e197184b2aac383c57","bytes":1326}

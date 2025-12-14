@@ -1,0 +1,46 @@
+{
+  "mips_header": {
+    "artifact_id": "MetaBlooms_DELTA_StagedFromOldOS_Slices_20251213T172423Z",
+    "parent_bundle": null,
+    "version": "1.0",
+    "timestamp_utc": "2025-12-13T17:26:00Z",
+    "content_type": "metablooms.delta.stage",
+    "councils": [
+      "Facilitator",
+      "Auditor",
+      "Recorder",
+      "Teacher",
+      "Hacker"
+    ],
+    "audit": "construct",
+    "links": []
+  },
+  "body": {
+    "delta_id": "STAGE_OLD_OS_SLICES_20251213T172423Z",
+    "scope": "tools+validators+termux",
+    "staged_changes": [
+      {
+        "id": "VALIDATOR_HARDENING",
+        "plan": "Integrate after A/B on 2 runs; require no regression in download workflow; keep rollback."
+      },
+      {
+        "id": "DELTAMINER_EXPANSION",
+        "plan": "Increase mining breadth with caps: max_files_per_run=120, max_zip_mb=12, timeout_s=35."
+      },
+      {
+        "id": "SANDCRAWLER_SAFER_PROFILE",
+        "plan": "Add safety gates + source weighting; opt-in only."
+      },
+      {
+        "id": "TERMUX_PACKER_RETRY",
+        "plan": "Avoid Cloudflare HTML challenge by using local scripts + manual upload; no curl to sandbox links."
+      }
+    ],
+    "promotion_criteria": [
+      "ROI score >=80",
+      "No new user steps introduced",
+      "Project files stay <=5",
+      "No web blockers introduced"
+    ]
+  }
+}
