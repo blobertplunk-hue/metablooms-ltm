@@ -51,3 +51,4 @@
 {"ts":"2025-12-14T21:32:39Z","path":"deltas/2025-12/2025-12-14_MB_patch_isdelta_recognizer_v1.mips.md","sha256":"4992e921c301ca27d99784f19bc9790a6b7356c8b53a2da8e77ffb5cf79a5fdd","bytes":4332}
 {"ts":"2025-12-14T21:32:41Z","path":"deltas/2025-12/MB__99_INDEX__ProjectFiles__REBUILT_2025-12-14.txt","sha256":"d8064187f89e0867f24238a97c183b2fb3aeff27f4d78a43c97b7f3195a28075","bytes":1335}
 {"ts":"2025-12-14T21:32:43Z","path":"deltas/2025-12/2025-12-14_MB_Termux_Watcher_AssurancePack_v1.mips.md","sha256":"c29e5ec11995a47147faced842f3c6f3ac0e4fe42bc520a3184d620cada0b4a2","bytes":8759}
+{"ts":"2025-12-14T21:32:45Z","path":"deltas/2025-12/MB__03_DELTA__SELFTEST_v2.mips.json","sha256":"bab0dfdd9fe5b2dd30d6867e81fb4fa4377a7d0ef358b925a6b134764b7f37e8","bytes":21}

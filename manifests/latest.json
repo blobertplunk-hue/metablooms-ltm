@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-14T21:32:43Z",
+  "generated_utc": "2025-12-14T21:32:45Z",
   "items": [
+    {
+      "ts": "2025-12-14T21:32:45Z",
+      "path": "deltas/2025-12/MB__03_DELTA__SELFTEST_v2.mips.json",
+      "sha256": "bab0dfdd9fe5b2dd30d6867e81fb4fa4377a7d0ef358b925a6b134764b7f37e8",
+      "bytes": 21
+    },
     {
       "ts": "2025-12-14T21:32:43Z",
       "path": "deltas/2025-12/2025-12-14_MB_Termux_Watcher_AssurancePack_v1.mips.md",
@@ -144,12 +150,6 @@
       "path": "deltas/2025-12/MetaBlooms_ProjectFiles_SlotPlan_20251213T135240Z.mips.json",
       "sha256": "6dd0b2cf88f64ed45f1272c73fc38eca704134baa19adbe2cc2864f3ee720f39",
       "bytes": 1875
-    },
-    {
-      "ts": "2025-12-14T21:31:47Z",
-      "path": "deltas/2025-12/MetaBlooms_DeltaGate_Decisions_20251213T133109Z.mips.json",
-      "sha256": "581b8e70546d705710b60c81fe2119883138744bd743f0b3d99980dcdae8dda2",
-      "bytes": 27983
     }
   ]
 }
