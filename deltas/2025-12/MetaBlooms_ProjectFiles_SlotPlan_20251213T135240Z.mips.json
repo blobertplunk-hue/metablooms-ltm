@@ -1,0 +1,53 @@
+{
+  "mips": {
+    "artifact_id": "MetaBlooms_ProjectFiles_SlotPlan_20251213T135240Z",
+    "parent_bundle": "MetaBlooms_ProjectFiles_CorePack",
+    "version": "1.0",
+    "timestamp_utc": "20251213T135240Z",
+    "content_type": "application/json",
+    "councils": [
+      "Facilitator",
+      "Auditor",
+      "Synthesizer",
+      "Recorder"
+    ],
+    "sha256": "f899d352a71e870da531f3c49b3c07f5484411e0ef9afb16af5b6ca1d06d91e6",
+    "links": {
+      "core_pack": "MetaBlooms_ProjectFiles_CorePack_20251213T135240Z.zip",
+      "toolkit_pack": "MetaBlooms_ProjectFiles_Toolkit_20251213T135240Z.zip"
+    },
+    "evidence_chain": {
+      "source": "chat_session",
+      "inputs": [
+        "MetaBlooms_DELTA_PACK_20251213T132235Z_001.zip"
+      ]
+    }
+  },
+  "body": {
+    "constraint": "Project Files has 20-slot cap; minimize file count via bundles.",
+    "recommended_project_files_slots": [
+      {
+        "slot": "OS_CORE (existing 6 files)",
+        "keep": "All current active OS core packs already in Project Files."
+      },
+      {
+        "slot": "CorePack zip",
+        "file": "MetaBlooms_ProjectFiles_CorePack_20251213T135240Z.zip",
+        "why": "All P0 deltas + reports in one slot; extract as needed."
+      },
+      {
+        "slot": "Toolkit zip",
+        "file": "MetaBlooms_ProjectFiles_Toolkit_20251213T135240Z.zip",
+        "why": "All Termux + organizer tooling in one slot."
+      },
+      {
+        "slot": "Pack Index + Summary (optional)",
+        "why": "Upload only if you want phone-side provenance inside Project Files; otherwise keep on phone."
+      }
+    ],
+    "operating_rule": {
+      "default": "Project Files stores only bundles + active core; everything else stays on phone under MetaBlooms_Organized/INDEX.",
+      "promotion": "Only promote to Project Files if it changes OS behavior or is required to reproduce a build."
+    }
+  }
+}
