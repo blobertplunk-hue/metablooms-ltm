@@ -48,3 +48,4 @@
 {"ts":"2025-12-14T21:32:32Z","path":"deltas/2025-12/MB__99_INDEX__ProjectFiles__RECOMPILED_2025-12-14.txt","sha256":"c73fc2facee3f8d8b8fbd90ffb03abd3dd89e88625f2640dd002ab9c825003eb","bytes":1069}
 {"ts":"2025-12-14T21:32:34Z","path":"deltas/2025-12/2025-12-14_MB_Termux_AutoRun_Watcher_v1.mips.md","sha256":"af35eb6db742259076f6ef3d1f5a523fa2aefc539f7a17d6b819a323ceb89e71","bytes":5123}
 {"ts":"2025-12-14T21:32:37Z","path":"deltas/2025-12/MB__02_OS__MetaBlooms_Core__ACTIVE__2025-12-14_REBUILT.mips.json","sha256":"db405ebeca213344c01cda8a124159641a9497cb3a7e1932718986db0c5aaddd","bytes":77870}
+{"ts":"2025-12-14T21:32:39Z","path":"deltas/2025-12/2025-12-14_MB_patch_isdelta_recognizer_v1.mips.md","sha256":"4992e921c301ca27d99784f19bc9790a6b7356c8b53a2da8e77ffb5cf79a5fdd","bytes":4332}
