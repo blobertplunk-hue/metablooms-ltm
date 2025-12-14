@@ -1,0 +1,94 @@
+{
+  "mips_header": {
+    "artifact_id": "MetaBlooms_DELTA_AutoDeltaGate_OnUpload",
+    "version": "1.0",
+    "timestamp_utc": "2025-12-13T12:53:43Z",
+    "content_type": "application/json",
+    "parent_bundle": "ACTIVE_PROJECT_FILES",
+    "councils": [
+      "Audit",
+      "Governance",
+      "Execution"
+    ],
+    "sha256": "eaeb9daee5fc44fe224f55dd1dab8d54be41a7a3b7731e1bc6f3272022edb668",
+    "evidence_chain": [
+      "user_goal:delta_autoplug_play",
+      "observed_gap:manual_delta_eval_confusion",
+      "remediation:autodeltagate_receipts"
+    ],
+    "links": []
+  },
+  "delta_kind": "RUNTIME_DELTA",
+  "delta_name": "Auto-DeltaGate on Upload",
+  "intent": "When new MetaBlooms_DELTA_*.mips.json files appear in Project Files (/mnt/data), automatically evaluate them with DeltaGate and emit receipt artifacts. If AUTO_APPLY, treat as applied-stack eligible (receipt + stack note), without requiring operator to run anything.",
+  "applies_to": {
+    "authority_source": "/mnt/data Project Files",
+    "bootloader": "MetaBlooms_PROJECT_INDEX_P0.mips.json",
+    "delta_glob": "MetaBlooms_DELTA_*.mips.json",
+    "receipt_glob": "MetaBlooms_RECEIPT_DeltaGate_*.json"
+  },
+  "changes": [
+    {
+      "id": "ADG-0",
+      "type": "policy",
+      "name": "Auto-Evaluate New Deltas",
+      "details": {
+        "trigger": "On each boot/preflight and after any new upload detection in /mnt/data",
+        "action": "Scan for MetaBlooms_DELTA_*.mips.json; for each without a matching latest receipt, run DeltaGate evaluation; write receipt JSON(s) into /mnt/data.",
+        "outputs": [
+          "MetaBlooms_RECEIPT_DeltaGate_<delta>_<timestamp>.json",
+          "MetaBlooms_RECEIPT_DeltaGate_BATCH_<timestamp>.json"
+        ]
+      }
+    },
+    {
+      "id": "ADG-1",
+      "type": "invariant",
+      "name": "Receipt-Backed Apply Eligibility",
+      "details": {
+        "rule": "A delta is considered 'applied-stack eligible' only if a receipt exists with decision=AUTO_APPLY (or operator override FORCE_APPLY).",
+        "note": "Eligibility is evidence; authority still comes from presence in Project Files."
+      }
+    },
+    {
+      "id": "ADG-2",
+      "type": "governance",
+      "name": "No Silent Apply",
+      "details": {
+        "rule": "Never silently declare a delta applied. Always emit a receipt and surface decision + reasons in mb:status/mb:deltas.",
+        "why": "Prevents confusion and preserves audit trail."
+      }
+    },
+    {
+      "id": "ADG-3",
+      "type": "interface",
+      "name": "Daily Interface Integration",
+      "details": {
+        "mb:deltas": "Must include fields: has_receipt, last_receipt, decision, total_score, missing_required_fields.",
+        "mb:apply-delta": "If receipt decision=AUTO_APPLY, return 'BAM' status and reference receipt; if HOLD/REJECT, return reasons and next action."
+      }
+    }
+  ],
+  "validation": {
+    "self_check": [
+      "Fields present: mips_header, delta_kind, delta_name, applies_to, changes, validation, rollback",
+      "Non-destructive: writes receipts only; does not modify packs",
+      "Deterministic: receipts include sha256 of evaluated delta"
+    ],
+    "expected_behavior": {
+      "on_boot": "Receipts are generated for any deltas lacking them.",
+      "on_new_delta_upload": "Receipts are generated on next boot/preflight."
+    }
+  },
+  "rollback": {
+    "how": [
+      "Remove this DELTA from Project Files to disable automatic evaluation behavior.",
+      "Optionally delete receipt artifacts (receipts are non-authoritative evidence)."
+    ],
+    "risk": "Low. Policy-only; no destructive changes."
+  },
+  "operator_notes": [
+    "This delta makes DeltaGate run inside the sandbox automatically. Operator should not run scripts manually unless requested.",
+    "If a delta is large or complex, evaluation may be staged (HOLD) and surfaced with reasons."
+  ]
+}
