@@ -1,0 +1,23 @@
+META BLOOMS — RECOVERY PACK INDEX
+================================
+BUILD_UTC: 2025-12-14T21:06:52Z
+PACK_ID: MB__RECOVERY_PACK__2025-12-14T210652Z
+
+CONTENTS (versioned filenames + sha256 + size_kb):
+
+- 2025-12-14_MB__AUDIT__Findings_RCA_PROVISIONAL__2025-12-14T210652Z__sha5aa28dbe5ecf__kb4.39.mips.md | sha256=5aa28dbe5ecf9124ec2e059de071ec8441cb96be92334d8d4175885c4d080c4b | kb=4.39
+- 2025-12-14_MB__AUDIT__GovExecDiscipline_v1__2025-12-14T210652Z__shaeb0b6a77eeea__kb5.29.mips.md | sha256=eb0b6a77eeeaf639c9a1fc04a672e7460d800b46b9b53f4d5ae6f59a60ff174c | kb=5.29
+- 2025-12-14_MB__SOP__RCA_Mode__PERMANENT__2025-12-14T210652Z__sha21f692ad2a94__kb4.69.mips.md | sha256=21f692ad2a94a4b6436b77d05b4a65a2deb683ed1418ec09cc686ae0f84ae599 | kb=4.69
+- 2025-12-14_MB__SPEC__CSRG_v1__2025-12-14T210652Z__sha3e2989b2aa81__kb5.83.mips.md | sha256=3e2989b2aa819c8db9f890af9df597b7d95ebd7b679f7b0184c40826dd8a3c24 | kb=5.83
+- MB__00_SENTINEL__ACTIVE_STATE__2025-12-14T210652Z__shad3a3364fa65e__kb1.11.txt | sha256=d3a3364fa65e2f4afe3a6b541a2ccd384fe9c049d8960dd7656b5b7ec205b4fc | kb=1.11
+- MB__00_SENTINEL__ACTIVE_STATE__REBUILT_2025-12-14__2025-12-14T210652Z__sha874b36df2072__kb1.05.txt | sha256=874b36df2072210df4e6cf484272bb736303de39400d0f28b06fb7bd71b06b0e | kb=1.05
+- MB__01_COREPACK__GovHardening_v7__2025-12-13__2025-12-14T210652Z__sha0277573d5b62__kb4.20.mips.json | sha256=0277573d5b62ff62477e4747452b9bc332cfdd99243efbd0c5103aac84ca2254 | kb=4.20
+- MB__02_OS__MetaBlooms_Core__ACTIVE__2025-12-13__2025-12-14T210652Z__sha5bdfa8b4fe2f__kb73.59.mips.json | sha256=5bdfa8b4fe2fdef18ba194c62a57790ea58125e3f06e2b5f7912bd8dd5c3f9f0 | kb=73.59
+- MB__02_OS__MetaBlooms_Core__ACTIVE__2025-12-14_REBUILT__2025-12-14T210652Z__shadb405ebeca21__kb76.04.mips.json | sha256=db405ebeca213344c01cda8a124159641a9497cb3a7e1932718986db0c5aaddd | kb=76.04
+- MB__03_DELTA__ChatGPTNativeBrowser_Synthesis_v1__2025-12-14T210652Z__sha424d47ab8294__kb7.33.mips.json | sha256=424d47ab8294b98365db2fbd982726541af698b27d53ad13d82bdf3139926563 | kb=7.33
+- MB__99_INDEX__ProjectFiles__REBUILT_2025-12-14__2025-12-14T210652Z__shad8064187f89e__kb1.30.txt | sha256=d8064187f89e0867f24238a97c183b2fb3aeff27f4d78a43c97b7f3195a28075 | kb=1.30
+
+NOTES:
+- This pack versions every artifact to prevent duplicate-name ambiguity (especially MB__99).
+- Only deltas explicitly provided to this run are included; additional MB__03_DELTA__* files must be added to Project Files and re-collapsed to be integrated into a new core.
+- Recommended Project Files set after recovery is installed: MB__00 (sentinel), MB__01 (corepack), MB__02 (core), MB__03 (active delta, if kept), MB__99 (index).
