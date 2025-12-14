@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-14T21:32:55Z",
+  "generated_utc": "2025-12-14T21:32:57Z",
   "items": [
+    {
+      "ts": "2025-12-14T21:32:57Z",
+      "path": "deltas/2025-12/2025-12-14_MB_Termux_Watcher_FixPack_OnePaste_v1.mips.md",
+      "sha256": "2e853ff5c92ba72fa2ae0aaedafeb11a5531ab234dc1c581865eab1694501a91",
+      "bytes": 3824
+    },
     {
       "ts": "2025-12-14T21:32:55Z",
       "path": "deltas/2025-12/MB__00_SENTINEL__ACTIVE_STATE__REBUILT_2025-12-14.txt",
@@ -144,12 +150,6 @@
       "path": "deltas/2025-12/MetaBlooms_DeltaSlicer_Report_20251213T172423Z.mips.json",
       "sha256": "66a87fd86b34373eb484b0e33dd3d4e53ce8cf43242c69d25bd3669ad7aac915",
       "bytes": 7705
-    },
-    {
-      "ts": "2025-12-14T21:32:02Z",
-      "path": "deltas/2025-12/MetaBlooms_DELTA_StagedFromOldOS_Slices_20251213T172423Z.mips.json",
-      "sha256": "c97a938671a165bfca9fa7bdd0276c04050a53bc454143e197184b2aac383c57",
-      "bytes": 1326
     }
   ]
 }
