@@ -1,0 +1,82 @@
+{
+  "mips": {
+    "artifact_id": "MetaBlooms_ProjectFiles_CorePack_v4_REFINED_20251213T161427Z",
+    "parent_bundle": "MetaBlooms_ProjectFiles_CorePack_v3_STABILIZED",
+    "version": "v4",
+    "timestamp_utc": "20251213T161427Z",
+    "content_type": "application/json",
+    "councils": [
+      "Facilitator",
+      "Auditor",
+      "Synthesizer",
+      "Recorder"
+    ],
+    "audit": "construct",
+    "evidence_chain": {
+      "inputs": [
+        "MetaBlooms_ProjectFiles_CorePack_v3_STABILIZED.json",
+        "MetaBlooms_DELTA_AutonomousIngest_LessUserCentric_20251213T153731Z.mips.json",
+        "MetaBlooms_DELTA_AutonomousExecution_ExeMode_20251213T155037Z.mips.json",
+        "MetaBlooms_DELTA_RefineStaged_PromotionPack_20251213T161427Z.mips.json"
+      ]
+    },
+    "links": {}
+  },
+  "content": {
+    "corepack_lineage": {
+      "base": "MetaBlooms_ProjectFiles_CorePack_v3_STABILIZED",
+      "upgrade_reason": "Refined staged engines into bounded slices; enabled safe auto-promotion for top two engines; staged others with hard guards."
+    },
+    "active_engines": {
+      "ExeMode": {
+        "enabled": true,
+        "max_user_actions": 1,
+        "no_intermediate_questions": true
+      },
+      "AutonomousIngest": {
+        "enabled": true,
+        "sandbox_first": true
+      },
+      "MetaAwarenessEngine": {
+        "enabled": true,
+        "risk_tier": 1
+      },
+      "LongTermContinuityEngine": {
+        "enabled": true,
+        "risk_tier": 1
+      }
+    },
+    "staged_engines": {
+      "ContextMemoryEngine": {
+        "enabled": false,
+        "risk_tier": 2,
+        "why_staged": "needs additional validation with real project file scans"
+      },
+      "ReasoningHorizonsEngine": {
+        "enabled": false,
+        "risk_tier": 2,
+        "why_staged": "needs calibration to avoid overplanning"
+      },
+      "StrategyBrainEngine": {
+        "enabled": false,
+        "risk_tier": 3,
+        "why_staged": "advisor-only conversion pending"
+      },
+      "ExecutiveFunctionEngine": {
+        "enabled": false,
+        "risk_tier": 3,
+        "why_staged": "single-action queue needs runtime proving"
+      }
+    },
+    "daily_commands": {
+      "mb:ingest": "Ingest all newly uploaded deltas/packs; slice; gate; ship CorePack vNEXT.",
+      "mb:os-audit": "Read-only archaeology of uploaded legacy OS/pack archives; extract missing concepts; ship report.",
+      "mb:refine-staged": "Run refinement pass on staged engines to reduce risk and increase net benefit; ship delta+report.",
+      "mb:status": "Show active/staged engines and last ingest decisions."
+    },
+    "stop_rules": [
+      "If an operation would require multi-step user instructions, convert to autonomous execution or refuse as noncompliant.",
+      "Never claim access to phone filesystem; only /mnt/data and user-provided uploads."
+    ]
+  }
+}

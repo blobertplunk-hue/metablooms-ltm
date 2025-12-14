@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-14T21:31:06Z",
+  "generated_utc": "2025-12-14T21:31:08Z",
   "items": [
+    {
+      "ts": "2025-12-14T21:31:08Z",
+      "path": "deltas/2025-12/MetaBlooms_ProjectFiles_CorePack_v4_REFINED_20251213T161427Z.mips.json",
+      "sha256": "c4e769c562b196f13892cf0aa92947fa1a7e1e5f76b3503b4e59cbe274b102d7",
+      "bytes": 2847
+    },
     {
       "ts": "2025-12-14T21:31:06Z",
       "path": "deltas/2025-12/MB__99_INDEX__ProjectFiles.txt",
