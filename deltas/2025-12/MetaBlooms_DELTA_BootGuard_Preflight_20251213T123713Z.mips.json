@@ -1,0 +1,78 @@
+{
+  "mips_header": {
+    "artifact_id": "MetaBlooms_DELTA_BootGuard_Preflight",
+    "version": "1.0",
+    "timestamp_utc": "2025-12-13T12:37:13Z",
+    "content_type": "application/json",
+    "parent_bundle": "ACTIVE_PROJECT_FILES",
+    "councils": [
+      "Audit",
+      "Governance",
+      "Execution"
+    ],
+    "evidence_chain": [
+      "failure_mode_observed:authority_confusion",
+      "remediation:bootguard_preflight"
+    ],
+    "links": []
+  },
+  "delta_kind": "RUNTIME_DELTA",
+  "delta_name": "BootGuard Preflight (Project Files Authority Lock)",
+  "intent": "Prevent authority confusion by forcing every run to inspect /mnt/data Project Files, resolve Project Index boot order, and refuse inference-first behavior.",
+  "rules": [
+    {
+      "id": "BG-0",
+      "name": "Authority First",
+      "policy": "If Project Files exist, they are the sole source of truth for active OS state. Never infer boot target without checking.",
+      "enforcement": "hard"
+    },
+    {
+      "id": "BG-1",
+      "name": "Bootloader Gate",
+      "policy": "Always load MetaBlooms_PROJECT_INDEX_P0.mips.json first (if present). If missing, require explicit user instruction before proceeding.",
+      "enforcement": "hard"
+    },
+    {
+      "id": "BG-2",
+      "name": "Pack Resolution",
+      "policy": "Resolve boot sequence to concrete pack filenames; ensure each exists; record load order. If any are missing, stop and report missing list.",
+      "enforcement": "hard"
+    },
+    {
+      "id": "BG-3",
+      "name": "Integrity Gate",
+      "policy": "If Project Index provides hashes, verify them. If hashes unavailable, compute and record sha256 for boot artifacts in a boot snapshot.",
+      "enforcement": "hard"
+    },
+    {
+      "id": "BG-4",
+      "name": "Delta Stack Gate",
+      "policy": "Enumerate MetaBlooms_DELTA_*.mips.json in Project Files and present a concise applied-stack view. Never assume a delta is applied unless present.",
+      "enforcement": "hard"
+    },
+    {
+      "id": "BG-5",
+      "name": "Session Output Contract",
+      "policy": "Every major action must emit: (a) artifact, (b) 1-line burndown, (c) evidence note with hashes where relevant.",
+      "enforcement": "soft"
+    }
+  ],
+  "recommended_next_ops": [
+    {
+      "id": "NEXT-1",
+      "name": "Daily Interface Command Set",
+      "what": "Define 5 short commands that query the booted OS state (core, deltas, packs, recent changes, deploy receipts).",
+      "artifact": "MetaBlooms_UI_DailyInterface_v1.json"
+    },
+    {
+      "id": "NEXT-2",
+      "name": "Release Lane",
+      "what": "Establish a release cadence: each major change = DELTA + manifest; weekly = deploy ZIP + manifest.",
+      "artifact": "MetaBlooms_RELEASE_POLICY_v1.json"
+    }
+  ],
+  "rollback": {
+    "how": "Remove this DELTA from Project Files to revert to prior behavior.",
+    "risk": "Low (policy-only)"
+  }
+}

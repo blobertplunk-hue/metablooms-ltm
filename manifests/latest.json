@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-14T21:30:53Z",
+  "generated_utc": "2025-12-14T21:30:55Z",
   "items": [
+    {
+      "ts": "2025-12-14T21:30:55Z",
+      "path": "deltas/2025-12/MetaBlooms_DELTA_BootGuard_Preflight_20251213T123713Z.mips.json",
+      "sha256": "423ad68860610035dac0cedee3cb46687b26da49a2205d18dfddacfebc1bafa8",
+      "bytes": 2882
+    },
     {
       "ts": "2025-12-14T21:30:53Z",
       "path": "deltas/2025-12/MetaBlooms_DeltaRecovery_Report_20251213T133109Z.mips.json",
