@@ -1,0 +1,125 @@
+{
+  "mips": {
+    "artifact_id": "MetaBlooms_ProjectFiles_CorePack_v7_GovHardening_20251213T185500Z",
+    "parent_bundle": "MetaBlooms_ProjectFiles_CorePack_v6_MOCD_20251213T180455Z",
+    "version": "v7",
+    "timestamp_utc": "20251213T185500Z",
+    "content_type": "application/json",
+    "councils": [
+      "Facilitator",
+      "Auditor",
+      "Synthesizer",
+      "Recorder"
+    ],
+    "audit": "construct",
+    "links": {
+      "prior_corepack": "MetaBlooms_ProjectFiles_CorePack_v6_MOCD_20251213T180455Z.mips.json",
+      "active_sentinel": "MB__ACTIVE_STATE__READ_ME.txt"
+    },
+    "sha256": "4bcd692a806f5ddfa42a2c560d13f5cefa9d734e91f7ebf4d23aa6d56358bc33"
+  },
+  "content": {
+    "what_this_is": "Project-files pointer pack (tiny on purpose). Contains boot rules + governance contracts + promoted/staged governance controls. Real payload lives in referenced bundles already in Project Files.",
+    "active_modules": {
+      "PROMOTED": [
+        "BootGuard_Preflight",
+        "AutoDeltaGate_OnUpload",
+        "DeltaGate (runtime kit)",
+        "ContextMemoryEngine",
+        "ReasoningHorizonsEngine",
+        "MOCD (MetaBlooms Operating Context Declaration)",
+        "LOC (LLM Operator Contract)",
+        "GovControls:AuthorityIllusionPenalty_v1",
+        "GovControls:EpistemicMemoryMetadata_v1"
+      ],
+      "STAGED": [
+        "GovControls:RoleDriftFlagger_v1",
+        "GovControls:BehavioralEnvelopeWarnings_v1",
+        "StrategyBrainEngine (advisor-only)",
+        "ExecutiveFunctionEngine (needs proving runs)"
+      ],
+      "DISCARDED_THIS_CYCLE": [
+        "GovControls:SemanticRegressionChecks_v1 (no-evidence gate)"
+      ]
+    },
+    "governance_contracts": {
+      "MOCD": {
+        "identity": "MetaBlooms OS is a governance/control system; LLM outputs are advisory.",
+        "non_negotiables": [
+          "separate_intelligence_from_authority",
+          "delta_based_evolution",
+          "bounded_autonomy",
+          "governance_over_confidence"
+        ]
+      },
+      "LOC": {
+        "role": "LLM acts as judgment provider, not decision-maker.",
+        "forbidden_assumptions": [
+          "implicit_execution",
+          "ungated_memory_writes",
+          "model_is_authority"
+        ],
+        "required_posture": [
+          "propose_dont_execute",
+          "declare_scope",
+          "surface_assumptions"
+        ]
+      }
+    },
+    "gov_controls_v1": {
+      "status": "AuthorityIllusionPenalty + EpistemicMemoryMetadata PROMOTED; RoleDrift + BehavioralEnvelope remain STAGED; SemanticRegression excluded.",
+      "promoted": {
+        "AuthorityIllusionPenalty_v1": {
+          "signals": [
+            "definitive_language_without_evidence",
+            "execution_assumption",
+            "implicit_authority_claim"
+          ],
+          "scoring_adjustment": {
+            "unsupported_certainty": -10
+          },
+          "enforcement": "none (scoring only)"
+        },
+        "EpistemicMemoryMetadata_v1": {
+          "memory_entry_fields": [
+            "confidence",
+            "provenance",
+            "timestamp_utc"
+          ],
+          "defaults": {
+            "llm_inferred": {
+              "confidence": "low",
+              "provenance": "llm"
+            }
+          },
+          "enforcement": "none (metadata only)"
+        }
+      },
+      "staged": {
+        "RoleDriftFlagger_v1": {
+          "signals": [
+            "decision_language",
+            "execution_language",
+            "speaking_for_user"
+          ],
+          "action": "flag_only"
+        },
+        "BehavioralEnvelopeWarnings_v1": {
+          "signals": [
+            "scope_expansion",
+            "strategy_injection",
+            "policy_without_request"
+          ],
+          "action": "log_warning_only"
+        }
+      }
+    },
+    "run_commands": {
+      "mb:status": "Print active pack + promoted/staged + last decisions",
+      "mb:contract": "Print MOCD + LOC (operator rules) for any LLM/operator",
+      "mb:gov": "Show promoted/staged governance controls + signals + scoring impacts",
+      "mb:os-audit": "Audit project pack integrity + missing pieces"
+    },
+    "next_move": "Observe staged signals (RoleDrift, BehavioralEnvelope) during normal use; re-run probe sweep later to calibrate thresholds before any enforcement."
+  }
+}
