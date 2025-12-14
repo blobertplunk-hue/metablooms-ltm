@@ -1,0 +1,96 @@
+{
+  "mips": {
+    "artifact_id": "MB__07_DELTA__BootHeader_LintAndRewrite_v1",
+    "version": "v1",
+    "timestamp_utc": "2025-12-14T00:41:29Z",
+    "content_type": "application/json",
+    "councils": [
+      "Governance",
+      "Auditor",
+      "Synthesizer"
+    ],
+    "audit": "construct",
+    "links": {
+      "depends_on": "MB__06_RULE__ExecutionSurface_Clarification_v1.mips.json",
+      "targets": [
+        "MB__00_SENTINEL__ACTIVE_STATE.txt",
+        "MB__01_COREPACK__GovHardening_v7__2025-12-13.mips.json"
+      ]
+    },
+    "evidence_chain": [
+      "downstream_llm_drift_prevention",
+      "boot_header_ambiguity_fix"
+    ],
+    "sha256_body": "d0770a3a09ecbdfe3cfd4957dd7caad988796798a2017797a79ef5d6b32ec75a"
+  },
+  "body": {
+    "delta_id": "DELTA_BOOTHEADER_LINT_REWRITE_v1",
+    "type": "governance_lint",
+    "priority": "P1",
+    "status": "STAGED",
+    "goal": "Make downstream LLMs reliably present the correct authority/execution separation and auto-correct incorrect boot headers before they propagate.",
+    "patches": [
+      {
+        "target": "MB__00_SENTINEL__ACTIVE_STATE.txt",
+        "patch_type": "append_block_if_missing",
+        "block_id": "BOOT_HEADER_SURFACES_V1",
+        "block_text": [
+          "EXECUTION SURFACE: Conversational LLM Interface (non-authoritative)",
+          "AUTHORITY SURFACE: MetaBlooms Governance Spine (file-backed)",
+          "",
+          "NOTE: Vendor UI names (Claude.ai/ChatGPT/etc.) describe the execution surface only and never imply authority."
+        ]
+      },
+      {
+        "target": "MB__01_COREPACK__GovHardening_v7__2025-12-13.mips.json",
+        "patch_type": "add_section",
+        "section_path": "content.run_commands",
+        "add_fields": {
+          "mb:bootlint": "Lint + rewrite any boot/status header to conform to MB__06_RULE__ExecutionSurface_Clarification_v1",
+          "mb:header": "Emit canonical boot/status header template (copy/paste-safe) with surfaces separated"
+        }
+      }
+    ],
+    "bootlint_spec": {
+      "inputs": [
+        "candidate_header_text"
+      ],
+      "outputs": [
+        "rewritten_header_text",
+        "violations_detected[]"
+      ],
+      "rules": [
+        {
+          "if_contains": "EXECUTION SURFACE: Claude.ai chat interface",
+          "rewrite_to": "EXECUTION SURFACE: Conversational LLM Interface (Claude.ai)"
+        },
+        {
+          "if_missing": "AUTHORITY SURFACE:",
+          "insert_lines_after_execution_surface": [
+            "AUTHORITY SURFACE: MetaBlooms Governance Spine (file-backed)"
+          ]
+        },
+        {
+          "if_contains_any": [
+            "I executed",
+            "I ran",
+            "I accessed your system",
+            "I changed your files"
+          ],
+          "action": "reject_and_require_rephrase"
+        },
+        {
+          "if_contains": "BOOT COMPLETE",
+          "rewrite_to": "BOOT VERIFIED (files present + contracts loaded)"
+        }
+      ],
+      "notes": "This is a conversational lint/rewrite (no tool execution). It is intended to be applied to any future status reports produced by any LLM."
+    },
+    "acceptance_tests": [
+      "Given a boot header containing 'EXECUTION SURFACE: Claude.ai chat interface', output rewrites it to 'Conversational LLM Interface (Claude.ai)' and adds the Authority Surface line.",
+      "Given a header containing execution-claim language, lint rejects and requests rephrase.",
+      "A downstream LLM can copy/paste the canonical header and remain LOC-compliant."
+    ],
+    "rollback": "Remove appended sentinel block; remove mb:bootlint and mb:header command entries. No other state changes."
+  }
+}
