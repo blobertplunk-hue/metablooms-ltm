@@ -1,0 +1,100 @@
+{
+  "MIPS": {
+    "artifact_id": "2025-12-13_MetaBlooms_DELTA_MobileFilenameFrontload_v1",
+    "parent_bundle": "MetaBlooms_ProjectFiles_CorePack_v7_GovHardening_20251213T185500Z.mips.json",
+    "version": "1.0",
+    "timestamp_utc": "2025-12-13T22:42:41Z",
+    "councils": [
+      "Auditor",
+      "Archivist",
+      "UX",
+      "Governance"
+    ],
+    "content_type": "application/json",
+    "links": [],
+    "evidence_chain": [
+      "mobile_ui_truncation_observed"
+    ],
+    "sha256": "16d2b8d8ae031ab9685ba09666e74ec17a6d0feb84b31beb8f95d1e1e7480eb2"
+  },
+  "body": {
+    "delta_id": "DELTA_MOBILE_FILENAME_FRONTLOAD_CONTRACT_v1",
+    "type": "governance_ux",
+    "priority": "P1",
+    "status": "STAGED",
+    "title": "Mobile Filename Frontload Contract (Android Project Files UI)",
+    "problem": {
+      "symptom": "Android Project Files list truncates filenames, making multiple .mips.json files indistinguishable at a glance.",
+      "impact": [
+        "increases selection errors (upload/replace wrong file)",
+        "breaks 'cavemen with power tools' usability constraint",
+        "adds hesitation friction during routine ops"
+      ]
+    },
+    "solution": {
+      "contract": [
+        "All Project Files MUST have first 24 characters unique and semantic.",
+        "Filenames MUST start with a stable slot prefix: MB__00, MB__01, MB__03, MB__90, etc.",
+        "Meaning must be front-loaded (do not rely on suffix timestamps).",
+        "Sentinel remains source of truth; filenames exist to reduce mobile friction."
+      ],
+      "recommended_slots": [
+        {
+          "slot": "MB__00",
+          "meaning": "Active State / Sentinel (source of truth pointer)"
+        },
+        {
+          "slot": "MB__01",
+          "meaning": "Active CorePack"
+        },
+        {
+          "slot": "MB__03",
+          "meaning": "External Intel / inputs (append-only)"
+        },
+        {
+          "slot": "MB__90",
+          "meaning": "Archives / optional bundles"
+        }
+      ],
+      "rename_plan": [
+        {
+          "from": "MetaBlooms_ProjectFiles_CorePack_v7_GovHardening_20251213T185500Z.mips.json",
+          "to": "MB__01_COREPACK_v7_GOVHARD.mips.json"
+        },
+        {
+          "from": "2025-12-13_MetaBlooms_ExternalIntel_Sweep_GovAI_v1_1.mips.json",
+          "to": "MB__03_EXTINTEL_GovAI_v1_1.mips.json"
+        },
+        {
+          "from": "MetaBlooms_BUNDLE_PersistenceBoundary_20251213T162852Z.zip",
+          "to": "MB__90_ARCHIVE_PersistBoundary.zip"
+        },
+        {
+          "from": "MB__ACTIVE_STATE__READ_ME__v7_REPLACE_ME.txt",
+          "to": "MB__00_ACTIVE_STATE_README.txt"
+        }
+      ]
+    },
+    "integration_points": [
+      {
+        "target": "CorePack (next build)",
+        "add": "Project Files Naming Contract section + slot prefixes as canonical names"
+      },
+      {
+        "target": "Active State Sentinel",
+        "add": "One-line rule: 'Mobile UI truncates filenames; trust slot prefixes MB__00/01/03/90.'"
+      }
+    ],
+    "validation": {
+      "checks": [
+        "In Android Project Files list view, each file is uniquely identifiable from the left/truncated portion.",
+        "User can tell CorePack vs External Intel without opening files."
+      ],
+      "rollback": "Revert filenames; no content changes required."
+    },
+    "provenance": {
+      "source": "User observed mobile UI truncation ambiguity; prior chat solution not captured into Delta.",
+      "timestamp_utc": "2025-12-13T22:42:41Z"
+    }
+  }
+}
