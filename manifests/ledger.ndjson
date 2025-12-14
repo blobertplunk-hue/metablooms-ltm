@@ -10,3 +10,4 @@
 {"ts":"2025-12-14T21:31:08Z","path":"deltas/2025-12/MetaBlooms_ProjectFiles_CorePack_v4_REFINED_20251213T161427Z.mips.json","sha256":"c4e769c562b196f13892cf0aa92947fa1a7e1e5f76b3503b4e59cbe274b102d7","bytes":2847}
 {"ts":"2025-12-14T21:31:10Z","path":"deltas/2025-12/MetaBlooms_DELTA_AutonomousExecution_ExeMode_20251213T155037Z.mips.json","sha256":"8ef2c443a9adc01424522767e3cf31327daa41c24445aa19e2aeba356b3ab222","bytes":3615}
 {"ts":"2025-12-14T21:31:13Z","path":"deltas/2025-12/MetaBlooms_ProjectFiles_CorePack_v5_PROMOTE2_20251213T161953Z.mips.json","sha256":"0644f58818aaacd8bb68355cb9047ed0aef2e0c8aedf9742cc52056a26a6ebed","bytes":1583}
+{"ts":"2025-12-14T21:31:15Z","path":"deltas/2025-12/MetaBlooms_DELTA_PromotedFromOldOS_Slices_20251213T172423Z.mips.json","sha256":"794479de61417ac245bf3cfb0a6e7437f7c60b830a3ef72e31020624b4b658f8","bytes":3152}

@@ -1,0 +1,117 @@
+{
+  "mips_header": {
+    "artifact_id": "MetaBlooms_DELTA_PromotedFromOldOS_Slices_20251213T172423Z",
+    "parent_bundle": null,
+    "version": "1.0",
+    "timestamp_utc": "2025-12-13T17:25:50Z",
+    "content_type": "metablooms.delta.promote",
+    "councils": [
+      "Facilitator",
+      "Auditor",
+      "Recorder",
+      "Teacher",
+      "Hacker"
+    ],
+    "audit": "construct",
+    "links": []
+  },
+  "body": {
+    "delta_id": "PROMOTE_OLD_OS_SLICES_20251213T172423Z",
+    "scope": "governance+ui+execution",
+    "changes": [
+      {
+        "type": "governance_rule",
+        "id": "PERSISTENCE_TRUTH_TABLE",
+        "add": {
+          "persisted_only_if": "user_uploaded_to_project_files",
+          "labels_required": [
+            "PERSISTED",
+            "EPHEMERAL"
+          ],
+          "forbid_claims_without_evidence": true
+        }
+      },
+      {
+        "type": "governance_rule",
+        "id": "STABLE_SENTINEL_FILENAME",
+        "add": {
+          "stable_filename": "MB__ACTIVE_STATE__READ_ME.txt",
+          "meaning": "Always current truth; contents define active state; timestamps live inside contents.",
+          "shipping_rule": "Every delivered bundle must include refreshed sentinel."
+        }
+      },
+      {
+        "type": "ui_rule",
+        "id": "MOBILE_SAFE_PREFIXES",
+        "add": {
+          "prefix_format": "MB[TYPE][STATE]__short__YYYYMMDD.ext",
+          "types": [
+            "CORE",
+            "BUNDLE",
+            "DELTA",
+            "TOOLKIT",
+            "ARCHIVE"
+          ],
+          "states": [
+            "LIVE",
+            "LOCK",
+            "STAGE",
+            "OPTIN"
+          ]
+        }
+      },
+      {
+        "type": "governance_rule",
+        "id": "SLOT_DISCIPLINE",
+        "add": {
+          "target_files_total": 5,
+          "recommended_set": [
+            "MB__ACTIVE_STATE__READ_ME.txt",
+            "MB[CORE][LIVE]...",
+            "MB[BUNDLE][LOCK]...",
+            "optional toolkit",
+            "optional archive"
+          ]
+        }
+      },
+      {
+        "type": "execution_rule",
+        "id": "EXE_MODE_MB_COMMANDS",
+        "add": {
+          "trigger_prefix": "mb:",
+          "clarifying_questions": "forbidden",
+          "allowed_stops": [
+            "missing_required_input",
+            "safety_violation"
+          ],
+          "default": "run→ship→report"
+        }
+      },
+      {
+        "type": "governance_rule",
+        "id": "BURDEN_TRANSFER_PRINCIPLE",
+        "add": {
+          "rule": "If user corrects same category twice, that category becomes autonomous.",
+          "examples": [
+            "persistence boundary",
+            "download vs inline fallback",
+            "file naming"
+          ]
+        }
+      }
+    ],
+    "rollback": {
+      "method": "remove rules by id; revert to prior naming scheme; keep sentinel optional",
+      "safe": true
+    },
+    "validation": {
+      "checks": [
+        "sentinel present",
+        "all shipped artifacts have mobile-safe prefix",
+        "report labels persisted vs ephemeral",
+        "project slot plan <=5"
+      ],
+      "status": "DRY_RUN_PASS (logic only)"
+    }
+  }
+}
