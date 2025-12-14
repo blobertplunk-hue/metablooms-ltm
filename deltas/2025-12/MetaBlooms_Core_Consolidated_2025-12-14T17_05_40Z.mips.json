@@ -1,0 +1,21 @@
+{
+  "os_id": "MB__02_OS__MetaBlooms_Core__ACTIVE",
+  "build_date_utc": "2025-12-14T14:53:38Z",
+  "principle": "Project Files are executable truth. OS state is derived automatically from files.",
+  "integrated_deltas": {
+    "governance": [
+      "MB__01_DELTA__AutoDeltaReconciler_v1",
+      "MB__03_DELTA__NegativeKnowledgeCapture_v1"
+    ],
+    "reasoning": [
+      "MB__03_DELTA__DDSR_ReasoningMode_v1"
+    ],
+    "teaching_workflows": [
+      "2025-12-14_MB__DELTA__COLO_WallPosters_FromWeeklyOutline_v1",
+      "MB_DELTA_IPS_HTML_FromWeeklyOutline_v1",
+      "2025-12-14_MB__DELTA__IPS_OnePager_MaxFont_OnePage_v1",
+      "MB__03_DELTA__WeeklyDriveExportAndZip_v1"
+    ]
+  },
+  "sha256": "90e4f93e0dacefc6474ae2ef0ee05777ba97ac4a55fa6f3cd67dd8e01acceb9f"
+}
