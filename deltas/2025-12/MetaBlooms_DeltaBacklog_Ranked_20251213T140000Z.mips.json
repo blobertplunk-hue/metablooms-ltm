@@ -1,0 +1,379 @@
+{
+  "mips": {
+    "artifact_id": "MetaBlooms_DeltaBacklog_Ranked_20251213T140000Z",
+    "version": "1.0",
+    "timestamp_utc": "2025-12-13T14:00:00Z",
+    "content_type": "application/json",
+    "links": {
+      "source_decisions": "sandbox:/mnt/data/MetaBlooms_DeltaGate_Decisions_20251213T133109Z.mips.json"
+    },
+    "sha256_body": "43d539f765b7df05c56d64f7832cfb8f49ef1c9278031181030dd6ea84463985"
+  },
+  "content": {
+    "generated_at": "2025-12-13T14:00:00Z",
+    "source": "MetaBlooms_DeltaGate_Decisions_20251213T133109Z.mips.json",
+    "ranking_method": "heuristic_score_v1 (status base + keyword boosts - stub penalties)",
+    "items": [
+      {
+        "score": 71,
+        "status": "staged",
+        "artifact_id": "MetaBlooms_OS_v17_1_MetaAwarenessEngine.delta",
+        "title": "Delta 10 — Install Meta-Awareness Engine: recursive introspection, runtime self-modeling, predictive stability heuristics, and execution-con",
+        "delta_type": "meta_awareness_upgrade",
+        "reason_not_implemented": "large architectural module; enable after integration test",
+        "recommendation": "Promote to ACTIVATED after integration test"
+      },
+      {
+        "score": 71,
+        "status": "staged",
+        "artifact_id": "MetaBlooms_OS_v17_3_LongTermContinuityEngine.delta",
+        "title": "Delta 12 — Install Long-Term Continuity Engine (LCE): multi-snapshot lineage stitching, drift prevention, state compression, and long-horizo",
+        "delta_type": "long_term_continuity_upgrade",
+        "reason_not_implemented": "large architectural module; enable after integration test",
+        "recommendation": "Promote to ACTIVATED after integration test"
+      },
+      {
+        "score": 65,
+        "status": "staged",
+        "artifact_id": "MetaBlooms_OS_v17_2_ContextMemoryEngine.delta",
+        "title": "Delta 11 — Install Context Memory Engine (CME): cross-session awareness bridge, snapshot loader, and reconstruction logic.",
+        "delta_type": "context_memory_upgrade",
+        "reason_not_implemented": "large architectural module; enable after integration test",
+        "recommendation": "Promote to ACTIVATED after integration test"
+      },
+      {
+        "score": 65,
+        "status": "staged",
+        "artifact_id": "MetaBlooms_OS_v17_4_ReasoningHorizonsEngine.delta",
+        "title": "Delta 13 — Install Reasoning Horizons Engine (RHE): long-horizon goal maintenance, multi-turn cognitive stability, and deep-sequence reasoni",
+        "delta_type": "reasoning_horizons_upgrade",
+        "reason_not_implemented": "large architectural module; enable after integration test",
+        "recommendation": "Promote to ACTIVATED after integration test"
+      },
+      {
+        "score": 65,
+        "status": "staged",
+        "artifact_id": "MetaBlooms_OS_v17_5_StrategyBrainEngine.delta",
+        "title": "Delta 14 — Install Strategy Brain Engine (SBE): branching futures, multi-path planning, decision trees, prioritization engine, and strategic",
+        "delta_type": "strategy_brain_upgrade",
+        "reason_not_implemented": "large architectural module; enable after integration test",
+        "recommendation": "Promote to ACTIVATED after integration test"
+      },
+      {
+        "score": 65,
+        "status": "staged",
+        "artifact_id": "MetaBlooms_OS_v17_6_ExecutiveFunctionEngine.delta",
+        "title": "Delta 15 — Install Executive Function Engine (EFE): execution control, guardrails, action scheduling, and consistency enforcement for plans ",
+        "delta_type": "executive_function_upgrade",
+        "reason_not_implemented": "large architectural module; enable after integration test",
+        "recommendation": "Promote to ACTIVATED after integration test"
+      },
+      {
+        "score": 63,
+        "status": "recorded",
+        "artifact_id": "MetaBlooms_OS_v2_37_TwoLayer_CognitiveFusion.delta",
+        "title": "Delta v2.37 — Convert v2.36 NSV4 Unified OS into explicit two-layer logic: StructureLayer (governance/schema/context/evidence) + CognitiveLa",
+        "delta_type": "two_layer_cognitive_fusion",
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 61,
+        "status": "recorded",
+        "artifact_id": "MetaBlooms_OS_v16_9_KGE20_StrategicAtoms.delta",
+        "title": "Delta 2 — Validate and bind Strategic Nexus KnowledgeAtoms to KGE-20 runtime and corpus.",
+        "delta_type": "knowledge_integration",
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "2025-12-12_MetaBlooms_DeltaPack_CONSOLIDATED_WiringManifest_P0.mips.json",
+        "title": null,
+        "delta_type": null,
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "DeltaPack_HTML_MegaLesson_RuntimeShell",
+        "title": null,
+        "delta_type": null,
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "DELTAS/DELTAS/MetaBlooms_DeltaPack_v16_7_to_v16_15.mips.json#0",
+        "title": null,
+        "delta_type": null,
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "DELTAS/DELTAS/MetaBlooms_DeltaPack_v16_7_to_v16_15.mips.json#1",
+        "title": null,
+        "delta_type": null,
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "DELTAS/DELTAS/MetaBlooms_DeltaPack_v16_7_to_v16_15.mips.json#2",
+        "title": null,
+        "delta_type": null,
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "DELTAS/DELTAS/MetaBlooms_DeltaPack_v16_7_to_v16_15.mips.json#3",
+        "title": null,
+        "delta_type": null,
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "DELTAS/DELTAS/MetaBlooms_DeltaPack_v16_7_to_v16_15.mips.json#4",
+        "title": null,
+        "delta_type": null,
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "DELTAS/DELTAS/MetaBlooms_DeltaPack_v16_7_to_v16_15.mips.json#5",
+        "title": null,
+        "delta_type": null,
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "DELTAS/DELTAS/MetaBlooms_DeltaPack_v16_7_to_v16_15.mips.json#6",
+        "title": null,
+        "delta_type": null,
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "DELTAS/DELTAS/MetaBlooms_DeltaPack_v16_7_to_v16_15.mips.json#7",
+        "title": null,
+        "delta_type": null,
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "MetaBlooms_CSM_v1_1_Delta",
+        "title": null,
+        "delta_type": null,
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "MetaBlooms_OS_Delta_PythonEngine_v1.1_vOmegaC",
+        "title": null,
+        "delta_type": null,
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "2025-12-02_BridgeEngine_v1_Delta",
+        "title": null,
+        "delta_type": null,
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "MetaBlooms_OS_vOmega24_5_Delta_ToolAutoRegister_RiskAware",
+        "title": null,
+        "delta_type": null,
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "2025-12-06_MTSS_SystemPatterns_Unification_DeltaPack",
+        "title": null,
+        "delta_type": null,
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "DeltaPack_DiagnosticBehavior_v1",
+        "title": null,
+        "delta_type": null,
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "2025-12-11_MetaBlooms_OS_vOmega25_Calibrated_Delta",
+        "title": null,
+        "delta_type": null,
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "MetaBlooms_OS_DeltaAutoload_Spec_v1",
+        "title": null,
+        "delta_type": null,
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "ExternalMemory_DriveSync_Delta_v1",
+        "title": null,
+        "delta_type": null,
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "MetaBlooms_HybridKernel_v11_Omega20_Delta_v1",
+        "title": null,
+        "delta_type": null,
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "MetaBlooms_OS_DeltaBundle_fromChat",
+        "title": null,
+        "delta_type": null,
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "OSDelta_LayeredBuildProtocol_v1",
+        "title": null,
+        "delta_type": null,
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "OSDelta_DealIntelligenceEngine_v1_0",
+        "title": "Adds DealIntelligenceEngine_v1_0 cognitive module for global deal discovery and real-time price intelligence.",
+        "delta_type": null,
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "OSDelta_OSExportEngine_v1",
+        "title": "Adds OSExportEngine_v1 and ExportSOP so the OS can generate full, updated OS snapshots by applying deltas to the canonical base OS, then emi",
+        "delta_type": null,
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "MetaBlooms_OS_v16_8_KGE20_Install.delta",
+        "title": "Delta 1 — Install and wire KGE-20 into OS v16.7.",
+        "delta_type": "os_module_integration",
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "MetaBlooms_OS_v16_10_WCI_KGE20_Link.delta",
+        "title": "Delta 3 — Bind WCI evaluator to KGE-20 KnowledgeAtom metrics.",
+        "delta_type": "evaluator_integration",
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "MetaBlooms_OS_v16_11_AgentRing_KGE20_DeepBind.delta",
+        "title": "Delta 4 — Deep integration of AgentRing with KGE-20 atoms, WCI scoring, and Juicer pipeline.",
+        "delta_type": "agent_integration",
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "MetaBlooms_OS_v2.37_Fusion_Delta",
+        "title": "Lean, honest fusion delta that extends v2.36 with vNext CORE modules without padding.",
+        "delta_type": "fusion_extension",
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 55,
+        "status": "recorded",
+        "artifact_id": "MetaBlooms_OS_v11_Delta_AllIntegrated",
+        "title": "MetaBlooms OS v11 integrated delta pack — merges governance, pedagogy, HTML/TTS, Bingo, ArtFusion, AlgorithmicEfficiency, CurriculumPipeline",
+        "delta_type": null,
+        "reason_not_implemented": "not directly tied to current goal; kept for future mining",
+        "recommendation": "Mine & slice into safe atoms, then run DeltaGate"
+      },
+      {
+        "score": 2,
+        "status": "blocked",
+        "artifact_id": "2025-12-12_ToolEngine_ValidatorReporter_ManifestValidator_Integration_Delta_P0",
+        "title": null,
+        "delta_type": null,
+        "reason_not_implemented": "contains placeholder/todo/stub",
+        "recommendation": "Quarantine; fix stubs/placeholders before reconsidering"
+      },
+      {
+        "score": 2,
+        "status": "blocked",
+        "artifact_id": "MetaBlooms_OS_vOmega24_4_Delta_PythonToolEngine_TimeEngines",
+        "title": null,
+        "delta_type": null,
+        "reason_not_implemented": "contains placeholder/todo/stub",
+        "recommendation": "Quarantine; fix stubs/placeholders before reconsidering"
+      },
+      {
+        "score": 2,
+        "status": "blocked",
+        "artifact_id": "MetaBlooms_OS_v10_TeachingEngine_Delta_2025-12-01",
+        "title": "Teaching Engine + HTML/Bingo upgrade delta: integrates external Δ1–Δ15 HTML teaching rules and adds second-opinion deltas for Bingo gameplay",
+        "delta_type": null,
+        "reason_not_implemented": "contains placeholder/todo/stub",
+        "recommendation": "Quarantine; fix stubs/placeholders before reconsidering"
+      }
+    ]
+  }
+}
