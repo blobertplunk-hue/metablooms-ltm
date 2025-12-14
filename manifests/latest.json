@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-14T21:32:59Z",
+  "generated_utc": "2025-12-14T21:33:01Z",
   "items": [
+    {
+      "ts": "2025-12-14T21:33:01Z",
+      "path": "deltas/2025-12/MB__99_INDEX__RecoveryPack__2025-12-14T210652Z.txt",
+      "sha256": "2f61d6eacf105198dbe11d2c2955a99474ec088a8a1fbbbdcecbb483360fecc3",
+      "bytes": 2649
+    },
     {
       "ts": "2025-12-14T21:32:59Z",
       "path": "deltas/2025-12/2025-12-14_MB__AUDIT__GovExecDiscipline_v1.mips.md",
@@ -144,12 +150,6 @@
       "path": "deltas/2025-12/MB__05_RULE_FileFirst_Default_v1.mips.json",
       "sha256": "b9cb73aad2acad92383e98cd04dcdf973c99beab0f7a36a62ca3a26a7b28f03b",
       "bytes": 1350
-    },
-    {
-      "ts": "2025-12-14T21:32:08Z",
-      "path": "deltas/2025-12/2025-12-13_MetaBlooms_DELTA_MobileFilenameFrontload_v1.mips.json",
-      "sha256": "50955079cedefba24ca8a6c881398a7b44c8542ddf489ed8ec0c9911689a9bb2",
-      "bytes": 3504
     }
   ]
 }
