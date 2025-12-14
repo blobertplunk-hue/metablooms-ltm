@@ -1,0 +1,201 @@
+{
+  "mips_header": {
+    "artifact_id": "MetaBlooms_UI_DailyInterface_v1",
+    "version": "1.0",
+    "timestamp_utc": "2025-12-13T12:41:42Z",
+    "content_type": "application/json",
+    "parent_bundle": "ACTIVE_PROJECT_FILES",
+    "councils": [
+      "Execution",
+      "Audit",
+      "Governance",
+      "Teacher"
+    ],
+    "sha256": "495b0179bff9f6d1dd8e9a52422706376521cc9c6cbd91ac96d07cf144e4641d",
+    "evidence_chain": [
+      "boot_authority:project_files",
+      "delta_stack:explicit",
+      "goal:one-line-ops"
+    ],
+    "links": []
+  },
+  "purpose": "Daily Interface Commands (DIC) — a tiny command contract so the operator can query the booted MetaBlooms state in one line. Includes Plug-and-Play Delta protocol (DeltaGate) for auto-ingest + auto-apply when ROI + necessity gates pass.",
+  "scope": {
+    "authority_source": "/mnt/data Project Files",
+    "bootloader": "MetaBlooms_PROJECT_INDEX_P0.mips.json",
+    "deltas": "MetaBlooms_DELTA_*.mips.json",
+    "receipts": "*_MANIFEST.json",
+    "deploy_bundles": "MetaBlooms_DEPLOY_*.zip"
+  },
+  "commands": [
+    {
+      "cmd": "mb:status",
+      "intent": "Show authoritative boot state: Project Index, boot packs in order, applied deltas, last deploy receipt.",
+      "outputs": [
+        "boot_stack",
+        "delta_stack",
+        "last_manifest",
+        "warnings"
+      ]
+    },
+    {
+      "cmd": "mb:health",
+      "intent": "Run BootGuard gates + DOTA invariants and return PASS/FAIL with actionable next step.",
+      "checks": [
+        "BG-0..BG-4 (authority/boot/exists/integrity/delta-stack)",
+        "DOTA invariants (auto-ingest, dedup, stub policy, shadow guard)"
+      ],
+      "outputs": [
+        "PASS|FAIL",
+        "missing_files",
+        "hash_mismatches",
+        "policy_violations",
+        "next_action"
+      ]
+    },
+    {
+      "cmd": "mb:recent",
+      "intent": "List the 15 most recent Project Files artifacts with sha256 and role hints.",
+      "outputs": [
+        "recent_files[]"
+      ]
+    },
+    {
+      "cmd": "mb:deltas",
+      "intent": "List all DELTAs present, grouped by type (runtime/policy/tooling), and show which are 'auto-apply eligible' under DeltaGate.",
+      "outputs": [
+        "deltas_by_kind",
+        "auto_apply_candidates"
+      ]
+    },
+    {
+      "cmd": "mb:apply-delta",
+      "intent": "Evaluate a candidate delta file under DeltaGate and, if it passes, mark as Applied in a new receipt (manifest) and update active stack notes.",
+      "inputs": [
+        "delta_filename"
+      ],
+      "outputs": [
+        "decision",
+        "reasons",
+        "receipt_artifact"
+      ]
+    },
+    {
+      "cmd": "mb:deploy",
+      "intent": "Create a clean deploy bundle (packs + applied deltas) plus manifest, excluding ARTIFACTS.",
+      "inputs": [
+        "mode=clean|full",
+        "label(optional)"
+      ],
+      "outputs": [
+        "deploy_zip",
+        "deploy_manifest"
+      ]
+    },
+    {
+      "cmd": "mb:rollback",
+      "intent": "Rollback an applied delta by producing a rollback receipt and recommending removal/disable path (never deletes files automatically).",
+      "inputs": [
+        "delta_filename"
+      ],
+      "outputs": [
+        "rollback_receipt",
+        "operator_steps"
+      ]
+    }
+  ],
+  "delta_gate": {
+    "name": "DeltaGate (Plug-and-Play Delta Protocol)",
+    "goal": "Deltas must be self-validating, better-than-current, necessary-or-additive, and reversible. If they pass, they are treated as working automatically (applied stack).",
+    "decision_questions": [
+      {
+        "id": "DG-1",
+        "q": "Is this delta strictly better than the current behavior it touches?",
+        "pass_criteria": "Includes measurable improvement or reduces risk/effort; does not regress baseline capabilities."
+      },
+      {
+        "id": "DG-2",
+        "q": "Does this delta add a needed capability we cannot do today (or cannot do safely/reliably)?",
+        "pass_criteria": "Adds missing function OR adds reliability/safety gate that eliminates known failure mode."
+      },
+      {
+        "id": "DG-3",
+        "q": "Is the delta plug-and-play (self-contained) with explicit integration points?",
+        "pass_criteria": "Declares applies_to, touched_modules, expected outputs, and does not require manual patching of unrelated files."
+      },
+      {
+        "id": "DG-4",
+        "q": "Does the delta include its own validator (or bind to an existing validator) and show PASS on preflight?",
+        "pass_criteria": "validator_spec present OR validator_binding present; a preflight run returns PASS or explains FAIL deterministically."
+      },
+      {
+        "id": "DG-5",
+        "q": "Is rollback safe and explicit?",
+        "pass_criteria": "Rollback section present with operator steps; delta is additive/overlay (no destructive edits)."
+      }
+    ],
+    "scoring": {
+      "scale": "0-100",
+      "weights": {
+        "necessity": 30,
+        "improvement": 25,
+        "safety": 20,
+        "self_validation": 15,
+        "rollback": 10
+      },
+      "auto_apply_threshold": 80,
+      "auto_reject_threshold": 49
+    },
+    "required_delta_fields": [
+      "mips_header",
+      "delta_kind",
+      "delta_name",
+      "applies_to",
+      "changes[]",
+      "validation",
+      "rollback"
+    ],
+    "auto_apply_policy": {
+      "rule": "If DG-1..DG-5 all pass AND score >= auto_apply_threshold, treat the delta as Applied immediately (receipt generated).",
+      "receipt": {
+        "type": "MANIFEST/RECEIPT",
+        "name_pattern": "MetaBlooms_RECEIPT_AppliedDelta_{delta_id}_{timestamp}.json",
+        "contents": [
+          "delta_filename",
+          "sha256",
+          "decision",
+          "scores",
+          "gates",
+          "boot_stack_ref"
+        ]
+      },
+      "operator_override": {
+        "allow": true,
+        "notes": "Operator may force apply or force reject; system must log override reason in receipt."
+      }
+    }
+  },
+  "usage_examples": [
+    {
+      "say": "mb:status",
+      "expect": "Boot stack + applied deltas from Project Files (authoritative)."
+    },
+    {
+      "say": "mb:health",
+      "expect": "PASS/FAIL with next action; no guessing."
+    },
+    {
+      "say": "mb:apply-delta MetaBlooms_DELTA_BootGuard_Preflight_*.mips.json",
+      "expect": "DeltaGate evaluation + apply receipt if passes."
+    },
+    {
+      "say": "mb:deploy mode=clean label=weekly",
+      "expect": "Deploy ZIP + manifest, no ARTIFACTS."
+    }
+  ],
+  "operator_rules": [
+    "Authority-first: never accept inferred state when Project Files exist.",
+    "Deltas are overlays: never destructively edit packs; evolve via append-only deltas.",
+    "Every apply/rollback creates a receipt artifact (manifest)."
+  ]
+}
