@@ -1,0 +1,366 @@
+{
+  "mips_header": {
+    "artifact_id": "MetaBlooms_OldOS_MineReport_20251213T171845Z",
+    "parent_bundle": "PACKSALL.zip",
+    "version": "v1",
+    "timestamp_utc": "20251213T171845Z",
+    "content_type": "application/json+mips",
+    "councils": [
+      "Facilitator",
+      "Auditor",
+      "Archivist",
+      "Synth"
+    ],
+    "audit": "construct",
+    "links": {
+      "source_zip": "PACKSALL.zip"
+    }
+  },
+  "body": {
+    "objective": "Mine old MetaBlooms OS bundles for high-ROI upgrades not currently active; rank and propose integration path.",
+    "inputs": {
+      "zip_scanned": "PACKSALL.zip",
+      "files_seen": 90,
+      "signals": "keyword heuristic scan of config/docs/code within nested zips; first 64KB text scoring."
+    },
+    "current_active_engines": [
+      "MetaAwarenessEngine",
+      "LongTermContinuityEngine"
+    ],
+    "ranked": {
+      "integrate": [
+        {
+          "outer": "PACKSALL.zip",
+          "inner": "2025-11-27_MetaBlooms_ChatSnapshot_Burndown_HostileSOP_v1.mips.json",
+          "score": 41,
+          "hits": {
+            "persistence": 2,
+            "delta_gate": 2,
+            "sandcrawler": 3,
+            "validators": 3,
+            "termux": 3,
+            "ux_mobile": 3
+          },
+          "size_bytes": 6349,
+          "priority": null,
+          "class": "INTEGRATE"
+        },
+        {
+          "outer": "2025-12-12_MetaBlooms_PackSmith_Compiler_v1_bundle.zip",
+          "inner": "2025-12-12_MetaBlooms_OS_CORE_PACK_P0.mips.json",
+          "score": 36,
+          "hits": {
+            "persistence": 3,
+            "delta_gate": 4,
+            "sandcrawler": 3,
+            "validators": 5,
+            "termux": 1
+          },
+          "size_bytes": 158775,
+          "priority": null,
+          "class": "INTEGRATE"
+        },
+        {
+          "outer": "MetaBlooms_OS_v10_CompleteBundle.zip",
+          "inner": "MetaBlooms_OS_v10_FULL.mips.json",
+          "score": 35,
+          "hits": {
+            "persistence": 1,
+            "delta_gate": 3,
+            "sandcrawler": 3,
+            "validators": 5,
+            "termux": 3
+          },
+          "size_bytes": 87609,
+          "priority": null,
+          "class": "INTEGRATE"
+        },
+        {
+          "outer": "MetaBlooms_OS_v11_IntegratedBundle_v1.zip",
+          "inner": "artifacts/MetaBlooms_OS_v11_FULL_Bundle.mips.json",
+          "score": 35,
+          "hits": {
+            "persistence": 1,
+            "delta_gate": 3,
+            "sandcrawler": 3,
+            "validators": 5,
+            "termux": 3
+          },
+          "size_bytes": 160204,
+          "priority": null,
+          "class": "INTEGRATE"
+        },
+        {
+          "outer": "2025-12-12_MetaBlooms_PackSmith_Compiler_v1_bundle.zip",
+          "inner": "2025-12-12_MetaBlooms_REASONING_PACK_P0.mips.json",
+          "score": 32,
+          "hits": {
+            "persistence": 1,
+            "delta_gate": 4,
+            "sandcrawler": 2,
+            "validators": 4,
+            "termux": 1,
+            "ux_mobile": 1
+          },
+          "size_bytes": 8240,
+          "priority": null,
+          "class": "INTEGRATE"
+        },
+        {
+          "outer": "2025-12-12_MetaBlooms_PackSmith_Compiler_v1_bundle.zip",
+          "inner": "2025-12-12_MetaBlooms_DOMAIN_BENCHMARKS_PACK_P1.mips.json",
+          "score": 30,
+          "hits": {
+            "persistence": 2,
+            "delta_gate": 2,
+            "sandcrawler": 2,
+            "validators": 5,
+            "termux": 1
+          },
+          "size_bytes": 17742,
+          "priority": null,
+          "class": "INTEGRATE"
+        },
+        {
+          "outer": "2025-12-12_MetaBlooms_PackSmith_Compiler_v1_bundle.zip",
+          "inner": "2025-12-12_MetaBlooms_GOVERNANCE_PACK_P0.mips.json",
+          "score": 29,
+          "hits": {
+            "persistence": 1,
+            "delta_gate": 2,
+            "sandcrawler": 3,
+            "validators": 5,
+            "termux": 1
+          },
+          "size_bytes": 20249,
+          "priority": null,
+          "class": "INTEGRATE"
+        },
+        {
+          "outer": "MetaBlooms_TermuxTools_v1_bundle (1).zip",
+          "inner": "mbos_bundle/mips/mbos_build_batchpacks.mips.json",
+          "score": 27,
+          "hits": {
+            "sandcrawler": 3,
+            "validators": 3,
+            "termux": 4,
+            "ux_mobile": 1
+          },
+          "size_bytes": 5050,
+          "priority": null,
+          "class": "INTEGRATE"
+        },
+        {
+          "outer": "MetaBlooms_OS_v7_2_Bundle_1764338453.zip",
+          "inner": "MetaBlooms_MetaRuleEngine_v1.2_FULL.mips.json",
+          "score": 25,
+          "hits": {
+            "persistence": 1,
+            "delta_gate": 2,
+            "sandcrawler": 3,
+            "validators": 3,
+            "termux": 1
+          },
+          "size_bytes": 12608,
+          "priority": null,
+          "class": "INTEGRATE"
+        },
+        {
+          "outer": "MetaBlooms_TermuxTools_v1_bundle (1).zip",
+          "inner": "mbos_bundle/mips/mbos_extract_functions.mips.json",
+          "score": 24,
+          "hits": {
+            "sandcrawler": 3,
+            "validators": 4,
+            "termux": 3
+          },
+          "size_bytes": 6552,
+          "priority": null,
+          "class": "INTEGRATE"
+        }
+      ],
+      "skim": [
+        {
+          "outer": "PACKSALL.zip",
+          "inner": "ReasoningProtocol_RobertStyle_v2_mips.json",
+          "score": 23,
+          "hits": {
+            "persistence": 1,
+            "delta_gate": 3,
+            "validators": 3,
+            "termux": 2
+          },
+          "size_bytes": 9934,
+          "priority": null,
+          "class": "SKIM"
+        },
+        {
+          "outer": "2025-12-03_MetaBlooms_OS_vOmega20_StarterPack.zip",
+          "inner": "MetaBlooms_OS_vOmega20_Full.mips.json",
+          "score": 22,
+          "hits": {
+            "persistence": 1,
+            "delta_gate": 1,
+            "sandcrawler": 3,
+            "validators": 3,
+            "termux": 1
+          },
+          "size_bytes": 10604,
+          "priority": null,
+          "class": "SKIM"
+        },
+        {
+          "outer": "2025-12-04T02-01-25_MetaBlooms_HybridKernel_RuntimeAndAssetsBundle_v1.zip",
+          "inner": "MetaBlooms_OS_vOmega20_FullIntegrated.mips.json",
+          "score": 22,
+          "hits": {
+            "persistence": 1,
+            "delta_gate": 1,
+            "sandcrawler": 3,
+            "validators": 3,
+            "termux": 1
+          },
+          "size_bytes": 10604,
+          "priority": null,
+          "class": "SKIM"
+        },
+        {
+          "outer": "MetaBlooms_OS_vOmega21_FULL_Package.zip",
+          "inner": "MetaBlooms_OS_vOmega21_FULL.json",
+          "score": 22,
+          "hits": {
+            "delta_gate": 2,
+            "sandcrawler": 3,
+            "validators": 3,
+            "termux": 1
+          },
+          "size_bytes": 20550,
+          "priority": null,
+          "class": "SKIM"
+        },
+        {
+          "outer": "MetaBlooms_OS_v7_2_Bundle_1764338453.zip",
+          "inner": "MetaBlooms_OS_Consolidated_20251127T224505Z.mips.json",
+          "score": 21,
+          "hits": {
+            "persistence": 2,
+            "validators": 3,
+            "termux": 1,
+            "ux_mobile": 1
+          },
+          "size_bytes": 1533,
+          "priority": null,
+          "class": "SKIM"
+        },
+        {
+          "outer": "PACKSALL.zip",
+          "inner": "2025-12-10_MetaBlooms_Browser_UpgradePack.mips.json",
+          "score": 21,
+          "hits": {
+            "persistence": 1,
+            "delta_gate": 1,
+            "sandcrawler": 2,
+            "validators": 3,
+            "termux": 1
+          },
+          "size_bytes": 8128,
+          "priority": null,
+          "class": "SKIM"
+        },
+        {
+          "outer": "PACKSALL.zip",
+          "inner": "ReasoningProtocol_RobertStyle_v1.mips.json",
+          "score": 21,
+          "hits": {
+            "persistence": 1,
+            "delta_gate": 2,
+            "validators": 3,
+            "termux": 2
+          },
+          "size_bytes": 4813,
+          "priority": null,
+          "class": "SKIM"
+        },
+        {
+          "outer": "2025-12-12_metablooms_file_organizer_bundle.zip",
+          "inner": "mb_organize.ps1",
+          "score": 20,
+          "hits": {
+            "delta_gate": 1,
+            "sandcrawler": 2,
+            "validators": 4,
+            "termux": 1,
+            "ux_mobile": 1
+          },
+          "size_bytes": 6140,
+          "priority": null,
+          "class": "SKIM"
+        },
+        {
+          "outer": "2025-12-12_metablooms_file_organizer_bundle.zip",
+          "inner": "mb_organize.py",
+          "score": 20,
+          "hits": {
+            "delta_gate": 1,
+            "sandcrawler": 2,
+            "validators": 3,
+            "termux": 2,
+            "ux_mobile": 1
+          },
+          "size_bytes": 11432,
+          "priority": null,
+          "class": "SKIM"
+        },
+        {
+          "outer": "MetaBlooms_OS_v11_IntegratedBundle_v1.zip",
+          "inner": "artifacts/2025-12-01_MetaBlooms_OS_Delta_PythonEngine_v1.1_vOmegaC.mips.json",
+          "score": 20,
+          "hits": {
+            "persistence": 2,
+            "delta_gate": 2,
+            "validators": 2,
+            "termux": 1
+          },
+          "size_bytes": 7893,
+          "priority": null,
+          "class": "SKIM"
+        },
+        {
+          "outer": "MetaBlooms_OS_v3_1_ProjectPack.zip",
+          "inner": "MetaBlooms_OS_v3_1_Snapshot.mips.json",
+          "score": 20,
+          "hits": {
+            "persistence": 2,
+            "delta_gate": 1,
+            "validators": 3,
+            "termux": 1
+          },
+          "size_bytes": 7701,
+          "priority": null,
+          "class": "SKIM"
+        }
+      ]
+    },
+    "next_actions": [
+      {
+        "id": "A1",
+        "action": "Extract top INTEGRATE candidates into a single 'DeltaMiner Findings' bundle (one zip) with 1-page READ_ME + per-item diffs.",
+        "owner": "assistant"
+      },
+      {
+        "id": "A2",
+        "action": "Run DeltaSlicer logic: attempt partial adoption (good parts only) by separating 'rules/spec' from 'scripts' from 'deprecated' for each candidate.",
+        "owner": "assistant"
+      },
+      {
+        "id": "A3",
+        "action": "Produce a single CorePack delta overlay that adds: ClosureEngine, MobileNamePrefixer, StableSentinel, AmalgamationGate, BurdenTransfer.",
+        "owner": "assistant"
+      }
+    ],
+    "caveats": [
+      "This scan is heuristic; it ranks by keyword density and likely relevance, not by executing code.",
+      "Some candidates may already be functionally present in newer packs; merge step will de-duplicate by capability."
+    ]
+  }
+}
