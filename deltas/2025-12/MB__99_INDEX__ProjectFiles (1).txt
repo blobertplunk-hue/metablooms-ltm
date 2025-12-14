@@ -1,0 +1,24 @@
+MB__99_INDEX__ProjectFiles.txt
+================================
+Front-loaded descriptions so mobile filename lists are understandable.
+
+- MB__00_SENTINEL__ACTIVE_STATE.txt — 1.1 KB — (core/contract)
+- MB__99_INDEX__ProjectFiles.txt — 0.9 KB — (core/contract)
+- MB__01_COREPACK__GovHardening_v7__2025-12-13.mips.json — 4.2 KB — (core/contract)
+- MB__03_DELTA__ChatGPTNativeBrowser_Synthesis_v1.mips.json — 7.3 KB — (core/contract)
+
+Other embedded artifacts included in MB__OS__MetaBlooms_Core__ACTIVE.mips.json:
+- 2025-12-13_MetaBlooms_DELTA_MobileFilenameFrontload_v1.mips.json — 3.4 KB — embedded payload
+- 2025-12-13_MetaBlooms_ExternalIntel_Sweep_GovAI_v1.mips.json — 4.6 KB — embedded payload
+- 2025-12-13_MetaBlooms_ExternalIntel_Sweep_GovAI_v1_1.mips.json — 8.9 KB — embedded payload
+- MB__01_COREPACK__GovHardening_v7__2025-12-13.mips.json — 4.2 KB — embedded payload
+- MB__02_DELTA_MobileFilenameFrontload_v1.mips.json — 3.6 KB — embedded payload
+- MB__03_DELTA__ChatGPTNativeBrowser_Synthesis_v1.mips.json — 7.3 KB — embedded payload
+- MB__03_SPEC_ChatGPTNativeBrowser_Roadmap_v1.mips.json — 5.6 KB — embedded payload
+- MB__04_SPEC_ChatGPTNativeBrowser_Blueprint_v2.mips.json — 9.1 KB — embedded payload
+- MB__05_RULE_FileFirst_Default_v1.mips.json — 1.3 KB — embedded payload
+- MB__OS__MetaBlooms_Core_v1.mips.json — 2.2 KB — embedded payload
+- MB__OS__MetaBlooms_Core_v1.mips.json — 2.2 KB — embedded payload
+- MetaBlooms_ProjectFiles_CorePack_v5_PROMOTE2_20251213T161953Z.mips.json — 1.5 KB — embedded payload
+- MetaBlooms_ProjectFiles_CorePack_v6_MOCD_20251213T180455Z.mips.json — 4.0 KB — embedded payload
+- MetaBlooms_ProjectFiles_CorePack_v7_GovHardening_20251213T185500Z.mips.json — 4.2 KB — embedded payload
