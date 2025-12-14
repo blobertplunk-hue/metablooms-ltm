@@ -1,0 +1,85 @@
+{
+  "mips_header": {
+    "artifact_id": "MetaBlooms_DELTA_DOTA_Runtime",
+    "version": "1.0",
+    "timestamp_utc": "2025-12-13T12:26:49Z",
+    "content_type": "application/json",
+    "parent_bundle": "ACTIVE_PROJECT_FILES",
+    "councils": [
+      "Governance",
+      "Reasoning",
+      "Continuity",
+      "Audit"
+    ],
+    "evidence_chain": [
+      "boot_verified",
+      "autoinbox_pass",
+      "dedup_zero",
+      "stub_policy_enforced"
+    ],
+    "links": []
+  },
+  "delta_kind": "RUNTIME_DELTA",
+  "delta_name": "DOTA (Day-Of-Truth-Anchor)",
+  "applies_to": {
+    "boot_stack": [
+      "2025-12-12_MetaBlooms_PROJECT_INDEX_P0.mips.json",
+      "2025-12-12_MetaBlooms_OS_CORE_PACK_P0.mips.json",
+      "2025-12-12_MetaBlooms_GOVERNANCE_PACK_P0.mips.json",
+      "2025-12-12_MetaBlooms_REASONING_PACK_P0.mips.json",
+      "2025-12-12_MetaBlooms_CONTINUITY_PACK_P0.mips.json",
+      "2025-12-12_MetaBlooms_DOMAIN_BENCHMARKS_PACK_P1.mips.json"
+    ]
+  },
+  "changes": [
+    {
+      "id": "auto_ingest_loop",
+      "type": "policy",
+      "details": {
+        "download_funnel": "/sdcard/Download \u2192 STAGING/INBOX",
+        "sort_rules": [
+          "delta\u2192DELTAS",
+          "pack|bundle\u2192PACKS",
+          "os_|metablooms_os\u2192CORE",
+          "else\u2192ARTIFACTS"
+        ],
+        "post_action": "reindex + dupe_check"
+      }
+    },
+    {
+      "id": "dedup_invariant",
+      "type": "invariant",
+      "details": {
+        "identity": "sha256",
+        "canonical_rule": "one-canonical-per-hash",
+        "aliases": "quarantine_only",
+        "status": "enforced"
+      }
+    },
+    {
+      "id": "stub_governance",
+      "type": "policy",
+      "details": {
+        "intentional_ui": "allowed",
+        "prototype_unfinished": "artifacts_only",
+        "spec_placeholder": "forbidden_in_runtime",
+        "enforcement": "index_level_lock"
+      }
+    },
+    {
+      "id": "stdlib_shadow_guard",
+      "type": "safety",
+      "details": {
+        "risk": "stdlib shadowing in Download",
+        "mitigation": "quarantine common stdlib filenames",
+        "status": "applied"
+      }
+    }
+  ],
+  "validation": {
+    "boot_integrity": "PASS",
+    "duplicates": 0,
+    "autoinbox": "PASS",
+    "stub_violations": 0
+  }
+}
