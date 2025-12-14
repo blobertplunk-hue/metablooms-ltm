@@ -1,0 +1,32 @@
+META BLOOMS — ACTIVE STATE SENTINEL (FRONTLOAD)
+========================================
+
+THIS FILE IS THE SOURCE OF TRUTH.
+ON MOBILE: READ THIS FIRST TO KNOW WHAT EACH FILE IS.
+
+ACTIVE DATE (UTC):
+2025-12-13
+
+ACTIVE COREPACK (PROJECT FILES):
+MB__01_COREPACK__GovHardening_v7__2025-12-13.mips.json
+
+ACTIVE DELTAS (PROJECT FILES):
+MB__02_DELTA__MobileFilenameFrontload_v1.mips.json
+MB__03_DELTA__ChatGPTNativeBrowser_Synthesis_v1.mips.json
+
+ACTIVE RULES (PROJECT FILES):
+MB__05_RULE_FileFirst_Default_v1.mips.json
+
+INDEX (PROJECT FILES):
+MB__99_INDEX__ProjectFiles.txt
+
+PROJECT FILES CONTRACT (TARGET = 5 FILES):
+1) MB__00_SENTINEL__ACTIVE_STATE.txt   (this file)
+2) MB__01_COREPACK__...                (core rules + governance)
+3) MB__02_DELTA__...                   (mobile filename frontload)
+4) MB__03_DELTA__...                   (chatgpt-native browser synthesis)
+5) MB__99_INDEX__...                   (human-readable map of the 5 files)
+
+NOTES:
+- Filenames are frontloaded so the first ~20 characters are unique on mobile.
+- If you see older files with similar names, trust this sentinel + the index.
