@@ -1,0 +1,28 @@
+META BLOOMS — ACTIVE STATE SENTINEL
+=================================
+THIS FILE IS THE SOURCE OF TRUTH.
+
+ACTIVE DATE (UTC):
+2025-12-14
+
+ACTIVE CORE:
+• MetaBlooms Core (Consolidated) — 2025-12-14
+
+ACTIVE GOVERNANCE:
+• AutoDeltaReconciler_v1
+• NegativeKnowledgeCapture_v1
+
+ACTIVE REASONING:
+• DDSR_ReasoningMode_v1
+
+ACTIVE WORKFLOWS:
+• CO/LO Wall Posters from Weekly Outline
+• IPS HTML from Weekly Outline
+• IPS One-Pager (Max Font, One Page)
+• Weekly Drive Export & ZIP
+
+STAGED:
+• InvariantFirstGate_v1
+
+NOTE:
+Sentinel and Index are derived artifacts.
