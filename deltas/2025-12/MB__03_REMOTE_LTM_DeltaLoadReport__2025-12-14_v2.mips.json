@@ -1,0 +1,51 @@
+{
+  "mips": {
+    "artifact_id": "MB__03_REMOTE_LTM_DeltaLoadReport__2025-12-14_v2",
+    "parent_bundle": "metablooms-ltm/manifests/latest.json",
+    "version": "v2",
+    "timestamp_utc": "2025-12-15T02:08:49Z",
+    "content_type": "application/json",
+    "councils": [
+      "Facilitator",
+      "Auditor",
+      "Synthesizer",
+      "Recorder"
+    ],
+    "links": {
+      "latest_json": "https://raw.githubusercontent.com/blobertplunk-hue/metablooms-ltm/main/manifests/latest.json",
+      "ledger_ndjson": "https://raw.githubusercontent.com/blobertplunk-hue/metablooms-ltm/main/manifests/ledger.ndjson"
+    }
+  },
+  "content": {
+    "execution_surface_note": "Loaded manifest metadata from latest.json. Delta bodies not fetched due to URL-open constraint in this environment; needs full delta URLs present in user message or search results.",
+    "latest_generated_utc": "2025-12-15T00:56:17Z",
+    "selected_to_load": [
+      "deltas/2025-12/MB__03_DELTA__DiscoverySurface_PrivateVocab_NoSEO_v1.mips.json",
+      "deltas/2025-12/MB__03_DELTA__RemoteLTM_RawURL_Contract_v1.mips.json",
+      "deltas/2025-12/MB__03_DELTA__AuthoritativeMemory_ContractAndLexicon_v1.mips.json"
+    ],
+    "loaded_this_run": {
+      "manifest_only": true,
+      "items": [
+        {
+          "path": "deltas/2025-12/MB__03_DELTA__DiscoverySurface_PrivateVocab_NoSEO_v1.mips.json",
+          "sha256": "cb9d84f679c74f80d69bd5535e34f4f6af26e27de849fb1d04429dba2ca8e6bd",
+          "bytes": 3841,
+          "ts": "2025-12-15T00:55:55Z"
+        },
+        {
+          "path": "deltas/2025-12/MB__03_DELTA__RemoteLTM_RawURL_Contract_v1.mips.json",
+          "sha256": "52b49f2c7c6ddd40c27343b4ce10d74a47c4461505acf058f06656e20ec60c61",
+          "bytes": 2706,
+          "ts": "2025-12-15T00:38:05Z"
+        },
+        {
+          "path": "deltas/2025-12/MB__03_DELTA__AuthoritativeMemory_ContractAndLexicon_v1.mips.json",
+          "sha256": "8d9831e63b72af85f519495fab82bd8af092faee2391e0f9499d1a78a0665da7",
+          "bytes": 7764,
+          "ts": "2025-12-15T00:32:06Z"
+        }
+      ]
+    }
+  }
+}

@@ -72,3 +72,4 @@
 {"ts":"2025-12-15T01:36:01Z","path":"deltas/2025-12/MB__03_DELTA__BootSequence_URLSurfacingInvariant_v1.mips.json","sha256":"a6f5a972a09b8be3bef547176de4994e1af0a57265c8cb47f48df529902ce688","bytes":1823}
 {"ts":"2025-12-15T02:01:38Z","path":"deltas/2025-12/MB__BOOT_PROMPT__MetaBlooms_OS_BIOS_v1_REBUILT_2025-12-14.mips.txt","sha256":"7ac0eddf8de4f7cedc6e862cf7866d1d78ca2ab9821374bc70f894af237750ad","bytes":4200}
 {"ts":"2025-12-15T02:07:04Z","path":"deltas/2025-12/MB__02_DELTA__BootBIOS_URLsSurfaced_v1.mips.json","sha256":"765cf9035535cc606069ea7b2aa65bce625d8845ddf454cc588fa6bb4c5d6f10","bytes":2451}
+{"ts":"2025-12-15T02:09:29Z","path":"deltas/2025-12/MB__03_REMOTE_LTM_DeltaLoadReport__2025-12-14_v2.mips.json","sha256":"cdac113d5c9eade2f7cf029e0be2e64e09a1fd474f967a2660d1bc88f79c5a78","bytes":2081}

@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-15T02:07:04Z",
+  "generated_utc": "2025-12-15T02:09:29Z",
   "items": [
+    {
+      "ts": "2025-12-15T02:09:29Z",
+      "path": "deltas/2025-12/MB__03_REMOTE_LTM_DeltaLoadReport__2025-12-14_v2.mips.json",
+      "sha256": "cdac113d5c9eade2f7cf029e0be2e64e09a1fd474f967a2660d1bc88f79c5a78",
+      "bytes": 2081
+    },
     {
       "ts": "2025-12-15T02:07:04Z",
       "path": "deltas/2025-12/MB__02_DELTA__BootBIOS_URLsSurfaced_v1.mips.json",
@@ -144,12 +150,6 @@
       "path": "deltas/2025-12/2025-12-14_MB_patch_isdelta_recognizer_v1.mips.md",
       "sha256": "4992e921c301ca27d99784f19bc9790a6b7356c8b53a2da8e77ffb5cf79a5fdd",
       "bytes": 4332
-    },
-    {
-      "ts": "2025-12-14T21:32:37Z",
-      "path": "deltas/2025-12/MB__02_OS__MetaBlooms_Core__ACTIVE__2025-12-14_REBUILT.mips.json",
-      "sha256": "db405ebeca213344c01cda8a124159641a9497cb3a7e1932718986db0c5aaddd",
-      "bytes": 77870
     }
   ]
 }
