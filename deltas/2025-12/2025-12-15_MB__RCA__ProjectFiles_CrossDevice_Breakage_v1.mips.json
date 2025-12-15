@@ -1,0 +1,68 @@
+{
+  "mips": {
+    "artifact_id": "MB__RCA__ProjectFiles_CrossDevice_Breakage_v1",
+    "version": "v1",
+    "timestamp_utc": "2025-12-15T06:11:57Z",
+    "content_type": "application/json",
+    "audit": "construct",
+    "sha256_body": "df1679909e02d3de1f986679c8d19c55f9c7a4fca954b4d836d36ab20a7b5502"
+  },
+  "body": {
+    "kind": "MB_PROJECT_FILES_RCA",
+    "timestamp_utc": "2025-12-15T06:11:57Z",
+    "timestamp_ct": "2025-12-15T21:00:00-06:00",
+    "premise": "User reports breakage predates remote LTM; project files are the shared state across devices.",
+    "most_likely_failure_modes": [
+      {
+        "id": "P1_DUPLICATE_OR_STALE_INDEX",
+        "what_happens": "Multiple MB__99_INDEX variants exist; boot loads a stale one or hashes don't match. This causes 'wrong files loaded' behavior.",
+        "why_this_matches": "User saw suspicious small sizes earlier and confusion about what is loaded."
+      },
+      {
+        "id": "P2_BOOT_ENTRYPOINT_DRIFT",
+        "what_happens": "Multiple boot prompt files exist; an older one is being invoked that does not surface URLs/handshake or uses outdated rules.",
+        "why_this_matches": "User reports boot behavior inconsistent and 'something installed' changed behavior."
+      },
+      {
+        "id": "P3_DELTA_COLLISION_IN_SLOT_03",
+        "what_happens": "A new MB__03_DELTA in Project Files became active and changed behavior (boot/routing) across devices.",
+        "why_this_matches": "Breakage across devices without LTM implies shared project artifact changed."
+      },
+      {
+        "id": "P4_ACTIVE_SET_VIOLATION",
+        "what_happens": "The canonical 5-file contract is violated: missing file, renamed file, or size gate violated (01<2KB or 02<50KB).",
+        "why_this_matches": "User previously flagged 'too small' files."
+      }
+    ],
+    "fast_isolation_protocol": {
+      "goal": "Identify whether a Project Files artifact drifted and roll back to canonical set without rewriting OS core.",
+      "steps": [
+        {
+          "step": "1) Confirm canonical active set and sizes",
+          "action": "Open MB__99_INDEX__ProjectFiles.txt and MB__00_SENTINEL__ACTIVE_STATE... and confirm they list the same 5 files, and that sizes meet gates.",
+          "pass_condition": "5 files match exactly + size plausibility gate passes."
+        },
+        {
+          "step": "2) Remove duplicates (UI action)",
+          "action": "In ChatGPT Project Files panel, search 'MB__99_INDEX' and 'MB__00_SENTINEL'. If duplicates exist, keep only the newest one whose embedded hashes match the active set.",
+          "pass_condition": "Only one MB__99 and one sentinel remain."
+        },
+        {
+          "step": "3) Neutralize behavior deltas to test",
+          "action": "Temporarily remove MB__03_DELTA__* from Project Files OR rename it to MB__03_DELTA__QUARANTINED__... (if your workflow supports). If removal isn't possible, replace it with a known-good minimal delta that does nothing.",
+          "pass_condition": "Boot behavior returns to predictable baseline."
+        },
+        {
+          "step": "4) Standardize boot entrypoint",
+          "action": "Ensure the boot prompt file used is MB__BOOT_PROMPT__MetaBlooms_OS_BIOS_v2 (handshake embedded). Remove/ignore older boot prompt variants.",
+          "pass_condition": "Boot always surfaces URLs and follows handshake."
+        }
+      ]
+    },
+    "what_to_send_me_if_still_broken": [
+      "Exact filenames visible in Project Files panel that start with MB__ (and any duplicates).",
+      "The first ~30 lines of MB__00_SENTINEL and MB__99_INDEX.",
+      "Name of the delta you 'installed this morning' (exact filename)."
+    ]
+  }
+}
