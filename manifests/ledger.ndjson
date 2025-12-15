@@ -81,3 +81,4 @@
 {"ts":"2025-12-15T03:22:06Z","path":"deltas/2025-12/2025-12-15_MB__03_DELTA__Replay_NoLLM_ImportReview_v1.mips.json","sha256":"8350d8442fa327032978381af9a85e0a6d7ba173e3b2df21f2cbcc6c0f1de3a3","bytes":2984}
 {"ts":"2025-12-15T04:08:35Z","path":"deltas/2025-12/2025-12-15_MB__03_DELTA__ReplayRun_v0_Recorder_Trace_SessionReplay.mips.json","sha256":"17a4b4e9c8e1aa10e937812d3f19c7e173c1e8615a3dccbff2a9f68860805535","bytes":4019}
 {"ts":"2025-12-15T04:08:55Z","path":"deltas/2025-12/2025-12-15_MB__03_DELTA__Sandcrawler_QueryIntelligence_v1.mips.json","sha256":"315054ccc4fd6bc9da054c531cf6fcd3ffd3372b5407f50094e7a760d42f8d74","bytes":2528}
+{"ts":"2025-12-15T04:09:02Z","path":"deltas/2025-12/2025-12-15_MB__03_DELTA__Sandcrawler_EpistemicControls_v1.mips.json","sha256":"b6f056945201e2f6c8872d53575e95341d387947d9d59168a7a5462c22597b32","bytes":2887}

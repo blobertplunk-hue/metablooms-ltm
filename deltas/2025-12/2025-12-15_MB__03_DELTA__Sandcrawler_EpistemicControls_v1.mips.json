@@ -1,0 +1,84 @@
+{
+  "mips": {
+    "artifact_id": "MB__03_DELTA__Sandcrawler_EpistemicControls_v1__2025-12-15",
+    "parent_bundle": "MB__02_OS__MetaBlooms_Core__ACTIVE__2025-12-14_REBUILT.mips.json",
+    "version": "v1",
+    "timestamp_utc": "2025-12-15T04:07:13Z",
+    "content_type": "application/json",
+    "councils": [
+      "Auditor",
+      "SystemsEngineer",
+      "Validator",
+      "Archivist"
+    ],
+    "sha256": "bb24c27279ed1d0bfef659e92bd9be1abb0f83cded82bb83c3631c7f89133ff9"
+  },
+  "content": {
+    "delta_type": "epistemic_upgrade",
+    "name": "Sandcrawler Epistemic Controls v1",
+    "goal": "Add structural epistemic advantages: Intent Drift Detection, Negative Knowledge Capture, Search Strategy Mutation Log.",
+    "controls": {
+      "intent_drift_detection": {
+        "intent_0": "freeze original objective string at run start",
+        "intent_n": "derive current focus after recall sweep",
+        "distance_metric": "semantic_distance_relative (implementation-defined)",
+        "thresholds": {
+          "low": 0.3,
+          "medium": 0.5,
+          "high": 0.7
+        },
+        "actions": {
+          "low": "continue",
+          "medium": "warn_in_receipt",
+          "high": "mandatory_recenter_sweep_before_final_synthesis"
+        },
+        "invariant": "no final synthesis if high drift is unresolved"
+      },
+      "negative_knowledge_capture": {
+        "capture_types": [
+          "failed_queries",
+          "rejected_claims",
+          "falsified_hypotheses",
+          "dead_end_paths"
+        ],
+        "storage": "append-only artifact (MB__SC__NegativeKnowledge.ndjson) referenced by run envelope",
+        "invariant": "rejections are first-class knowledge and must be logged when encountered"
+      },
+      "search_strategy_mutation_log": {
+        "log_fields": [
+          "strategy",
+          "context",
+          "effectiveness",
+          "signals",
+          "failures",
+          "notes"
+        ],
+        "storage": "append-only artifact (MB__SC__StrategyMutation.ndjson)",
+        "invariant": "each run must emit >=1 strategy entry (even if 'baseline')"
+      }
+    },
+    "artifacts_added": [
+      "MB__SC__NegativeKnowledge.ndjson",
+      "MB__SC__StrategyMutation.ndjson"
+    ],
+    "validators": [
+      "V_SC_INTENT_DRIFT_COMPUTED",
+      "V_SC_NO_FINAL_WITH_HIGH_DRIFT",
+      "V_SC_NEGATIVE_KNOWLEDGE_EMITTED_WHEN_APPLICABLE",
+      "V_SC_STRATEGY_MUTATION_ENTRY_EXISTS"
+    ],
+    "feature_flags": {
+      "sandcrawler_intent_drift_enabled": true,
+      "sandcrawler_negative_knowledge_enabled": true,
+      "sandcrawler_strategy_mutation_enabled": true
+    },
+    "rollback": {
+      "strategy": "feature_flag_disable",
+      "steps": [
+        "Set sandcrawler_intent_drift_enabled=false",
+        "Set sandcrawler_negative_knowledge_enabled=false",
+        "Set sandcrawler_strategy_mutation_enabled=false"
+      ]
+    }
+  }
+}
