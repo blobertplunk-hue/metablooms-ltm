@@ -1,0 +1,68 @@
+{
+  "MIPS_HEADER": {
+    "artifact_id": "MB__03_DELTA__RemoteLTM_RawURL_Contract_v1",
+    "version": "1.0.0",
+    "timestamp_utc": "2025-12-14T23:55:00Z",
+    "content_type": "application/json",
+    "councils": [
+      "Auditor",
+      "Engineer",
+      "Archivist"
+    ],
+    "sha256": "0075cfc2b00d950675869963e78595d75e181778529052a9b5912404f271fa9b",
+    "evidence_chain": []
+  },
+  "BODY": {
+    "kind": "delta",
+    "scope": "RemoteLTM",
+    "title": "Raw GitHub URL contract for Web.run bootstrapping",
+    "changes": [
+      {
+        "id": "RemoteLTM.RawEndpoints",
+        "type": "add",
+        "value": {
+          "repo_web": "https://github.com/blobertplunk-hue/metablooms-ltm",
+          "branch": "main",
+          "raw_base": "https://raw.githubusercontent.com/blobertplunk-hue/metablooms-ltm/main",
+          "manifests": {
+            "latest": "https://raw.githubusercontent.com/blobertplunk-hue/metablooms-ltm/main/manifests/latest.json",
+            "ledger": "https://raw.githubusercontent.com/blobertplunk-hue/metablooms-ltm/main/manifests/ledger.ndjson"
+          },
+          "conventions": {
+            "delta_paths": [
+              "deltas/YYYY-MM/<filename>"
+            ],
+            "latest_schema": "{generated_utc, items:[{ts,path,sha256,bytes}]}"
+          }
+        }
+      },
+      {
+        "id": "RemoteLTM.FetchProcedure",
+        "type": "add",
+        "value": {
+          "step1": "Fetch manifests/latest.json from raw_base; parse items sorted newest-first.",
+          "step2": "Fetch top N delta paths from raw_base + '/' + item.path (N default 25).",
+          "step3": "Verify sha256/bytes when possible; if mismatch, fall back to ledger scan for that sha.",
+          "step4": "Integrate via AutoDeltaReconciler; do not require manual uploads."
+        }
+      },
+      {
+        "id": "RemoteLTM.Verification",
+        "type": "add",
+        "value": {
+          "termux_checks": [
+            "curl -fsSL https://raw.githubusercontent.com/blobertplunk-hue/metablooms-ltm/main/manifests/latest.json | head",
+            "curl -fsSL https://raw.githubusercontent.com/blobertplunk-hue/metablooms-ltm/main/manifests/ledger.ndjson | tail -n 3"
+          ],
+          "chat_checks": [
+            "User pastes the raw URL(s) into chat so web.run can open them (tool constraint)."
+          ]
+        }
+      }
+    ],
+    "notes": {
+      "why": "Locks the exact URL pattern and bootstrap algorithm so any fresh chat can self-mount without user uploads.",
+      "tooling_constraint": "In this environment, web.run can only open URLs that appear in the chat or search results; therefore the user should paste the raw URLs once to allow verification."
+    }
+  }
+}
