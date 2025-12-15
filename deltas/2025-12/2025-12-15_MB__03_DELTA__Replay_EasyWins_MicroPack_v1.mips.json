@@ -1,0 +1,95 @@
+{
+  "mips": {
+    "artifact_id": "MB__03_DELTA__Replay_EasyWins_MicroPack_v1__2025-12-15",
+    "parent_bundle": "MB__02_OS__MetaBlooms_Core__ACTIVE__2025-12-14_REBUILT.mips.json",
+    "version": "v1",
+    "timestamp_utc": "2025-12-15T03:19:24Z",
+    "content_type": "application/json",
+    "councils": [
+      "Auditor",
+      "SystemsEngineer",
+      "Validator",
+      "Archivist"
+    ],
+    "sha256": "ecc4a27288308a502f3d18d8505919321f8145d161c2d47b8045c82ba19e582a"
+  },
+  "content": {
+    "delta_type": "micro_upgrade_pack",
+    "name": "Replay Easy Wins Micro-Pack",
+    "goal": "Close immediate replay-related gaps without execution engines or heavy infra.",
+    "included_easy_wins": [
+      "Replay claim discipline",
+      "Command/Event separation (thin slice)",
+      "Forensic run indexing"
+    ],
+    "policies": {
+      "replay_claim_rule": {
+        "rule": "The system MUST NOT use 'replay', 'rerun', or 'deterministic' unless an evidence artifact hash is referenced.",
+        "fallback_language": {
+          "replay": "re-derivable",
+          "rerun": "re-reasoned",
+          "deterministic": "consistent under assumptions"
+        }
+      }
+    },
+    "schemas": {
+      "CommandStream": {
+        "format": "ndjson",
+        "required_fields": [
+          "cmd_id",
+          "ts_utc",
+          "type",
+          "intent",
+          "scope"
+        ]
+      },
+      "EventStream": {
+        "format": "ndjson",
+        "required_fields": [
+          "evt_id",
+          "ts_utc",
+          "type",
+          "outcome",
+          "ref_cmd_id"
+        ]
+      },
+      "RunIndexEntry": {
+        "format": "ndjson",
+        "fields": [
+          "run_id",
+          "started_at",
+          "ended_at",
+          "surface",
+          "artifacts",
+          "tags"
+        ]
+      }
+    },
+    "artifacts_created": [
+      "MB__INDEX__RUNS.ndjson",
+      "MB__RECEIPT__RunSummary.md"
+    ],
+    "validators": [
+      "V_NO_REPLAY_CLAIM_WITHOUT_ARTIFACT",
+      "V_COMMAND_EVENT_PAIRING",
+      "V_RUN_INDEX_ENTRY_EXISTS"
+    ],
+    "acceptance_tests": [
+      "Using 'replay' without evidence hash -> FAIL",
+      "Every command has >=1 linked event -> PASS",
+      "Every run produces index entry -> PASS"
+    ],
+    "rollback": {
+      "strategy": "Feature-flagged language and logging rules",
+      "steps": [
+        "Disable replay_claim_rule",
+        "Stop emitting RunIndex entries"
+      ]
+    },
+    "feature_flags": {
+      "replay_claim_discipline_enabled": true,
+      "command_event_split_enabled": true,
+      "run_indexing_enabled": true
+    }
+  }
+}

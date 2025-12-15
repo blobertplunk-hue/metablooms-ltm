@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-15T02:17:07Z",
+  "generated_utc": "2025-12-15T03:20:20Z",
   "items": [
+    {
+      "ts": "2025-12-15T03:20:20Z",
+      "path": "deltas/2025-12/2025-12-15_MB__03_DELTA__Replay_EasyWins_MicroPack_v1.mips.json",
+      "sha256": "5fb7787c17fc9d42f34faa6495a41472b444025a3ec7d29ac9e4d6ede70b924a",
+      "bytes": 2587
+    },
     {
       "ts": "2025-12-15T02:17:07Z",
       "path": "deltas/2025-12/2025-12-14_MB__BOOT_PROMPT__MetaBlooms_OS_BIOS_v2.mips.json",
@@ -144,12 +150,6 @@
       "path": "deltas/2025-12/2025-12-14_MB__AUDIT__Findings_RCA_PROVISIONAL.mips.md",
       "sha256": "5aa28dbe5ecf9124ec2e059de071ec8441cb96be92334d8d4175885c4d080c4b",
       "bytes": 4495
-    },
-    {
-      "ts": "2025-12-14T21:32:47Z",
-      "path": "deltas/2025-12/2025-12-14_MB__SOP__RCA_Mode__PERMANENT.mips.md",
-      "sha256": "21f692ad2a94a4b6436b77d05b4a65a2deb683ed1418ec09cc686ae0f84ae599",
-      "bytes": 4806
     }
   ]
 }
