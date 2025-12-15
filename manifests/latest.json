@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-15T06:17:34Z",
+  "generated_utc": "2025-12-15T12:35:32Z",
   "items": [
+    {
+      "ts": "2025-12-15T12:35:32Z",
+      "path": "deltas/2025-12/2025-12-15_MB__03_DELTA__VettingReport_BrokenChatFilter_v1.mips.json",
+      "sha256": "98d4a4beb967511e47b3cb2e08fda436976d2016f7a56f75b6503fd5ab1683b1",
+      "bytes": 7623
+    },
     {
       "ts": "2025-12-15T06:17:34Z",
       "path": "deltas/2025-12/2025-12-15_MB__RCA__ProjectFiles_CrossDevice_Breakage_v1.mips.json",
@@ -143,12 +149,6 @@
       "ts": "2025-12-14T22:51:52Z",
       "path": "deltas/2025-12/MB__03_DELTA__SMOKETEST__20251214T225149Z.mips.json",
       "sha256": "948a13da14d0e5f3c61e115d0613bba4153d647613c9dacd43d16d7b8a230638",
-      "bytes": 105
-    },
-    {
-      "ts": "2025-12-14T22:50:15Z",
-      "path": "deltas/2025-12/MB__03_DELTA__SMOKETEST__20251214T225007Z.mips.json",
-      "sha256": "8d8162864a38cd200f307f684788d1a2ecc46c3b91e9210a5a128cb68634ee07",
       "bytes": 105
     }
   ]
