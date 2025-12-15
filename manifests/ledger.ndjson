@@ -68,3 +68,4 @@
 {"ts":"2025-12-15T00:38:05Z","path":"deltas/2025-12/MB__03_DELTA__RemoteLTM_RawURL_Contract_v1.mips.json","sha256":"52b49f2c7c6ddd40c27343b4ce10d74a47c4461505acf058f06656e20ec60c61","bytes":2706}
 {"ts":"2025-12-15T00:55:55Z","path":"deltas/2025-12/MB__03_DELTA__DiscoverySurface_PrivateVocab_NoSEO_v1.mips.json","sha256":"cb9d84f679c74f80d69bd5535e34f4f6af26e27de849fb1d04429dba2ca8e6bd","bytes":3841}
 {"ts":"2025-12-15T00:56:17Z","path":"deltas/2025-12/README_MetaBloomsLTM_UPDATED_v1.mips.md","sha256":"88746544a6257aa0d0e5b2a03c70c8608b15ba968b8ecaad2272426ca299cd04","bytes":2026}
+{"ts":"2025-12-15T01:35:54Z","path":"deltas/2025-12/MB__00_BOOT__BIOS_PROMPT__ExternalLTM_v1.mips.md","sha256":"cf4fac50d5fecf391d019e5094ae331dc154e557bc072540efd08165d046da65","bytes":2259}
