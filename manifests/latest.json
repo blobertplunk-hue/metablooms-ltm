@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-15T03:20:20Z",
+  "generated_utc": "2025-12-15T03:22:06Z",
   "items": [
+    {
+      "ts": "2025-12-15T03:22:06Z",
+      "path": "deltas/2025-12/2025-12-15_MB__03_DELTA__Replay_NoLLM_ImportReview_v1.mips.json",
+      "sha256": "8350d8442fa327032978381af9a85e0a6d7ba173e3b2df21f2cbcc6c0f1de3a3",
+      "bytes": 2984
+    },
     {
       "ts": "2025-12-15T03:20:20Z",
       "path": "deltas/2025-12/2025-12-15_MB__03_DELTA__Replay_EasyWins_MicroPack_v1.mips.json",
@@ -144,12 +150,6 @@
       "path": "deltas/2025-12/2025-12-14_MB_Termux_GitHub_AuthFix_v1.mips.md",
       "sha256": "e097d2a12ca5a869098abbd5d5641e97d2f43e6b5534fa2a58c77ffebd897b8e",
       "bytes": 2550
-    },
-    {
-      "ts": "2025-12-14T21:32:49Z",
-      "path": "deltas/2025-12/2025-12-14_MB__AUDIT__Findings_RCA_PROVISIONAL.mips.md",
-      "sha256": "5aa28dbe5ecf9124ec2e059de071ec8441cb96be92334d8d4175885c4d080c4b",
-      "bytes": 4495
     }
   ]
 }

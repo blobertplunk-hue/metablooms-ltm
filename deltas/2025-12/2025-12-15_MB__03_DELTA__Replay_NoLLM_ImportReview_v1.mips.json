@@ -1,0 +1,99 @@
+{
+  "mips": {
+    "artifact_id": "MB__03_DELTA__Replay_NoLLM_ImportReview_v1__2025-12-15",
+    "parent_bundle": "MB__02_OS__MetaBlooms_Core__ACTIVE__2025-12-14_REBUILT.mips.json",
+    "version": "v1",
+    "timestamp_utc": "2025-12-15T03:20:59Z",
+    "content_type": "application/json",
+    "councils": [
+      "Auditor",
+      "SystemsEngineer",
+      "Validator",
+      "Archivist"
+    ],
+    "sha256": "0e2166c9ed6bb346bf0a3630996863c8108c518dc458f2db77a55b96ff024da1"
+  },
+  "content": {
+    "delta_type": "micro_upgrade_pack",
+    "name": "Replay No\u2011LLM Import & Review",
+    "goal": "Enable replay without execution: import, validate, and review external replay artifacts with zero LLM re\u2011reasoning.",
+    "scope": "READ\u2011ONLY. No execution, no side effects.",
+    "supported_imports": [
+      {
+        "source": "Chrome DevTools Recorder",
+        "formats": [
+          "JSON user flow",
+          "Puppeteer export"
+        ],
+        "use": "Import as CommandStream for review and future execution."
+      },
+      {
+        "source": "Playwright",
+        "formats": [
+          "trace.zip"
+        ],
+        "use": "Attach as Event evidence; step\u2011through via Trace Viewer."
+      },
+      {
+        "source": "rrweb",
+        "formats": [
+          "event stream JSON"
+        ],
+        "use": "Session playback for human review/training."
+      }
+    ],
+    "import_pipeline": [
+      "Detect format",
+      "Schema validate",
+      "Redact secrets/PII",
+      "Hash artifacts",
+      "Attach evidence refs",
+      "Generate human\u2011readable receipt"
+    ],
+    "artifacts_created": [
+      "ReplayRunEnvelope.json",
+      "CommandStream.ndjson (if applicable)",
+      "EventEvidenceRef.json",
+      "MB__RECEIPT__ReplayReview.md"
+    ],
+    "validators": [
+      "V_IMPORT_SCHEMA_OK",
+      "V_READ_ONLY_ENFORCED",
+      "V_ARTIFACT_HASHED",
+      "V_REPLAY_CLAIM_DISCIPLINE"
+    ],
+    "review_ui_contract": {
+      "required_sections": [
+        "What was imported",
+        "What can be replayed (review only)",
+        "What cannot be executed yet",
+        "Evidence hashes",
+        "Privacy/redaction notes"
+      ],
+      "forbidden_language": [
+        "executed",
+        "ran automatically",
+        "deterministic execution"
+      ]
+    },
+    "acceptance_tests": [
+      "Import DevTools Recorder JSON -> CommandStream created, no execution",
+      "Import trace.zip -> EvidenceRef created with hash",
+      "Any execution attempt -> FAIL",
+      "Receipt omits forbidden language -> PASS"
+    ],
+    "rollback": {
+      "strategy": "Feature\u2011flag only; artifacts remain audit\u2011read\u2011only",
+      "steps": [
+        "Disable no_llm_import_review_enabled",
+        "Stop generating ReplayReview receipts"
+      ]
+    },
+    "feature_flags": {
+      "no_llm_import_review_enabled": true,
+      "allow_devtools_recorder_import": true,
+      "allow_playwright_trace_attach": true,
+      "allow_rrweb_review": true
+    }
+  }
+}
