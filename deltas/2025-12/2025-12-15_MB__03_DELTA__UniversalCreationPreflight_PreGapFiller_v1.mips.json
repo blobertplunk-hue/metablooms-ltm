@@ -1,0 +1,167 @@
+{
+  "mips_version": "1.0",
+  "artifact_type": "MB_DELTA",
+  "delta_id": "MB.DELTA.UCP.PREGF.v1.bb41b07c",
+  "title": "Universal Creation Preflight (Pre-GapFiller) — all-build gating SOP",
+  "date_created": "2025-12-15",
+  "timezone": "America/Chicago",
+  "status": "proposed_ready",
+  "scope": [
+    "CRF",
+    "MetaBlooms",
+    "All builds: lesson/html/activity/assessment/system"
+  ],
+  "priority": "P0",
+  "intent": "Enforce a mandatory preflight gate before any creation; automatically triggers GapFinder(all-levels) + RCA + GapFiller planning before drafting content/code, preventing silent semantic/pedagogy/UX failures.",
+  "change_summary": {
+    "adds": [
+      "SOP_UNIVERSAL_CREATION_PREFLIGHT_v1.0 (mandatory)",
+      "ReleaseGate:NO_BUILD_BEFORE_PREFLIGHT_PASS",
+      "RCA_REQUIRED_ON_TOP_FAILURES",
+      "GapFinder_AllLevels_required",
+      "GapFiller_plan_required_after_preflight"
+    ],
+    "modifies": [
+      "BuildFlow: parse → preflight → gapfinder → rca → gapfiller plan → readiness decision → build → validate → ship"
+    ],
+    "removes": []
+  },
+  "spec": {
+    "sop_name": "SOP_UNIVERSAL_CREATION_PREFLIGHT_v1.0",
+    "auto_trigger_policy": {
+      "default": "ON",
+      "disable_phrase": "preflight off (this turn)",
+      "notes": "Runs automatically before any substantive creation unless explicitly disabled for that turn."
+    },
+    "hard_rules": [
+      "Do not generate lessons/HTML/activities/assessments before preflight passes.",
+      "If GENERATED_LANGUAGE is involved, require a content bank + semantic validation gates.",
+      "If any blockers exist, stop and output Missing Systems + GapFinder Findings + RCA + GapFiller Plan.",
+      "No export/ship until blockers == 0; majors may be overridden only with explicit user override."
+    ],
+    "steps": [
+      {
+        "id": "S1",
+        "name": "Define Task Clearly",
+        "checks": [
+          "learning_goal",
+          "student_action",
+          "success_criteria",
+          "confusion_signals"
+        ]
+      },
+      {
+        "id": "S2",
+        "name": "Identify Content Type",
+        "checks": [
+          "authored_content",
+          "generated_language",
+          "skill_practice",
+          "assessment",
+          "game_wrapper"
+        ],
+        "gates": [
+          "if generated_language then require content_bank+semantic_gates"
+        ]
+      },
+      {
+        "id": "S3",
+        "name": "Required Subsystem Check",
+        "checks": [
+          "content_bank",
+          "activity_contracts",
+          "modality_ladder",
+          "feedback_rules",
+          "persistence_completion"
+        ]
+      },
+      {
+        "id": "S4",
+        "name": "Run GapFinder All Levels",
+        "levels": [
+          "L0_Intent",
+          "L1_Semantics",
+          "L2_Pedagogy",
+          "L3_UX",
+          "L4_Engineering"
+        ],
+        "output": "blockers_majors_minors"
+      },
+      {
+        "id": "S5",
+        "name": "Root Cause Analysis",
+        "top_failures": 3,
+        "checks": [
+          "symptom",
+          "proximate_cause",
+          "root_cause",
+          "prevention_gate",
+          "owner_module"
+        ]
+      },
+      {
+        "id": "S6",
+        "name": "GapFiller Plan",
+        "checks": [
+          "fix_per_blocker",
+          "addresses_root_cause",
+          "rerun_gapfinder"
+        ]
+      },
+      {
+        "id": "S7",
+        "name": "Build Readiness Decision",
+        "outputs": [
+          "READY_TO_BUILD",
+          "NOT_READY_missing_systems"
+        ]
+      }
+    ],
+    "output_format_contract": [
+      "Preflight Summary",
+      "Missing Systems",
+      "GapFinder Findings (blockers first)",
+      "RCA Notes",
+      "GapFiller Plan",
+      "Build Readiness Decision"
+    ],
+    "integration_points": {
+      "gapfinder": "Use existing GapFinder; ensure it runs at all levels and includes semantic/pedagogy/UX checks when generated_language is detected.",
+      "gapfiller": "Run after preflight to repair missing systems/content; then rerun GapFinder before build.",
+      "validator_hooks": "Treat preflight pass/fail as a release gate in ValidatorHooks; log to EvidenceChain."
+    },
+    "quality_bars": {
+      "blockers_zero_required": true,
+      "majors_override_requires_user": true,
+      "minors_log_only": true
+    },
+    "examples": {
+      "hf_words_case": {
+        "generated_language": true,
+        "required_missing_systems": [
+          "WordCard content bank",
+          "Semantic validation gate",
+          "Modality ladder (see→type, hear→type, context)"
+        ],
+        "expected_decision": "NOT_READY"
+      }
+    }
+  },
+  "evidence": {
+    "provenance": "Derived from observed failure mode in HF Words suite and the successful Bingo Hub 'authored card bank + gating' pattern.",
+    "evidence_weight": "high",
+    "failure_signal_fixed": "Polished UI can mask semantic/prompt-task mismatch; preflight blocks before build."
+  },
+  "rollback": {
+    "rollback_strategy": "Disable auto_trigger_policy for SOP_UNIVERSAL_CREATION_PREFLIGHT_v1.0; keep manual invocation available.",
+    "safety": "Additive SOP only; no destructive changes."
+  },
+  "tests": {
+    "acceptance_tests": [
+      "AT1: Any 'build/make/create/generate' request triggers preflight output before any code/content.",
+      "AT2: Generated_language + missing content_bank => NOT_READY and build blocked.",
+      "AT3: Blockers=0 => proceed to build and run post-build validation.",
+      "AT4: Output order matches output_format_contract."
+    ]
+  }
+}
