@@ -1,0 +1,38 @@
+{
+  "delta_id": "MB__03_DELTA__UniversalCreationPreflight_PreGapFiller_v1__ADDENDUM_EvidenceUpgrades_v1",
+  "date": "2025-12-15",
+  "purpose": "Upgrade Universal Creation Preflight + WordCard pipeline to evidence-based, world-class standards",
+  "adds": [
+    {
+      "component": "WordCardSchema",
+      "fields": [
+        "regularity_tag: decodable|partly|irregular",
+        "tricky_part_note: string",
+        "mapping_steps: {say, segment(optional), spell, check}",
+        "spaced_retrieval: {stage, next_due_iso}"
+      ]
+    },
+    {
+      "component": "GapFinder_SemanticPedagogyLens",
+      "new_blockers": [
+        "missing_regularity_tag",
+        "no_mapping_steps_for_irregular_words",
+        "no_spaced_retrieval_fields_present"
+      ]
+    },
+    {
+      "component": "SuiteRequirements",
+      "requirements": [
+        "Typed practice + dictation must exist",
+        "Optional handwriting/trace extension must be offered",
+        "Spaced retrieval queue must be implemented"
+      ]
+    }
+  ],
+  "evidence_anchors": [
+    "Structured literacy guidance on high-frequency words and orthographic mapping",
+    "UDL principles: multiple means of engagement, representation, action/expression",
+    "Research on retrieval practice and spaced review"
+  ],
+  "status": "P0-ADDENDUM"
+}
