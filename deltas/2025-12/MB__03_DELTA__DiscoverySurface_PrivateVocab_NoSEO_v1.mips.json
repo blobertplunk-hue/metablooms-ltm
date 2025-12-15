@@ -1,0 +1,97 @@
+{
+  "MIPS_HEADER": {
+    "artifact_id": "MB__03_DELTA__DiscoverySurface_PrivateVocab_NoSEO_v1",
+    "parent_bundle": null,
+    "version": "v1",
+    "timestamp_utc": "2025-12-15T00:52:30Z",
+    "councils": [
+      "Facilitator",
+      "Auditor",
+      "Archivist",
+      "Synthesizer"
+    ],
+    "sha256": "e59587cb0c0202717290340c65dd61057335f8cbb2c3616f2f46407eb7b07466",
+    "content_type": "application/json",
+    "links": [],
+    "evidence_chain": []
+  },
+  "BODY": {
+    "kind": "MB_DELTA",
+    "delta_id": "MB__03_DELTA__DiscoverySurface_PrivateVocab_NoSEO_v1",
+    "scope": [
+      "RemoteLTM",
+      "Discovery",
+      "Governance",
+      "Language"
+    ],
+    "intent": "Codify intent-scoped discoverability for MetaBlooms RemoteLTM and prevent accidental broad SEO exposure; define deterministic raw URL contract and discovery fallbacks.",
+    "rules": [
+      {
+        "id": "DISCOVERY.PRIVATE_VOCABULARY",
+        "title": "Private Vocabulary Principle",
+        "priority": "P0",
+        "rule": "Prefer system-specific identifiers (MetaBlooms, MIPS, DeltaCollapse, manifests/latest.json, ledger.ndjson, etc.) over popular commodity keywords in public repo metadata. Optimize for addressability by trusted actors, not broad discoverability.",
+        "enforcement": [
+          "README lint",
+          "Delta lint",
+          "Boot guard"
+        ]
+      },
+      {
+        "id": "DISCOVERY.NEVER_SEO_REPO",
+        "title": "Never SEO This Repo",
+        "priority": "P0",
+        "rule": "Do not add popular LLM-memory keywords to README, repository description, topics, or external posts. Avoid backlinks from high-traffic sources. If example text is needed, use MetaBlooms-specific lexicon only.",
+        "enforcement": [
+          "README lint",
+          "Repo topics check (manual)"
+        ]
+      },
+      {
+        "id": "REMOTE_LTM.DISCOVERY_SURFACE_CONTRACT",
+        "title": "Discovery Surface Contract",
+        "priority": "P0",
+        "rule": "RemoteLTM must be recoverable in a cold-start chat without uploads by explicit URL or tool search discovery. Maintain at least one deterministic machine-readable bootstrap artifact at a stable path in the repo that contains canonical repo and raw_base URLs.",
+        "required_artifacts": [
+          "manifests/bootstrap.json",
+          "manifests/latest.json",
+          "manifests/ledger.ndjson"
+        ]
+      },
+      {
+        "id": "REMOTE_LTM.RAW_URL_CONTRACT",
+        "title": "Canonical Raw URL Contract",
+        "priority": "P0",
+        "rule": "Canonical raw base is https://raw.githubusercontent.com/<owner>/<repo>/main. Canonical fetch targets: /manifests/bootstrap.json, /manifests/latest.json, /manifests/ledger.ndjson. Consumers must try bootstrap -> latest -> ledger fallback and verify JSON parseability.",
+        "fallback_sequence": [
+          "bootstrap.json",
+          "latest.json",
+          "ledger.ndjson"
+        ]
+      }
+    ],
+    "lint": {
+      "readme_required_sections": [
+        "MetaBlooms LTM Bootstrap",
+        "Canonical Raw Fetch URLs",
+        "Manifests",
+        "Operational Notes"
+      ],
+      "readme_forbidden_terms": [
+        "LLM memory",
+        "ChatGPT memory",
+        "long-term memory for LLMs",
+        "agent memory"
+      ],
+      "note": "Forbidden terms are for README/metadata; internal docs may use them when necessary."
+    },
+    "migration": {
+      "actions": [
+        "Update README.md in repo root with MetaBlooms-specific lexicon and canonical raw URLs.",
+        "Add manifests/bootstrap.json referencing repo and raw base URLs.",
+        "Ensure manifests/latest.json and manifests/ledger.ndjson are committed and up to date."
+      ],
+      "rollback": "Revert README.md and remove manifests/bootstrap.json; keep existing manifests/latest.json and ledger.ndjson."
+    }
+  }
+}

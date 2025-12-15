@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-15T00:38:05Z",
+  "generated_utc": "2025-12-15T00:55:55Z",
   "items": [
+    {
+      "ts": "2025-12-15T00:55:55Z",
+      "path": "deltas/2025-12/MB__03_DELTA__DiscoverySurface_PrivateVocab_NoSEO_v1.mips.json",
+      "sha256": "cb9d84f679c74f80d69bd5535e34f4f6af26e27de849fb1d04429dba2ca8e6bd",
+      "bytes": 3841
+    },
     {
       "ts": "2025-12-15T00:38:05Z",
       "path": "deltas/2025-12/MB__03_DELTA__RemoteLTM_RawURL_Contract_v1.mips.json",
@@ -144,12 +150,6 @@
       "path": "deltas/2025-12/2025-12-14_MB_MVP_LTM_loop_mechanics_v1.mips.md",
       "sha256": "cfb241ab5e3ee042070f8ccc6ee2cb08ba72ea4e01908deb76115d9e3bd0f118",
       "bytes": 10280
-    },
-    {
-      "ts": "2025-12-14T21:32:23Z",
-      "path": "deltas/2025-12/MB__01_DELTA__AutoDeltaReconciler_v1.mips.json",
-      "sha256": "4c6b203085fa1264f5212cfc76beb1913b01fa779dcc0f1daa5d3c2583a30a69",
-      "bytes": 1471
     }
   ]
 }
