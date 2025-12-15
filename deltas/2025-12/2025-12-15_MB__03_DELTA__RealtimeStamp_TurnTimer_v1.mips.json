@@ -1,0 +1,62 @@
+{
+  "mips": {
+    "artifact_id": "MB__03_DELTA__RealtimeStamp_TurnTimer_v1__2025-12-15",
+    "parent_bundle": "MB__02_OS__MetaBlooms_Core__ACTIVE__2025-12-14_REBUILT.mips.json",
+    "version": "v1",
+    "timestamp_utc": "2025-12-15T04:40:49Z",
+    "content_type": "application/json",
+    "councils": [
+      "Auditor",
+      "SystemsEngineer",
+      "Validator",
+      "Archivist"
+    ],
+    "sha256": "2803191ef9eca516a155899b6650ba6c51394d30ee948af0e22e4c0dc3cd3b67"
+  },
+  "content": {
+    "delta_type": "runtime_observability_upgrade",
+    "name": "Realtime Stamp + Turn Timer Invariant v1",
+    "goal": "Reinstate turniodic real-time checks/stamps and enforce turn-level timing receipts without claiming inaccessible wall-clock facts.",
+    "problem_statement": [
+      "Missing periodic real-time stamps and inability to compute elapsed real-world time reliably.",
+      "Inconsistent python artifact materialization for deltas/tools."
+    ],
+    "invariants_added": [
+      "Every assistant response includes a TIMESTAMP block with UTC and America/Chicago local time.",
+      "If prior stamp exists in-session, compute elapsed time since last stamp; otherwise state elapsed unknown (no prior stamp).",
+      "Never claim total wall-clock chat duration unless stamps exist covering the interval."
+    ],
+    "timestamp_block_format": {
+      "required_fields": [
+        "utc_iso",
+        "local_iso",
+        "elapsed_since_last_seconds",
+        "elapsed_note"
+      ]
+    },
+    "periodic_checks": {
+      "cadence": "turniodic (every turn)",
+      "real_time_source": "user_info tool when available; else system UTC + configured timezone for local display"
+    },
+    "python_artifact_policy": {
+      "require_python_for_downloadables": true,
+      "rule": "Any delta/tool introduced must be written to /mnt/data and linked in same turn."
+    },
+    "validators": [
+      "V_TS_BLOCK_PRESENT_EVERY_TURN",
+      "V_NO_WALLCLOCK_CLAIM_WITHOUT_STAMPS",
+      "V_DOWNLOADABLE_ARTIFACTS_CREATED_WHEN_PROMISED"
+    ],
+    "feature_flags": {
+      "realtime_stamp_enabled": true,
+      "turn_timer_enabled": true
+    },
+    "rollback": {
+      "strategy": "feature_flag_disable",
+      "steps": [
+        "Set realtime_stamp_enabled=false",
+        "Set turn_timer_enabled=false"
+      ]
+    }
+  }
+}
