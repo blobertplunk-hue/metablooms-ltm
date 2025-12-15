@@ -1,0 +1,70 @@
+{
+  "mips": {
+    "artifact_id": "MB__03_REMOTE_LTM_LoadedDeltas_Report_v1",
+    "content_type": "application/json",
+    "timestamp_utc": "2025-12-15T02:11:29Z",
+    "version": "v1",
+    "sha256_body": "967bc7689835466af5f32c2dd3b92f9a0bb660405ae8e1152ea88318b5fc009d",
+    "links": {
+      "delta_1": "https://raw.githubusercontent.com/blobertplunk-hue/metablooms-ltm/main/deltas/2025-12/MB__03_DELTA__DiscoverySurface_PrivateVocab_NoSEO_v1.mips.json",
+      "delta_2": "https://raw.githubusercontent.com/blobertplunk-hue/metablooms-ltm/main/deltas/2025-12/MB__03_DELTA__RemoteLTM_RawURL_Contract_v1.mips.json",
+      "delta_3": "https://raw.githubusercontent.com/blobertplunk-hue/metablooms-ltm/main/deltas/2025-12/MB__03_DELTA__AuthoritativeMemory_ContractAndLexicon_v1.mips.json"
+    }
+  },
+  "body": {
+    "kind": "MB_REMOTE_LTM_DELTA_LOAD_REPORT",
+    "run_timestamp_utc": "2025-12-15T02:11:29Z",
+    "source": {
+      "repo": "blobertplunk-hue/metablooms-ltm",
+      "branch": "main",
+      "method": "direct_open_raw_urls"
+    },
+    "loaded_deltas": [
+      {
+        "url": "https://raw.githubusercontent.com/blobertplunk-hue/metablooms-ltm/main/deltas/2025-12/MB__03_DELTA__DiscoverySurface_PrivateVocab_NoSEO_v1.mips.json",
+        "artifact_id": "MB__03_DELTA__DiscoverySurface_PrivateVocab_NoSEO_v1",
+        "version": "v1",
+        "timestamp_utc": "2025-12-15T00:52:30Z",
+        "sha256": "e59587cb0c0202717290340c65dd61057335f8cbb2c3616f2f46407eb7b07466",
+        "content_type": "application/json",
+        "councils": [
+          "Facilitator",
+          "Auditor",
+          "Archivist",
+          "Synthesizer"
+        ]
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blobertplunk-hue/metablooms-ltm/main/deltas/2025-12/MB__03_DELTA__RemoteLTM_RawURL_Contract_v1.mips.json",
+        "artifact_id": "MB__03_DELTA__RemoteLTM_RawURL_Contract_v1",
+        "version": "1.0.0",
+        "timestamp_utc": "2025-12-14T23:55:00Z",
+        "sha256": "0075cfc2b00d950675869963e78595d75e181778529052a9b5912404f271fa9b",
+        "content_type": "application/json",
+        "councils": [
+          "Auditor",
+          "Engineer",
+          "Archivist"
+        ]
+      },
+      {
+        "url": "https://raw.githubusercontent.com/blobertplunk-hue/metablooms-ltm/main/deltas/2025-12/MB__03_DELTA__AuthoritativeMemory_ContractAndLexicon_v1.mips.json",
+        "artifact_id": "MB__03_DELTA__AuthoritativeMemory_ContractAndLexicon_v1",
+        "version": "1.0.0",
+        "timestamp_utc": "2025-12-15T00:25:43Z",
+        "sha256": "2ac4bfe71a3dd57e2f89f4a046197414cf4472006ff8711439c1cfe6bb2d2a2d",
+        "content_type": "application/json",
+        "councils": [
+          "Facilitator",
+          "Auditor",
+          "Synthesizer",
+          "Recorder"
+        ]
+      }
+    ],
+    "notes": {
+      "meaning_of_loaded": "Delta bodies were fetched and parsed enough to read MIPS headers and summarize intent/rules. No local Project Files were overwritten.",
+      "next_step_recommendation": "If you want these to become ACTIVE in local runtime, we should produce a local MB__03_DELTA__RemoteLTM_IngestReceipt_v1 and (optionally) a consolidation delta that maps/merges conflicts."
+    }
+  }
+}
