@@ -1,0 +1,27 @@
+{
+  "mips": {
+    "artifact_id": "MB__TOOL__TurnTimer_Helper_v1__2025-12-15",
+    "parent_bundle": "MB__02_OS__MetaBlooms_Core__ACTIVE__2025-12-14_REBUILT.mips.json",
+    "version": "v1",
+    "timestamp_utc": "2025-12-15T04:40:49Z",
+    "content_type": "text/x-python",
+    "councils": [
+      "SystemsEngineer",
+      "Auditor"
+    ],
+    "sha256": "1c36efe0a6dee389d72d5471ef2e26d18cd4541f350983654e64b3aae424a752"
+  },
+  "body": {
+    "filename": "mb_turntimer_helper.py",
+    "usage": [
+      "python mb_turntimer_helper.py stamp",
+      "python mb_turntimer_helper.py stamp --out stamps.ndjson",
+      "python mb_turntimer_helper.py summarize stamps.ndjson"
+    ],
+    "notes": [
+      "Optional: assistant-side stamps are enforced by delta regardless.",
+      "Uses your machine's local system time."
+    ],
+    "code": "#!/usr/bin/env python3\nimport argparse, json, time, datetime\n\ndef now_utc_iso():\n    return datetime.datetime.utcnow().replace(microsecond=0).isoformat() + \"Z\"\n\ndef now_local_iso():\n    dt = datetime.datetime.now().astimezone()\n    return dt.replace(microsecond=0).isoformat()\n\ndef write_stamp(out_path=None):\n    rec = {\n        \"utc_iso\": now_utc_iso(),\n        \"local_iso\": now_local_iso(),\n        \"epoch_s\": int(time.time()),\n        \"kind\": \"stamp\"\n    }\n    line = json.dumps(rec, ensure_ascii=False)\n    if out_path:\n        with open(out_path, \"a\", encoding=\"utf-8\") as f:\n            f.write(line + \"\\n\")\n    print(line)\n\ndef summarize(path):\n    stamps=[]\n    with open(path, \"r\", encoding=\"utf-8\") as f:\n        for line in f:\n            line=line.strip()\n            if not line: \n                continue\n            try:\n                stamps.append(json.loads(line))\n            except Exception:\n                pass\n    if len(stamps) < 2:\n        print(json.dumps({\"error\":\"need >=2 stamps to summarize\",\"count\":len(stamps)}, ensure_ascii=False))\n        return\n    stamps.sort(key=lambda r: r.get(\"epoch_s\", 0))\n    elapsed = stamps[-1][\"epoch_s\"] - stamps[0][\"epoch_s\"]\n    out = {\n        \"count\": len(stamps),\n        \"first_utc\": stamps[0].get(\"utc_iso\"),\n        \"last_utc\": stamps[-1].get(\"utc_iso\"),\n        \"elapsed_seconds\": elapsed\n    }\n    print(json.dumps(out, ensure_ascii=False, indent=2))\n\ndef main():\n    ap=argparse.ArgumentParser()\n    sub=ap.add_subparsers(dest=\"cmd\", required=True)\n    sp=sub.add_parser(\"stamp\")\n    sp.add_argument(\"--out\", default=None)\n    sm=sub.add_parser(\"summarize\")\n    sm.add_argument(\"path\")\n    args=ap.parse_args()\n    if args.cmd==\"stamp\":\n        write_stamp(args.out)\n    else:\n        summarize(args.path)\n\nif __name__==\"__main__\":\n    main()\n"
+  }
+}
