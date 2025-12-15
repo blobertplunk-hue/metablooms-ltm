@@ -1,13 +1,29 @@
-# MetaBlooms LTM (External)
+# MetaBlooms LTM
 
-This repository stores MetaBlooms *export artifacts* (deltas + manifests) pushed automatically from Termux.
+This repository is a deterministic, append-only artifact store for MetaBlooms.
 
-## Folder contract
-- `deltas/YYYY-MM/` : ingested deltas (MIPS JSON/MD/TXT)
-- `manifests/ledger.ndjson` : append-only ingestion ledger (sha256, bytes, path)
-- `manifests/latest.json` : small rolling window of most recent ledger items
-- `docs/` : human docs (optional)
-- `tools/` : helper scripts (optional)
+It is intentionally optimized for:
+- deterministic retrieval
+- auditability
+- append-only change tracking
 
-## Safety
-Never commit tokens, credentials, or private student data.
+It is intentionally NOT optimized for broad discoverability.
+
+## Bootstrap (canonical)
+Consumers should start here:
+
+- `manifests/bootstrap.json`
+
+That file declares:
+- the canonical raw base
+- manifest paths
+- the fetch order and fallback behavior
+
+## Manifests
+- `manifests/latest.json` — fast index of recent ingests
+- `manifests/ledger.ndjson` — append-only ledger with SHA + byte counts
+
+## Policy
+- Private vocabulary only
+- Avoid broad/commodity keywords
+- Prefer deterministic contracts over narrative description
