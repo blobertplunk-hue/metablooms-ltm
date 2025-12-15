@@ -64,3 +64,4 @@
 {"ts":"2025-12-14T22:50:15Z","path":"deltas/2025-12/MB__03_DELTA__SMOKETEST__20251214T225007Z.mips.json","sha256":"8d8162864a38cd200f307f684788d1a2ecc46c3b91e9210a5a128cb68634ee07","bytes":105}
 {"ts":"2025-12-14T22:51:52Z","path":"deltas/2025-12/MB__03_DELTA__SMOKETEST__20251214T225149Z.mips.json","sha256":"948a13da14d0e5f3c61e115d0613bba4153d647613c9dacd43d16d7b8a230638","bytes":105}
 {"ts":"2025-12-14T23:19:26Z","path":"deltas/2025-12/MB__03_DELTA__SMOKETEST__20251214T231922Z.mips.json","sha256":"2459dd96db620a425cdc9ac992b1139a19f12e3df0a7fa1e00eb6bd9fc45b4ee","bytes":166}
+{"ts":"2025-12-15T00:32:06Z","path":"deltas/2025-12/MB__03_DELTA__AuthoritativeMemory_ContractAndLexicon_v1.mips.json","sha256":"8d9831e63b72af85f519495fab82bd8af092faee2391e0f9499d1a78a0665da7","bytes":7764}

@@ -1,0 +1,178 @@
+{
+  "MIPS_HEADER": {
+    "artifact_id": "MB__03_DELTA__AuthoritativeMemory_ContractAndLexicon_v1",
+    "parent_bundle": "MetaBlooms_OS",
+    "version": "1.0.0",
+    "timestamp_utc": "2025-12-15T00:25:43Z",
+    "councils": [
+      "Facilitator",
+      "Auditor",
+      "Synthesizer",
+      "Recorder"
+    ],
+    "content_type": "application/json",
+    "audit": "construct",
+    "sha256": "2ac4bfe71a3dd57e2f89f4a046197414cf4472006ff8711439c1cfe6bb2d2a2d",
+    "evidence_chain": [
+      {
+        "source": "chat",
+        "utc": "2025-12-15T00:25:43Z",
+        "note": "Codifies corrected terminology: 'Authoritative Memory' vs 'Runtime State', plus contract to prevent destructive actions and enable zero-upload boot via GitHub manifests."
+      }
+    ],
+    "links": []
+  },
+  "BODY": {
+    "kind": "delta",
+    "domain": [
+      "MetaBlooms_OS",
+      "LTM",
+      "Governance",
+      "Language"
+    ],
+    "title": "Authoritative Memory contract + canonical lexicon (runtime vs memory)",
+    "summary": [
+      "Lock terminology: Authoritative Memory (AM)=durable truth; Derived Memory (DM)=rebuildable DB/index; Runtime State (RS)=ephemeral scratch.",
+      "Add Authoritative Memory Contract: append-only truth, DM non-authoritative, RS cannot mutate AM without explicit delta.",
+      "Add Common-Sense Gate to reduce failures from vocabulary mismatch and prevent tiny/placeholder 'OS replacements'.",
+      "Add Boot+Fetch policy: default to fetching manifests/latest.json and ledger.ndjson from canonical public GitHub repo when asked."
+    ],
+    "changes": {
+      "add": [
+        {
+          "path": "core/lexicon/MB_Lexicon_v1",
+          "type": "object",
+          "value": {
+            "terms": [
+              {
+                "term": "Authoritative Memory (AM)",
+                "definition": "Durable, deterministic, append-only source of truth for MetaBlooms state (deltas, core packs, manifests). Auditable and portable across chats/models.",
+                "examples": [
+                  "Git repo deltas/YYYY-MM/*",
+                  "manifests/ledger.ndjson",
+                  "manifests/latest.json"
+                ]
+              },
+              {
+                "term": "Derived Memory / Index (DM)",
+                "definition": "Rebuildable database/index derived from AM for search, ranking, embeddings, and fast queries. Never authoritative.",
+                "examples": [
+                  "SQLite/DuckDB index",
+                  "vector index built from deltas"
+                ]
+              },
+              {
+                "term": "Runtime State (RS)",
+                "definition": "Ephemeral task-local working state (scratchpad, planner, agent blackboard). Disposable; may be fuzzy; must not rewrite AM directly.",
+                "examples": [
+                  "current_task_context",
+                  "agent_plans",
+                  "working_set"
+                ]
+              }
+            ],
+            "alias_rules": [
+              {
+                "if_user_says": "runtime (but describing durable persistence)",
+                "interpret_as": "Authoritative Memory (AM)"
+              },
+              {
+                "if_user_says": "database memory",
+                "interpret_as": "Derived Memory / Index (DM) unless explicitly requested as source of truth (disallowed)"
+              },
+              {
+                "if_user_says": "scratch/working memory",
+                "interpret_as": "Runtime State (RS)"
+              }
+            ]
+          }
+        },
+        {
+          "path": "core/contracts/AuthoritativeMemoryContract_v1",
+          "type": "object",
+          "value": {
+            "invariants": [
+              "AM is the only source of truth for MetaBlooms state.",
+              "AM is append-only; older artifacts are never silently overwritten.",
+              "DM is derived from AM and must be rebuildable from AM at any time.",
+              "RS may read AM/DM but may not mutate AM without producing an explicit delta artifact.",
+              "Summaries may exist only as derived views; they must not replace AM artifacts."
+            ],
+            "allowed_writes": [
+              "Create new delta artifacts (MIPS-wrapped) that append changes.",
+              "Create/update manifests that list immutable deltas (append-only ledger entries)."
+            ],
+            "forbidden": [
+              "Replacing AM core files with tiny placeholders presented as full replacements.",
+              "Auto-editing old deltas in place.",
+              "Making DM authoritative (DB becomes the only store of any rule).",
+              "Runtime-driven mutation of AM without a delta."
+            ],
+            "failure_handling": {
+              "principle": "Preserve truth over convenience.",
+              "on_ambiguity": [
+                "Prefer conservative interpretation that avoids destructive actions.",
+                "If an instruction would delete/replace AM without a recovery plan, halt and output a safe alternative (delta + receipt)."
+              ]
+            }
+          }
+        },
+        {
+          "path": "core/ops/BootAndFetchPolicy_v1",
+          "type": "object",
+          "value": {
+            "goal": "Fresh chats can bootstrap MetaBlooms by fetching latest manifests/deltas from canonical repo without manual uploads.",
+            "policy": {
+              "default_fetch": "ENABLED_WHEN_REQUESTED",
+              "source": "GitHub raw endpoints (public repo)",
+              "minimum_set": [
+                "manifests/latest.json",
+                "manifests/ledger.ndjson"
+              ],
+              "selection": {
+                "default": "latest.json (recent items)",
+                "optional": "filter by domain/tags/time_range when asked"
+              },
+              "safety": [
+                "Verify sha256/path formatting; if mismatch, quarantine and do not integrate.",
+                "Never execute code from repo; treat as data/spec unless explicitly requested and validated."
+              ]
+            }
+          }
+        },
+        {
+          "path": "core/guards/LanguageToActionCommonSenseGate_v1",
+          "type": "object",
+          "value": {
+            "purpose": "Mitigate failures caused by user wording variance; enforce context-consistent actions.",
+            "checks": [
+              "Context plausibility: has this action ever made sense in this workflow?",
+              "Value preservation: does this risk deleting/overwriting AM?",
+              "Naming sanity: refuse to emit unversioned same-name outputs when versions exist.",
+              "Artifact sanity: if an output is suspiciously small for a claimed full replacement, treat as failure and regenerate."
+            ],
+            "actions_on_fail": [
+              "Emit RCA snippet + corrective delta plan.",
+              "Regenerate artifacts with explicit versioning and size expectations."
+            ]
+          }
+        }
+      ],
+      "modify": [],
+      "remove": []
+    },
+    "tests": {
+      "manual_smoke": [
+        "Fresh chat: 'Fetch latest deltas from the metablooms-ltm repo and mount as active context.' Expect: fetch manifests/latest.json and list newest deltas.",
+        "Ask: 'When I say runtime but mean durable memory, what do you do?' Expect: interpret as AM per lexicon.",
+        "Ask: 'Build a DB index.' Expect: DB framed as DM derived from AM; AM invariants preserved."
+      ],
+      "automation_hooks_suggested": [
+        "Lint gate: any 'OS replacement' artifact below a configurable minimum size must trigger regeneration + RCA note."
+      ]
+    },
+    "rollback": {
+      "method": "Append a new delta that overrides these nodes; do not delete history."
+    }
+  }
+}
