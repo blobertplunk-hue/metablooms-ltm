@@ -79,3 +79,4 @@
 {"ts":"2025-12-15T02:17:07Z","path":"deltas/2025-12/2025-12-14_MB__BOOT_PROMPT__MetaBlooms_OS_BIOS_v2.mips.json","sha256":"eabc4d4018742cc44662ef8b36f966d20ad67601e41cc14cbe2d23213fcdc8e8","bytes":4629}
 {"ts":"2025-12-15T03:20:20Z","path":"deltas/2025-12/2025-12-15_MB__03_DELTA__Replay_EasyWins_MicroPack_v1.mips.json","sha256":"5fb7787c17fc9d42f34faa6495a41472b444025a3ec7d29ac9e4d6ede70b924a","bytes":2587}
 {"ts":"2025-12-15T03:22:06Z","path":"deltas/2025-12/2025-12-15_MB__03_DELTA__Replay_NoLLM_ImportReview_v1.mips.json","sha256":"8350d8442fa327032978381af9a85e0a6d7ba173e3b2df21f2cbcc6c0f1de3a3","bytes":2984}
+{"ts":"2025-12-15T04:08:35Z","path":"deltas/2025-12/2025-12-15_MB__03_DELTA__ReplayRun_v0_Recorder_Trace_SessionReplay.mips.json","sha256":"17a4b4e9c8e1aa10e937812d3f19c7e173c1e8615a3dccbff2a9f68860805535","bytes":4019}

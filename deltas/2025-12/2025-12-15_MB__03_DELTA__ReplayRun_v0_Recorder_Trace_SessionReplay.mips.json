@@ -1,0 +1,123 @@
+{
+  "mips": {
+    "artifact_id": "MB__03_DELTA__ReplayRun_v0_Recorder_Trace_SessionReplay__2025-12-15",
+    "parent_bundle": "MB__02_OS__MetaBlooms_Core__ACTIVE__2025-12-14_REBUILT.mips.json",
+    "version": "v0",
+    "timestamp_utc": "2025-12-15T03:07:03Z",
+    "content_type": "application/json",
+    "councils": [
+      "Auditor",
+      "SystemsEngineer",
+      "Archivist",
+      "Validator"
+    ],
+    "links": {
+      "playwright_trace_viewer": "https://playwright.dev/docs/trace-viewer",
+      "chrome_devtools_recorder": "https://developer.chrome.com/docs/devtools/recorder",
+      "rrweb_repo": "https://github.com/rrweb-io/rrweb"
+    },
+    "sha256": "e344c427125c4e004713f5652821a6981c0d8443e07dfe48dd5ffb1a03fd1d2f"
+  },
+  "content": {
+    "delta_type": "capability_add",
+    "name": "ReplayRun v0",
+    "goal": "Make every governed run replayable with a no-LLM mode using: Chrome DevTools Recorder exports, Playwright tracing, and rrweb session replay.",
+    "non_negotiables": [
+      "No claim of replay unless an evidence artifact exists and is hash-referenced.",
+      "Command stream (intent) is separate from Event stream (facts).",
+      "Project Files remain authoritative; this delta only adds specs, validators, optional tooling hooks.",
+      "Privacy-by-default: redact secrets/PII; store hashes+metadata by default."
+    ],
+    "replay_sources_supported_v0": [
+      {
+        "source": "Chrome DevTools Recorder",
+        "artifact": "User flow export (JSON / Puppeteer formats)",
+        "use": "Import to CommandStream; run no-LLM replay."
+      },
+      {
+        "source": "Playwright Trace",
+        "artifact": "trace.zip",
+        "use": "Attach as evidence; step-through forensics via Trace Viewer."
+      },
+      {
+        "source": "rrweb",
+        "artifact": "event stream JSON",
+        "use": "Capture human session; attach as evidence; optional playback."
+      }
+    ],
+    "specs": {
+      "ReplayRunEnvelope": {
+        "run_id": "uuidv7",
+        "created_at_utc": "iso8601",
+        "actor": {
+          "type": "human|agent|system",
+          "id": "string"
+        },
+        "context": {
+          "surface": "chat|termux|windows|browser",
+          "session_id": "string"
+        },
+        "inputs_hash": "sha256",
+        "commands_ref": "artifact pointer",
+        "events_ref": "artifact pointer",
+        "evidence_refs": [
+          "artifact pointers"
+        ],
+        "head_hash": "sha256",
+        "privacy": {
+          "redaction_level": "none|min|strict",
+          "pii_scan": "pass|warn|fail"
+        }
+      },
+      "CommandStream": {
+        "format": "ndjson",
+        "entry_fields": [
+          "cmd_id",
+          "ts_utc",
+          "type",
+          "target",
+          "params",
+          "expected"
+        ]
+      },
+      "EventStream": {
+        "format": "ndjson (append-only)",
+        "entry_fields": [
+          "evt_id",
+          "ts_utc",
+          "type",
+          "ref_cmd_id",
+          "data",
+          "prev_hash",
+          "entry_hash"
+        ]
+      }
+    },
+    "validators": [
+      "V_REPLAY_00_schema",
+      "V_REPLAY_01_hash_chain",
+      "V_REPLAY_02_no_claim_without_artifact",
+      "V_REPLAY_03_privacy_gate",
+      "V_REPLAY_04_import_devtools_recorder"
+    ],
+    "acceptance_tests_v0": [
+      "Import DevTools Recorder export -> CommandStream >=1 command and valid envelope.",
+      "EventStream hash-chain verifies and head_hash matches computed.",
+      "Replayable=true with empty evidence_refs -> FAIL.",
+      "Strict redaction with secret patterns -> FAIL."
+    ],
+    "rollback": {
+      "feature_flag": "replay_run_v0_enabled",
+      "disable_steps": [
+        "Set replay_run_v0_enabled=false",
+        "Stop emitting envelopes; keep existing artifacts read-only"
+      ]
+    },
+    "feature_flags": {
+      "replay_run_v0_enabled": true,
+      "replay_no_llm_mode_enabled": true,
+      "record_playwright_trace_when_available": true,
+      "allow_rrweb_capture": "opt-in per surface"
+    }
+  }
+}
