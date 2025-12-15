@@ -89,3 +89,4 @@
 {"ts":"2025-12-15T12:35:32Z","path":"deltas/2025-12/2025-12-15_MB__03_DELTA__VettingReport_BrokenChatFilter_v1.mips.json","sha256":"98d4a4beb967511e47b3cb2e08fda436976d2016f7a56f75b6503fd5ab1683b1","bytes":7623}
 {"ts":"2025-12-15T18:23:10Z","path":"deltas/2025-12/2025-12-15_MB__03_DELTA__UniversalCreationPreflight_PreGapFiller_v1.mips.json","sha256":"cb1e81aff6535b3827a605c23f2612da0e9c1e24c01d48637a0009473159f28d","bytes":5553}
 {"ts":"2025-12-15T18:27:02Z","path":"deltas/2025-12/2025-12-15_MB__03_DELTA__UniversalCreationPreflight_EvidenceUpgrades_v1.mips.json","sha256":"d8cd545c96a2e461894737d6aa5e7c314e1184811fec1fe10c8e5e045b197a48","bytes":1300}
+{"ts":"2025-12-15T23:44:25Z","path":"deltas/2025-12/2025-12-15_MB__COMPILER__MetaBlooms_Compiler_v1.mips.json","sha256":"d1dc5075abded7adea4d261c781edfab957169bf3ca5b535cfb762136c7e73e5","bytes":7221}

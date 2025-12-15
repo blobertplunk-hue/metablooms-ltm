@@ -1,0 +1,250 @@
+{
+  "mips": {
+    "mips_version": "1.0",
+    "artifact_id": "33d6cbe6-6b63-4523-8223-1c5ad54906a6",
+    "parent_bundle": "MetaBlooms_Recovery_Run_2025-12-15",
+    "version": "v1",
+    "timestamp": "2025-12-15T17:40:27.185957-06:00",
+    "content_type": "application/json",
+    "councils": [
+      "Auditor",
+      "Archivist",
+      "Rationalist",
+      "Teacher"
+    ],
+    "sha256": "fcbfeb38dc6a9bf11602e08be4ccb1e53712509c29b7d01f73cd8db415319212",
+    "evidence_chain": {
+      "mode": "append_only",
+      "source": "local_recovery_parts_001-006"
+    },
+    "links": []
+  },
+  "body": {
+    "artifact": "MB__COMPILER__MetaBlooms_Compiler_v1.mips.json",
+    "name": "MetaBlooms Compiler v1",
+    "purpose": "Compile high-level principles, prompts, deltas, and recovered artifacts into enforceable, testable, promotable OS upgrades with validators and evidence gates.",
+    "core_concept": {
+      "analogy": [
+        "compiler (source \u2192 IR \u2192 optimized IR \u2192 target)",
+        "policy-as-code",
+        "linter + test harness + release gate"
+      ],
+      "source_inputs": [
+        "raw user utterance",
+        "prompt draft",
+        "delta draft",
+        "recovered artifact chunk",
+        "external critique (e.g., Claude)"
+      ],
+      "targets": [
+        "OS core JSON",
+        "Delta .mips.json",
+        "Validator registry",
+        "EvidenceChain append"
+      ]
+    },
+    "pipeline": [
+      {
+        "phase": "Parse",
+        "outputs": [
+          "IdeaGraph"
+        ],
+        "checks": [
+          "tokenize ideas",
+          "extract constraints",
+          "identify named constructs"
+        ],
+        "fail_if": [
+          "no actionable intent detected"
+        ]
+      },
+      {
+        "phase": "Normalize",
+        "outputs": [
+          "Canonical IR"
+        ],
+        "checks": [
+          "rename-resistance mapping",
+          "role separation",
+          "constraint-first structuring"
+        ],
+        "fail_if": [
+          "semantic drift detected without justification"
+        ]
+      },
+      {
+        "phase": "EnforcementSpec Synthesis",
+        "outputs": [
+          "EnforcementSpec"
+        ],
+        "checks": [
+          "criteria present",
+          "pressure tests declared",
+          "promotion rules declared",
+          "audit hooks present"
+        ],
+        "fail_if": [
+          "missing any required field"
+        ]
+      },
+      {
+        "phase": "Pressure Tests",
+        "outputs": [
+          "TestResults"
+        ],
+        "checks": [
+          "generalization",
+          "falsification",
+          "survivorship",
+          "compression",
+          "leverage"
+        ],
+        "pass_rule": ">=2 pressure tests pass for Validated; else remain Provisional"
+      },
+      {
+        "phase": "Promotion Decision",
+        "outputs": [
+          "PromotionPlan"
+        ],
+        "checks": [
+          "provisional\u2192validated\u2192locked gates",
+          "risk tiering P0/P1/P2",
+          "rollback plan"
+        ],
+        "fail_if": [
+          "attempt to lock without validation"
+        ]
+      },
+      {
+        "phase": "Emit",
+        "outputs": [
+          "Delta bundle",
+          "Validator hooks",
+          "Diff patch"
+        ],
+        "checks": [
+          "append-only",
+          "MIPS wrapper",
+          "sha256",
+          "links"
+        ],
+        "fail_if": [
+          "non-append mutation without explicit override"
+        ]
+      },
+      {
+        "phase": "Audit + Self-Check",
+        "outputs": [
+          "CompilerReport",
+          "Scorecard"
+        ],
+        "checks": [
+          "third-party review pass",
+          "broken logic scan",
+          "coverage gaps"
+        ],
+        "fail_if": [
+          "unresolved critical issues"
+        ]
+      }
+    ],
+    "enforcement_spec_schema": {
+      "required_fields": [
+        "id",
+        "name",
+        "scope",
+        "non_goals",
+        "criteria",
+        "pressure_tests",
+        "promotion_path",
+        "failure_modes",
+        "audit_hooks",
+        "evidence_requirements",
+        "rollback"
+      ],
+      "example": {
+        "id": "MB__RULE__DoofusGeniusWatchdog_v1",
+        "name": "Doofus\u2192Genius Watchdog",
+        "scope": [
+          "live chat ideas",
+          "assistant ideas",
+          "historical artifacts"
+        ],
+        "non_goals": [
+          "tone policing",
+          "humiliation"
+        ],
+        "criteria": {
+          "Doofus": [
+            "generic restatement",
+            "ungrounded speculation"
+          ],
+          "Genius": [
+            "generalizes to >=2 unrelated domains",
+            "eliminates a failure class"
+          ]
+        },
+        "pressure_tests": [
+          "generalization",
+          "falsification",
+          "leverage"
+        ],
+        "promotion_path": {
+          "default": "Provisional",
+          "Validated": "2+ tests pass",
+          "Locked": "Validated + evidence logged"
+        },
+        "failure_modes": [
+          "downgrade to Provisional",
+          "discard if fails all tests"
+        ],
+        "audit_hooks": [
+          "log_test_matrix",
+          "emit_scorecard_row"
+        ],
+        "evidence_requirements": {
+          "min_sources": 2,
+          "types": [
+            "artifact",
+            "behavioral"
+          ],
+          "confidence_scale": "Supported/Contested/Emerging"
+        },
+        "rollback": {
+          "method": "disable validator entry; keep append-only log"
+        }
+      }
+    },
+    "pressure_tests": {
+      "generalization": "Strip context; apply to 3 unrelated cases; pass if works in >=2.",
+      "falsification": "Search for counterexamples; fail if a simple counterexample breaks it without repair.",
+      "survivorship": "Appears independently across multiple artifacts/iterations or improves under revision.",
+      "compression": "Can be simplified without losing enforcement power; fail if simplification kills it.",
+      "leverage": "Reduces future work/cognitive load or eliminates error class."
+    },
+    "promotion_rules": {
+      "states": [
+        "Provisional",
+        "Validated",
+        "Locked"
+      ],
+      "validated_gate": ">=2 pressure tests pass",
+      "locked_gate": "Validated + EnforcementSpec complete + Evidence logged",
+      "p0_gate": "Locked + regression-preventing or safety-critical + clear rollback"
+    },
+    "runtime_contracts": {
+      "rename_resistance": "Construct names are load-bearing; renames require semantic equivalence proof.",
+      "scope_fence": "During recovery/repair, forbid opportunistic refactors outside scope.",
+      "artifact_bias": "Claims require artifacts or test results; explanations alone are insufficient.",
+      "heartbeat_default": "Long-running scripts emit periodic low-noise liveness heartbeats."
+    },
+    "outputs": [
+      "MB__COMPILER__Report.md",
+      "MB__COMPILER__Scorecard.json",
+      "MB__DELTA__*.mips.json",
+      "ValidatorRegistry.patch.json",
+      "EvidenceChain append rows"
+    ],
+    "implementation_note": "This is the missing 'thing that does this job in real file systems': a compiler-style pipeline plus policy-as-code gates (lint/test/release)."
+  }
+}
