@@ -1,0 +1,62 @@
+{
+  "mips": {
+    "artifact_id": "MB__02_DELTA__BootBIOS_URLsSurfaced_v1",
+    "content_type": "application/json",
+    "timestamp_utc": "2025-12-15T02:06:45Z",
+    "version": "v1",
+    "councils": [
+      "Facilitator",
+      "Auditor",
+      "Recorder"
+    ],
+    "links": {
+      "boot_bios": "MB__BOOT_PROMPT__MetaBlooms_OS_BIOS_v1.txt"
+    },
+    "sha256_body": "8b5a279b4f3c6fb18a757db0388412244aefb0762559c48e04bcb31a8c18cd2a"
+  },
+  "payload": {
+    "delta_id": "DELTA_BOOTBIOS_SURFACE_REMOTE_URLS_v1",
+    "title": "Boot BIOS must surface canonical remote LTM URLs in-chat",
+    "type": "boot_contract",
+    "priority": "P0",
+    "problem": {
+      "symptom": "Boot responses omit canonical remote LTM URLs, preventing operator verification and cross-chat portability.",
+      "impact": [
+        "User cannot verify targets",
+        "Downstream LLMs miss required fetch endpoints",
+        "Boot feels incomplete"
+      ]
+    },
+    "solution": {
+      "rule": "During STEP 3 (REMOTE LTM BOOTSTRAP), always print the canonical bootstrap URL and the two canonical fetch targets (latest.json, ledger.ndjson) plus CDN fallback, as explicit copyable URLs.",
+      "urls": {
+        "bootstrap": "https://raw.githubusercontent.com/blobertplunk-hue/metablooms-ltm/main/manifests/bootstrap.json",
+        "latest": "https://raw.githubusercontent.com/blobertplunk-hue/metablooms-ltm/main/manifests/latest.json",
+        "ledger": "https://raw.githubusercontent.com/blobertplunk-hue/metablooms-ltm/main/manifests/ledger.ndjson",
+        "cdn_fallback_base": "https://cdn.jsdelivr.net/gh/blobertplunk-hue/metablooms-ltm@main/manifests/"
+      },
+      "format_contract": "Provide URLs in a single code block labeled REMOTE LTM TARGETS."
+    },
+    "integration_points": [
+      {
+        "target": "MB__BOOT_PROMPT__MetaBlooms_OS_BIOS_v1.txt",
+        "action": "append rule under STEP 3 and STEP 4"
+      },
+      {
+        "target": "Boot output template",
+        "action": "add REMOTE LTM TARGETS block"
+      }
+    ],
+    "validation": {
+      "checks": [
+        "On 'Boot the OS', output includes all four URLs (bootstrap, latest, ledger, CDN base) verbatim.",
+        "URLs are in a copyable code block."
+      ],
+      "rollback": "Remove appended lines from boot BIOS and boot output template."
+    },
+    "provenance": {
+      "timestamp_utc": "2025-12-15T02:06:45Z",
+      "source": "User correction during boot fidelity audit"
+    }
+  }
+}
