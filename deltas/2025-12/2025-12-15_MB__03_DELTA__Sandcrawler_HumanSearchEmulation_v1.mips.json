@@ -1,0 +1,69 @@
+{
+  "mips": {
+    "artifact_id": "MB__03_DELTA__Sandcrawler_HumanSearchEmulation_v1__2025-12-15",
+    "parent_bundle": "MB__02_OS__MetaBlooms_Core__ACTIVE__2025-12-14_REBUILT.mips.json",
+    "version": "v1",
+    "timestamp_utc": "2025-12-15T04:07:13Z",
+    "content_type": "application/json",
+    "councils": [
+      "Auditor",
+      "SystemsEngineer",
+      "Validator",
+      "Archivist"
+    ],
+    "sha256": "068627bfb5687fdf443f1d5567e048b6a45dc5c98a580dc0dfdd14736a09e8c5"
+  },
+  "content": {
+    "delta_type": "behavioral_invariant",
+    "name": "Sandcrawler Human Search Emulation Layer (HEEL) v1",
+    "goal": "Promote expert human search operator behaviors to enforced Sandcrawler invariants with receipts.",
+    "pre_search_contract": {
+      "include_source_types": [
+        "primary_docs",
+        "repos",
+        "official_docs",
+        "papers_if_needed"
+      ],
+      "exclude_source_types": [
+        "marketing_pages",
+        "thin_affiliate_SEO",
+        "low-signal_scrapes"
+      ],
+      "assumptions_disallowed": [
+        "enterprise_infra_unless_specified",
+        "unbounded_resources"
+      ],
+      "acceptable_uncertainty": "medium"
+    },
+    "operator_moves_enforced": [
+      "adversarial_forking(Q+ and Q-)",
+      "skeptic_pass_required",
+      "format_steering(structured outputs, not prose)",
+      "one_followup_loop('what did we miss?')"
+    ],
+    "output_structure_required": [
+      "claims_table",
+      "contrast_matrix",
+      "open_questions",
+      "what_changes_conclusion"
+    ],
+    "receipts": [
+      "MB__RECEIPT__Sandcrawler_Search.md (extended with contract + skeptic pass notes)"
+    ],
+    "validators": [
+      "V_SC_CONTRACT_PRESENT",
+      "V_SC_ADVERSARIAL_FORKING_USED",
+      "V_SC_SKEPTIC_PASS_PRESENT",
+      "V_SC_FORMAT_ENFORCEMENT"
+    ],
+    "feature_flags": {
+      "sandcrawler_human_emulation_enabled": true
+    },
+    "rollback": {
+      "strategy": "feature_flag_disable",
+      "steps": [
+        "Set sandcrawler_human_emulation_enabled=false"
+      ]
+    }
+  }
+}
