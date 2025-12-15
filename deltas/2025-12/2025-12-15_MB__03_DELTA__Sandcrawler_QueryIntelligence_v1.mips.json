@@ -1,0 +1,83 @@
+{
+  "mips": {
+    "artifact_id": "MB__03_DELTA__Sandcrawler_QueryIntelligence_v1__2025-12-15",
+    "parent_bundle": "MB__02_OS__MetaBlooms_Core__ACTIVE__2025-12-14_REBUILT.mips.json",
+    "version": "v1",
+    "timestamp_utc": "2025-12-15T04:07:13Z",
+    "content_type": "application/json",
+    "councils": [
+      "Auditor",
+      "SystemsEngineer",
+      "Validator",
+      "Archivist"
+    ],
+    "sha256": "5d797832187e1a900490712d494fa4d642d70bb735480fff20658cd861263b1b"
+  },
+  "content": {
+    "delta_type": "search_upgrade",
+    "name": "Sandcrawler Query Intelligence v1",
+    "goal": "Perplexity/Gemini-class query expansion + recall-first sweep + structured synthesis, while preserving evidence discipline.",
+    "query_generation": {
+      "minimum_query_classes": [
+        "direct_factual",
+        "terminology_variants",
+        "mechanism_how_it_works",
+        "comparative_alternatives",
+        "failure_criticism_limitations",
+        "adjacent_domain_analogy",
+        "temporal_change_over_time"
+      ],
+      "paired_queries": {
+        "enabled": true,
+        "pattern": "+ (support/why it works) and - (criticism/why it fails) per class"
+      }
+    },
+    "workflow_phases": [
+      {
+        "phase": "A_recall_sweep",
+        "rule": "collect first; no synthesis; log sources and failures"
+      },
+      {
+        "phase": "B_precision_pass",
+        "rule": "cluster, prune, contrast; then synthesize"
+      }
+    ],
+    "synthesis_contract": {
+      "required_sections": [
+        "what_sources_agree_on",
+        "where_sources_disagree",
+        "weak_or_speculative_areas",
+        "what_is_missing"
+      ],
+      "claims_table_required": true,
+      "claim_fields": [
+        "claim",
+        "support_sources",
+        "confidence",
+        "basis(explicit|inferred|speculative)"
+      ]
+    },
+    "receipts": [
+      "MB__RECEIPT__Sandcrawler_Search.md"
+    ],
+    "validators": [
+      "V_SC_QEE_MIN_CLASSES",
+      "V_SC_RECALL_BEFORE_SYNTHESIS",
+      "V_SC_REQUIRED_SECTIONS_PRESENT",
+      "V_SC_CLAIMS_TABLE_PRESENT"
+    ],
+    "feature_flags": {
+      "sandcrawler_query_intelligence_enabled": true,
+      "sandcrawler_recall_first_enabled": true,
+      "sandcrawler_structured_synthesis_enabled": true
+    },
+    "rollback": {
+      "strategy": "feature_flag_disable",
+      "steps": [
+        "Set sandcrawler_query_intelligence_enabled=false",
+        "Set sandcrawler_recall_first_enabled=false",
+        "Set sandcrawler_structured_synthesis_enabled=false"
+      ]
+    }
+  }
+}
