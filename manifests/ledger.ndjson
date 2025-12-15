@@ -75,3 +75,4 @@
 {"ts":"2025-12-15T02:09:29Z","path":"deltas/2025-12/MB__03_REMOTE_LTM_DeltaLoadReport__2025-12-14_v2.mips.json","sha256":"cdac113d5c9eade2f7cf029e0be2e64e09a1fd474f967a2660d1bc88f79c5a78","bytes":2081}
 {"ts":"2025-12-15T02:11:57Z","path":"deltas/2025-12/2025-12-14_MB__03_REMOTE_LTM_LoadedDeltas_Report_v1.mips.json","sha256":"419173e417eb46fd4ce2a68cab79ba1cdfd51c7c235eb4d0ec3880403dc01832","bytes":3219}
 {"ts":"2025-12-15T02:13:27Z","path":"deltas/2025-12/2025-12-14_MB__05_RULE__BootHandshake_3Msg_v1.mips.json","sha256":"32d553a1fc878a5c3e13a9428c392cc877ec52d8855901d001c8b107cada96d4","bytes":3480}
+{"ts":"2025-12-15T02:15:54Z","path":"deltas/2025-12/2025-12-14_MB__03_DELTA__BootBIOS_RemoteLTM_3MsgHandshake_v1.mips.json","sha256":"9dde4f6ea214770ce580fa42ad0d5ed8bada7e4ba903b8ee7e4b09635238101f","bytes":2770}

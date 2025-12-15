@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-15T02:13:27Z",
+  "generated_utc": "2025-12-15T02:15:54Z",
   "items": [
+    {
+      "ts": "2025-12-15T02:15:54Z",
+      "path": "deltas/2025-12/2025-12-14_MB__03_DELTA__BootBIOS_RemoteLTM_3MsgHandshake_v1.mips.json",
+      "sha256": "9dde4f6ea214770ce580fa42ad0d5ed8bada7e4ba903b8ee7e4b09635238101f",
+      "bytes": 2770
+    },
     {
       "ts": "2025-12-15T02:13:27Z",
       "path": "deltas/2025-12/2025-12-14_MB__05_RULE__BootHandshake_3Msg_v1.mips.json",
@@ -144,12 +150,6 @@
       "path": "deltas/2025-12/MB__03_DELTA__SELFTEST_v2.mips.json",
       "sha256": "bab0dfdd9fe5b2dd30d6867e81fb4fa4377a7d0ef358b925a6b134764b7f37e8",
       "bytes": 21
-    },
-    {
-      "ts": "2025-12-14T21:32:43Z",
-      "path": "deltas/2025-12/2025-12-14_MB_Termux_Watcher_AssurancePack_v1.mips.md",
-      "sha256": "c29e5ec11995a47147faced842f3c6f3ac0e4fe42bc520a3184d620cada0b4a2",
-      "bytes": 8759
     }
   ]
 }

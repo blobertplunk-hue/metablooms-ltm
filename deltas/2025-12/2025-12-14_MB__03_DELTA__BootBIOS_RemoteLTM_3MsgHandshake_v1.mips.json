@@ -1,0 +1,32 @@
+{
+  "mips": {
+    "artifact_id": "MB__03_DELTA__BootBIOS_RemoteLTM_3MsgHandshake_v1",
+    "parent_bundle": "MB__BOOT_PROMPT__MetaBlooms_OS_BIOS_v1.txt",
+    "version": "v1",
+    "timestamp_utc": "2025-12-15T02:15:35Z",
+    "content_type": "application/json",
+    "councils": [
+      "Facilitator",
+      "Auditor",
+      "Engineer",
+      "Recorder"
+    ],
+    "audit": "construct",
+    "sha256_body": "1d7a48705cf9769f1defa186ad2111fdfe282d9818c14bca3eaef68083ece0e8",
+    "links": {
+      "target_boot_bios": "MB__BOOT_PROMPT__MetaBlooms_OS_BIOS_v1.txt"
+    }
+  },
+  "body": {
+    "kind": "MB_BOOT_BIOS_PATCH",
+    "target_file": "MB__BOOT_PROMPT__MetaBlooms_OS_BIOS_v1.txt",
+    "target_section": "Insert after STEP 4 — REMOTE STATE INGEST",
+    "timestamp_utc": "2025-12-15T02:15:35Z",
+    "patch_text": "APPEND-ONLY PATCH — REMOTE LTM HANDSHAKE (3-MESSAGE MODE)\n======================================================\n\nInsert the following block into the BOOT BIOS immediately AFTER STEP 4 — REMOTE STATE INGEST\n(and before STEP 5 — STATE RECONCILIATION). Do not remove any existing steps.\n\nREMOTE LTM HANDSHAKE (MANDATORY)\n-------------------------------\n\nBecause the execution surface may only open remote URLs that appear verbatim in user messages,\nRemote LTM boot MUST use this 3-message handshake whenever remote fetch is required.\n\nMESSAGE 1 — SURFACE & REQUEST ECHO\n• Surface all canonical Remote LTM URLs verbatim (bootstrap/latest/ledger + CDN fallback base).\n• Emit a labeled copy-paste block: “REMOTE LTM TARGETS — BOOT_ECHO_AUTH”.\n• Wait for the user to paste that block verbatim.\n\nMESSAGE 2 — FETCH & REQUEST DELTA ECHO\n• Open the echoed URLs.\n• Parse bootstrap.json and manifests/latest.json.\n• Select newest MB__03_DELTA entries (default: 3; may be increased if user requests).\n• Emit a labeled copy-paste block: “REMOTE LTM DELTAS — DELTA_ECHO_AUTH” containing FULL raw URLs.\n• Wait for the user to paste that block verbatim.\n\nMESSAGE 3 — INGEST & CONFIRM\n• Open the echoed delta URLs.\n• Parse MIPS headers and minimally validate sha/size fields when present.\n• Report loaded deltas: artifact_id, version, timestamp_utc, sha256.\n• Emit an ingest receipt artifact (MIPS JSON) and resume boot.\n\nNON-NEGOTIABLES\n• Do not claim remote ingest unless delta bodies were opened.\n• Do not ask clarifying questions unless a fetch fails.\n• Do not overwrite Project Files.\n",
+    "rationale": [
+      "Eliminates recurring boot friction caused by URL-open allowlist constraints.",
+      "Guarantees remote delta ingest completes in 2–3 messages deterministically."
+    ],
+    "rollback": "Remove the inserted REMOTE LTM HANDSHAKE block; no other changes required."
+  }
+}
