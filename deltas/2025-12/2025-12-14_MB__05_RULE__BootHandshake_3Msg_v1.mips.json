@@ -1,0 +1,72 @@
+{
+  "mips": {
+    "artifact_id": "MB__05_RULE__BootHandshake_3Msg_v1",
+    "content_type": "application/json",
+    "timestamp_utc": "2025-12-15T02:13:07Z",
+    "version": "v1",
+    "sha256_body": "a9ac5178ce72234fe703015dc05bb4f5fcda1ae689184f9144338fa66e5ffdcc"
+  },
+  "body": {
+    "name": "MB Boot — 3-Message Remote LTM Handshake",
+    "goal": "Complete remote LTM bootstrap + delta ingest with minimal user interaction under URL-open allowlist constraints.",
+    "constraints_addressed": [
+      "Assistant can only open remote URLs that appear verbatim in user text (execution-surface gate).",
+      "Must surface canonical URLs on boot.",
+      "Must not overwrite local Project Files; only ingest and report deltas."
+    ],
+    "message_flow": [
+      {
+        "msg": 1,
+        "speaker": "assistant",
+        "title": "BOOT: Surface canonical URLs + request user echo",
+        "assistant_outputs": [
+          "bootstrap.json URL",
+          "latest.json URL",
+          "ledger.ndjson URL",
+          "CDN fallback base",
+          "Copy-paste block labeled BOOT_ECHO_AUTH"
+        ],
+        "user_action": "Reply by pasting the BOOT_ECHO_AUTH block verbatim."
+      },
+      {
+        "msg": 2,
+        "speaker": "assistant",
+        "title": "FETCH: Open bootstrap/latest/ledger; compute delta URL list",
+        "assistant_actions": [
+          "Open bootstrap.json",
+          "Open latest.json",
+          "Optionally open ledger.ndjson if needed",
+          "Extract top-N delta paths (default: newest 3 MB__03_DELTA)",
+          "Render copy-paste block labeled DELTA_ECHO_AUTH containing full raw URLs for those deltas"
+        ],
+        "user_action": "Reply by pasting the DELTA_ECHO_AUTH block verbatim."
+      },
+      {
+        "msg": 3,
+        "speaker": "assistant",
+        "title": "INGEST: Open delta URLs; report loaded deltas + hashes",
+        "assistant_actions": [
+          "Open each delta URL",
+          "Parse MIPS headers and minimal payload keys",
+          "List loaded deltas (artifact_id/version/timestamp/sha)",
+          "Write ingest receipt artifact to Project Files (downloadable MIPS JSON)"
+        ],
+        "user_action": "None. Boot is complete with remote deltas ingested."
+      }
+    ],
+    "copy_paste_templates": {
+      "BOOT_ECHO_AUTH": "REMOTE LTM TARGETS (CANONICAL) — BOOT_ECHO_AUTH\n\nBOOTSTRAP\nhttps://raw.githubusercontent.com/blobertplunk-hue/metablooms-ltm/main/manifests/bootstrap.json\n\nPRIMARY FETCH TARGETS\nhttps://raw.githubusercontent.com/blobertplunk-hue/metablooms-ltm/main/manifests/latest.json\nhttps://raw.githubusercontent.com/blobertplunk-hue/metablooms-ltm/main/manifests/ledger.ndjson\n\nCDN FALLBACK BASE (if raw.githubusercontent.com fails)\nhttps://cdn.jsdelivr.net/gh/blobertplunk-hue/metablooms-ltm@main/manifests/\n",
+      "DELTA_ECHO_AUTH": "REMOTE LTM DELTAS — DELTA_ECHO_AUTH\n\n# Paste the exact delta URLs provided by the assistant in Msg 2 here.\n# Example:\n# https://raw.githubusercontent.com/.../deltas/YYYY-MM/MB__03_DELTA__Something_v1.mips.json\n"
+    },
+    "default_parameters": {
+      "delta_pick_policy": "newest_MB__03_DELTA_first",
+      "delta_pick_count": 3,
+      "fallback_to_ledger": true
+    },
+    "success_criteria": [
+      "Within 3 messages: assistant produces list of loaded deltas with sha256 + timestamps.",
+      "A downloadable ingest receipt artifact exists for audit/replay.",
+      "No claims of execution without receipts."
+    ]
+  }
+}
