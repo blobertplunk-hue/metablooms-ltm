@@ -1,0 +1,50 @@
+{
+  "MIPS_HEADER": {
+    "artifact_id": "MB__03_DELTA__BootSequence_URLSurfacingInvariant_v1.mips.json",
+    "parent_bundle": "",
+    "version": "1.0",
+    "timestamp_utc": "2025-12-15T01:35:30Z",
+    "content_type": "application/json",
+    "councils": [
+      "Facilitator",
+      "Auditor",
+      "Synthesizer",
+      "Recorder"
+    ],
+    "evidence_chain": [
+      "chat_observation:web_tool_url_provenance_constraint"
+    ],
+    "sha256": "2857524c314412047363181f5c65e75299f4adfdb5cdb8bdaf0891d4385cc746"
+  },
+  "BODY": {
+    "delta_type": "OS_RULE_ADD",
+    "name": "BootSequence_URLSurfacingInvariant",
+    "status": "ACTIVE",
+    "problem": "External LTM fetch can fail when canonical raw URLs are not explicitly surfaced in-chat prior to web retrieval.",
+    "rule": "All boot sequences that include External LTM MUST surface canonical URLs verbatim before any web retrieval attempt.",
+    "canonical_endpoints": {
+      "repo": "https://github.com/blobertplunk-hue/metablooms-ltm",
+      "raw_latest_json": "https://raw.githubusercontent.com/blobertplunk-hue/metablooms-ltm/main/manifests/latest.json",
+      "raw_ledger_ndjson": "https://raw.githubusercontent.com/blobertplunk-hue/metablooms-ltm/main/manifests/ledger.ndjson"
+    },
+    "invariants": [
+      "SURFACE_URLS_VERBATIM_BEFORE_FETCH",
+      "FETCH_MANIFESTS_AFTER_SURFACE",
+      "RETRY_ONCE_AFTER_RESURFACE_IF_BLOCKED"
+    ],
+    "enforcement": {
+      "severity": "HARD_FAIL",
+      "on_violation": [
+        "Abort fetch",
+        "Print canonical_endpoints verbatim",
+        "Retry fetch once",
+        "If still blocked: enter RCA_Mode and request user to paste URLs again"
+      ]
+    },
+    "integration_points": [
+      "BootHeader",
+      "SandCrawler Prime / External LTM retrieval",
+      "AutoDeltaReconciler (remote ingest)"
+    ]
+  }
+}

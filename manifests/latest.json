@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-15T01:35:54Z",
+  "generated_utc": "2025-12-15T01:36:01Z",
   "items": [
+    {
+      "ts": "2025-12-15T01:36:01Z",
+      "path": "deltas/2025-12/MB__03_DELTA__BootSequence_URLSurfacingInvariant_v1.mips.json",
+      "sha256": "a6f5a972a09b8be3bef547176de4994e1af0a57265c8cb47f48df529902ce688",
+      "bytes": 1823
+    },
     {
       "ts": "2025-12-15T01:35:54Z",
       "path": "deltas/2025-12/MB__00_BOOT__BIOS_PROMPT__ExternalLTM_v1.mips.md",
@@ -144,12 +150,6 @@
       "path": "deltas/2025-12/MB__99_INDEX__ProjectFiles__RECOMPILED_2025-12-14.txt",
       "sha256": "c73fc2facee3f8d8b8fbd90ffb03abd3dd89e88625f2640dd002ab9c825003eb",
       "bytes": 1069
-    },
-    {
-      "ts": "2025-12-14T21:32:30Z",
-      "path": "deltas/2025-12/MB__03_DELTA__SELFTEST_v1.mips.json",
-      "sha256": "d6670af843ac06b376c9d43aad8ba7cdd1ca22c841a0e74e05bc6f8324a82456",
-      "bytes": 18
     }
   ]
 }
