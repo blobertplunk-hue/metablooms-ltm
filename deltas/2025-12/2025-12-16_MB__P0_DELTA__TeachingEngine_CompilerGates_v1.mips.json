@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "id": "MB__P0_DELTA__TeachingEngine_CompilerGates_v1",
+    "timestamp_local_ct": "2025-12-16",
+    "scope": [
+      "TeachingEngine",
+      "HTMLBuildPipeline",
+      "Compiler",
+      "GapFiller",
+      "SandCrawler"
+    ],
+    "intent": "Make the Teaching Engine reliably build/validate polished student-facing HTML by enforcing compiler gates (TTS template, clarity, interactivity, vocab hygiene) and adding Python-first planning/validation passes."
+  },
+  "deltas": [
+    {
+      "target": "Compiler.v1",
+      "type": "ADD_GATES",
+      "name": "HTML_TeachingEngine_GatePack_v1",
+      "rules": [
+        {
+          "gate": "TTS_TEMPLATE_PRESENT",
+          "fail_if": "missing chooseBestVoice/loadVoices/speakFromElement block",
+          "severity": "BLOCKER"
+        },
+        {
+          "gate": "STUDENT_CLARITY",
+          "fail_if": "no explicit 'What to do' steps + example + success criteria",
+          "severity": "BLOCKER"
+        },
+        {
+          "gate": "VOCAB_HYGIENE",
+          "fail_if": "nonce/garbage tokens (e.g., 'cit', 'ains') in prompts/content",
+          "severity": "MAJOR"
+        },
+        {
+          "gate": "INTERACTION_SANITY",
+          "fail_if": "inputs present without purpose labels / feedback loop",
+          "severity": "MAJOR"
+        },
+        {
+          "gate": "DARKMODE_OK",
+          "fail_if": "contrast below WCAG-ish heuristic on main panels",
+          "severity": "MINOR"
+        },
+        {
+          "gate": "BILINGUAL_READY",
+          "fail_if": "no EN/ES toggles for instructions + stems when requested",
+          "severity": "MAJOR"
+        },
+        {
+          "gate": "NO_STUBS",
+          "fail_if": "placeholder sections or broken nav/actions",
+          "severity": "BLOCKER"
+        }
+      ],
+      "evidence": [
+        "User report: prior HTML suite dull/unclear, TTS broken, random words appeared."
+      ]
+    },
+    {
+      "target": "HTMLBuildPipeline",
+      "type": "ADD_STAGE",
+      "name": "PythonPlanningPass_v1",
+      "description": "Before any HTML is generated, run a Python pass that converts the user intent into a structured build spec (sections, interactions, vocab list, sentence stems, CRA visuals needed) and runs lint/consistency checks on the spec itself.",
+      "outputs": [
+        "build_spec.json",
+        "risk_flags.json",
+        "checklist.md"
+      ]
+    },
+    {
+      "target": "GapFiller",
+      "type": "UPDATE_POLICY",
+      "name": "GapFiller_As_GateInput_v1",
+      "description": "GapFiller runs before gate evaluation; it must propose missing student-facing clarity elements and missing validation hooks, then compiler gates evaluate post-gapfilled artifact.",
+      "stops": [
+        "If GapFiller adds >20% new content without new constraints, mark as 'theater risk' and request tighter spec."
+      ]
+    },
+    {
+      "target": "SandCrawler",
+      "type": "UPDATE_POLICY",
+      "name": "FalsificationPlusFun_Search_v1",
+      "description": "Allow non-hypothesis search when intent is 'serendipity/fun/idea forage'. Still requires an explicit 'forage intent' tag and a capture rubric (why saved, how used)."
+    }
+  ],
+  "ops": {
+    "next_actions_ordered": [
+      "Unpack + inventory remaining parts_007..012 bundles; extract all HTML-related assets and TeachingEngine modules into a single staging directory.",
+      "Run compiler gatepack against top 20 HTML candidates from curated salvage; produce pass/fail report with exact fix lists.",
+      "Select 1 flagship HTML to refactor end-to-end using the new PythonPlanningPass + GatePack; package as TeachingEngine_vNext exemplar.",
+      "Back-propagate any new invariants into Compiler.v1 and update active OS index."
+    ],
+    "success_metrics": {
+      "html_pass_rate_target": ">=80% for curated Top20 after refactor",
+      "blocker_zero_target": "0 blockers on flagship",
+      "time_to_first_working_flagship": "1 turn (in-sandbox) with runnable HTML file"
+    }
+  }
+}

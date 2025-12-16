@@ -92,3 +92,4 @@
 {"ts":"2025-12-15T23:44:25Z","path":"deltas/2025-12/2025-12-15_MB__COMPILER__MetaBlooms_Compiler_v1.mips.json","sha256":"d1dc5075abded7adea4d261c781edfab957169bf3ca5b535cfb762136c7e73e5","bytes":7221}
 {"ts":"2025-12-16T00:42:05Z","path":"deltas/2025-12/2025-12-15_MB__PLAN__PythonUseOverlap_Innovation_v1.mips.json","sha256":"6b8cc7e66f03b72234ce52ffdc6e696e28ed978f1304dbc064221061ce090e11","bytes":1714}
 {"ts":"2025-12-16T03:03:21Z","path":"deltas/2025-12/2025-12-15_MB__SCAN__ZipParts_HTML_Triage_v1.mips.json","sha256":"96d22219ab8462036be3b0229984758b12608c9bac002084608de862655377b3","bytes":2695}
+{"ts":"2025-12-16T06:35:32Z","path":"deltas/2025-12/2025-12-16_MB__P0_DELTA__TeachingEngine_CompilerGates_v1.mips.json","sha256":"c5cd7f6a71c0a93f55e747265bca6cba8da82cd42c305d8ece98e9a0558d305e","bytes":3987}
