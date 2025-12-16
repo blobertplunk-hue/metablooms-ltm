@@ -1,0 +1,63 @@
+{
+  "mips": {
+    "mips_version": "1.0",
+    "artifact_id": "ae90d1d7-8be6-4b5d-98fd-2554e0be47c2",
+    "parent_bundle": "MetaBlooms_Recovery_Run_2025-12-15",
+    "version": "v1",
+    "timestamp": "2025-12-15T18:39:06.939683-06:00",
+    "content_type": "application/json",
+    "councils": [
+      "Architect",
+      "Auditor",
+      "Rationalist",
+      "Teacher"
+    ],
+    "sha256": "b5e2e11cd97fb2028f3144b0806d7c6954fde0f5f5f84b656a056052062c5089",
+    "evidence_chain": {
+      "mode": "append_only",
+      "source": "python_use_overlap_innovation_plan"
+    },
+    "links": [
+      "sandbox:/mnt/data/2025-12-15_metablooms_python_use_overlap_innovation_plan.md",
+      "sandbox:/mnt/data/2025-12-15_python_use_taxonomy.csv"
+    ]
+  },
+  "body": {
+    "plan_name": "Python Use Overlap + Innovation Plan",
+    "version": "v1",
+    "timestamp": "2025-12-15T18:39:06.939683-06:00",
+    "inputs": {
+      "seed_sources": [
+        "RealPython what can I do with Python",
+        "Coursera what is Python used for",
+        "Python docs release notes"
+      ]
+    },
+    "artifacts": {
+      "taxonomy_csv": "sandbox:/mnt/data/2025-12-15_python_use_taxonomy.csv",
+      "plan_md": "sandbox:/mnt/data/2025-12-15_metablooms_python_use_overlap_innovation_plan.md"
+    },
+    "method": {
+      "overlap_motifs": [
+        "ETL",
+        "Contract",
+        "Simulation",
+        "Adapter",
+        "PressureRig",
+        "Timekeeper"
+      ],
+      "innovation_recipe": [
+        "substrate",
+        "motif",
+        "constraint_shift",
+        "outcome"
+      ],
+      "validation_gates": [
+        "Generalization",
+        "Falsification",
+        "ExecutionEvidence",
+        "RegressionSafety"
+      ]
+    }
+  }
+}
