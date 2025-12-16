@@ -1,6 +1,12 @@
 {
-  "generated_utc": "2025-12-16T00:42:05Z",
+  "generated_utc": "2025-12-16T03:03:21Z",
   "items": [
+    {
+      "ts": "2025-12-16T03:03:21Z",
+      "path": "deltas/2025-12/2025-12-15_MB__SCAN__ZipParts_HTML_Triage_v1.mips.json",
+      "sha256": "96d22219ab8462036be3b0229984758b12608c9bac002084608de862655377b3",
+      "bytes": 2695
+    },
     {
       "ts": "2025-12-16T00:42:05Z",
       "path": "deltas/2025-12/2025-12-15_MB__PLAN__PythonUseOverlap_Innovation_v1.mips.json",
@@ -144,12 +150,6 @@
       "path": "deltas/2025-12/README_MetaBloomsLTM_UPDATED_v1.mips.md",
       "sha256": "88746544a6257aa0d0e5b2a03c70c8608b15ba968b8ecaad2272426ca299cd04",
       "bytes": 2026
-    },
-    {
-      "ts": "2025-12-15T00:55:55Z",
-      "path": "deltas/2025-12/MB__03_DELTA__DiscoverySurface_PrivateVocab_NoSEO_v1.mips.json",
-      "sha256": "cb9d84f679c74f80d69bd5535e34f4f6af26e27de849fb1d04429dba2ca8e6bd",
-      "bytes": 3841
     }
   ]
 }

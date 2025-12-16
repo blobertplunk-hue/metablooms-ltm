@@ -1,0 +1,97 @@
+{
+  "mips": {
+    "artifact_id": "MB__SCAN__ZipParts_HTML_Triage_v1",
+    "version": "1.0",
+    "timestamp": "2025-12-16T03:02:50",
+    "content_type": "application/json",
+    "sha256": "0f3b369d9a540c48058a7f80a733dc16b3b3cb8278b05e8e3be8d500022a8512"
+  },
+  "body": {
+    "timestamp": "2025-12-16T03:02:50",
+    "scanned_zips": [
+      "2025-12-15_metablooms_compiler_mvp_bundle.zip",
+      "2025-12-15_metablooms_html_build_python_pipeline_bundle.zip",
+      "part_001.zip",
+      "part_002.zip",
+      "part_003.zip",
+      "part_004.zip",
+      "part_005.zip",
+      "part_006.zip",
+      "remote_ltm_deltas_2025-12-15.zip"
+    ],
+    "zip_summaries": [
+      {
+        "zip": "2025-12-15_metablooms_compiler_mvp_bundle.zip",
+        "files": 5,
+        "html": 0,
+        "js": 0,
+        "md": 2
+      },
+      {
+        "zip": "2025-12-15_metablooms_html_build_python_pipeline_bundle.zip",
+        "files": 2,
+        "html": 0,
+        "js": 0,
+        "md": 1
+      },
+      {
+        "zip": "part_001.zip",
+        "files": 10,
+        "html": 0,
+        "js": 0,
+        "md": 0
+      },
+      {
+        "zip": "part_002.zip",
+        "files": 12,
+        "html": 0,
+        "js": 0,
+        "md": 0
+      },
+      {
+        "zip": "part_003.zip",
+        "files": 17,
+        "html": 0,
+        "js": 0,
+        "md": 0
+      },
+      {
+        "zip": "part_004.zip",
+        "files": 20,
+        "html": 0,
+        "js": 0,
+        "md": 0
+      },
+      {
+        "zip": "part_005.zip",
+        "files": 21,
+        "html": 0,
+        "js": 0,
+        "md": 0
+      },
+      {
+        "zip": "part_006.zip",
+        "files": 21,
+        "html": 0,
+        "js": 0,
+        "md": 0
+      },
+      {
+        "zip": "remote_ltm_deltas_2025-12-15.zip",
+        "files": 34,
+        "html": 0,
+        "js": 0,
+        "md": 2
+      }
+    ],
+    "html_found_total": 0,
+    "decision": {
+      "html_salvage_status": "No .html/.htm files found in part_001\u2013part_006; these parts appear to be JSON OS/corpus packs.",
+      "next_best_move": "Upload the next 6 ZIP parts (part_007\u2013part_012 or whatever naming you used). I will run the same fast triage and, if HTML is present, prioritize an HTML salvage lane (extract \u2192 classify \u2192 validate \u2192 repackage) in parallel with the compiler retrofit."
+    },
+    "parallel_plan": {
+      "lane_A_compiler": "Continue Phase-5 retrofit (validators + BDGE + pressure tests) using the recovered JSON packs as regression corpus.",
+      "lane_B_html_salvage": "Only triggered when HTML assets appear; convert legacy HTML into 'locked TTS + clear instructions + dark mode' compliant templates with automated checks."
+    }
+  }
+}
