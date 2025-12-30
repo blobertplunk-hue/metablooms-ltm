@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "repo": "metabloom-ltm",
+  "repo": "metablooms-ltm",
   "branch": "main",
   "latest_manifest_path": "manifests/latest.json",
   "ledger_path": "ledger/ledger.ndjson",
