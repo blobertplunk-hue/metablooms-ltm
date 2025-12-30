@@ -4,7 +4,7 @@
   "state": {
     "type": "snapshot",
     "snapshot_path": "snapshots/snapshot_0001.json",
-    "snapshot_sha256": "98182b00550b15bf37ae8e46ece8023c2ed4014e713122c26aada492a3d0b8bc"
+    "snapshot_sha256": "8b87a7cf8d347724e68a5d7da5b32b23b03808a85a5495fb36cc84744ce5fc66"
   },
   "deltas": [],
   "governance": {
