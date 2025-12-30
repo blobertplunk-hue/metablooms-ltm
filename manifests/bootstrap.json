@@ -1,25 +1,16 @@
 {
-  "metablooms_bootstrap_version": "1.0",
-  "generated_utc": "2025-12-15T00:56:49Z",
-  "repo": {
-    "owner": "blobertplunk-hue",
-    "name": "metablooms-ltm",
-    "branch": "main",
-    "https": "https://github.com/blobertplunk-hue/metablooms-ltm",
-    "raw_base": "https://raw.githubusercontent.com/blobertplunk-hue/metablooms-ltm/main"
-  },
-  "manifests": {
-    "latest_json": "manifests/latest.json",
-    "ledger_ndjson": "manifests/ledger.ndjson"
-  },
-  "fetch_contract": {
-    "order": ["bootstrap.json", "latest.json", "ledger.ndjson"],
-    "latest_fallback": "ledger_tail",
-    "max_items_default": 50
-  },
-  "policy": {
-    "private_vocab": true,
-    "no_seo_keywords": true,
-    "no_generic_llm_memory_keywords": true
-  }
+  "schema_version": "1.0",
+  "repo": "metabloom-ltm",
+  "branch": "main",
+  "latest_manifest_path": "manifests/latest.json",
+  "ledger_path": "ledger/ledger.ndjson",
+  "required_files": [
+    "manifests/latest.json",
+    "ledger/ledger.ndjson",
+    "schemas/manifest.bootstrap.schema.json",
+    "schemas/manifest.latest.schema.json",
+    "schemas/ledger.event.schema.json"
+  ],
+  "fail_closed": true,
+  "notes": "Fill <OWNER> during OS config. Keep this file stable; evolve via schema_version + additive fields."
 }

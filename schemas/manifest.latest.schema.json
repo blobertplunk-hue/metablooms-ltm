@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MetaBlooms LTM Latest Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "as_of_utc",
+    "state",
+    "deltas",
+    "governance"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "as_of_utc": {
+      "type": "string"
+    },
+    "state": {
+      "type": "object",
+      "required": [
+        "type",
+        "snapshot_path",
+        "snapshot_sha256"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "empty",
+            "snapshot"
+          ]
+        },
+        "snapshot_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "snapshot_sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": true
+    },
+    "deltas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "applies_to": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "governance": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

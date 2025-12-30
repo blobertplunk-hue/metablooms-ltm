@@ -1,155 +1,19 @@
 {
-  "generated_utc": "2025-12-16T06:35:32Z",
-  "items": [
-    {
-      "ts": "2025-12-16T06:35:32Z",
-      "path": "deltas/2025-12/2025-12-16_MB__P0_DELTA__TeachingEngine_CompilerGates_v1.mips.json",
-      "sha256": "c5cd7f6a71c0a93f55e747265bca6cba8da82cd42c305d8ece98e9a0558d305e",
-      "bytes": 3987
-    },
-    {
-      "ts": "2025-12-16T03:03:21Z",
-      "path": "deltas/2025-12/2025-12-15_MB__SCAN__ZipParts_HTML_Triage_v1.mips.json",
-      "sha256": "96d22219ab8462036be3b0229984758b12608c9bac002084608de862655377b3",
-      "bytes": 2695
-    },
-    {
-      "ts": "2025-12-16T00:42:05Z",
-      "path": "deltas/2025-12/2025-12-15_MB__PLAN__PythonUseOverlap_Innovation_v1.mips.json",
-      "sha256": "6b8cc7e66f03b72234ce52ffdc6e696e28ed978f1304dbc064221061ce090e11",
-      "bytes": 1714
-    },
-    {
-      "ts": "2025-12-15T23:44:25Z",
-      "path": "deltas/2025-12/2025-12-15_MB__COMPILER__MetaBlooms_Compiler_v1.mips.json",
-      "sha256": "d1dc5075abded7adea4d261c781edfab957169bf3ca5b535cfb762136c7e73e5",
-      "bytes": 7221
-    },
-    {
-      "ts": "2025-12-15T18:27:02Z",
-      "path": "deltas/2025-12/2025-12-15_MB__03_DELTA__UniversalCreationPreflight_EvidenceUpgrades_v1.mips.json",
-      "sha256": "d8cd545c96a2e461894737d6aa5e7c314e1184811fec1fe10c8e5e045b197a48",
-      "bytes": 1300
-    },
-    {
-      "ts": "2025-12-15T18:23:10Z",
-      "path": "deltas/2025-12/2025-12-15_MB__03_DELTA__UniversalCreationPreflight_PreGapFiller_v1.mips.json",
-      "sha256": "cb1e81aff6535b3827a605c23f2612da0e9c1e24c01d48637a0009473159f28d",
-      "bytes": 5553
-    },
-    {
-      "ts": "2025-12-15T12:35:32Z",
-      "path": "deltas/2025-12/2025-12-15_MB__03_DELTA__VettingReport_BrokenChatFilter_v1.mips.json",
-      "sha256": "98d4a4beb967511e47b3cb2e08fda436976d2016f7a56f75b6503fd5ab1683b1",
-      "bytes": 7623
-    },
-    {
-      "ts": "2025-12-15T06:17:34Z",
-      "path": "deltas/2025-12/2025-12-15_MB__RCA__ProjectFiles_CrossDevice_Breakage_v1.mips.json",
-      "sha256": "d35bbf6adc6f19a4eff963c12a01a46223f40bd4b3f3d666e49d1ce1d031d4de",
-      "bytes": 3679
-    },
-    {
-      "ts": "2025-12-15T04:41:27Z",
-      "path": "deltas/2025-12/2025-12-15_MB__TOOL__TurnTimer_Helper_v1.mips.json",
-      "sha256": "e6f0b4a5f0edc2e45d4a7079a4bf13a2e763d767be9040b6ad8d0d7586e6b6ff",
-      "bytes": 2777
-    },
-    {
-      "ts": "2025-12-15T04:41:25Z",
-      "path": "deltas/2025-12/2025-12-15_MB__03_DELTA__RealtimeStamp_TurnTimer_v1.mips.json",
-      "sha256": "e5de006fd2094a55781b7733f8bfd22695eb4cb4044be6e39083338d71c8cd02",
-      "bytes": 2304
-    },
-    {
-      "ts": "2025-12-15T04:09:04Z",
-      "path": "deltas/2025-12/2025-12-15_MB__03_DELTA__Sandcrawler_HumanSearchEmulation_v1.mips.json",
-      "sha256": "c8e9a2c15510474bcd82135619130f88384051c814348fc374e71a7dea09a00c",
-      "bytes": 2043
-    },
-    {
-      "ts": "2025-12-15T04:09:02Z",
-      "path": "deltas/2025-12/2025-12-15_MB__03_DELTA__Sandcrawler_EpistemicControls_v1.mips.json",
-      "sha256": "b6f056945201e2f6c8872d53575e95341d387947d9d59168a7a5462c22597b32",
-      "bytes": 2887
-    },
-    {
-      "ts": "2025-12-15T04:08:55Z",
-      "path": "deltas/2025-12/2025-12-15_MB__03_DELTA__Sandcrawler_QueryIntelligence_v1.mips.json",
-      "sha256": "315054ccc4fd6bc9da054c531cf6fcd3ffd3372b5407f50094e7a760d42f8d74",
-      "bytes": 2528
-    },
-    {
-      "ts": "2025-12-15T04:08:35Z",
-      "path": "deltas/2025-12/2025-12-15_MB__03_DELTA__ReplayRun_v0_Recorder_Trace_SessionReplay.mips.json",
-      "sha256": "17a4b4e9c8e1aa10e937812d3f19c7e173c1e8615a3dccbff2a9f68860805535",
-      "bytes": 4019
-    },
-    {
-      "ts": "2025-12-15T03:22:06Z",
-      "path": "deltas/2025-12/2025-12-15_MB__03_DELTA__Replay_NoLLM_ImportReview_v1.mips.json",
-      "sha256": "8350d8442fa327032978381af9a85e0a6d7ba173e3b2df21f2cbcc6c0f1de3a3",
-      "bytes": 2984
-    },
-    {
-      "ts": "2025-12-15T03:20:20Z",
-      "path": "deltas/2025-12/2025-12-15_MB__03_DELTA__Replay_EasyWins_MicroPack_v1.mips.json",
-      "sha256": "5fb7787c17fc9d42f34faa6495a41472b444025a3ec7d29ac9e4d6ede70b924a",
-      "bytes": 2587
-    },
-    {
-      "ts": "2025-12-15T02:17:07Z",
-      "path": "deltas/2025-12/2025-12-14_MB__BOOT_PROMPT__MetaBlooms_OS_BIOS_v2.mips.json",
-      "sha256": "eabc4d4018742cc44662ef8b36f966d20ad67601e41cc14cbe2d23213fcdc8e8",
-      "bytes": 4629
-    },
-    {
-      "ts": "2025-12-15T02:15:54Z",
-      "path": "deltas/2025-12/2025-12-14_MB__03_DELTA__BootBIOS_RemoteLTM_3MsgHandshake_v1.mips.json",
-      "sha256": "9dde4f6ea214770ce580fa42ad0d5ed8bada7e4ba903b8ee7e4b09635238101f",
-      "bytes": 2770
-    },
-    {
-      "ts": "2025-12-15T02:13:27Z",
-      "path": "deltas/2025-12/2025-12-14_MB__05_RULE__BootHandshake_3Msg_v1.mips.json",
-      "sha256": "32d553a1fc878a5c3e13a9428c392cc877ec52d8855901d001c8b107cada96d4",
-      "bytes": 3480
-    },
-    {
-      "ts": "2025-12-15T02:11:57Z",
-      "path": "deltas/2025-12/2025-12-14_MB__03_REMOTE_LTM_LoadedDeltas_Report_v1.mips.json",
-      "sha256": "419173e417eb46fd4ce2a68cab79ba1cdfd51c7c235eb4d0ec3880403dc01832",
-      "bytes": 3219
-    },
-    {
-      "ts": "2025-12-15T02:09:29Z",
-      "path": "deltas/2025-12/MB__03_REMOTE_LTM_DeltaLoadReport__2025-12-14_v2.mips.json",
-      "sha256": "cdac113d5c9eade2f7cf029e0be2e64e09a1fd474f967a2660d1bc88f79c5a78",
-      "bytes": 2081
-    },
-    {
-      "ts": "2025-12-15T02:07:04Z",
-      "path": "deltas/2025-12/MB__02_DELTA__BootBIOS_URLsSurfaced_v1.mips.json",
-      "sha256": "765cf9035535cc606069ea7b2aa65bce625d8845ddf454cc588fa6bb4c5d6f10",
-      "bytes": 2451
-    },
-    {
-      "ts": "2025-12-15T02:01:38Z",
-      "path": "deltas/2025-12/MB__BOOT_PROMPT__MetaBlooms_OS_BIOS_v1_REBUILT_2025-12-14.mips.txt",
-      "sha256": "7ac0eddf8de4f7cedc6e862cf7866d1d78ca2ab9821374bc70f894af237750ad",
-      "bytes": 4200
-    },
-    {
-      "ts": "2025-12-15T01:36:01Z",
-      "path": "deltas/2025-12/MB__03_DELTA__BootSequence_URLSurfacingInvariant_v1.mips.json",
-      "sha256": "a6f5a972a09b8be3bef547176de4994e1af0a57265c8cb47f48df529902ce688",
-      "bytes": 1823
-    },
-    {
-      "ts": "2025-12-15T01:35:54Z",
-      "path": "deltas/2025-12/MB__00_BOOT__BIOS_PROMPT__ExternalLTM_v1.mips.md",
-      "sha256": "cf4fac50d5fecf391d019e5094ae331dc154e557bc072540efd08165d046da65",
-      "bytes": 2259
-    }
-  ]
+  "schema_version": "1.0",
+  "as_of_utc": "2025-12-30T19:45:37Z",
+  "state": {
+    "type": "empty",
+    "snapshot_path": null,
+    "snapshot_sha256": null
+  },
+  "deltas": [],
+  "governance": {
+    "approval": "manual",
+    "min_reviewers": 1,
+    "rules": [
+      "ledger append-only",
+      "hash required for any payload referenced by latest.json",
+      "fail-closed if any referenced file missing or hash mismatch"
+    ]
+  }
 }

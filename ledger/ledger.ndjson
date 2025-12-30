@@ -1,0 +1,1 @@
+{"event_id": "evt_000001", "ts_utc": "2025-12-30T19:45:37Z", "event_type": "SYSTEM_INIT", "payload": {"kind": "system_init", "detail": "initialized metabloom-ltm", "version": "1.0"}, "sha256": "55fe433fd8d118d15f68e0c5a52a1137ccae84275a62509db6750fd59fee21c7", "prev_sha256": null}
