@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "as_of_utc": "2025-12-30T19:45:37Z",
+  "state": {
+    "type": "empty",
+    "snapshot_path": null,
+    "snapshot_sha256": null
+  },
+  "deltas": [],
+  "governance": {
+    "approval": "manual",
+    "min_reviewers": 1,
+    "rules": [
+      "ledger append-only",
+      "hash required for any payload referenced by latest.json",
+      "fail-closed if any referenced file missing or hash mismatch"
+    ]
+  }
+}

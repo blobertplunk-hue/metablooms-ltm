@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MetaBlooms LTM Bootstrap Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "repo",
+    "branch",
+    "latest_manifest_path",
+    "ledger_path",
+    "required_files",
+    "fail_closed"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "repo": {
+      "type": "string"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "latest_manifest_path": {
+      "type": "string"
+    },
+    "ledger_path": {
+      "type": "string"
+    },
+    "required_files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "fail_closed": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

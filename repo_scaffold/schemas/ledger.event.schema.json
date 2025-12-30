@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MetaBlooms LTM Ledger Event",
+  "type": "object",
+  "required": [
+    "event_id",
+    "ts_utc",
+    "event_type",
+    "payload",
+    "sha256"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "ts_utc": {
+      "type": "string"
+    },
+    "event_type": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "prev_sha256": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  },
+  "additionalProperties": true
+}
