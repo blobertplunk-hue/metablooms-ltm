@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
 MetaBlooms LTM repo validator (fail-closed).
+
 Checks:
 - Required paths exist.
 - manifests/latest.json validates against schemas/manifest.latest.schema.json
@@ -8,9 +9,9 @@ Checks:
 - If latest.state.type == "snapshot": referenced snapshot exists and sha256 matches
 - For each delta in latest.deltas: referenced file exists and sha256 matches
 - ledger/ledger.ndjson is valid NDJSON (each non-empty line is valid JSON)
+
 Notes:
-- This does NOT attempt to enforce append-only across history (needs git diff context).
-  In PR context, you can add an additional step to diff against base branch if desired.
+- This does NOT enforce append-only across git history; it validates current repo contents.
 """
 
 import json
@@ -65,35 +66,42 @@ def main():
     validate_schema(bootstrap, ROOT / "schemas/manifest.bootstrap.schema.json")
     validate_schema(latest, ROOT / "schemas/manifest.latest.schema.json")
 
-    # Snapshot / deltas
+    # Snapshot verification
     state = latest.get("state", {})
     stype = state.get("type")
 
     if stype == "snapshot":
         snap_path = state.get("snapshot_path")
         snap_sha = state.get("snapshot_sha256")
-        ensure(isinstance(snap_path, str) and snap_path.strip(), "latest.state.snapshot_path must be a non-empty string for snapshot state")
-        ensure(isinstance(snap_sha, str) and len(snap_sha) == 64, "latest.state.snapshot_sha256 must be a 64-char hex string for snapshot state")
+
+        ensure(isinstance(snap_path, str) and snap_path.strip(),
+               "latest.state.snapshot_path must be a non-empty string for snapshot state")
+        ensure(isinstance(snap_sha, str) and len(snap_sha) == 64,
+               "latest.state.snapshot_sha256 must be a 64-char hex string for snapshot state")
 
         snap_file = ROOT / snap_path
         ensure(snap_file.exists(), f"Snapshot file missing: {snap_path}")
 
         computed = sha256_text(read_text(snap_file))
-        ensure(computed == snap_sha, f"Snapshot sha256 mismatch for {snap_path}: expected {snap_sha}, got {computed}")
+        ensure(computed == snap_sha,
+               f"Snapshot sha256 mismatch for {snap_path}: expected {snap_sha}, got {computed}")
 
     # Delta verification
     for i, d in enumerate(latest.get("deltas", [])):
         path = d.get("path")
         sha = d.get("sha256")
+
         ensure(isinstance(path, str) and path.strip(), f"Delta[{i}] path must be non-empty string")
         ensure(isinstance(sha, str) and len(sha) == 64, f"Delta[{i}] sha256 must be 64-char hex string")
 
         f = ROOT / path
         ensure(f.exists(), f"Delta file missing: {path}")
-        computed = sha256_text(read_text(f))
-        ensure(computed == sha, f"Delta sha256 mismatch for {path}: expected {sha}, got {computed}")
 
-    # Ledger NDJSON sanity (JSON parse only)
+        computed = sha256_text(read_text(f))
+        ensure(computed == sha,
+               f"Delta sha256 mismatch for {path}: expected {sha}, got {computed}")
+
+    # Ledger NDJSON sanity
     ledger_path = ROOT / "ledger/ledger.ndjson"
     for ln, line in enumerate(read_text(ledger_path).splitlines(), start=1):
         if not line.strip():
