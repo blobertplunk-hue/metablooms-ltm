@@ -1,1 +1,24 @@
+{
+  "created_utc": "2025-12-30T00:00:00Z",
+  "memory": {
+    "indexes": {},
+    "kv": {},
+    "notes": [
+      "First durable LTM snapshot for MetaBlooms.",
+      "Represents an initialized but intentionally minimal memory state."
+    ],
+    "pointers": {
+      "ledger_path": "ledger/ledger.ndjson"
+    },
+    "status": "baseline_seed"
+  },
+  "schema_version": "1.0",
+  "snapshot_id": "snapshot_0001",
+  "source": {
+    "branch": "main",
+    "kind": "github_ltm_seed",
+    "owner": "blobertplunk-hue",
+    "repo": "metablooms-ltm"
+  }
+}
 
