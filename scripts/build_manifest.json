@@ -1,0 +1,130 @@
+{
+  "build_manifest_version": "1.0",
+  "purpose": "Authoritative list of files required for bootable MetaBlooms OS bundle",
+  "last_updated": "2026-01-06",
+  "required_boot_files": [
+    {
+      "path": "BOOT.md",
+      "required": true,
+      "category": "boot_documentation",
+      "purpose": "Boot process documentation"
+    },
+    {
+      "path": "BOOT_METABLOOMS.py",
+      "required": true,
+      "category": "boot_launcher",
+      "purpose": "Stable boot launcher - extracts bundle and runs entrypoint"
+    },
+    {
+      "path": "RUN_METABLOOMS.py",
+      "required": true,
+      "category": "boot_entrypoint",
+      "purpose": "Primary runtime entrypoint - activates all subsystems"
+    },
+    {
+      "path": "boot_manifest.json",
+      "required": true,
+      "category": "boot_config",
+      "purpose": "Boot configuration - specifies entrypoint and success signal"
+    },
+    {
+      "path": "boot_contract.json",
+      "required": true,
+      "category": "boot_config",
+      "purpose": "Boot contract specifications"
+    },
+    {
+      "path": "ENTRYPOINT.md",
+      "required": true,
+      "category": "boot_documentation",
+      "purpose": "Entry point documentation"
+    },
+    {
+      "path": "README_BOOT_RULES.md",
+      "required": false,
+      "category": "boot_documentation",
+      "purpose": "Boot rules documentation"
+    }
+  ],
+  "required_control_plane_files": [
+    {
+      "path": "control_plane/__init__.py",
+      "required": true,
+      "category": "control_plane_core",
+      "purpose": "Python package marker"
+    },
+    {
+      "path": "control_plane/BOOT_STATE.json",
+      "required": true,
+      "category": "control_plane_core",
+      "purpose": "Boot state configuration - CRITICAL for boot success"
+    },
+    {
+      "path": "control_plane/boot_activator.py",
+      "required": true,
+      "category": "control_plane_core",
+      "purpose": "Subsystem activation logic"
+    },
+    {
+      "path": "control_plane/activation_registry.py",
+      "required": true,
+      "category": "control_plane_core",
+      "purpose": "Activation status tracking"
+    },
+    {
+      "path": "control_plane/mandatory_chat_capture.py",
+      "required": true,
+      "category": "control_plane_core",
+      "purpose": "Chat capture initialization"
+    },
+    {
+      "path": "control_plane/shopping_mode_controller.py",
+      "required": true,
+      "category": "control_plane_subsystem",
+      "purpose": "Shopping mode controller subsystem"
+    },
+    {
+      "path": "control_plane/delta_enforcer_v1.py",
+      "required": true,
+      "category": "control_plane_subsystem",
+      "purpose": "Delta integrity enforcement"
+    },
+    {
+      "path": "control_plane/bridge_map.json",
+      "required": true,
+      "category": "control_plane_config",
+      "purpose": "Bridge map configuration - required subsystem"
+    },
+    {
+      "path": "control_plane/heuristic_matrix.json",
+      "required": true,
+      "category": "control_plane_config",
+      "purpose": "Heuristic matrix - required subsystem"
+    },
+    {
+      "path": "control_plane/chm_contract.json",
+      "required": false,
+      "category": "control_plane_config",
+      "purpose": "CHM contract configuration"
+    }
+  ],
+  "required_directories": [
+    "control_plane/state_hub",
+    "learning/nanoblooms",
+    "learning/microblooms",
+    "learning/macroblooms",
+    "governance",
+    "ble"
+  ],
+  "boot_validation_rules": {
+    "entrypoint_specified": "boot_manifest.json must specify 'entrypoint' field pointing to RUN_METABLOOMS.py",
+    "success_signal_defined": "boot_manifest.json must specify 'success_signal' (default: BOOT_OK)",
+    "required_subsystems": [
+      "CONTROL_PLANE_CORE",
+      "BRIDGE_MAP",
+      "HEURISTIC_MATRIX",
+      "CHM",
+      "SHOPPING_MODE_CONTROLLER"
+    ]
+  }
+}
