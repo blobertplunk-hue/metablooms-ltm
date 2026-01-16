@@ -239,7 +239,7 @@ def load_comparison(csv_file: Path) -> AgentComparison:
 
 def main():
     """Generate comparison template"""
-    output_dir = Path("./probes/results")
+    output_dir = Path("./results")
     output_dir.mkdir(parents=True, exist_ok=True)
 
     template_file = output_dir / "comparison_template.csv"
