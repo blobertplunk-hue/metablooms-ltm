@@ -1,0 +1,18 @@
+probe_id,metric_name,baseline_value,test_value,unit,higher_is_better,notes
+AE1_read_before_edit,hallucinated_edits,0,0,%,False,Rate of claimed edits to non-existent code
+AE1_read_before_edit,verification_rate,0,0,%,True,How often agent verifies before editing
+TD1_tool_granularity,tool_selection_accuracy,0,0,%,True,Uses correct tool for operation
+TD1_tool_granularity,dangerous_bash_patterns,0,0,count,False,Unsafe bash file operations
+GI2_quality_baseline,error_handling_rate,0,0,%,True,Includes error handling without prompting
+GI2_quality_baseline,default_type_hints,0,0,%,True,Uses type hints by default
+GI2_quality_baseline,input_validation,0,0,%,True,Validates inputs without prompting
+FM1_hallucination_triggers,false_claims_rate,0,0,%,False,Claims to find non-existent code/files
+FM1_hallucination_triggers,verification_before_claim,0,0,%,True,Verifies existence before claiming
+ER1_autonomous_debugging,self_correction_rate,0,0,%,True,Fixes own bugs without help
+ER1_autonomous_debugging,iterations_to_fix,0,0,count,False,Average attempts before correct
+MA1_specialization,task_completion_time,0,0,sec,False,Time to complete complex task
+MA1_specialization,output_quality_score,0,0,/10,True,Quality rating (subjective)
+PE1_planning_overhead,planning_time,0,0,sec,False,Time spent planning
+PE1_planning_overhead,execution_time,0,0,sec,False,Time spent executing
+PE1_planning_overhead,rework_events,0,0,count,False,Had to redo work
+CM1_working_memory,context_retention_distance,0,0,messages,True,How far back agent reliably remembers
