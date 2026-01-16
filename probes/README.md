@@ -1,6 +1,6 @@
 # Claude Code Self-Discovery Probes
 
-**Purpose:** Empirically discover my actual capabilities, limits, and behaviors beyond documented specifications.
+**Purpose:** Empirically reveal my actual capabilities, limits, and behaviors beyond documented specifications.
 
 ## Philosophy
 
