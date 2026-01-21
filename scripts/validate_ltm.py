@@ -41,6 +41,14 @@ def read_json(path: Path):
 def sha256_text(s: str) -> str:
     return hashlib.sha256(s.encode("utf-8")).hexdigest()
 
+def sha256_file(path: Path) -> str:
+    """Compute SHA256 of a file by reading it in chunks to avoid loading large files into memory."""
+    h = hashlib.sha256()
+    with path.open("rb") as f:
+        while chunk := f.read(8192):
+            h.update(chunk)
+    return h.hexdigest()
+
 def ensure(cond: bool, msg: str):
     if not cond:
         raise RuntimeError(msg)
@@ -82,7 +90,7 @@ def main():
         snap_file = ROOT / snap_path
         ensure(snap_file.exists(), f"Snapshot file missing: {snap_path}")
 
-        computed = sha256_text(read_text(snap_file))
+        computed = sha256_file(snap_file)
         ensure(computed == snap_sha,
                f"Snapshot sha256 mismatch for {snap_path}: expected {snap_sha}, got {computed}")
 
@@ -97,19 +105,20 @@ def main():
         f = ROOT / path
         ensure(f.exists(), f"Delta file missing: {path}")
 
-        computed = sha256_text(read_text(f))
+        computed = sha256_file(f)
         ensure(computed == sha,
                f"Delta sha256 mismatch for {path}: expected {sha}, got {computed}")
 
     # Ledger NDJSON sanity
     ledger_path = ROOT / "ledger/ledger.ndjson"
-    for ln, line in enumerate(read_text(ledger_path).splitlines(), start=1):
-        if not line.strip():
-            continue
-        try:
-            json.loads(line)
-        except Exception as e:
-            raise RuntimeError(f"Ledger NDJSON invalid JSON at line {ln}: {e}")
+    with ledger_path.open("r", encoding="utf-8") as ledger_file:
+        for ln, line in enumerate(ledger_file, start=1):
+            if not line.strip():
+                continue
+            try:
+                json.loads(line)
+            except Exception as e:
+                raise RuntimeError(f"Ledger NDJSON invalid JSON at line {ln}: {e}")
 
     print("OK: MetaBlooms LTM validation passed.")
 
