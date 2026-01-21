@@ -156,10 +156,10 @@ class GoalValidator:
             ):
                 return True
 
-        # Strategy 3: Check execution status for boolean criteria
-        if isinstance(expected_value, bool) and expected_value:
-            # If we're looking for True, check if command succeeded
-            return command_result.get("success", False)
+        # Strategy 3: REMOVED - Don't just check command success
+        # This was too lenient - any successful command would mark all boolean
+        # criteria as met, causing hallucinated goal achievement.
+        # Only mark criterion as met if there's ACTUAL evidence in results or artifacts.
 
         return False
 
@@ -169,21 +169,48 @@ class GoalValidator:
         """
         Search artifact contents for evidence of criterion.
 
-        This is a simple keyword search. In production, this would use:
-        - NLP/LLM to understand semantic meaning
-        - Regex patterns for structured data
-        - JSON parsing for structured outputs
+        Strategies:
+        1. Try parsing as JSON and check for criterion as field
+        2. Fall back to keyword search in text content
         """
         if not os.path.exists(artifact_path):
             return False
 
         try:
             with open(artifact_path, "r") as f:
-                content = f.read().lower()
+                content = f.read()
 
-            # Look for criterion keyword
+            # Strategy 1: Try parsing as JSON (for result.json artifacts)
+            try:
+                data = json.loads(content)
+
+                # Check if criterion is directly in the parsed data
+                if criterion in data:
+                    return data[criterion] == expected_value
+
+                # Check if criterion is in nested "result" field
+                # (command executor writes result as stringified dict)
+                if "result" in data and isinstance(data["result"], str):
+                    # Try parsing the result string as a dict
+                    try:
+                        result_str = data["result"]
+                        # Handle both dict repr and JSON string
+                        if result_str.startswith("{"):
+                            import ast
+                            result_dict = ast.literal_eval(result_str)
+                            if criterion in result_dict:
+                                return result_dict[criterion] == expected_value
+                    except:
+                        pass
+
+            except json.JSONDecodeError:
+                # Not JSON, fall through to text search
+                pass
+
+            # Strategy 2: Keyword search in text content
+            content_lower = content.lower()
             criterion_lower = criterion.replace("_", " ")
-            if criterion_lower in content:
+            if criterion_lower in content_lower:
                 # Found mention - check if positive or negative
                 if isinstance(expected_value, bool):
                     if expected_value:
