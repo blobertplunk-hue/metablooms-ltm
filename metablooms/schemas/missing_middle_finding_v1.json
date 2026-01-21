@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Missing Middle Finding v1",
+  "type": "object",
+  "required": ["severity", "category"],
+  "properties": {
+    "severity": { "type": "string", "enum": ["WARN", "BLOCK"] },
+    "category": {
+      "type": "string",
+      "enum": ["PLAN_CODE", "CODE_EVIDENCE", "EVIDENCE_GATE", "LOOP"]
+    },
+    "missing": { "type": "string" }
+  }
+}
