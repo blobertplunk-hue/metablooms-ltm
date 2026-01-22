@@ -23,6 +23,9 @@ from jsonschema import Draft202012Validator
 
 ROOT = Path(__file__).resolve().parents[1]
 
+# Constants
+SHA256_HEX_LENGTH = 64
+
 REQUIRED = [
     "manifests/bootstrap.json",
     "manifests/latest.json",
@@ -53,56 +56,51 @@ def validate_schema(instance, schema_path: Path):
         msg = "\n".join([f"- {list(e.path)}: {e.message}" for e in errors])
         raise RuntimeError(f"Schema validation failed for {schema_path}:\n{msg}")
 
-def main():
-    # Required paths
-    for rel in REQUIRED:
-        p = ROOT / rel
-        ensure(p.exists(), f"Missing required file: {rel}")
+def validate_path_format(path, context: str):
+    """Validate that a path is a non-empty string."""
+    ensure(isinstance(path, str) and path.strip(),
+           f"{context} path must be a non-empty string")
 
-    bootstrap = read_json(ROOT / "manifests/bootstrap.json")
-    latest = read_json(ROOT / "manifests/latest.json")
+def validate_sha256_format(sha256, context: str):
+    """Validate that a SHA256 hash is a 64-character hex string."""
+    ensure(isinstance(sha256, str) and len(sha256) == SHA256_HEX_LENGTH,
+           f"{context} sha256 must be a {SHA256_HEX_LENGTH}-char hex string")
 
-    # Schema validation
-    validate_schema(bootstrap, ROOT / "schemas/manifest.bootstrap.schema.json")
-    validate_schema(latest, ROOT / "schemas/manifest.latest.schema.json")
+def verify_file_hash(file_path: Path, expected_sha256: str, relative_path: str):
+    """Verify that a file exists and its SHA256 hash matches the expected value."""
+    ensure(file_path.exists(), f"File missing: {relative_path}")
+    computed = sha256_text(read_text(file_path))
+    ensure(computed == expected_sha256,
+           f"SHA256 mismatch for {relative_path}: expected {expected_sha256}, got {computed}")
 
-    # Snapshot verification
-    state = latest.get("state", {})
-    stype = state.get("type")
+def verify_snapshot(state: dict):
+    """Verify snapshot file existence and hash if state type is 'snapshot'."""
+    if state.get("type") != "snapshot":
+        return
 
-    if stype == "snapshot":
-        snap_path = state.get("snapshot_path")
-        snap_sha = state.get("snapshot_sha256")
+    snap_path = state.get("snapshot_path")
+    snap_sha = state.get("snapshot_sha256")
 
-        ensure(isinstance(snap_path, str) and snap_path.strip(),
-               "latest.state.snapshot_path must be a non-empty string for snapshot state")
-        ensure(isinstance(snap_sha, str) and len(snap_sha) == 64,
-               "latest.state.snapshot_sha256 must be a 64-char hex string for snapshot state")
+    validate_path_format(snap_path, "latest.state.snapshot_path")
+    validate_sha256_format(snap_sha, "latest.state.snapshot_sha256")
 
-        snap_file = ROOT / snap_path
-        ensure(snap_file.exists(), f"Snapshot file missing: {snap_path}")
+    snap_file = ROOT / snap_path
+    verify_file_hash(snap_file, snap_sha, snap_path)
 
-        computed = sha256_text(read_text(snap_file))
-        ensure(computed == snap_sha,
-               f"Snapshot sha256 mismatch for {snap_path}: expected {snap_sha}, got {computed}")
+def verify_deltas(deltas: list):
+    """Verify all delta files exist and their hashes match."""
+    for i, delta in enumerate(deltas):
+        path = delta.get("path")
+        sha = delta.get("sha256")
 
-    # Delta verification
-    for i, d in enumerate(latest.get("deltas", [])):
-        path = d.get("path")
-        sha = d.get("sha256")
+        validate_path_format(path, f"Delta[{i}]")
+        validate_sha256_format(sha, f"Delta[{i}]")
 
-        ensure(isinstance(path, str) and path.strip(), f"Delta[{i}] path must be non-empty string")
-        ensure(isinstance(sha, str) and len(sha) == 64, f"Delta[{i}] sha256 must be 64-char hex string")
+        delta_file = ROOT / path
+        verify_file_hash(delta_file, sha, path)
 
-        f = ROOT / path
-        ensure(f.exists(), f"Delta file missing: {path}")
-
-        computed = sha256_text(read_text(f))
-        ensure(computed == sha,
-               f"Delta sha256 mismatch for {path}: expected {sha}, got {computed}")
-
-    # Ledger NDJSON sanity
-    ledger_path = ROOT / "ledger/ledger.ndjson"
+def verify_ledger_ndjson(ledger_path: Path):
+    """Verify that the ledger file is valid NDJSON (one JSON object per line)."""
     for ln, line in enumerate(read_text(ledger_path).splitlines(), start=1):
         if not line.strip():
             continue
@@ -110,6 +108,25 @@ def main():
             json.loads(line)
         except Exception as e:
             raise RuntimeError(f"Ledger NDJSON invalid JSON at line {ln}: {e}")
+
+def main():
+    # Required paths
+    for rel in REQUIRED:
+        p = ROOT / rel
+        ensure(p.exists(), f"Missing required file: {rel}")
+
+    # Load manifests
+    bootstrap = read_json(ROOT / "manifests/bootstrap.json")
+    latest = read_json(ROOT / "manifests/latest.json")
+
+    # Schema validation
+    validate_schema(bootstrap, ROOT / "schemas/manifest.bootstrap.schema.json")
+    validate_schema(latest, ROOT / "schemas/manifest.latest.schema.json")
+
+    # Content verification
+    verify_snapshot(latest.get("state", {}))
+    verify_deltas(latest.get("deltas", []))
+    verify_ledger_ndjson(ROOT / "ledger/ledger.ndjson")
 
     print("OK: MetaBlooms LTM validation passed.")
 
