@@ -1,0 +1,16 @@
+{"turn_id": "20260123_context_resume", "timestamp_utc": "2026-01-23T12:40:00Z", "operation": "convert_chat_artifacts_to_segments"}
+{"artifact_type": "segment", "file": "segments/SEG_P0_DEBUG_PROTOCOL_V1.md", "sha256": "bbb8a813ab9098b153369289ac5f66bf0a7da7c983d0f49f531019f9b0a0689e", "lines": 129, "derived_from": "SEE/MMD/ECL debugging session in prior turns"}
+{"artifact_type": "segment", "file": "segments/SEG_EXECUTION_TEST_HARNESS_V1.md", "sha256": "2bc46cfe540778db29421e3f0196dc111fa06b5ace3a81f88e07ad248d763a20", "lines": 147, "derived_from": "POST_PATCH_EXECUTION_TEST.py pattern from debugging"}
+{"artifact_type": "segment", "file": "segments/SEG_ROLLBACK_SAFE_SHIPPING_V1.md", "sha256": "f66255b32cda8fb5161dc2917b444caace7e51d07bf34bd33d4663873f9b0693", "lines": 228, "derived_from": "Shipping improvement proposals from chat"}
+{"artifact_type": "segment", "file": "segments/SEG_DELTA_QUEUE_MANAGEMENT_V1.md", "sha256": "85e4333e047cee45f211a2e8393986e00ae16673983223a0e86f909331184ee8", "lines": 280, "derived_from": "Delta queue improvement proposals from chat"}
+{"artifact_type": "segment", "file": "segments/SEG_SELF_HEALING_ROLLBACK_V1.md", "sha256": "565a458a0f4538ea35b06dfb7980192feedf06a19413c5e3b7a425a00f92664d", "lines": 426, "derived_from": "Healing with rollback pattern from P0 debugging"}
+{"artifact_type": "segment", "file": "segments/SEG_HEALING_RECEIPT_CHAIN_V1.md", "sha256": "551f131f3e27227b25eb593d5b7c2d6bde5ae7a8e49496da487d2b47326ad259", "lines": 504, "derived_from": "Receipt chain pattern from governance bundle work"}
+{"artifact_type": "segment", "file": "segments/SEG_GOVERNANCE_BUNDLE_V1.md", "sha256": "e0ac55c89ad04d5e26c882c02a7fc867574a63f05f631a8b13aa12bc0d94c390", "lines": 582, "derived_from": "Governance bundle assembly from P0 audit"}
+{"artifact_type": "row", "file": "rows/ROW_DEBUG_P0_CRITICAL.md", "sha256": "f1e0389c77d0ffc8ab4c06876586096cfea922c4b6221eea12730c0698e78b4b", "lines": 189, "routes_to": "PIPE_SEE_MMD_ECL_DEBUG"}
+{"artifact_type": "row", "file": "rows/ROW_APPLY_HEALING_DELTA.md", "sha256": "c1cd60a6563e05e7a0054d1cb5ae0d61570dc6d79423b4ef48987c61fc286e37", "lines": 196, "routes_to": "PIPE_HEALING_WITH_ROLLBACK"}
+{"artifact_type": "row", "file": "rows/ROW_MANAGE_DELTA_QUEUE.md", "sha256": "72a98f903c76978f02a0121463773ad22c5aca5105dccfe866b662d3863edb12", "lines": 239, "routes_to": "PIPE_DELTA_QUEUE_MGMT"}
+{"artifact_type": "row", "file": "rows/ROW_SHIP_WITH_ROLLBACK.md", "sha256": "147e71c3ca50e78e62a96dd411f26b3c4b2a06951912dfcda6755784f3d2b096", "lines": 233, "routes_to": "PIPE_SHIP_WITH_ROLLBACK"}
+{"artifact_type": "pipeline", "file": "pipelines/PIPE_SEE_MMD_ECL_DEBUG.md", "sha256": "63a92f0fde4d8db1f6bfcba5aee1686e3e0b8e25d6cd1bddf41b9eae3e8787dc", "lines": 408, "phases": 5}
+{"artifact_type": "pipeline", "file": "pipelines/PIPE_HEALING_WITH_ROLLBACK.md", "sha256": "db5d9446bb5f55518396623fc11d93bf3c51c5a3ec3c976d9fc7d6298e6b74b0", "lines": 410, "phases": 5}
+{"artifact_type": "pipeline", "file": "pipelines/PIPE_DELTA_QUEUE_MANAGEMENT.md", "sha256": "e9ee9ee0fa6eee3cddb7a72b4e3d166611bc603a79246ac08f8dc1902253227a", "lines": 475, "phases": 5}
+{"manifest_hash": "computed_below", "total_artifacts": 14, "total_lines": 3846}
