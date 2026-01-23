@@ -1,0 +1,10 @@
+{"turn_id": "20260123_metablooms_os_documentation", "timestamp_utc": "2026-01-23T13:00:00Z", "operation": "convert_metablooms_os_to_segments"}
+{"artifact_type": "segment", "file": "segments/SEG_METABLOOMS_PREFLIGHT_GATES_V1.md", "source": "MetaBlooms OS preflight/gates/", "sha256": "206f4e9ec2126e54a6de9841d52a417f4655ffb37cdeab4443414a91b84e75b8", "lines": 209, "components_documented": 24}
+{"artifact_type": "segment", "file": "segments/SEG_METABLOOMS_RUNTIME_V1.md", "source": "MetaBlooms OS runtime/", "sha256": "084c40b18f5f5ecb89b3d995ed80ffd1b664e7a2f7918a486ca18f3e315dfb37", "lines": 465, "components_documented": 10}
+{"artifact_type": "segment", "file": "segments/SEG_METABLOOMS_SEE_GOVERNANCE_V1.md", "source": "MetaBlooms OS governance/p0_dcc_v1/", "sha256": "5c3290339322b18285fc1b3d5370a2895eb6a0e953830d1fb6f19d10a9df09a2", "lines": 247, "components_documented": 3}
+{"artifact_type": "segment", "file": "segments/SEG_METABLOOMS_EVIDENCE_STORE_V1.md", "source": "MetaBlooms OS evidence/", "sha256": "257be7681ba1b71b3642ad1f2f87cedab1ec2d0de896ef39f290e28d96846731", "lines": 412, "components_documented": 6}
+{"artifact_type": "segment", "file": "segments/SEG_METABLOOMS_PROMOTION_GATE_V1.md", "source": "MetaBlooms OS gates/enforced_promotion_gate/", "sha256": "bfdb568a0bd11d51a6da44db39ce58a7715091e63a77527d79ee49dc830fcc7c", "lines": 549, "components_documented": 8}
+{"artifact_type": "row", "file": "rows/ROW_METABLOOMS_BOOT.md", "routes_to": "PIPE_METABLOOMS_BOOT_SEQUENCE", "sha256": "88f0b20702ab8ecc24904342f2215c3c018ff3e0909161deff46e4bed1e33f99", "lines": 188}
+{"artifact_type": "row", "file": "rows/ROW_METABLOOMS_PROMOTE.md", "routes_to": "PIPE_METABLOOMS_PROMOTION", "sha256": "073fb9d3daa75c8870794f0228208b04c45908e796a328343335bcaca46bd0ea", "lines": 180}
+{"artifact_type": "pipeline", "file": "pipelines/PIPE_METABLOOMS_BOOT_SEQUENCE.md", "phases": 5, "sha256": "4b951cc93210a7a7e88f02be08df1ad8317e1fa890cc5399259f593eedd54fbc", "lines": 405}
+{"manifest_hash": "computed_below", "total_artifacts": 8, "total_lines": 2655, "total_os_components": 51}
