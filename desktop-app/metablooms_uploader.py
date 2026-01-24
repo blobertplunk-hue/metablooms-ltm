@@ -16,6 +16,21 @@ from datetime import datetime
 from pathlib import Path
 import hashlib
 
+# Dark mode colors
+COLORS = {
+    "bg": "#1e1e1e",
+    "bg_light": "#2d2d2d",
+    "bg_lighter": "#3c3c3c",
+    "fg": "#d4d4d4",
+    "fg_dim": "#808080",
+    "accent": "#569cd6",
+    "success": "#4ec9b0",
+    "error": "#f14c4c",
+    "warning": "#cca700",
+    "border": "#404040"
+}
+
+
 class MetaBloomsUploader:
     # Files larger than this (in bytes) will use Git LFS
     LFS_THRESHOLD = 50 * 1024 * 1024  # 50 MB
@@ -25,13 +40,10 @@ class MetaBloomsUploader:
         self.root.title("MetaBlooms GitHub Uploader")
         self.root.geometry("800x700")
         self.root.minsize(700, 600)
+        self.root.configure(bg=COLORS["bg"])
 
-        # Configure style
-        style = ttk.Style()
-        style.configure("Title.TLabel", font=("Segoe UI", 16, "bold"))
-        style.configure("Heading.TLabel", font=("Segoe UI", 11, "bold"))
-        style.configure("Success.TLabel", foreground="green")
-        style.configure("Error.TLabel", foreground="red")
+        # Apply dark theme
+        self.apply_dark_theme()
 
         # Repository paths
         self.repo_paths = {
@@ -41,6 +53,87 @@ class MetaBloomsUploader:
 
         self.create_widgets()
         self.load_config()
+
+    def apply_dark_theme(self):
+        """Apply dark mode theme to ttk widgets"""
+        style = ttk.Style()
+
+        # Use clam theme as base (works better for customization)
+        style.theme_use('clam')
+
+        # Configure main styles
+        style.configure(".",
+            background=COLORS["bg"],
+            foreground=COLORS["fg"],
+            fieldbackground=COLORS["bg_light"],
+            troughcolor=COLORS["bg_light"],
+            bordercolor=COLORS["border"],
+            lightcolor=COLORS["bg_lighter"],
+            darkcolor=COLORS["bg"]
+        )
+
+        # Frame
+        style.configure("TFrame", background=COLORS["bg"])
+
+        # Label
+        style.configure("TLabel", background=COLORS["bg"], foreground=COLORS["fg"])
+        style.configure("Title.TLabel", font=("Segoe UI", 16, "bold"), foreground=COLORS["accent"])
+        style.configure("Heading.TLabel", font=("Segoe UI", 11, "bold"))
+
+        # LabelFrame
+        style.configure("TLabelframe", background=COLORS["bg"], foreground=COLORS["fg"])
+        style.configure("TLabelframe.Label", background=COLORS["bg"], foreground=COLORS["accent"])
+
+        # Button
+        style.configure("TButton",
+            background=COLORS["bg_lighter"],
+            foreground=COLORS["fg"],
+            padding=(10, 5)
+        )
+        style.map("TButton",
+            background=[("active", COLORS["accent"]), ("pressed", COLORS["bg_light"])],
+            foreground=[("active", "#ffffff")]
+        )
+
+        # Entry
+        style.configure("TEntry",
+            fieldbackground=COLORS["bg_light"],
+            foreground=COLORS["fg"],
+            insertcolor=COLORS["fg"]
+        )
+
+        # Radiobutton
+        style.configure("TRadiobutton",
+            background=COLORS["bg"],
+            foreground=COLORS["fg"]
+        )
+        style.map("TRadiobutton",
+            background=[("active", COLORS["bg"])]
+        )
+
+        # Checkbutton
+        style.configure("TCheckbutton",
+            background=COLORS["bg"],
+            foreground=COLORS["fg"]
+        )
+        style.map("TCheckbutton",
+            background=[("active", COLORS["bg"])]
+        )
+
+        # Notebook (tabs)
+        style.configure("TNotebook",
+            background=COLORS["bg"],
+            bordercolor=COLORS["border"]
+        )
+        style.configure("TNotebook.Tab",
+            background=COLORS["bg_light"],
+            foreground=COLORS["fg"],
+            padding=(15, 8)
+        )
+        style.map("TNotebook.Tab",
+            background=[("selected", COLORS["bg_lighter"])],
+            foreground=[("selected", COLORS["accent"])]
+        )
 
     def create_widgets(self):
         # Main container with padding
@@ -61,10 +154,10 @@ class MetaBloomsUploader:
         self.deltas_tab = ttk.Frame(self.notebook, padding="10")
         self.os_tab = ttk.Frame(self.notebook, padding="10")
 
-        self.notebook.add(self.setup_tab, text="Setup")
-        self.notebook.add(self.files_tab, text="Upload Files")
-        self.notebook.add(self.deltas_tab, text="Upload Deltas")
-        self.notebook.add(self.os_tab, text="Upload OS Zip")
+        self.notebook.add(self.setup_tab, text="  Setup  ")
+        self.notebook.add(self.files_tab, text="  Upload Files  ")
+        self.notebook.add(self.deltas_tab, text="  Upload Deltas  ")
+        self.notebook.add(self.os_tab, text="  Upload OS Zip  ")
 
         self.create_setup_tab()
         self.create_files_tab()
@@ -75,13 +168,54 @@ class MetaBloomsUploader:
         log_frame = ttk.LabelFrame(main_frame, text="Log Output", padding="5")
         log_frame.pack(fill=tk.BOTH, expand=True)
 
-        self.log_text = scrolledtext.ScrolledText(log_frame, height=10, font=("Consolas", 9))
+        self.log_text = scrolledtext.ScrolledText(
+            log_frame,
+            height=10,
+            font=("Consolas", 9),
+            bg=COLORS["bg_light"],
+            fg=COLORS["fg"],
+            insertbackground=COLORS["fg"],
+            selectbackground=COLORS["accent"],
+            selectforeground="#ffffff",
+            relief=tk.FLAT,
+            borderwidth=0
+        )
         self.log_text.pack(fill=tk.BOTH, expand=True)
+
+        # Configure log text tags for colored output
+        self.log_text.tag_configure("success", foreground=COLORS["success"])
+        self.log_text.tag_configure("error", foreground=COLORS["error"])
+        self.log_text.tag_configure("warning", foreground=COLORS["warning"])
+        self.log_text.tag_configure("info", foreground=COLORS["fg"])
 
         # Status bar
         self.status_var = tk.StringVar(value="Ready")
-        status_bar = ttk.Label(main_frame, textvariable=self.status_var, relief=tk.SUNKEN, anchor=tk.W)
+        status_bar = tk.Label(
+            main_frame,
+            textvariable=self.status_var,
+            bg=COLORS["bg_lighter"],
+            fg=COLORS["fg"],
+            anchor=tk.W,
+            padx=10,
+            pady=5
+        )
         status_bar.pack(fill=tk.X, pady=(5, 0))
+
+    def create_dark_listbox(self, parent, **kwargs):
+        """Create a dark-themed listbox"""
+        listbox = tk.Listbox(
+            parent,
+            bg=COLORS["bg_light"],
+            fg=COLORS["fg"],
+            selectbackground=COLORS["accent"],
+            selectforeground="#ffffff",
+            highlightbackground=COLORS["border"],
+            highlightcolor=COLORS["accent"],
+            relief=tk.FLAT,
+            borderwidth=1,
+            **kwargs
+        )
+        return listbox
 
     def create_setup_tab(self):
         """Create the setup/configuration tab"""
@@ -139,8 +273,8 @@ class MetaBloomsUploader:
         ttk.Button(btn_frame, text="Add Folder...", command=self.add_folder).pack(side=tk.LEFT, padx=2)
         ttk.Button(btn_frame, text="Clear List", command=self.clear_file_list).pack(side=tk.LEFT, padx=2)
 
-        # File list
-        self.file_listbox = tk.Listbox(file_frame, height=8, selectmode=tk.EXTENDED)
+        # File list (dark themed)
+        self.file_listbox = self.create_dark_listbox(file_frame, height=8, selectmode=tk.EXTENDED)
         self.file_listbox.pack(fill=tk.BOTH, expand=True, pady=5)
 
         # Destination path
@@ -179,7 +313,7 @@ class MetaBloomsUploader:
         ttk.Button(btn_frame, text="Add Delta Files...", command=self.add_delta_files).pack(side=tk.LEFT, padx=2)
         ttk.Button(btn_frame, text="Clear", command=self.clear_delta_list).pack(side=tk.LEFT, padx=2)
 
-        self.delta_listbox = tk.Listbox(delta_frame, height=8, selectmode=tk.EXTENDED)
+        self.delta_listbox = self.create_dark_listbox(delta_frame, height=8, selectmode=tk.EXTENDED)
         self.delta_listbox.pack(fill=tk.BOTH, expand=True, pady=5)
 
         # Auto-organize option
@@ -247,26 +381,60 @@ class MetaBloomsUploader:
         ttk.Button(self.os_tab, text="Upload OS Zip to GitHub", command=self.upload_os_zip).pack(pady=10)
 
     def log(self, message, level="info"):
-        """Add a message to the log"""
+        """Add a message to the log with color"""
         timestamp = datetime.now().strftime("%H:%M:%S")
         prefix = {"info": "", "success": "[OK] ", "error": "[ERROR] ", "warning": "[WARN] "}
-        self.log_text.insert(tk.END, f"[{timestamp}] {prefix.get(level, '')}{message}\n")
+        full_message = f"[{timestamp}] {prefix.get(level, '')}{message}\n"
+        self.log_text.insert(tk.END, full_message, level)
         self.log_text.see(tk.END)
         self.root.update_idletasks()
+
+    def normalize_path(self, path):
+        """Normalize and validate a file path"""
+        if not path:
+            return None
+        # Strip whitespace and quotes
+        path = path.strip().strip('"').strip("'")
+        # Convert to Path object and resolve
+        try:
+            normalized = str(Path(path).resolve())
+            return normalized
+        except Exception:
+            return None
 
     def run_git_command(self, cmd, cwd=None):
         """Run a git command and return output"""
         try:
-            result = subprocess.run(
-                cmd,
-                cwd=cwd,
-                capture_output=True,
-                text=True,
-                shell=True if os.name == 'nt' else False
-            )
+            # Normalize the working directory path
+            if cwd:
+                cwd = self.normalize_path(cwd)
+                if not cwd or not os.path.isdir(cwd):
+                    self.log(f"Invalid directory: {cwd}", "error")
+                    return None, f"Invalid directory: {cwd}"
+
+            # On Windows, use shell=True for git commands
+            if os.name == 'nt':
+                result = subprocess.run(
+                    cmd,
+                    cwd=cwd,
+                    capture_output=True,
+                    text=True,
+                    shell=True
+                )
+            else:
+                # On Unix, split the command
+                import shlex
+                result = subprocess.run(
+                    shlex.split(cmd),
+                    cwd=cwd,
+                    capture_output=True,
+                    text=True
+                )
+
             if result.returncode != 0:
-                self.log(f"Git error: {result.stderr}", "error")
-                return None, result.stderr
+                error_msg = result.stderr.strip() if result.stderr else "Unknown error"
+                self.log(f"Git error: {error_msg}", "error")
+                return None, error_msg
             return result.stdout, None
         except Exception as e:
             self.log(f"Exception running git: {e}", "error")
@@ -276,8 +444,10 @@ class MetaBloomsUploader:
         """Browse for repository folder"""
         path = filedialog.askdirectory(title=f"Select MetaBlooms {repo_type.upper()} Repository")
         if path:
+            path = self.normalize_path(path)
             # Verify it's a git repo
-            if os.path.exists(os.path.join(path, ".git")):
+            git_dir = os.path.join(path, ".git")
+            if os.path.exists(git_dir):
                 if repo_type == "ltm":
                     self.ltm_path_var.set(path)
                 else:
@@ -285,12 +455,14 @@ class MetaBloomsUploader:
                 self.repo_paths[repo_type] = path
                 self.log(f"Set {repo_type.upper()} repo path: {path}", "success")
             else:
-                messagebox.showerror("Error", "Selected folder is not a Git repository")
+                messagebox.showerror("Error", "Selected folder is not a Git repository.\nMake sure you select the folder containing .git")
 
     def init_git_lfs(self):
         """Initialize Git LFS in both repositories"""
+        initialized = False
         for repo_type, path in self.repo_paths.items():
-            if path and os.path.exists(path):
+            path = self.normalize_path(path)
+            if path and os.path.isdir(path):
                 self.log(f"Initializing Git LFS in {repo_type.upper()} repo...")
 
                 # Install LFS
@@ -303,17 +475,32 @@ class MetaBloomsUploader:
                 for pattern in patterns:
                     self.run_git_command(f'git lfs track "{pattern}"', cwd=path)
 
-                self.log(f"Git LFS initialized in {repo_type.upper()} repo", "success")
+                # Add .gitattributes
+                self.run_git_command("git add .gitattributes", cwd=path)
 
-        messagebox.showinfo("Git LFS", "Git LFS has been initialized. Large files will be tracked automatically.")
+                self.log(f"Git LFS initialized in {repo_type.upper()} repo", "success")
+                initialized = True
+
+        if initialized:
+            messagebox.showinfo("Git LFS", "Git LFS has been initialized. Large files will be tracked automatically.")
+        else:
+            messagebox.showwarning("Git LFS", "No valid repositories configured. Please set repository paths first.")
 
     def save_config(self):
         """Save configuration to file"""
+        ltm_path = self.normalize_path(self.ltm_path_var.get())
+        os_path = self.normalize_path(self.os_path_var.get())
+
         config = {
-            "ltm_path": self.ltm_path_var.get(),
-            "os_path": self.os_path_var.get()
+            "ltm_path": ltm_path or "",
+            "os_path": os_path or ""
         }
-        config_path = os.path.join(os.path.dirname(__file__), "uploader_config.json")
+
+        # Update internal paths
+        self.repo_paths["ltm"] = ltm_path or ""
+        self.repo_paths["os"] = os_path or ""
+
+        config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "uploader_config.json")
         try:
             with open(config_path, "w") as f:
                 json.dump(config, f, indent=2)
@@ -324,15 +511,19 @@ class MetaBloomsUploader:
 
     def load_config(self):
         """Load configuration from file"""
-        config_path = os.path.join(os.path.dirname(__file__), "uploader_config.json")
+        config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "uploader_config.json")
         try:
             if os.path.exists(config_path):
                 with open(config_path) as f:
                     config = json.load(f)
-                self.ltm_path_var.set(config.get("ltm_path", ""))
-                self.os_path_var.set(config.get("os_path", ""))
-                self.repo_paths["ltm"] = config.get("ltm_path", "")
-                self.repo_paths["os"] = config.get("os_path", "")
+
+                ltm_path = self.normalize_path(config.get("ltm_path", ""))
+                os_path = self.normalize_path(config.get("os_path", ""))
+
+                self.ltm_path_var.set(ltm_path or "")
+                self.os_path_var.set(os_path or "")
+                self.repo_paths["ltm"] = ltm_path or ""
+                self.repo_paths["os"] = os_path or ""
                 self.log("Configuration loaded", "info")
         except Exception as e:
             self.log(f"No config file found, using defaults", "info")
@@ -341,7 +532,8 @@ class MetaBloomsUploader:
         """Add files to the upload list"""
         files = filedialog.askopenfilenames(title="Select Files to Upload")
         for f in files:
-            if f not in self.selected_files:
+            f = self.normalize_path(f)
+            if f and f not in self.selected_files:
                 self.selected_files.append(f)
                 self.file_listbox.insert(tk.END, os.path.basename(f))
 
@@ -349,6 +541,7 @@ class MetaBloomsUploader:
         """Add all files from a folder"""
         folder = filedialog.askdirectory(title="Select Folder to Upload")
         if folder:
+            folder = self.normalize_path(folder)
             for root, dirs, files in os.walk(folder):
                 for f in files:
                     full_path = os.path.join(root, f)
@@ -369,7 +562,8 @@ class MetaBloomsUploader:
             filetypes=[("JSON files", "*.json"), ("All files", "*.*")]
         )
         for f in files:
-            if f not in self.selected_deltas:
+            f = self.normalize_path(f)
+            if f and f not in self.selected_deltas:
                 self.selected_deltas.append(f)
                 self.delta_listbox.insert(tk.END, os.path.basename(f))
 
@@ -385,12 +579,16 @@ class MetaBloomsUploader:
             filetypes=[("ZIP files", "*.zip"), ("All files", "*.*")]
         )
         if file:
+            file = self.normalize_path(file)
             self.os_zip_var.set(file)
             # Show file info
-            size = os.path.getsize(file)
-            size_mb = size / (1024 * 1024)
-            lfs_note = " (will use Git LFS)" if size > self.LFS_THRESHOLD else ""
-            self.zip_info_var.set(f"Size: {size_mb:.2f} MB{lfs_note}")
+            try:
+                size = os.path.getsize(file)
+                size_mb = size / (1024 * 1024)
+                lfs_note = " (will use Git LFS)" if size > self.LFS_THRESHOLD else ""
+                self.zip_info_var.set(f"Size: {size_mb:.2f} MB{lfs_note}")
+            except Exception as e:
+                self.zip_info_var.set(f"Error reading file: {e}")
 
     def calculate_sha256(self, filepath):
         """Calculate SHA256 hash of a file"""
@@ -408,15 +606,16 @@ class MetaBloomsUploader:
             ext = os.path.splitext(filename)[1]
             if ext:
                 self.run_git_command(f'git lfs track "*{ext}"', cwd=repo_path)
+                self.run_git_command("git add .gitattributes", cwd=repo_path)
                 self.log(f"Tracking {ext} files with Git LFS", "info")
 
     def upload_files(self):
         """Upload selected files to GitHub"""
         repo_type = self.file_repo_var.get()
-        repo_path = self.repo_paths.get(repo_type)
+        repo_path = self.normalize_path(self.repo_paths.get(repo_type))
 
-        if not repo_path:
-            messagebox.showerror("Error", f"Please set the {repo_type.upper()} repository path in Setup tab")
+        if not repo_path or not os.path.isdir(repo_path):
+            messagebox.showerror("Error", f"Please set a valid {repo_type.upper()} repository path in Setup tab")
             return
 
         if not self.selected_files:
@@ -469,10 +668,10 @@ class MetaBloomsUploader:
 
     def upload_deltas(self):
         """Upload delta files to GitHub"""
-        repo_path = self.repo_paths.get("ltm")
+        repo_path = self.normalize_path(self.repo_paths.get("ltm"))
 
-        if not repo_path:
-            messagebox.showerror("Error", "Please set the LTM repository path in Setup tab")
+        if not repo_path or not os.path.isdir(repo_path):
+            messagebox.showerror("Error", "Please set a valid LTM repository path in Setup tab")
             return
 
         if not self.selected_deltas:
@@ -527,14 +726,14 @@ class MetaBloomsUploader:
     def upload_os_zip(self):
         """Upload OS zip file to GitHub"""
         repo_type = self.os_repo_var.get()
-        repo_path = self.repo_paths.get(repo_type)
-        zip_path = self.os_zip_var.get()
+        repo_path = self.normalize_path(self.repo_paths.get(repo_type))
+        zip_path = self.normalize_path(self.os_zip_var.get())
 
-        if not repo_path:
-            messagebox.showerror("Error", f"Please set the {repo_type.upper()} repository path in Setup tab")
+        if not repo_path or not os.path.isdir(repo_path):
+            messagebox.showerror("Error", f"Please set a valid {repo_type.upper()} repository path in Setup tab")
             return
 
-        if not zip_path or not os.path.exists(zip_path):
+        if not zip_path or not os.path.isfile(zip_path):
             messagebox.showerror("Error", "Please select a valid OS zip file")
             return
 
