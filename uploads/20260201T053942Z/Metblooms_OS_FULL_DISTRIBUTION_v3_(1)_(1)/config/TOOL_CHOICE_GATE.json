@@ -1,0 +1,17 @@
+{
+  "version": "v1",
+  "generated_utc": "2026-01-30T14:37:21Z",
+  "enforce": true,
+  "mode": "enforce",
+  "requires": [
+    "indexes/TOOL_TAXONOMY.json",
+    "indexes/TOOL_UNIVERSE.json"
+  ],
+  "log_ledger": "bts/tool_choice_audit.ndjson",
+  "inputs_env": [
+    "MB_TASK_CLASS",
+    "MB_TOOL_USED"
+  ],
+  "fail_closed_if_enforce_true_and_violation": true,
+  "enforced_utc": "2026-01-30T14:46:35Z"
+}

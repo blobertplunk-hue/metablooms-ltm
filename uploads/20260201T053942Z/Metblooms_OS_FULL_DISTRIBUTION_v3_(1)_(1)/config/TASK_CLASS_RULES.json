@@ -1,0 +1,81 @@
+{
+  "version": "v1",
+  "generated_utc": "2026-01-30T14:40:48Z",
+  "task_classes": {
+    "external_research": {
+      "keywords": [
+        "research",
+        "sources",
+        "citations",
+        "evidence",
+        "look up",
+        "latest",
+        "news",
+        "verify"
+      ],
+      "default_tool": "web.run"
+    },
+    "pdf_analysis": {
+      "keywords": [
+        "pdf",
+        "screenshot",
+        "pageno",
+        "table",
+        "figure"
+      ],
+      "default_tool": "web.run"
+    },
+    "uploaded_corpus_lookup": {
+      "keywords": [
+        "search the file",
+        "in the bundle",
+        "in the uploaded",
+        "file_search",
+        "ndjson",
+        "chat index"
+      ],
+      "default_tool": "file_search.msearch"
+    },
+    "create_user_downloadable_artifact": {
+      "keywords": [
+        "export",
+        "download",
+        "zip",
+        "pptx",
+        "xlsx",
+        "pdf",
+        "file"
+      ],
+      "default_tool": "python_user_visible.exec"
+    },
+    "shell_inspection_hashing": {
+      "keywords": [
+        "ls",
+        "find",
+        "sha256",
+        "hash",
+        "manifest",
+        "chmod",
+        "tar",
+        "zipfile"
+      ],
+      "default_tool": "container.exec"
+    },
+    "image_generation": {
+      "keywords": [
+        "generate an image",
+        "edit image",
+        "make a picture"
+      ],
+      "default_tool": "image_gen"
+    }
+  },
+  "precedence": [
+    "external_research",
+    "pdf_analysis",
+    "uploaded_corpus_lookup",
+    "create_user_downloadable_artifact",
+    "shell_inspection_hashing",
+    "image_generation"
+  ]
+}

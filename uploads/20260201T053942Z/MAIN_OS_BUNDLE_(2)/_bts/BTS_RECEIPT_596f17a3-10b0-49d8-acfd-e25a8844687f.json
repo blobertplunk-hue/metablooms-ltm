@@ -1,0 +1,35 @@
+{
+  "turn_id": "596f17a3-10b0-49d8-acfd-e25a8844687f",
+  "timestamp": "2026-01-31T23:39:08Z",
+  "tool_calls_logged": [
+    "python_user_visible.exec"
+  ],
+  "decisions": [
+    {
+      "id": "DEC-EXPORT-001",
+      "decision": "Lock canonical root and define dual export manifest",
+      "rationale": "Prepare deterministic OS and Chat Index exports",
+      "constraints": [
+        "FAIL\u2192FIX",
+        "hash-bound separation"
+      ]
+    }
+  ],
+  "artifacts_emitted": [
+    {
+      "path": "/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_596f17a3-10b0-49d8-acfd-e25a8844687f.json",
+      "bytes": 211,
+      "sha256": "dac441513cc82f8bf0c104db11c993bc3f2c1906be7389f08e8acf7ecb913d02"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/_deployment/CANONICAL_ROOT_LOCK.json",
+      "bytes": 434,
+      "sha256": "1569986f92c4aaf82f01620c8d80f0d524a70c3288cfe675399ac87112b35e2f"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/_deployment/EXPORT_MANIFEST_v1.json",
+      "bytes": 1017,
+      "sha256": "66da131d5e10b342be11c8020f92e5c8ed26a731e29d57798d32c0c1e75fae15"
+    }
+  ]
+}

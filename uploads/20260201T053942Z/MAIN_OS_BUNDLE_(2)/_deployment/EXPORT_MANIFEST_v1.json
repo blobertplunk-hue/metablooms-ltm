@@ -1,0 +1,59 @@
+{
+  "turn_id": "f62732a6-57e8-448a-80f1-2fa678e7feda",
+  "timestamp": "2026-01-31T23:39:18Z",
+  "manifest_version": "v1",
+  "exports": [
+    {
+      "name": "Metblooms_OS_MAIN",
+      "source_root": "/mnt/data/Metblooms_OS",
+      "output_zip": "/mnt/data/Metblooms_OS_EXPORT_vX.Y.zip",
+      "include": [
+        "_bts/",
+        "_state/",
+        "_integrity/",
+        "_harness/",
+        "healing/",
+        "_deployment/",
+        "_policy/",
+        "CLAUDE.md"
+      ],
+      "exclude": [
+        "**/*chat_index*",
+        "**/*transcript*",
+        "**/*.ndjson (except _state/chat_ledger.ndjson)",
+        "Metblooms_CHAT_INDEX/**"
+      ],
+      "required_proofs": [
+        "_deployment/OS_EXPORT_PROOF.json",
+        "_deployment/OS_FREEZE_RECEIPT.json",
+        "_deployment/OS_EXPORT_RECEIPT.json"
+      ]
+    },
+    {
+      "name": "Metblooms_CHAT_INDEX",
+      "source_root": "/mnt/data/Metblooms_CHAT_INDEX",
+      "output_zip": "/mnt/data/Metblooms_CHAT_INDEX_EXPORT_vX.Y.zip",
+      "include": [
+        "**/*.ndjson",
+        "**/*.json",
+        "**/*.mri",
+        "**/*.bin"
+      ],
+      "exclude": [
+        "_bts/",
+        "_deployment/",
+        "Metblooms_OS/**"
+      ],
+      "required_proofs": [
+        "CHAT_INDEX_ROOT_LOCK.json",
+        "CHAT_INDEX_BINDING.json",
+        "CHAT_INDEX_EXPORT_RECEIPT.json"
+      ]
+    }
+  ],
+  "binding_policy": {
+    "no_embedding": "OS and CHAT_INDEX must be shipped separately",
+    "bind_by_hash_only": "CHAT_INDEX_BINDING.json must bind OS zip sha256 to chat-index merkle root",
+    "rehydration_proof_required": "EXPORT_REHYDRATION_PROOF.json"
+  }
+}

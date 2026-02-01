@@ -1,0 +1,8 @@
+{
+  "artifact": "P08_AUDIT_RECEIPT_v1",
+  "timestamp_utc": "2026-01-31T17:16:34Z",
+  "phase": "P-08",
+  "status": "PASS",
+  "report_path": "/mnt/data/Metblooms_OS/receipts/P08_AUDIT_REPORT_v1.json",
+  "fail_closed": true
+}

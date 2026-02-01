@@ -1,0 +1,44 @@
+{
+  "turn_id": "660d0074-4d84-451e-bdef-0fca0f7e80e6",
+  "timestamp": "2026-01-31T23:48:17Z",
+  "tool_calls_logged": [
+    {
+      "tool": "python_user_visible.exec",
+      "inputs": [
+        "detect ROEZ lock",
+        "abort before write"
+      ],
+      "outputs": {
+        "roez_locked": true
+      }
+    }
+  ],
+  "decisions": [
+    {
+      "id": "DEC-P1-FAILCLOSED",
+      "decision": "Abort P1 emission",
+      "rationale": "ROEZ sealed; writing forbidden",
+      "constraints": [
+        "FAIL_CLOSED_ON_ROEZ_WRITE"
+      ]
+    }
+  ],
+  "constraints_logged": [
+    "ROEZ read-only enforced",
+    "No writes permitted to ROEZ"
+  ],
+  "artifacts_emitted": [
+    {
+      "path": "/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_660d0074-4d84-451e-bdef-0fca0f7e80e6.json",
+      "bytes": 301,
+      "sha256": "722e8598bc59616ba5058aa2049867cf8ce799aa87967ad21a35f0c24e41827f"
+    }
+  ],
+  "failures": [
+    {
+      "error": "ROEZ_LOCKED",
+      "detail": "ROEZ is sealed read-only; writing PAIN_POINTS_LEDGER.ndjson would violate forensic lock",
+      "exception": "[Errno 2] No such file or directory: '/mnt/data/Metblooms_OS/_roez/.__probe_write'"
+    }
+  ]
+}

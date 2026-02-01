@@ -1,0 +1,9 @@
+{
+  "report_id": "AUTHORITY_DISSENT_REPORT_v1",
+  "fields": [
+    "avg_authority",
+    "high_dissent_count",
+    "claims_with_dissent"
+  ],
+  "created_utc": "2026-01-31T16:40:42Z"
+}

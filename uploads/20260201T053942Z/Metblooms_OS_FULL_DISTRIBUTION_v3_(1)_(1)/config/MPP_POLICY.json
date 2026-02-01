@@ -1,0 +1,24 @@
+{
+  "mpp_auto_start": true,
+  "trigger_actions": [
+    "implement",
+    "create",
+    "modify",
+    "plan",
+    "design",
+    "patch",
+    "fix",
+    "build",
+    "enforce"
+  ],
+  "default_mode": "hard_gate",
+  "requires_phases": [
+    "SEE",
+    "CORROBORATION",
+    "MMD",
+    "PLAN"
+  ],
+  "allow_user_bypass": true,
+  "bypass_phrase": "bypass mpp",
+  "fail_closed_if_missing": true
+}

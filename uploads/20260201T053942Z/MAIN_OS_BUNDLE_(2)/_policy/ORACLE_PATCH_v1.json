@@ -1,0 +1,11 @@
+{
+  "turn_id": "24f529b6-127d-4782-875a-3bedee92409c",
+  "timestamp": "2026-01-31T23:54:59Z",
+  "patch_version": "v1",
+  "action": "NARROW_ORACLE_SCOPE",
+  "exclusions": [
+    "/mnt/data/Metblooms_OS/_roez/PAIN_POINTS_LEDGER.ndjson"
+  ],
+  "rationale": "Exclude first-write ROEZ archives from immediate oracle comparison; include after reseal baseline.",
+  "observed_mismatches": []
+}

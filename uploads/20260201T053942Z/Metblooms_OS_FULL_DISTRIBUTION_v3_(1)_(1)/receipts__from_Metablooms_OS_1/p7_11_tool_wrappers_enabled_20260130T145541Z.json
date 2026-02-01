@@ -1,0 +1,21 @@
+{
+  "phase": "P7.11",
+  "utc": "2026-01-30T14:55:41Z",
+  "turn_id": "20260130T145541Z",
+  "artifacts": {
+    "wrappers": [
+      "/mnt/data/Metblooms_OS/tools/wrappers/web_run_wrapper.sh",
+      "/mnt/data/Metblooms_OS/tools/wrappers/file_search_msearch_wrapper.sh",
+      "/mnt/data/Metblooms_OS/tools/wrappers/python_user_visible_exec_wrapper.sh",
+      "/mnt/data/Metblooms_OS/tools/wrappers/container_exec_wrapper.sh"
+    ],
+    "preference": "config/TOOL_WRAPPER_PREFERENCE.json"
+  },
+  "sha256": {
+    "/mnt/data/Metblooms_OS/tools/wrappers/web_run_wrapper.sh": "90c217866f99a4b0b4b699e7d30a1412532e57c224f1b34e03a0531481431865",
+    "/mnt/data/Metblooms_OS/tools/wrappers/file_search_msearch_wrapper.sh": "3727c75ea13ced74a072cee542d5b39fd92bf9e8716172b66399baf7010093a0",
+    "/mnt/data/Metblooms_OS/tools/wrappers/python_user_visible_exec_wrapper.sh": "9273a1811abb4217ca2e8d262a7c7b5089c8259f92870d6c7f8a479ff6c69f99",
+    "/mnt/data/Metblooms_OS/tools/wrappers/container_exec_wrapper.sh": "8d2f8b4f34a87100ccd1848205641af1be52471213bb4c23374490bcefb38ee1"
+  },
+  "status": "OK"
+}

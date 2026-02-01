@@ -1,0 +1,3 @@
+{"note": "Automated linting converts prompt invariants into executable checks, reducing drift.", "anchors": ["S1", "S3"]}
+{"note": "Repo-resident policy-as-code improves consistency across turns.", "anchors": ["S2", "S5"]}
+{"note": "Excluding volatile artifacts aligns with determinism guidance.", "anchors": ["S4"]}

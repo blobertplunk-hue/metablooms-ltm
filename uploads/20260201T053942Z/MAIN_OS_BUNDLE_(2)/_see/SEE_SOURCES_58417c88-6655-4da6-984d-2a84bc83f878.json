@@ -1,0 +1,61 @@
+{
+  "scope": "prompt effectiveness: full-contract prompts vs short prompts",
+  "sources": [
+    {
+      "ref": "turn0search3",
+      "title": "OpenAI prompt engineering best practices",
+      "type": "primary",
+      "url": "https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api"
+    },
+    {
+      "ref": "turn0search7",
+      "title": "OpenAI prompt engineering guide (docs)",
+      "type": "primary",
+      "url": "https://platform.openai.com/docs/guides/prompt-engineering"
+    },
+    {
+      "ref": "turn0search2",
+      "title": "Anthropic: Claude Code best practices",
+      "type": "primary",
+      "url": "https://www.anthropic.com/engineering/claude-code-best-practices"
+    },
+    {
+      "ref": "turn0search6",
+      "title": "Claude Code Docs: Best Practices",
+      "type": "primary",
+      "url": "https://code.claude.com/docs/en/best-practices"
+    },
+    {
+      "ref": "turn0search4",
+      "title": "Scientific Reports 2025: prompt structure & reliability for task flows",
+      "type": "peer_reviewed",
+      "url": "https://www.nature.com/articles/s41598-025-19170-9"
+    },
+    {
+      "ref": "turn0search11",
+      "title": "Europace 2025: structured prompt + checklist use",
+      "type": "peer_reviewed",
+      "url": "https://academic.oup.com/europace/article/27/8/euaf173/8229583"
+    },
+    {
+      "ref": "turn0search1",
+      "title": "2026 study: LLM reliability on checklist items (PMC)",
+      "type": "peer_reviewed",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12795173/"
+    },
+    {
+      "ref": "turn1search1",
+      "title": "SWE-bench paper (arXiv)",
+      "type": "primary",
+      "url": "https://arxiv.org/abs/2310.06770"
+    },
+    {
+      "ref": "turn1search0",
+      "title": "SWE-bench evaluation guide",
+      "type": "primary",
+      "url": "https://www.swebench.com/SWE-bench/guides/evaluation/"
+    }
+  ],
+  "timestamp": "2026-02-01T00:33:33Z",
+  "turn_id": "58417c88-6655-4da6-984d-2a84bc83f878"
+}

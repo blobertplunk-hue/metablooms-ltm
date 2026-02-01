@@ -1,0 +1,10 @@
+{
+  "turn_id": "741c182d-f073-4cce-bd91-d5a7c0ad3c01",
+  "timestamp": "2026-02-01T00:00:07Z",
+  "canonical_root": "/mnt/data/Metblooms_OS",
+  "status": "BOOT_OK",
+  "phase": "P9.2_ORACLE_BASELINE_FINALIZATION",
+  "phase_guard": "ORACLE_PATCH_V2_ONLY",
+  "mode": "FAIL\u2192FIX",
+  "zoop": "ENABLED"
+}

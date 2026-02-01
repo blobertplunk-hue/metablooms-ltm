@@ -1,0 +1,48 @@
+{
+  "turn_id": "24f529b6-127d-4782-875a-3bedee92409c",
+  "timestamp": "2026-01-31T23:54:59Z",
+  "tool_calls_logged": [
+    {
+      "tool": "python_user_visible.exec",
+      "function": "exec"
+    },
+    {
+      "tool": "subprocess.run",
+      "args": [
+        "python3",
+        "/mnt/data/Metblooms_OS/_harness/check_integrity.py"
+      ]
+    }
+  ],
+  "failfix": [
+    {
+      "stage": "R1_LOCATE",
+      "result": "IDENTIFIED_MISMATCH",
+      "details": []
+    }
+  ],
+  "decisions": [
+    {
+      "id": "DEC-ORACLE-PATCH",
+      "decision": "Narrow oracle scope",
+      "rationale": "Align with execution-based proof; avoid poisoning forensic baseline"
+    }
+  ],
+  "artifacts_emitted": [
+    {
+      "path": "/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_24f529b6-127d-4782-875a-3bedee92409c.json",
+      "bytes": 307,
+      "sha256": "106d7e711fae7852f82894f4f85976549ae462d02a92e9b0fdfa3b514b06fa5c"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/_policy/ORACLE_PATCH_v1.json",
+      "bytes": 384,
+      "sha256": "7fb47b198166e045ade7c84dfbcf568fd19cc5618c368fa0130fb32495efa37d"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/_integrity/INTEGRITY_ORACLE_REPORT.json",
+      "bytes": 229,
+      "sha256": "5a8f2286baddc67ab6d634f09784b61d8d38079d72bca2d6b40cca47d13b90f7"
+    }
+  ]
+}

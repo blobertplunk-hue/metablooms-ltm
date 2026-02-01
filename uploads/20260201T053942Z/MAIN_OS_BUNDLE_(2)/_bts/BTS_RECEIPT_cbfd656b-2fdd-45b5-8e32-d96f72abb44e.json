@@ -1,0 +1,62 @@
+{
+  "artifacts_emitted": [
+    {
+      "bytes": 718,
+      "path": "/mnt/data/Metblooms_OS/_policy/ORACLE_SCOPE_LOCK.json",
+      "sha256": "e050e33161dc0b9d5de0b5a74410a19350eb469a1074836b1be2c2f9d315a570"
+    },
+    {
+      "bytes": 675,
+      "path": "/mnt/data/Metblooms_OS/_state/INTEGRITY_ORACLE_REPORT.json",
+      "sha256": "84bcecf1a84cc0255c0128a02a1e160f48ce053ff3656ae9bedc6734ab327687"
+    },
+    {
+      "bytes": 527,
+      "path": "/mnt/data/Metblooms_OS/_see/SEE_SOURCES_cbfd656b-2fdd-45b5-8e32-d96f72abb44e.json",
+      "sha256": "84136692cc810e4d94ce7169f03eb59f533232ac1566c5fe7e5bca7fe4928e80"
+    },
+    {
+      "bytes": 351,
+      "path": "/mnt/data/Metblooms_OS/_see/SEE_NOTES_cbfd656b-2fdd-45b5-8e32-d96f72abb44e.ndjson",
+      "sha256": "712f69fa682acbdf0da10712bb05aec2199305e964ad16d50c233e2b678cab49"
+    },
+    {
+      "bytes": 118,
+      "path": "/mnt/data/Metblooms_OS/_see/SEE_RECEIPT_cbfd656b-2fdd-45b5-8e32-d96f72abb44e.json",
+      "sha256": "d9b8dbd8d9bddafb0806c1adf50efc7bccfaaf61b92103650e98fc628bc702c8"
+    },
+    {
+      "bytes": 183,
+      "path": "/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_cbfd656b-2fdd-45b5-8e32-d96f72abb44e.json",
+      "sha256": "0c0f4291f6fc0210cd33f902dc3ce5321c30379a7872ab423fcd5c1312beb1fa"
+    }
+  ],
+  "constraints_logged": [
+    "NO PROMPT SHORTENING",
+    "SEE every turn"
+  ],
+  "decisions": [
+    {
+      "constraints": [
+        "no unauthorized writes",
+        "contents-only hashing"
+      ],
+      "decision": "Lock deterministic scope excluding volatile dirs; include ROEZ only for baseline.",
+      "id": "DEC-ORACLE-SCOPE",
+      "rationale": "SEE-backed determinism and custody."
+    }
+  ],
+  "failfix": [],
+  "timestamp": "2026-02-01T00:34:57Z",
+  "tool_calls_logged": [
+    {
+      "function": "inspect/run oracle",
+      "inputs": [
+        "--baseline",
+        "verify"
+      ],
+      "tool": "python_user_visible.exec"
+    }
+  ],
+  "turn_id": "cbfd656b-2fdd-45b5-8e32-d96f72abb44e"
+}

@@ -1,0 +1,131 @@
+{
+  "artifact": "BTS_ARTIFACT_MANIFEST_v1",
+  "timestamp_utc": "2026-01-31T17:16:34Z",
+  "artifacts": [
+    {
+      "path": "/mnt/data/Metblooms_OS/p01/CLAIM_AUTHORITY_RULES_v1.json",
+      "sha256": "8a9dd27774454c7e90e53e8b1fa9402294201e43c0782a9af350ce4ba476aabf"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p01/CLAIM_AUTHORITY_VALIDATION_RULES_v1.json",
+      "sha256": "f186c276c9f955546ce3b38cf20e08cb005b6b9349382319237e23fdb1e67529"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p01/CLAIM_GRAPH_AUTHORITY_FAILURE_SEMANTICS_v1.json",
+      "sha256": "b144070c46a1edd137d6deeb540219fb749231a0088b2fad73e8c3acca47c11e"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p01/CLAIM_GRAPH_AUTHORITY_REPORT_SPEC_v1.json",
+      "sha256": "4ab95ab8b1dc44a07aabd627ea5dc9065823aeb638d93ae664903d4e6fdb0fa9"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p01/CLAIM_GRAPH_SCHEMA_DRAFT_v1.json",
+      "sha256": "dc5a2dd1ce52b932e3defeda1e8fff68e62051c0350abd68c4100febe9e3fe87"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p01/CLAIM_GRAPH_SCHEMA_v1.json",
+      "sha256": "801d89b56792beaa5102d3c23612ec6928e08727052bd1ec02f6ad542b88a72f"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p02/SATURATION_CERTIFICATE_SPEC_v1.json",
+      "sha256": "6025350b1662343cab37d5b57cb1d35f937c3063cf1134e8f2ce8c32ee334577"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p02/SATURATION_GATING_v1.json",
+      "sha256": "e76fcc46fbb8b3834a64ff5a9ccbcde15551b379e4c3cc5e3267e53b40fb5149"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p02/SATURATION_ISSUANCE_RULES_v1.json",
+      "sha256": "2fbdd0e65e76d72633cfa5e4ea30d4f5f4c1deb642b3ce1963fe752923cc7a97"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p02/SATURATION_METRICS_COMPUTE_v1.json",
+      "sha256": "da57d3b2eb9fda50298badb86f0d327012eeb6f97cee210761b96aca3be6a631"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p02/SATURATION_SCHEMA_v1.json",
+      "sha256": "29f84dc50c464c0a49aff3f8c367905f6ed912ba3776d9bfcd595652beae02da"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p03/AUTHORITY_DISSENT_COMPUTE_v1.json",
+      "sha256": "14b9b14723d785051f6d0b9c30f9f417fb3840ceee2669c8d364af10e0747f1c"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p03/AUTHORITY_DISSENT_GATING_v1.json",
+      "sha256": "dafe10546c540589bd0967a82cd545b7dd14f9943ee3ff70ccd391214896d706"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p03/AUTHORITY_DISSENT_REPORT_SPEC_v1.json",
+      "sha256": "c7835fdf8a8634e1da2b2ea41554396e64c3a31d3b6bc345388a88fb2dfa89bf"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p03/EVIDENCE_AUTHORITY_DISSENT_SCHEMA_v1.json",
+      "sha256": "0a6e4699218fb560a5ad9ae258bfef10d122171116ec38cf5ebf967df6836472"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p03/P03_ACCEPTANCE_CRITERIA_v1.json",
+      "sha256": "8f6ef7ee0efb7438118ae35805c3753eda72d52747c1f0bba68a9d1e66f09d71"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p04/CONSISTENCY_DRIFT_COMPUTE_v1.json",
+      "sha256": "55cb727fdc6579efc79cc79a908cce438e8395edad90162a742f6aa402308488"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p04/CONSISTENCY_DRIFT_GATING_v1.json",
+      "sha256": "520609ee7ea547523cee112c063ccb6c61a5b10aca257d57ea04acdc253fe5c3"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p04/CONSISTENCY_DRIFT_REPORT_SPEC_v1.json",
+      "sha256": "eca3604ce756bd51d55a9906ebbcf37ea8c3f1ae43b4ccf8db3a84a638a3a482"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p04/CROSS_CLAIM_CONSISTENCY_SCHEMA_v1.json",
+      "sha256": "37be4a9e279e2695e24fea4ac53d2dc857e82dfcb2ace5fd428f8fe3a1a8d941"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p04/P04_ACCEPTANCE_CRITERIA_v1.json",
+      "sha256": "f50a6a4705dbc9dd5ae0b5dea34da01ab087780bd501fab4b184e024ddc2b7f9"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p05/EVIDENCE_FRESHNESS_DECAY_v1.json",
+      "sha256": "687c2c6fe677569c8f0434cbc747f081d135914c7d196c068d6d518e4da7b6c4"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p05/EVIDENCE_LIFECYCLE_GATING_v1.json",
+      "sha256": "49200dc8b6473ce1c2a482b643b184b965d3ea1d25db990b75c5556246afafd8"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p05/EVIDENCE_LIFECYCLE_SCHEMA_v1.json",
+      "sha256": "1ebf6fd476e2c16e40145a57327377dfb2473bdfae837e35c3c22de601fc8cb3"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p05/EVIDENCE_REVALIDATION_WORKFLOWS_v1.json",
+      "sha256": "e833d6d2c55aecdbeb1043ab2fc59a30529bf3591aba37cd8bb682e5718bcde2"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p05/P05_ACCEPTANCE_CRITERIA_v1.json",
+      "sha256": "957548abae3b28a96a831f0f7d1503d0a0b93a16212fa9440575c2ea30cf8820"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p06/COST_ROI_COMPUTE_v1.json",
+      "sha256": "267f02a078534038406062c7f4bedb5c729d0b67fed5224c486ab8e47016d2d8"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p06/COST_ROI_ENFORCEMENT_v1.json",
+      "sha256": "28c04a41a6130d1076ebf4360cbddaa44d9fc6a21125151e88fed5a5def39246"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p06/COST_ROI_REPORT_SPEC_v1.json",
+      "sha256": "64111e8232188665669bf20d2d2ec2c727579153a77aac9f7f44421f06a489ba"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p06/COST_ROI_SCHEMA_v1.json",
+      "sha256": "6c43ae3a447bba2ae9b18cd804d00501c7867a4308c1dcc64c4928b12498e7b1"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/p06/P06_ACCEPTANCE_CRITERIA_v1.json",
+      "sha256": "e7d5bea88e4814fb995f4dbda22029dbd64f718c6488288aeff83c3428f3b49b"
+    }
+  ],
+  "count": 31
+}

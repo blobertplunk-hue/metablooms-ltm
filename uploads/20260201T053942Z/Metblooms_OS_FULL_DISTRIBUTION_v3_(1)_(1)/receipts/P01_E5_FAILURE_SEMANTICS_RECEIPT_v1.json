@@ -1,0 +1,10 @@
+{
+  "artifact": "P01_E5_FAILURE_SEMANTICS_RECEIPT_v1",
+  "timestamp_utc": "2026-01-31T16:32:29Z",
+  "phase": "P-01",
+  "subphase": "E-5",
+  "status": "PASS",
+  "artifacts_created": [
+    "/mnt/data/Metblooms_OS/p01/CLAIM_GRAPH_AUTHORITY_FAILURE_SEMANTICS_v1.json"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "phase": "P7.10",
+  "utc": "2026-01-30T14:46:35Z",
+  "change": "TOOL_CHOICE_GATE.enforce set to true",
+  "artifact": "config/TOOL_CHOICE_GATE.json",
+  "sha256": "46d280f1454564c496f5c34c60483b1dd5ac2742a2d7174169f5237a81d81b09",
+  "status": "ENFORCEMENT_ENABLED"
+}

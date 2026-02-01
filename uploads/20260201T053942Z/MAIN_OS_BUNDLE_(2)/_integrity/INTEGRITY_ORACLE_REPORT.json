@@ -1,0 +1,7 @@
+{
+  "turn_id": "24f529b6-127d-4782-875a-3bedee92409c",
+  "timestamp": "2026-01-31T23:54:59Z",
+  "oracle_run": "check_integrity.py",
+  "pre_patch_exit": 2,
+  "patch_emitted": "/mnt/data/Metblooms_OS/_policy/ORACLE_PATCH_v1.json"
+}

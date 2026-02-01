@@ -1,0 +1,64 @@
+{
+  "ruleset_id": "CLAIM_AUTHORITY_RULES_v1",
+  "version": "1.0.0",
+  "created_utc": "2026-01-31T16:29:27Z",
+  "description": "Validation rules to compute authority satisfaction for CLAIM nodes",
+  "thresholds": {
+    "MUST": {
+      "min_supporting_evidence": 3,
+      "min_distinct_source_types": 3,
+      "max_contradictions_allowed": 0,
+      "dissent_required": true
+    },
+    "SHOULD": {
+      "min_supporting_evidence": 2,
+      "min_distinct_source_types": 2,
+      "max_contradictions_allowed": 1,
+      "dissent_required": true
+    },
+    "MAY": {
+      "min_supporting_evidence": 1,
+      "min_distinct_source_types": 1,
+      "max_contradictions_allowed": 2,
+      "dissent_required": false
+    }
+  },
+  "diversity_check": {
+    "dimension": "source_type",
+    "allowed_types": [
+      "academic",
+      "industry",
+      "standards",
+      "government"
+    ],
+    "enforcement": "FAIL_IF_NOT_MET"
+  },
+  "dissent_hooks": {
+    "capture_on": [
+      "CONTRADICTS"
+    ],
+    "severity_levels": [
+      "LOW",
+      "MEDIUM",
+      "HIGH"
+    ],
+    "escalate_if": {
+      "severity": "HIGH",
+      "action": "BLOCK_CLAIM"
+    }
+  },
+  "computation": {
+    "status_values": [
+      "SATISFIED",
+      "UNSATISFIED",
+      "BLOCKED"
+    ],
+    "evaluation_order": [
+      "count_supporting_evidence",
+      "check_diversity",
+      "evaluate_contradictions",
+      "attach_dissent",
+      "finalize_status"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "enforce_mpp_before_actions": true,
+  "blocked_until_mpp_complete": true,
+  "evidence_required": [
+    "receipts/mpp_start_receipt_<TURN_ID>.json",
+    "receipts/mpp_phase_receipts.ndjson"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "generated_utc": "2026-01-30T14:40:48Z",
+  "env": {
+    "user_text": "MB_USER_TEXT",
+    "tool_used": "MB_TOOL_USED",
+    "task_class_override": "MB_TASK_CLASS"
+  },
+  "task_rules": "config/TASK_CLASS_RULES.json",
+  "gate": "config/TOOL_CHOICE_GATE.json",
+  "taxonomy": "indexes/TOOL_TAXONOMY.json",
+  "ledger": "bts/action_wrapper_ledger.ndjson",
+  "fail_closed_if_enforce_true_and_violation": true
+}

@@ -1,0 +1,10 @@
+{
+  "turn_id": "b3d7829f-e1c9-4770-ae9f-9d0cc4cdb49b",
+  "timestamp": "2026-01-31T23:33:32Z",
+  "canonical_root": "/mnt/data/Metblooms_OS",
+  "status": "BOOT_OK",
+  "phase": "P10_DEPLOYMENT_READINESS_FINAL",
+  "phase_guard": "FINAL",
+  "mode": "FAIL\u2192FIX",
+  "zoop": "ENABLED"
+}

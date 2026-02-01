@@ -1,0 +1,33 @@
+{
+  "artifacts": [
+    {
+      "bytes": 134,
+      "path": "/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_93224d2c-592d-4338-9112-37f02c67fa04.json",
+      "sha256": "b1ab4295128c41344c28b4c2fb4c73e1b0734b50b05b316912c06d3e54c9e3a7"
+    },
+    {
+      "bytes": 312,
+      "path": "/mnt/data/Metblooms_OS/_see/SEE_SOURCES_93224d2c-592d-4338-9112-37f02c67fa04.json",
+      "sha256": "2a22d12c40e288f1374d46f5f7220a4e53a80c4167a10f40071caa37ec7c5262"
+    },
+    {
+      "bytes": 122,
+      "path": "/mnt/data/Metblooms_OS/_see/SEE_NOTES_93224d2c-592d-4338-9112-37f02c67fa04.ndjson",
+      "sha256": "7be0e0c253096c89b6f1eaafcdcbbef31cbff3ab4850eccdfc2ebcd94037e571"
+    },
+    {
+      "bytes": 118,
+      "path": "/mnt/data/Metblooms_OS/_see/SEE_RECEIPT_93224d2c-592d-4338-9112-37f02c67fa04.json",
+      "sha256": "22dfdd210ceac115b35c2484fd69d82fcf97a5639920f4724f466c2230c560a6"
+    }
+  ],
+  "failfix": [
+    {
+      "class": "MissingPrecondition",
+      "detail": "PAIN_POINTS_LEDGER.ndjson missing",
+      "result": "PASS"
+    }
+  ],
+  "timestamp": "2026-02-01T00:44:45Z",
+  "turn_id": "93224d2c-592d-4338-9112-37f02c67fa04"
+}

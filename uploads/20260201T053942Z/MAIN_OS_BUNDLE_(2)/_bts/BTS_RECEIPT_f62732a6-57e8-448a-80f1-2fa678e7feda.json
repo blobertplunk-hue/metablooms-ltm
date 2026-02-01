@@ -1,0 +1,65 @@
+{
+  "turn_id": "f62732a6-57e8-448a-80f1-2fa678e7feda",
+  "timestamp": "2026-01-31T23:39:18Z",
+  "tool_calls_logged": [
+    {
+      "tool": "python_user_visible.exec",
+      "inputs": [
+        "emit BOOT_RECEIPT",
+        "emit CANONICAL_ROOT_LOCK",
+        "emit EXPORT_MANIFEST_v1"
+      ],
+      "outputs": [
+        {
+          "paths": [
+            "/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_f62732a6-57e8-448a-80f1-2fa678e7feda.json",
+            "/mnt/data/Metblooms_OS/_deployment/CANONICAL_ROOT_LOCK.json",
+            "/mnt/data/Metblooms_OS/_deployment/EXPORT_MANIFEST_v1.json"
+          ]
+        }
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "id": "DEC-EXP-001",
+      "decision": "Lock canonical root under _deployment",
+      "rationale": "Prevent export root ambiguity and wrapper/case leakage",
+      "constraints": [
+        "canonical root enforced",
+        "fail-closed on non-writable"
+      ]
+    },
+    {
+      "id": "DEC-EXP-002",
+      "decision": "Export manifest defines two separate bundles with hash-only binding",
+      "rationale": "Ship main OS and chat index independently while preserving verifiable linkage",
+      "constraints": [
+        "no embedding",
+        "bind by hash only"
+      ]
+    }
+  ],
+  "constraints_logged": [
+    "canonical_root=/mnt/data/Metblooms_OS",
+    "separate exports: OS vs Chat Index",
+    "fail-closed on missing write permission"
+  ],
+  "artifacts_emitted": [
+    {
+      "path": "/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_f62732a6-57e8-448a-80f1-2fa678e7feda.json",
+      "bytes": 320,
+      "sha256": "e57982e02985c783ad33315a2b4a1f98837be7c498761d8748abff6f377c7a5e"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/_deployment/CANONICAL_ROOT_LOCK.json",
+      "bytes": 360,
+      "sha256": "519d545ba7395e58d649d7d921442608909120c33d6e60e656c3eb9bf10e0b25"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/_deployment/EXPORT_MANIFEST_v1.json",
+      "bytes": 1627,
+      "sha256": "f7b156377ab38a0c27d70f0f2bcd0373508bb2ddacd3fdc30ee2ccf80c2605f1"
+    }
+  ]
+}

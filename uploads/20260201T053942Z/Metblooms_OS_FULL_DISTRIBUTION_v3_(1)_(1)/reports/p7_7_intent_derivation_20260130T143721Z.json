@@ -1,0 +1,43 @@
+{
+  "utc": "2026-01-30T14:37:21Z",
+  "turn_id": "20260130T143721Z",
+  "derived_patterns": {
+    "planning": [],
+    "implementation": [
+      "build",
+      "wire"
+    ],
+    "research": [],
+    "reasoning_only": []
+  },
+  "audit": {
+    "source": "/mnt/data/BTS_AUDIT_EXPANDED_HARDGATES_20260129T194922Z.xlsx",
+    "sheets": [
+      "Audit_Comparison_Expanded",
+      "Hard_Gates_Promoted",
+      "Tool_Map_Expanded"
+    ],
+    "columns_detected": {
+      "Audit_Comparison_Expanded": [
+        "task_class",
+        "heuristic_tool",
+        "governed_tool",
+        "better_tool",
+        "rationale"
+      ],
+      "Hard_Gates_Promoted": [
+        "rule_type",
+        "condition",
+        "enforcement"
+      ],
+      "Tool_Map_Expanded": [
+        "tool",
+        "best_for",
+        "avoid_when",
+        "notes"
+      ]
+    },
+    "rows_used": 23,
+    "notes": []
+  }
+}

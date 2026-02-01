@@ -1,0 +1,51 @@
+{
+  "spec_id": "CLAIM_GRAPH_AUTHORITY_FAILURE_SEMANTICS_v1",
+  "version": "1.0.0",
+  "created_utc": "2026-01-31T16:32:29Z",
+  "trigger": {
+    "report": "CLAIM_GRAPH_AUTHORITY_REPORT_v1",
+    "conditions": [
+      "overall_pass == false",
+      "any MUST claim authority_satisfied == false"
+    ]
+  },
+  "blocking_rules": {
+    "on_fail": {
+      "block_phases": [
+        "P-02",
+        "P-03",
+        "P-04",
+        "P-05",
+        "P-06",
+        "P-07",
+        "P-08",
+        "P-09",
+        "P-10"
+      ],
+      "emit_artifact": "P01_BLOCK_RECEIPT_v1",
+      "status": "FAIL_CLOSED"
+    },
+    "on_pass": {
+      "allow_next_phase": "P-02",
+      "emit_artifact": "P01_ACCEPT_RECEIPT_v1"
+    }
+  },
+  "failure_artifacts": {
+    "required_fields": [
+      "failed_claim_ids",
+      "failure_reasons",
+      "authority_levels_violated",
+      "dissent_summary"
+    ]
+  },
+  "retry_policy": {
+    "allowed": true,
+    "requires_change": [
+      "additional_evidence",
+      "revised_claim_text",
+      "authority_level_downgrade"
+    ],
+    "max_retries": 3
+  },
+  "fail_closed": true
+}

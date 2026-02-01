@@ -1,0 +1,1 @@
+{"source_bundle": "MetaBlooms_OS_SHIPPED_PATCHED_20260130T003500Z.zip", "path": "Cross_Plan_Consistency_Audit.txt", "chunk": 0, "content": "CROSS-PLAN CONSISTENCY AUDIT\n\nDetect:\n- Contradictory tool choices for identical tasks\n- Rank regressions\n", "sha256": "dd46e18f913da6606f08f63e142da96ab780e8a845c8e5c1fcf83714922f679c"}

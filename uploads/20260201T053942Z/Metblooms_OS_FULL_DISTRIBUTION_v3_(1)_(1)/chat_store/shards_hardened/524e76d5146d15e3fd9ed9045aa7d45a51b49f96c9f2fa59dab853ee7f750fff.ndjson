@@ -1,0 +1,1 @@
+{"source_bundle": "MetaBlooms_OS_SHIPPED_PATCHED_20260130T003500Z.zip", "path": "registry/definition_registry.json", "chunk": 0, "content": "{\n  \"schemas\": {\n    \"resolved_mpp\": \"registry/resolved_mpp.schema.json\"\n  }\n}", "sha256": "524e76d5146d15e3fd9ed9045aa7d45a51b49f96c9f2fa59dab853ee7f750fff"}

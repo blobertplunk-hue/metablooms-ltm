@@ -1,0 +1,49 @@
+{
+  "ab_hooks": {
+    "enabled": true,
+    "log_path": "/mnt/data/Metblooms_OS/_state/prompt_ab_metrics.ndjson",
+    "required_fields": [
+      "turn_id",
+      "variant_id",
+      "metrics",
+      "notes"
+    ]
+  },
+  "amends": [
+    "PROMPT_CONSTITUTION_V1",
+    "PROMPT_CONSTITUTION_V1_1"
+  ],
+  "anchors": [
+    "https://platform.openai.com/docs/guides/prompt-engineering",
+    "https://www.anthropic.com/engineering/claude-code-best-practices",
+    "https://www.swebench.com/SWE-bench/guides/evaluation/",
+    "https://reproducible-builds.org/docs/timestamps/",
+    "https://reproducible-builds.org/docs/deterministic-build-systems/",
+    "https://www.w3.org/TR/prov-o/",
+    "https://openai.com/index/introducing-swe-bench-verified/",
+    "https://developers.openai.com/cookbook/examples/gpt-5/gpt-5-2_prompting_guide/"
+  ],
+  "id": "PROMPT_CONSTITUTION_V1_2",
+  "immutable_additions": {
+    "meta_prompting_invariant": [
+      "Each NEW_FULL_PROMPT must contain PROMPT_SELF_INSTRUCTION specifying how to generate the subsequent prompt.",
+      "Each turn must include PROMPT_PATCH_NOTES and incorporate them into NEW_FULL_PROMPT."
+    ],
+    "non_blame_invariant": [
+      "Do not attribute governance enforcement gaps to user; describe as assistant/system failure modes.",
+      "Apologize briefly and state fix as a governed patch when applicable."
+    ],
+    "output_shape_invariant": [
+      "Response must include NEW_FULL_PROMPT as final section.",
+      "Do not end with a one-line command or state-transition token.",
+      "Failure to emit NEW_FULL_PROMPT is FAIL-CLOSED."
+    ]
+  },
+  "patch_notes": [
+    "Add Output Shape Invariant: every turn must output a full next-turn prompt; no state-transition token endings.",
+    "Add Communication Invariant: avoid attributing enforcement failures to user; treat as assistant/system remediation.",
+    "Add Prompt-Propagation Invariant: next prompt must include a section that instructs how to generate the next prompt (meta)."
+  ],
+  "timestamp_utc": "2026-02-01T00:49:24Z",
+  "turn_id": "aa842471-99f7-4625-b2ee-b3a3535d221d"
+}

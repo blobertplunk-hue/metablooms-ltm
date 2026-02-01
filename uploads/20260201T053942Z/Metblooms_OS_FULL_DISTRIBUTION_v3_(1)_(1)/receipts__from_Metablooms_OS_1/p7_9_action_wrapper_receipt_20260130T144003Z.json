@@ -1,0 +1,14 @@
+{
+  "phase": "P7.9",
+  "utc": "2026-01-30T14:40:03Z",
+  "turn_id": "20260130T144003Z",
+  "artifacts": {
+    "action_wrapper": "tools/runner/action_wrapper.py",
+    "tool_choice_gate": "config/TOOL_CHOICE_GATE.json"
+  },
+  "sha256": {
+    "tools/runner/action_wrapper.py": "992241dae0fe042753f8311da7fccf76d8aafabef419c57700c0f4ee230cd564",
+    "config/TOOL_CHOICE_GATE.json": "a2d577b78de8eff63d1b817e1caca0aefff3c9bfd456b4c2ade6c841113c27b0"
+  },
+  "status": "OK_ENFORCING"
+}

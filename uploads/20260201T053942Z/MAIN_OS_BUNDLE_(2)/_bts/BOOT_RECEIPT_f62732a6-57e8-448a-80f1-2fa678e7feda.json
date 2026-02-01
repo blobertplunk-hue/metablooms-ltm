@@ -1,0 +1,10 @@
+{
+  "turn_id": "f62732a6-57e8-448a-80f1-2fa678e7feda",
+  "timestamp": "2026-01-31T23:39:18Z",
+  "canonical_root": "/mnt/data/Metblooms_OS",
+  "status": "BOOT_OK",
+  "phase": "P10_EXPORT_PREP_STEP_1_2",
+  "phase_guard": "EMIT_CANONICAL_ROOT_LOCK_AND_EXPORT_MANIFEST_ONLY",
+  "mode": "FAIL\u2192FIX",
+  "zoop": "ENABLED"
+}

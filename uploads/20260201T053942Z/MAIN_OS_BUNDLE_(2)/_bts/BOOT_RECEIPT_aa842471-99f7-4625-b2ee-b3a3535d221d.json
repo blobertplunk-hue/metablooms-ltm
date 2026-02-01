@@ -1,0 +1,10 @@
+{
+  "canonical_root": "/mnt/data/Metblooms_OS",
+  "fail_fix_mode": "ENFORCED",
+  "notes": [
+    "Writable-surface enforcement is policy-level in this turn; file writes restricted to _policy/_bts/_state/_see."
+  ],
+  "status": "BOOT_OK",
+  "timestamp_utc": "2026-02-01T00:49:24Z",
+  "turn_id": "aa842471-99f7-4625-b2ee-b3a3535d221d"
+}

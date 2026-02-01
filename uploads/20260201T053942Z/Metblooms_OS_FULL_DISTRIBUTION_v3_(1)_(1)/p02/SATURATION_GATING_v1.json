@@ -1,0 +1,7 @@
+{
+  "on_PASS": "allow_P03",
+  "on_STALE": "warn_and_continue",
+  "on_REVOKED": "block_P03",
+  "on_FAIL": "block_pipeline",
+  "created_utc": "2026-01-31T16:36:01Z"
+}

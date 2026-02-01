@@ -1,0 +1,1 @@
+{"source_bundle": "MetaBlooms_OS_SHIPPED_PATCHED_20260130T003500Z.zip", "path": "payload/mpp_artifacts/execution_p7/gate_decisions.json", "chunk": 0, "content": "{\n  \"quality_gate\": \"pass (no data)\",\n  \"security_gate\": \"pass\",\n  \"mode\": \"analysis-only\"\n}", "sha256": "69fb07bca8b52517a7d57e6c0e210afd18a8d24fc5559dc809ce10703d0ca900"}

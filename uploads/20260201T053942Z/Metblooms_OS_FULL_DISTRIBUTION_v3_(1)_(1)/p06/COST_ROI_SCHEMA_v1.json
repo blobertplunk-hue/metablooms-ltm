@@ -1,0 +1,14 @@
+{
+  "schema_id": "COST_ROI_SCHEMA_v1",
+  "cost_types": [
+    "compute",
+    "api",
+    "human_time"
+  ],
+  "roi_metrics": [
+    "value_score",
+    "decision_impact",
+    "reuse_potential"
+  ],
+  "created_utc": "2026-01-31T16:56:30Z"
+}

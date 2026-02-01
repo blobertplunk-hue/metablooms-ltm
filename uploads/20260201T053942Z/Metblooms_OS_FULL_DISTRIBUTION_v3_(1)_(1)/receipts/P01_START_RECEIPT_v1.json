@@ -1,0 +1,15 @@
+{
+  "artifact": "P01_START_RECEIPT_v1",
+  "timestamp_utc": "2026-01-31T16:22:41Z",
+  "prerequisite": {
+    "p00_gate_path": "/mnt/data/Metblooms_OS/receipts/P00_BOOT_GATE_CHECK_v2.json",
+    "p00_gate_present": true,
+    "p00_gate_status": "PASS"
+  },
+  "phase": "P-01",
+  "status": "PASS",
+  "errors": [],
+  "artifacts_created": [
+    "/mnt/data/Metblooms_OS/p01/CLAIM_GRAPH_SCHEMA_DRAFT_v1.json"
+  ]
+}

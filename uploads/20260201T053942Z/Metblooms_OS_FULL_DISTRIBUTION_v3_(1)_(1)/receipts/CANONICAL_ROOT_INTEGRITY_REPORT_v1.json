@@ -1,0 +1,27 @@
+{
+  "artifact": "CANONICAL_ROOT_INTEGRITY_REPORT_v1",
+  "timestamp_utc": "2026-01-31T16:19:30Z",
+  "canonical_root": "/mnt/data/Metblooms_OS",
+  "checks": {
+    "canonical_root_exists": true,
+    "shadow_roots_found": [],
+    "shadow_root_absent": true,
+    "subsystems_present": [
+      "_bts",
+      "boot",
+      "bts",
+      "chat_index",
+      "chat_store",
+      "config",
+      "freeze",
+      "indexes",
+      "merkle",
+      "receipts",
+      "receipts__from_Metablooms_OS_1",
+      "reports",
+      "tools"
+    ],
+    "missing_required_subsystems": []
+  },
+  "ready_for_overlay_integration": true
+}

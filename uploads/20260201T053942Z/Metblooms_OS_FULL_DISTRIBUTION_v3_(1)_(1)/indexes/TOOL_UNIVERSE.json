@@ -1,0 +1,52 @@
+{
+  "version": "v1",
+  "generated_utc": "2026-01-30T14:37:21Z",
+  "tools": [
+    {
+      "name": "web.run",
+      "domain": "web",
+      "purpose": "External research, citations, browsing, screenshots for PDFs"
+    },
+    {
+      "name": "file_search.msearch",
+      "domain": "files",
+      "purpose": "Search uploaded/internal files"
+    },
+    {
+      "name": "file_search.mclick",
+      "domain": "files",
+      "purpose": "Open file chunks"
+    },
+    {
+      "name": "python.exec",
+      "domain": "sandbox",
+      "purpose": "Private analysis"
+    },
+    {
+      "name": "python_user_visible.exec",
+      "domain": "sandbox",
+      "purpose": "User-visible code outputs & file creation"
+    },
+    {
+      "name": "container.exec",
+      "domain": "sandbox",
+      "purpose": "Shell commands, inspection, hashing"
+    },
+    {
+      "name": "container.open_image",
+      "domain": "sandbox",
+      "purpose": "View generated images"
+    },
+    {
+      "name": "image_gen",
+      "domain": "media",
+      "purpose": "Generate/edit images"
+    },
+    {
+      "name": "automations.create",
+      "domain": "automation",
+      "purpose": "Scheduled reminders/searches"
+    }
+  ],
+  "notes": "This is a conservative starting universe; expand as tools are discovered."
+}

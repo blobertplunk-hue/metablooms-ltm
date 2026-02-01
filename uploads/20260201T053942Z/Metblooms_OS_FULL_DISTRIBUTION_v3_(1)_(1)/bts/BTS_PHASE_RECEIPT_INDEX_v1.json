@@ -1,0 +1,95 @@
+{
+  "artifact": "BTS_PHASE_RECEIPT_INDEX_v1",
+  "timestamp_utc": "2026-01-31T17:16:34Z",
+  "receipts": [
+    {
+      "path": "/mnt/data/Metblooms_OS/receipts/BOOT_FROM_PROJECTFILES_RUN_v1.json",
+      "sha256": "a6c2b25d2db1c4e7b05366a473028e6af35e8bc98481b932aacf6b8216514254"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/receipts/BOOT_RECEIPT_v1.json",
+      "sha256": "ebe1c962e7ac96da971d14c96f1f38409463b5d9b469110954a9aece641092d0"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/receipts/CANONICAL_ROOT_INTEGRITY_RECEIPT_v1.json",
+      "sha256": "eaa2f511cef37c7c4af141e4614b6eab750e550654ac66345745a4634c68ddf6"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/receipts/CANONICAL_ROOT_INTEGRITY_REPORT_v1.json",
+      "sha256": "ef58376541a14d95d380633c86a5937a3ee424ae29a2ea2fa15da0d17c883dc9"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/receipts/P00_BOOT_GATE_CHECK_v2.json",
+      "sha256": "b3302fb9ab11a9f1f7585b39009087994f8c3bb335380b8d679d382e0ebdf92d"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/receipts/P01_ACCEPT_RECEIPT_v1.json",
+      "sha256": "fd2506f09bc12eb399a625cea1e4b9d72f9dd815b73538c0188a1f93a705b485"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/receipts/P01_E2_SCHEMA_RECEIPT_v1.json",
+      "sha256": "37c8126e7f09374605e15e6fbeb7c1a95fd11985422b2f34f14dea636fdac70f"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/receipts/P01_E3_AUTHORITY_RULES_RECEIPT_v1.json",
+      "sha256": "5810af9eff07986292feb0bd9b487c827d266d26ea2842445a6ad0f6ff49b9a6"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/receipts/P01_E3_RULES_RECEIPT_v1.json",
+      "sha256": "763fcb229bc11bbd319178a96d20e9f3c2b48c5ff610a3bc0b050a9775eccd19"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/receipts/P01_E4_REPORT_SPEC_RECEIPT_v1.json",
+      "sha256": "a13e390395e04f156e18dd0377939d4bba0e1dd925780dab652b2b39ac161840"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/receipts/P01_E5_FAILURE_SEMANTICS_RECEIPT_v1.json",
+      "sha256": "66a11a7f8d6f6b24fadebaa537b71de81ac648097d63fc346da887bccf8662d1"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/receipts/P01_START_RECEIPT_v1.json",
+      "sha256": "e81d792daf6ed23ee52d19046de5fa38c404ef43487593ae6061ff83780aad0b"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/receipts/P02_ATOMIC_BATCH_RECEIPT_v1.json",
+      "sha256": "6e143e0eb537899373a4628deb41c9943553ba1dbcacd99bfc07b8501b18abc3"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/receipts/P03_ATOMIC_BATCH_RECEIPT_v1.json",
+      "sha256": "6b7769f0827b4a1efb653d1d68d49246f94dc8c803d2921118da7ef3995ebc5c"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/receipts/P04_ATOMIC_BATCH_RECEIPT_v1.json",
+      "sha256": "466112df547241ccdd0188a14d369be5e0759849821063bcb870fa93512888c1"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/receipts/P05_ATOMIC_BATCH_RECEIPT_v1.json",
+      "sha256": "6ab740a8e481bbe4b3aa46c9a137449a2169ffe2ac645c74cd575cd65a389da3"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/receipts/P06_ATOMIC_BATCH_RECEIPT_v1.json",
+      "sha256": "339a7fc8da961bf715baf53bdc47624ea15b69194d27093e1a7714188bbce392"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/receipts/P07_BTS_FINALIZATION_RECEIPT_v1.json",
+      "sha256": "ccbc62ec1c93c71651d5f7436b78dd7d35bfbe5a809a8afa69159f9fdcb68782"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/receipts/P08_AUDIT_RECEIPT_v1.json",
+      "sha256": "f68f01da98aa68e83d89122dcdb21f9a7ce1b87a7c7f167d3583c9dadb93027a"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/receipts/P08_AUDIT_REPORT_v1.json",
+      "sha256": "2adfbe8b54dd8e5fd1a596e76f06144f9fa4bd9c96ef2f295fe6376319bfe055"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/receipts/PATCH_APPLICATION_RECEIPT_v1.json",
+      "sha256": "60fd1738f18cc74342ef55398abc0565311d540a8c122511ef2da66efa443bcb"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/receipts/ZOOP_GUARD_RECEIPT_v1.json",
+      "sha256": "e0c234e1574bbbe3d9c922447fe4421c6b42397d115fe3e754cd9a448f811dc0"
+    }
+  ],
+  "count": 22
+}

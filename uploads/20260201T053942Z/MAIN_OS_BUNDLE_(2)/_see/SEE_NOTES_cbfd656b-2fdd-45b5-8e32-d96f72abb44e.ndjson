@@ -1,0 +1,2 @@
+{"turn_id": "cbfd656b-2fdd-45b5-8e32-d96f72abb44e", "claim": "Exclude volatile artifacts and metadata to ensure deterministic baselines.", "anchors": ["rb-determinism", "rb-timestamps"]}
+{"turn_id": "cbfd656b-2fdd-45b5-8e32-d96f72abb44e", "claim": "Establish baseline then verify to preserve chain-of-custody.", "anchors": ["prov-o", "nist-1800-25"]}

@@ -1,0 +1,60 @@
+{
+  "turn_id": "741c182d-f073-4cce-bd91-d5a7c0ad3c01",
+  "timestamp": "2026-02-01T00:00:07Z",
+  "failfix": [
+    {
+      "stage": "R1_LOCATE",
+      "oracle_scope": {
+        "hashed_paths": [
+          "_bts",
+          "_state",
+          "_policy",
+          "_deployment",
+          "_integrity"
+        ],
+        "metadata": [
+          "sha256"
+        ],
+        "excluded": [
+          "_roez/PAIN_POINTS_LEDGER.ndjson (baseline-only)"
+        ]
+      },
+      "timestamp": "2026-02-01T00:00:07Z"
+    },
+    {
+      "stage": "R2_RECONSTRUCT",
+      "result": "OK",
+      "timestamp": "2026-02-01T00:00:07Z"
+    },
+    {
+      "stage": "RE-SEAL",
+      "result": "OK",
+      "timestamp": "2026-02-01T00:00:07Z"
+    },
+    {
+      "stage": "VERIFY",
+      "exit": 2,
+      "stdout": "",
+      "stderr": "python3: can't open file '/mnt/data/Metblooms_OS/_harness/check_integrity.py': [Errno 2] No such file or directory\n"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "DEC-ORACLE-V2-FAIL",
+      "decision": "Fail-closed",
+      "rationale": "Oracle mismatch post baseline patch"
+    }
+  ],
+  "artifacts_emitted": [
+    {
+      "path": "/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_741c182d-f073-4cce-bd91-d5a7c0ad3c01.json",
+      "bytes": 300,
+      "sha256": "3e2b3b630659edb75d26d0b26f3cdbd9664744c5ccaf00f5ebab945d2aaabe69"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/_policy/ORACLE_PATCH_v2.json",
+      "bytes": 655,
+      "sha256": "8d7666a46a04bdef610022ea9c92ed612aa44d0c43a49f5abed2b884f62a72fe"
+    }
+  ]
+}

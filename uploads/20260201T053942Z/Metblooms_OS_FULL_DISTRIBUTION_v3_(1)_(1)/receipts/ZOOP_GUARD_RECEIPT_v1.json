@@ -1,0 +1,34 @@
+{
+  "artifact": "ZOOP_GUARD_RECEIPT_v1",
+  "timestamp_utc": "2026-01-31T16:19:15Z",
+  "status": "PASS",
+  "canonical_root": "/mnt/data/Metblooms_OS",
+  "zip_path": "/mnt/data/MetaBlooms_OS_V1_FROZEN_CANONICAL_20260130T172729Z.zip",
+  "zip_sha256": "accf734f2a9b220f7d73d617c8096358365a997aa10ce8ccc3970eeb8d118c7c",
+  "extract_target": "/mnt/data/Metblooms_OS",
+  "checks": {
+    "shadow_roots_found": [],
+    "shadow_root_absent": true,
+    "zip_top_level_entries": [
+      "Metablooms_OS"
+    ],
+    "auto_flatten_applied": true,
+    "auto_flatten_wrapper": "Metablooms_OS",
+    "missing_required_subsystems": []
+  },
+  "actions": [
+    {
+      "op": "clean_target_contents",
+      "target": "/mnt/data/Metblooms_OS",
+      "preserve": [
+        "receipts"
+      ]
+    },
+    {
+      "op": "auto_flatten_single_root",
+      "wrapper": "Metablooms_OS"
+    }
+  ],
+  "errors": [],
+  "hashes": {}
+}

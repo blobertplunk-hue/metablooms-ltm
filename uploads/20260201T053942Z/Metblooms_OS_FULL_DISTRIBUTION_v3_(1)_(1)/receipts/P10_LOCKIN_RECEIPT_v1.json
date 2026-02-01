@@ -1,0 +1,12 @@
+{
+  "artifact": "P10_LOCKIN_RECEIPT_v1",
+  "timestamp_utc": "2026-01-31T17:20:04Z",
+  "phase": "P-10",
+  "status": "PASS",
+  "snapshot": "/mnt/data/Metblooms_CANONICAL_STATE_SNAPSHOT_v3.zip",
+  "manifest": "/mnt/data/CANONICAL_STATE_MANIFEST_v3.json",
+  "sha256": {
+    "snapshot": "4b37ebb423e038fd73af82693c5c74f78c5d55da53e3d88ff8b8592b982d9d49",
+    "manifest": "d7bc5a0d83f69233514760bafac5c497a68ad7584668e030e94a821ca5eced9d"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "spec_id": "SATURATION_CERTIFICATE_SPEC_v1",
+  "states": [
+    "PASS",
+    "STALE",
+    "REVOKED",
+    "FAIL"
+  ],
+  "gates": [
+    "P01_ACCEPT"
+  ],
+  "created_utc": "2026-01-31T16:36:01Z"
+}

@@ -1,0 +1,11 @@
+{
+  "artifact": "P01_E2_SCHEMA_RECEIPT_v1",
+  "timestamp_utc": "2026-01-31T16:26:01Z",
+  "phase": "P-01",
+  "subphase": "E-2",
+  "status": "PASS",
+  "artifacts_created": [
+    "/mnt/data/Metblooms_OS/p01/CLAIM_GRAPH_SCHEMA_v1.json"
+  ],
+  "notes": "Canonical Claim Graph schema defined."
+}

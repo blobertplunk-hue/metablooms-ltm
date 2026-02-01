@@ -1,0 +1,125 @@
+{
+  "utc": "2026-01-30T14:56:29Z",
+  "root": "/mnt/data/Metblooms_OS",
+  "checks": [
+    {
+      "check": "canonical_root_lock",
+      "path": "canonical_root_lock.json",
+      "ok": true,
+      "sha256": "3eb913dee6e8f91667552620939fb817b77edcca28a3912d6eb8e2161b049b72",
+      "size": 81
+    },
+    {
+      "check": "boot_policy",
+      "path": "config/BOOT_POLICY.json",
+      "ok": true,
+      "sha256": "ed7c37b38de68cbd69386c4d0cb05b6681a295fe865ae77d79ccda0cb4efee9a",
+      "size": 241
+    },
+    {
+      "check": "bts_policy",
+      "path": "config/BTS_POLICY.json",
+      "ok": true,
+      "sha256": "ca1e8c5898bbc3a6eaceb3a091778139a0df538fa7b2ec392fd945f2454c09bd",
+      "size": 233
+    },
+    {
+      "check": "see_gate",
+      "path": "config/SEE_GATE.json",
+      "ok": true,
+      "sha256": "fe14c9e3821fdab571fe8f18ecd2296aac73c1daead03722d9f6e7312685bd3f",
+      "size": 199
+    },
+    {
+      "check": "mpp_gate",
+      "path": "config/MPP_GATE.json",
+      "ok": true,
+      "sha256": "ff3b2425bdf4a63e2d09d11a4b06d41f081fb822460174842990fcf3a45fbfa5",
+      "size": 658
+    },
+    {
+      "check": "mpp_guard",
+      "path": "tools/mpp/mpp_guard.py",
+      "ok": true,
+      "sha256": "2ad1893c7d5aab1c8d8f1e10533dcdcb8505715057d30891aab9584094d6b360",
+      "size": 2304
+    },
+    {
+      "check": "bts_tick_runner",
+      "path": "tools/bts/bts_tick_runner.py",
+      "ok": true,
+      "sha256": "2862b4dfabeb2b176c5e4c0bd17668282f01a06bce5432d2adabc4772ed9995d",
+      "size": 3504
+    },
+    {
+      "check": "intent_rules_active",
+      "path": "config/INTENT_RULES_ACTIVE.json",
+      "ok": true,
+      "sha256": "4bb4ee8bb77e164eadc67d134683131d01eaee0d47f3859b9aaf0687b73da553",
+      "size": 84
+    },
+    {
+      "check": "intent_rules_v2",
+      "path": "config/INTENT_RULES_v2.json",
+      "ok": true,
+      "sha256": "16ef4dc11b80af450ad1276886d0b425d76c9a41c858b746295b5a2239c2f859",
+      "size": 1765
+    },
+    {
+      "check": "tool_universe",
+      "path": "indexes/TOOL_UNIVERSE.json",
+      "ok": true,
+      "sha256": "e8715387ada20d471c1a3ee48bb85a191553b6c2adfa7677d7dab20c96cc522e",
+      "size": 1271
+    },
+    {
+      "check": "tool_taxonomy",
+      "path": "indexes/TOOL_TAXONOMY.json",
+      "ok": true,
+      "sha256": "216b0d72a8fd2e52f28b28162cd350d919eaf0f8d5301816672693d9c62b6981",
+      "size": 1800
+    },
+    {
+      "check": "tool_choice_gate",
+      "path": "config/TOOL_CHOICE_GATE.json",
+      "ok": true,
+      "sha256": "46d280f1454564c496f5c34c60483b1dd5ac2742a2d7174169f5237a81d81b09",
+      "size": 398
+    },
+    {
+      "check": "action_wrapper_cfg",
+      "path": "config/ACTION_WRAPPER.json",
+      "ok": true,
+      "sha256": "ba40b89f6d7c4b64d50b9da5aa24583ddbf4805067d0bd6651f8789787ea3344",
+      "size": 424
+    },
+    {
+      "check": "action_wrapper",
+      "path": "tools/bts/mb_action_wrapper.py",
+      "ok": true,
+      "sha256": "154f0418410245f376a655ccef0298e8895570a4d97d15135664f1b9a0d911b6",
+      "size": 2485
+    },
+    {
+      "check": "task_class_rules",
+      "path": "config/TASK_CLASS_RULES.json",
+      "ok": true,
+      "sha256": "2296cb6d9f41e65f4f49872a1c7088a577aa00e9b22e5f1d18146957df0295a3",
+      "size": 1617
+    },
+    {
+      "check": "task_class_classifier",
+      "path": "tools/bts/classify_task_class.py",
+      "ok": true,
+      "sha256": "677d8c43ee6486221d4605e22de915d1afa80befb8630b76a86dd618516b60ed",
+      "size": 631
+    }
+  ],
+  "counts": {
+    "boot_receipts": 1,
+    "bts_tick_receipts": 1,
+    "mpp_start_receipts": 0
+  },
+  "tool_choice_enforce": true,
+  "status": "PASS"
+}

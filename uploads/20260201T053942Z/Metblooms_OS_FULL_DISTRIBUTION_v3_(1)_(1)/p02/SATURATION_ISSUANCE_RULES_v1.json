@@ -1,0 +1,9 @@
+{
+  "issue_on": "PASS",
+  "invalidate_on": [
+    "new_evidence",
+    "authority_change"
+  ],
+  "versioning": "monotonic",
+  "created_utc": "2026-01-31T16:36:01Z"
+}

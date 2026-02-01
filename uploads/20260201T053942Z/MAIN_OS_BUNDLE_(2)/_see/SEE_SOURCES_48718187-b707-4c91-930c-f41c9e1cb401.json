@@ -1,0 +1,31 @@
+{
+  "sources": [
+    {
+      "id": "S1",
+      "topic": "explicit constraints & output formats",
+      "url": "https://platform.openai.com/docs/guides/prompt-engineering"
+    },
+    {
+      "id": "S2",
+      "topic": "repo-resident rules & harnesses",
+      "url": "https://www.anthropic.com/engineering/claude-code-best-practices"
+    },
+    {
+      "id": "S3",
+      "topic": "execution-based evaluation",
+      "url": "https://www.swebench.com/"
+    },
+    {
+      "id": "S4",
+      "topic": "determinism & volatility exclusion",
+      "url": "https://reproducible-builds.org/docs/"
+    },
+    {
+      "id": "S5",
+      "topic": "provenance & chain of custody",
+      "url": "https://www.w3.org/TR/prov-o/"
+    }
+  ],
+  "timestamp_utc": "2026-02-01T00:58:09Z",
+  "turn_id": "48718187-b707-4c91-930c-f41c9e1cb401"
+}

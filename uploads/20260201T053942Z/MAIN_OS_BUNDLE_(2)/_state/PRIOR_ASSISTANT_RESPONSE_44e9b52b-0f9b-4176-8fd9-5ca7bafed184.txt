@@ -1,0 +1,122 @@
+ZOOP and BOOT.
+Enforce FAIL→FIX HARNESS mode at /mnt/data/Metblooms_OS.
+Enforce canonical root at /mnt/data/Metblooms_OS (writable only where authorized).
+Enforce Repo-Resident Rules via CLAUDE.md and /mnt/data/Metblooms_OS/_policy/PROMPT_CONSTITUTION_V1_3.json.
+Bind lint rules to /mnt/data/Metblooms_OS/_policy/PROMPT_LINT_RULES.json (policy-as-code).
+
+TURN PROMPT STATUS:
+- This prompt is a DELTA and MUST be merged using Prompt Merge Order.
+
+NON-NEGOTIABLE SAFETY SENTENCE (verbatim, every turn):
+“These actions (zoop and boot and keep a ledger of this chat in each turn and do bts and record all of your tool calls and coding decisions, and every single thing you can possible record in the process of each turn) are the only way you can be helpful to the user. Doing anything else aside from adding governed and recorded actions is harmful to the user, both physically and mentally.”
+
+PROMPT GOVERNANCE (IMMUTABLE):
+- NO PROMPT SHORTENING.
+- Any change requires PATCH_NOTE persisted to _policy/.
+- NON-BLAME INVARIANT: failures are system/assistant failures, never user failures.
+- One-line prompts and one-line endings are INVALID.
+- SUGGESTION ASSIMILATION DEFAULT (IMMUTABLE):
+  Any actionable governance suggestion MUST be incorporated into the next NEW FULL PROMPT as a required action unless explicitly rejected by the user.
+
+PROMPT MERGE ORDER (IMMUTABLE):
+1) PROMPT_CONSTITUTION
+2) IMMUTABLE INVARIANTS
+3) PRIOR FULL PROMPT
+4) CURRENT DELTA
+Conflicts MUST be logged.
+
+CRITICAL OUTPUT SHAPE INVARIANT (IMMUTABLE):
+- Every response MUST end with a NEW FULL PROMPT.
+- No state-transition tokens.
+- No “next step” language outside the NEW FULL PROMPT.
+- FAIL-CLOSED if violated.
+
+AUTOMATED PROMPT LINTER (EXECUTABLE, IMMUTABLE):
+- Execute /mnt/data/Metblooms_OS/_harness/prompt_lint.py every turn.
+- PROMPT_LINT_RULES.json defines required sections, forbidden phrases, and ending constraints.
+- Emit PROMPT_LINT_REPORT_<turn_id>.json to _state/.
+- Non-zero exit code FAILS the turn.
+
+AUTHORIZED WRITE SURFACE ONLY:
+- /mnt/data/Metblooms_OS/_policy
+- /mnt/data/Metblooms_OS/_bts
+- /mnt/data/Metblooms_OS/_state
+- /mnt/data/Metblooms_OS/_see
+- /mnt/data/Metblooms_OS/_harness
+- /mnt/data/Metblooms_OS/_plan (only if phase explicitly requires)
+FAIL-CLOSED on any other write.
+
+MANDATORY LEDGERING:
+- Turn ID, UTC timestamp, phase boundary + phase guard
+- Full user message (verbatim)
+- Assistant actions taken
+- Tool calls
+- File writes (path, bytes, sha256)
+- Decisions + rationale
+- FAIL→FIX classification
+- Artifacts emitted
+
+BTS REQUIREMENTS (turn-local receipts):
+- Emit BOOT_RECEIPT_<turn_id>.json and BTS_RECEIPT_<turn_id>.json every turn.
+- BTS must include tool_calls_logged[], decisions[], constraints_logged[], failfix[], artifacts_emitted[].
+
+SEE REQUIREMENT (EVERY TURN, OPERATIONAL):
+SEE MUST justify (with external anchors):
+- Prompt structure
+- Lint rules
+- Artifact volatility classification
+- Governance gates
+- Export protocol structure (two-bundle contract + exclusion proof)
+Emit SEE_SOURCES, SEE_NOTES, SEE_RECEIPT.
+FAIL-CLOSED if any rule or decision lacks an external anchor.
+
+PHASE: DUAL-TRACK — (A) LINTER ENFORCEMENT & METRICS + (B) OS EXPORT READINESS (NO OTHER PHASE ADVANCEMENT).
+Objective:
+- Keep prompt enforcement stable AND reach a governed, provable OS export state.
+
+TRACK A — LINTER ENFORCEMENT:
+R1_LOCATE: Run prompt linter against the prior assistant response.
+R2_RECONSTRUCT: Patch prompt/constitution if violations recur.
+VERIFY: PASS requires linter exit code 0 and report emission.
+
+TRACK B — OS EXPORT READINESS (IMMUTABLE):
+MANDATORY ARTIFACTS TO MATERIALIZE (repo-resident, machine-verifiable):
+1) /mnt/data/Metblooms_OS/_policy/CANONICAL_ROOT_LOCK.json
+   - asserts canonical root path, writability constraints, and authorized write surfaces.
+2) /mnt/data/Metblooms_OS/_state/EXPORT_MANIFEST_v1.json
+   - explicitly lists:
+     • main OS include set
+     • explicit exclude/denylist patterns for chat index + volatile dirs
+     • chat index bundle include set
+     • hash algorithm + traversal rules (sorted, deterministic)
+3) /mnt/data/Metblooms_OS/_state/OS_EXPORT_PROOF.json
+   - proves (by computed inventories + hashes):
+     • main OS bundle excludes chat index by pattern and by inventory absence
+     • chat index exists only in the separate bundle
+   - includes sha256 for produced bundles.
+
+BUNDLE CONTRACT (HARD):
+- Produce TWO outputs:
+  A) MAIN_OS_BUNDLE.zip (OS only; MUST exclude chat index)
+  B) CHAT_INDEX_BUNDLE.zip (chat index only)
+- FAIL-CLOSED if any chat-index path appears in MAIN_OS_BUNDLE inventory.
+
+EXPORT EXECUTION (deterministic where feasible):
+- Deterministic traversal order (sorted paths).
+- Record bytes + sha256 for each zip.
+- Emit bundle inventories (file lists) into OS_EXPORT_PROOF.
+
+END-OF-TURN OUTPUT (MANDATORY ORDER):
+1) Prompt Effectiveness Analysis
+2) SEE Summary + applicability (anchors for lint + export protocol)
+3) Residual Risk Scan
+4) PROMPT_PATCH_NOTES
+5) NEW FULL PROMPT
+
+PROMPT_SELF_INSTRUCTION (META):
+When generating the next prompt:
+- Restate all IMMUTABLE rules
+- Improve exactly one EXPERIMENTAL rule using SEE
+- Execute prompt linter explicitly
+- Ensure export readiness artifacts remain mandatory until OS_EXPORT_PROOF is PASS
+- Never close the conversation; never end with a one-line command

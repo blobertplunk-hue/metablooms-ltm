@@ -1,0 +1,1 @@
+{"source_bundle": "MetaBlooms_OS_SHIPPED_PATCHED_20260130T003500Z.zip", "path": "evidence/boot_diagnostics/turn_20260128T044659Z/ingest_semantics_out/POS/POS1_flat_tree_min/canonical_tree/metablooms/preflight_chain.json", "chunk": 0, "content": "{\n  \"preflight_chain\": []\n}", "sha256": "945851284d9a31094d2b9255b96c6972f8a7263aeaa2736d9afd907bdd50c152"}

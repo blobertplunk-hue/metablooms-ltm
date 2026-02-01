@@ -1,0 +1,1 @@
+{"source_bundle": "MetaBlooms_OS_SHIPPED_PATCHED_20260130T003500Z.zip", "path": "boot_pipeline_mbml.json", "chunk": 0, "content": "{\n  \"auto_invoke\": \"MBML\",\n  \"when\": \"artifacts_detected\",\n  \"mode\": \"analysis-only\"\n}", "sha256": "9048b7e38109d32a6ddf351302c44c94e0de47ad01b3079a0dc7b54d3f7bfd0c"}

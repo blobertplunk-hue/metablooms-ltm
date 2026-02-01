@@ -1,0 +1,70 @@
+{
+  "sources": [
+    {
+      "claim_tags": [
+        "explicit_constraints",
+        "output_format"
+      ],
+      "id": "S1",
+      "url": "https://platform.openai.com/docs/guides/prompt-engineering"
+    },
+    {
+      "claim_tags": [
+        "repo_rules",
+        "workflow_contracts"
+      ],
+      "id": "S2",
+      "url": "https://www.anthropic.com/engineering/claude-code-best-practices"
+    },
+    {
+      "claim_tags": [
+        "execution_based_eval",
+        "harness"
+      ],
+      "id": "S3",
+      "url": "https://www.swebench.com/SWE-bench/guides/evaluation/"
+    },
+    {
+      "claim_tags": [
+        "nondeterminism",
+        "timestamps"
+      ],
+      "id": "S4",
+      "url": "https://reproducible-builds.org/docs/timestamps/"
+    },
+    {
+      "claim_tags": [
+        "file_ordering",
+        "determinism"
+      ],
+      "id": "S5",
+      "url": "https://reproducible-builds.org/docs/deterministic-build-systems/"
+    },
+    {
+      "claim_tags": [
+        "provenance",
+        "chain_of_custody"
+      ],
+      "id": "S6",
+      "url": "https://www.w3.org/TR/prov-o/"
+    },
+    {
+      "claim_tags": [
+        "verified_eval",
+        "human_validated"
+      ],
+      "id": "S7",
+      "url": "https://openai.com/index/introducing-swe-bench-verified/"
+    },
+    {
+      "claim_tags": [
+        "scaffolding",
+        "explicit_scope"
+      ],
+      "id": "S8",
+      "url": "https://developers.openai.com/cookbook/examples/gpt-5/gpt-5-2_prompting_guide/"
+    }
+  ],
+  "timestamp_utc": "2026-02-01T00:49:24Z",
+  "turn_id": "aa842471-99f7-4625-b2ee-b3a3535d221d"
+}

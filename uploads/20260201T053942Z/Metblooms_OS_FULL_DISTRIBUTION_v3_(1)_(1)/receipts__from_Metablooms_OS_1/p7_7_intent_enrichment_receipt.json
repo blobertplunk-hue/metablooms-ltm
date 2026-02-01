@@ -1,0 +1,8 @@
+{
+  "phase": "P7.7",
+  "utc": "2026-01-30T14:35:54Z",
+  "change": "Deterministic enrichment of INTENT_RULES patterns (no ML)",
+  "files": {
+    "config/INTENT_RULES.json": "a02ad7f4fe5ffb7cf71557e1a0229dfcae83075457019318a5d35adb0e1dde82"
+  }
+}

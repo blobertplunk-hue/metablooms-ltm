@@ -1,0 +1,60 @@
+{
+  "ruleset_id": "CLAIM_AUTHORITY_VALIDATION_RULES_v1",
+  "version": "1.0.0",
+  "created_utc": "2026-01-31T16:29:33Z",
+  "inputs": {
+    "claim_node": "CLAIM",
+    "evidence_edges": [
+      "SUPPORTS",
+      "CONTRADICTS"
+    ],
+    "dissent_nodes": "DISSENT"
+  },
+  "thresholds": {
+    "MUST": {
+      "min_support_sources": 3,
+      "min_distinct_source_types": 2,
+      "max_high_severity_dissent": 0
+    },
+    "SHOULD": {
+      "min_support_sources": 2,
+      "min_distinct_source_types": 1,
+      "max_high_severity_dissent": 1
+    },
+    "MAY": {
+      "min_support_sources": 1,
+      "min_distinct_source_types": 1,
+      "max_high_severity_dissent": 2
+    }
+  },
+  "diversity_check": {
+    "required": true,
+    "allowed_source_types": [
+      "academic",
+      "industry",
+      "standards",
+      "government"
+    ]
+  },
+  "dissent_capture_hooks": {
+    "required": true,
+    "severity_levels": [
+      "low",
+      "medium",
+      "high"
+    ],
+    "fail_on_missing_dissent_record": true
+  },
+  "computation": {
+    "support_count": "count(distinct EVIDENCE nodes with SUPPORTS edge)",
+    "source_type_count": "count(distinct EVIDENCE.source_type)",
+    "high_dissent_count": "count(DISSENT where severity==high OR EVIDENCE with CONTRADICTS and confidence>=0.7)",
+    "authority_satisfied": "evaluate thresholds per claim.authority_level"
+  },
+  "outputs": {
+    "authority_satisfied": "boolean",
+    "authority_score": "0-1 float (normalized support/diversity minus dissent penalty)",
+    "reasons": "list of failing checks"
+  },
+  "fail_closed": true
+}

@@ -1,0 +1,9 @@
+{
+  "authority_score_formula": "weighted_sum(credibility,methodology,recency)",
+  "dissent_weighting": {
+    "low": 0.1,
+    "medium": 0.3,
+    "high": 0.6
+  },
+  "created_utc": "2026-01-31T16:40:42Z"
+}

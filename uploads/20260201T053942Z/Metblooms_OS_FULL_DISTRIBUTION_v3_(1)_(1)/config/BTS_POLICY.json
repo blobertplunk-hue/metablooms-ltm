@@ -1,0 +1,10 @@
+{
+  "bts_required_every_turn": true,
+  "include_reasoning_only": true,
+  "emit_on_boot": true,
+  "emit_on_non_boot_turns": true,
+  "required_artifacts": [
+    "_bts/bts_tick_receipt_<UTC>.json"
+  ],
+  "fail_closed_if_missing": true
+}

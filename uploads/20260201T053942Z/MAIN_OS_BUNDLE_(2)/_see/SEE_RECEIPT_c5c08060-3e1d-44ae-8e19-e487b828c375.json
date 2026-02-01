@@ -1,0 +1,28 @@
+{
+  "anchors_used": [
+    "turn0search3",
+    "turn0search7",
+    "turn0search2",
+    "turn0search6",
+    "turn0search4",
+    "turn0search11",
+    "turn0search1",
+    "turn1search1",
+    "turn1search0"
+  ],
+  "artifacts": [
+    {
+      "bytes": 2946,
+      "path": "/mnt/data/Metblooms_OS/_see/SEE_SOURCES_c5c08060-3e1d-44ae-8e19-e487b828c375.json",
+      "sha256": "6a1a490e200805f810dbe8b93fec56f6160142ae0778a1603ff475976d038d70"
+    },
+    {
+      "bytes": 1816,
+      "path": "/mnt/data/Metblooms_OS/_see/SEE_NOTES_c5c08060-3e1d-44ae-8e19-e487b828c375.ndjson",
+      "sha256": "10d7b196ee455e47ac538b029af299e82e0a3691aee599f27f3638ac69c47941"
+    }
+  ],
+  "phase": "P1.SEE_PROMPT_EFFECTIVENESS",
+  "timestamp": "2026-02-01T00:33:02Z",
+  "turn_id": "c5c08060-3e1d-44ae-8e19-e487b828c375"
+}

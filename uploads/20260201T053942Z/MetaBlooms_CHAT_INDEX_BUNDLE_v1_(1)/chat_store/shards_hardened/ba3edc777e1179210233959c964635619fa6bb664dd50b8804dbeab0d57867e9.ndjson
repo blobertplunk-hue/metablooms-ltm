@@ -1,0 +1,1 @@
+{"source_bundle": "MetaBlooms_OS_SHIPPED_PATCHED_20260130T003500Z.zip", "path": "audit/bootstrap_option1_patch_audit.md", "chunk": 1, "content": "_option1.diff`\n- Receipt: `/mnt/data/Metablooms_OS/bootstrap_receipt.option1_patch.json`\n", "sha256": "ba3edc777e1179210233959c964635619fa6bb664dd50b8804dbeab0d57867e9"}

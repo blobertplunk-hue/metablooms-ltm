@@ -1,0 +1,10 @@
+{
+  "rollup_fields": [
+    "fresh_count",
+    "stale_count",
+    "revoked_count"
+  ],
+  "on_excess_stale": "warn",
+  "on_any_revoked": "block_pipeline",
+  "created_utc": "2026-01-31T16:50:17Z"
+}

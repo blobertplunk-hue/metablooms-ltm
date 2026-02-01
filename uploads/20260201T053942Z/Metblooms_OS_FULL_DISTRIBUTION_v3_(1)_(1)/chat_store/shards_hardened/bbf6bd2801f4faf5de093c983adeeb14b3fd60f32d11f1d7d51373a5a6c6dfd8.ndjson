@@ -1,0 +1,1 @@
+{"source_bundle": "MetaBlooms_OS_SHIPPED_PATCHED_20260130T003500Z.zip", "path": "Execution_Telemetry_Spec.txt", "chunk": 0, "content": "EXECUTION TELEMETRY\n\nCompare:\n- Planned tools (from plan)\n- Actual tools (observed)\n\nDetect:\n- Drift\n- Unauthorized escalation\n", "sha256": "bbf6bd2801f4faf5de093c983adeeb14b3fd60f32d11f1d7d51373a5a6c6dfd8"}

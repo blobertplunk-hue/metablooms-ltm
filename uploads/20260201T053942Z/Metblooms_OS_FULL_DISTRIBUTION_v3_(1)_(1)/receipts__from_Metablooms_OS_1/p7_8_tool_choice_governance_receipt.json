@@ -1,0 +1,9 @@
+{
+  "phase": "P7.8",
+  "utc": "2026-01-30T14:35:54Z",
+  "files": {
+    "indexes/TOOL_INDEX.json": "45bdc7b34cce544b401f84e44fdb8c66c02ffb91e2d4b2af699efe2518430e67",
+    "indexes/TOOL_GATES.json": "8f508998253cbb8b6a7369e610721e74930f1b9b83374eac1c457fa3e1244eef",
+    "tools/bts/evaluate_tool_choice.py": "d10114f408e795b36740cdd0ad86f0d5eb0abe3fc68bb50939078a6fecacd6b9"
+  }
+}

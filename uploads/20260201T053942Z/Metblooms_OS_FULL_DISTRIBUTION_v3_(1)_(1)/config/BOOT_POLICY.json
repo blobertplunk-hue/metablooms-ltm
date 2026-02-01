@@ -1,0 +1,9 @@
+{
+  "boot_must_attempt": true,
+  "boot_never_refuse": true,
+  "on_failure": "emit BOOT_FAIL receipt with error; fail-closed",
+  "required_artifacts_per_boot": [
+    "boot/boot_receipt_<UTC>.json",
+    "_bts/bts_tick_receipt_<UTC>.json"
+  ]
+}

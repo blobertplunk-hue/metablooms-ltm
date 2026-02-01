@@ -1,0 +1,45 @@
+{
+  "artifact": "BOOT_GATE_v1",
+  "timestamp_utc": "2026-01-31T16:04:07Z",
+  "canonical_root": "/mnt/data/Metblooms_OS",
+  "required_preconditions": [
+    {
+      "id": "P00_ZOOP_GUARD_PASS",
+      "artifact_path": "receipts/ZOOP_GUARD_RECEIPT_v1.json",
+      "must_equal": {
+        "status": "PASS"
+      }
+    },
+    {
+      "id": "P00_CANONICAL_INTEGRITY_PASS",
+      "artifact_path": "receipts/CANONICAL_ROOT_INTEGRITY_RECEIPT_v1_2.json",
+      "must_equal": {
+        "status": "PASS"
+      }
+    }
+  ],
+  "boot_pipeline": [
+    {
+      "step": "RUN_ZOOP_GUARD",
+      "tool": "python",
+      "entrypoint": "tools/zoop/zoop_guard.py",
+      "args": [
+        "--zip",
+        "${OS_ZIP_PATH}",
+        "--target",
+        "/mnt/data/Metblooms_OS"
+      ]
+    },
+    {
+      "step": "RUN_CANONICAL_ROOT_INTEGRITY_CHECK",
+      "tool": "python",
+      "entrypoint": "tools/boot/canonical_root_integrity_check.py",
+      "args": [
+        "--root",
+        "/mnt/data/Metblooms_OS"
+      ]
+    }
+  ],
+  "fail_closed": true,
+  "notes": "BOOT is considered successful only when required receipts exist and validate."
+}

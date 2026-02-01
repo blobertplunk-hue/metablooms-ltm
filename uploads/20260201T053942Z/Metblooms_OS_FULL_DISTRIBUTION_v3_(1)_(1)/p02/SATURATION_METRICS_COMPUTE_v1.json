@@ -1,0 +1,8 @@
+{
+  "compute": {
+    "novelty_curve": "delta(unique_concepts)/iteration",
+    "coverage_estimate": "covered/known_space",
+    "yield_rate": "useful/total_sources"
+  },
+  "created_utc": "2026-01-31T16:36:01Z"
+}

@@ -1,0 +1,7 @@
+{
+  "compute": {
+    "total_cost": "sum(cost_types)",
+    "roi_score": "weighted_sum(value_score,decision_impact,reuse_potential)"
+  },
+  "created_utc": "2026-01-31T16:56:30Z"
+}

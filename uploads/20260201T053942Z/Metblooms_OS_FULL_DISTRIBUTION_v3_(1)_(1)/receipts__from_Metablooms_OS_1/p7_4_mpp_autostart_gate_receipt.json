@@ -1,0 +1,19 @@
+{
+  "phase": "P7.4",
+  "utc": "2026-01-30T14:06:47Z",
+  "changes": {
+    "mpp_gate": "config/MPP_GATE.json",
+    "mpp_guard": "tools/mpp/mpp_guard.py",
+    "mpp_templates": [
+      "config/MPP_START_RECEIPT_TEMPLATE.json",
+      "config/MPP_PHASE_RECEIPT_TEMPLATE.json"
+    ],
+    "bts_mpp_enforcement": "config/BTS_MPP_ENFORCEMENT.json"
+  },
+  "sha256": {
+    "config/MPP_GATE.json": "ff3b2425bdf4a63e2d09d11a4b06d41f081fb822460174842990fcf3a45fbfa5",
+    "tools/mpp/mpp_guard.py": "2ad1893c7d5aab1c8d8f1e10533dcdcb8505715057d30891aab9584094d6b360",
+    "config/BTS_MPP_ENFORCEMENT.json": "6d2ba446e0494133667f06dd2376b82633090ac74c7039305a288f7b58946e17"
+  },
+  "status": "OK"
+}

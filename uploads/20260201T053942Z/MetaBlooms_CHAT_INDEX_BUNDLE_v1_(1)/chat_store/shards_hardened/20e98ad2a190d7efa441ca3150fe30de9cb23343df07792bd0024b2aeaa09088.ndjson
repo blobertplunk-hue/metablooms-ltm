@@ -1,0 +1,1 @@
+{"source_bundle": "MetaBlooms_OS_SHIPPED_PATCHED_20260130T003500Z.zip", "path": "metablooms/gates/zoop_unified_gate_pack_v1/schemas/zoop/zoop_execution_gate_receipt.schema.json", "chunk": 2, "content": " \"then\": {\n        \"required\": [\n          \"failure\"\n        ]\n      }\n    }\n  ]\n}", "sha256": "20e98ad2a190d7efa441ca3150fe30de9cb23343df07792bd0024b2aeaa09088"}

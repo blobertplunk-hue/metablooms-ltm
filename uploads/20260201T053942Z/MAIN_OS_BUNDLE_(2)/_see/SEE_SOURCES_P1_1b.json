@@ -1,0 +1,88 @@
+{
+  "scope": "P1.1b baseline stabilization (deterministic integrity oracle + forensic lock)",
+  "sources": [
+    {
+      "id": "turn0search0",
+      "notes": "NIST practice guide on data integrity; relevant to baselining + integrity monitoring.",
+      "title": "NIST SP 1800-25 (PDF)",
+      "topics": [
+        "data integrity",
+        "baselining",
+        "verification"
+      ],
+      "type": "primary",
+      "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1800-25.pdf"
+    },
+    {
+      "id": "turn0search4",
+      "notes": "Official CSRC page for SP 1800-25.",
+      "title": "NIST CSRC SP 1800-25 landing",
+      "topics": [
+        "data integrity",
+        "practice guide"
+      ],
+      "type": "primary",
+      "url": "https://csrc.nist.gov/pubs/sp/1800/25/final"
+    },
+    {
+      "id": "turn0search3",
+      "notes": "Provenance ontology; supports chain-of-custody modeling.",
+      "title": "W3C PROV-O",
+      "topics": [
+        "provenance",
+        "immutability",
+        "traceability"
+      ],
+      "type": "primary",
+      "url": "https://www.w3.org/TR/prov-o/"
+    },
+    {
+      "id": "turn0search2",
+      "notes": "Explains nondeterminism sources such as filesystem ordering and current time.",
+      "title": "Reproducible Builds: deterministic build systems",
+      "topics": [
+        "determinism",
+        "sorted traversal",
+        "time variance"
+      ],
+      "type": "primary",
+      "url": "https://reproducible-builds.org/docs/deterministic-build-systems/"
+    },
+    {
+      "id": "turn0search10",
+      "notes": "Discusses removing/clamping nondeterministic metadata (timestamps, etc.).",
+      "title": "Reproducible Builds: stripping unreproducible information",
+      "topics": [
+        "normalization",
+        "timestamps",
+        "metadata removal"
+      ],
+      "type": "primary",
+      "url": "https://reproducible-builds.org/docs/stripping-unreproducible-information/"
+    },
+    {
+      "id": "turn0search17",
+      "notes": "Highlights timestamps as a major source of nondeterminism.",
+      "title": "Reproducible Builds: timestamps",
+      "topics": [
+        "timestamps",
+        "nondeterminism"
+      ],
+      "type": "primary",
+      "url": "https://reproducible-builds.org/docs/timestamps/"
+    },
+    {
+      "id": "turn0search15",
+      "notes": "States entities considered immutable in PROV-O; supports 'new state = new entity' framing.",
+      "title": "PAV ontology paper referencing PROV immutability",
+      "topics": [
+        "PROV-O",
+        "immutability"
+      ],
+      "type": "secondary",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4177195/"
+    }
+  ],
+  "timestamp": "2026-02-01T00:27:20Z",
+  "turn_id": "f28b2198-ba3a-4453-a61d-ecc4e69f8984"
+}

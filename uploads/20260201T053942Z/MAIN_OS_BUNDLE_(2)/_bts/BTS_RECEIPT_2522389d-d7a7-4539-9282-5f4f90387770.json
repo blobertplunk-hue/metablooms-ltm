@@ -1,0 +1,67 @@
+{
+  "turn_id": "2522389d-d7a7-4539-9282-5f4f90387770",
+  "timestamp": "2026-02-01T00:08:59Z",
+  "phase": "P9.0_ORACLE_MATERIALIZATION_ONLY",
+  "tool_calls": [
+    {
+      "tool": "python_user_visible.exec",
+      "function": "exec",
+      "inputs": {
+        "oracle_path": "/mnt/data/Metblooms_OS/_harness/check_integrity.py",
+        "baseline_path": "/mnt/data/Metblooms_OS/_harness/ORACLE_BASELINE_v1.json"
+      },
+      "outputs": {
+        "oracle_existed": false,
+        "dryrun": {
+          "exit_code": 1,
+          "stdout": "{\n  \"mismatches\": [\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_0e005951-f1e3-4aaf-8c57-e2bbb4e60ddc.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_24f529b6-127d-4782-875a-3bedee92409c.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_2522389d-d7a7-4539-9282-5f4f90387770.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_596f17a3-10b0-49d8-acfd-e25a8844687f.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_660d0074-4d84-451e-bdef-0fca0f7e80e6.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_741c182d-f073-4cce-bd91-d5a7c0ad3c01.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_7520c724-41ea-4373-a701-cdaaefe908d6.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_82cbb69c-1771-4c01-b844-23d984da97d4.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_b3d7829f-e1c9-4770-ae9f-9d0cc4cdb49b.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_bb03f3cd-372c-471e-aba3-1adf95053750.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_f62732a6-57e8-448a-80f1-2fa678e7feda.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BTS_RECEIPT_0e005951-f1e3-4aaf-8c57-e2bbb4e60ddc.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BTS_RECEIPT_24f529b6-127d-4782-875a-3bedee92409c.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BTS_RECEIPT_596f17a3-10b0-49d8-acfd-e25a8844687f.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BTS_RECEIPT_660d0074-4d84-451e-bdef-0fca0f7e80e6.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BTS_RECEIPT_741c182d-f073-4cce-bd91-d5a7c0ad3c01.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BTS_RECEIPT_7520c724-41ea-4373-a701-cdaaefe908d6.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BTS_RECEIPT_82cbb69c-1771-4c01-b844-23d984da97d4.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BTS_RECEIPT_b3d7829f-e1c9-4770-ae9f-9d0cc4cdb49b.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BTS_RECEIPT_f62732a6-57e8-448a-80f1-2fa678e7feda.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_deployment/CANONICAL_ROOT_LOCK.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_deployment/DEPLOYMENT_READINESS_RECEIPT.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_deployment/EXPORT_MANIFEST_v1.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_deployment/INTEGRITY_VERIFICATION_REPORT.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_deployment/OS_EXPORT_PROOF.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_deployment/_merkle/MERKLE_ROOT_MANIFEST.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_harness/ORACLE_BASELINE_v1.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_harness/check_integrity.py\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_integrity/INTEGRITY_ORACLE_REPORT.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_policy/ORACLE_PATCH_v1.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_policy/ORACLE_PATCH_v2.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_state/chat_ledger.ndjson\",\n      \"type\": \"extra_file\"\n    }\n  ],\n  \"result\": \"FAIL\"\n}\n",
+          "stderr": ""
+        }
+      }
+    }
+  ],
+  "file_mutations": [
+    {
+      "path": "/mnt/data/Metblooms_OS/_harness/check_integrity.py",
+      "bytes": 3016,
+      "sha256": "1a0378fe40b44e999de31e2b51b83127dad828ec0c9ea1b0b0b1e0e482e826fb"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/_harness/ORACLE_BASELINE_v1.json",
+      "bytes": 987,
+      "sha256": "d62d4fa8a059757b2d8f64a171684e487095c33016f55a371f43943015adc430"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_2522389d-d7a7-4539-9282-5f4f90387770.json",
+      "bytes": 414,
+      "sha256": "f2218a0e6a446dde22be3db01b02b363be76bb95e4310bd8e7202a9f26e7c909"
+    }
+  ],
+  "failfix": [
+    {
+      "stage": "R1_LOCATE",
+      "oracle_existed": false,
+      "classification": "governance_gap"
+    },
+    {
+      "stage": "R2_RECONSTRUCT",
+      "action": "materialize deterministic oracle",
+      "result": "OK"
+    }
+  ],
+  "oracle_execution_proof": {
+    "exit_code": 1,
+    "stdout": "{\n  \"mismatches\": [\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_0e005951-f1e3-4aaf-8c57-e2bbb4e60ddc.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_24f529b6-127d-4782-875a-3bedee92409c.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_2522389d-d7a7-4539-9282-5f4f90387770.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_596f17a3-10b0-49d8-acfd-e25a8844687f.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_660d0074-4d84-451e-bdef-0fca0f7e80e6.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_741c182d-f073-4cce-bd91-d5a7c0ad3c01.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_7520c724-41ea-4373-a701-cdaaefe908d6.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_82cbb69c-1771-4c01-b844-23d984da97d4.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_b3d7829f-e1c9-4770-ae9f-9d0cc4cdb49b.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_bb03f3cd-372c-471e-aba3-1adf95053750.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_f62732a6-57e8-448a-80f1-2fa678e7feda.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BTS_RECEIPT_0e005951-f1e3-4aaf-8c57-e2bbb4e60ddc.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BTS_RECEIPT_24f529b6-127d-4782-875a-3bedee92409c.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BTS_RECEIPT_596f17a3-10b0-49d8-acfd-e25a8844687f.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BTS_RECEIPT_660d0074-4d84-451e-bdef-0fca0f7e80e6.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BTS_RECEIPT_741c182d-f073-4cce-bd91-d5a7c0ad3c01.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BTS_RECEIPT_7520c724-41ea-4373-a701-cdaaefe908d6.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BTS_RECEIPT_82cbb69c-1771-4c01-b844-23d984da97d4.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BTS_RECEIPT_b3d7829f-e1c9-4770-ae9f-9d0cc4cdb49b.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_bts/BTS_RECEIPT_f62732a6-57e8-448a-80f1-2fa678e7feda.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_deployment/CANONICAL_ROOT_LOCK.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_deployment/DEPLOYMENT_READINESS_RECEIPT.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_deployment/EXPORT_MANIFEST_v1.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_deployment/INTEGRITY_VERIFICATION_REPORT.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_deployment/OS_EXPORT_PROOF.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_deployment/_merkle/MERKLE_ROOT_MANIFEST.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_harness/ORACLE_BASELINE_v1.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_harness/check_integrity.py\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_integrity/INTEGRITY_ORACLE_REPORT.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_policy/ORACLE_PATCH_v1.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_policy/ORACLE_PATCH_v2.json\",\n      \"type\": \"extra_file\"\n    },\n    {\n      \"path\": \"/mnt/data/Metblooms_OS/_state/chat_ledger.ndjson\",\n      \"type\": \"extra_file\"\n    }\n  ],\n  \"result\": \"FAIL\"\n}\n",
+    "stderr": ""
+  },
+  "decisions": [
+    {
+      "id": "DEC-P9.0-001",
+      "decision": "Materialize deterministic oracle in _harness",
+      "rationale": "Eliminate nondeterministic metadata and traversal drift; enable execution-based proof",
+      "constraints": [
+        "write only to _harness plus BTS/ledger"
+      ]
+    }
+  ]
+}

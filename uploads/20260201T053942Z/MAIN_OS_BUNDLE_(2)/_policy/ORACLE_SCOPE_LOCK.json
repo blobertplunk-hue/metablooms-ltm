@@ -1,0 +1,35 @@
+{
+  "inspection": {
+    "needs_patch": false,
+    "oracle_exists": true,
+    "signals": {
+      "baseline_flag_present": true,
+      "excludes_bts": false,
+      "excludes_state": false
+    }
+  },
+  "scope": {
+    "baseline": {
+      "exclude_dirs": [
+        "_bts",
+        "_state",
+        "baseline_artifact"
+      ],
+      "hashing": "contents-only",
+      "include_roez_once": true,
+      "traversal": "sorted"
+    },
+    "verify": {
+      "exclude_dirs": [
+        "_roez",
+        "_bts",
+        "_state",
+        "baseline_artifact"
+      ],
+      "hashing": "contents-only",
+      "traversal": "sorted"
+    }
+  },
+  "timestamp": "2026-02-01T00:34:57Z",
+  "turn_id": "cbfd656b-2fdd-45b5-8e32-d96f72abb44e"
+}

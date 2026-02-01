@@ -1,0 +1,47 @@
+{
+  "turn_id": "82cbb69c-1771-4c01-b844-23d984da97d4",
+  "timestamp": "2026-01-31T23:58:06Z",
+  "failfix": [
+    {
+      "stage": "R1_LOCATE",
+      "roez_exists": true,
+      "oracle_patch_applied": "/mnt/data/Metblooms_OS/_policy/ORACLE_PATCH_v1.json",
+      "timestamp": "2026-01-31T23:58:06Z"
+    },
+    {
+      "stage": "R2_RECONSTRUCT",
+      "result": "OK",
+      "timestamp": "2026-01-31T23:58:06Z"
+    },
+    {
+      "stage": "RE-SEAL",
+      "result": "OK",
+      "timestamp": "2026-01-31T23:58:06Z"
+    },
+    {
+      "stage": "VERIFY",
+      "exit": 2,
+      "stdout": "",
+      "stderr": "python3: can't open file '/mnt/data/Metblooms_OS/_harness/check_integrity.py': [Errno 2] No such file or directory\n"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "DEC-ORACLE-FAIL",
+      "decision": "Fail-closed",
+      "rationale": "Integrity oracle mismatch"
+    }
+  ],
+  "artifacts_emitted": [
+    {
+      "path": "/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_82cbb69c-1771-4c01-b844-23d984da97d4.json",
+      "bytes": 283,
+      "sha256": "6dafa86cbd59c7af2feb727be249cf4703b2e7c5d10560691e8ec4760a20f048"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/_roez/PAIN_POINTS_LEDGER.ndjson",
+      "bytes": 2379,
+      "sha256": "f7284b09ae5e14b08031baffd480ab28b71533941445b0162bb62bbc0775b194"
+    }
+  ]
+}

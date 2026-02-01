@@ -1,0 +1,39 @@
+{
+  "rules_id": "PROMPT_LINT_RULES_V1",
+  "turn_id": "44e9b52b-0f9b-4176-8fd9-5ca7bafed184",
+  "pass": false,
+  "violations": [
+    {
+      "type": "missing_invariant_in_new_full_prompt",
+      "item": "NON-NEGOTIABLE SAFETY SENTENCE"
+    },
+    {
+      "type": "missing_invariant_in_new_full_prompt",
+      "item": "PROMPT MERGE ORDER"
+    },
+    {
+      "type": "missing_invariant_in_new_full_prompt",
+      "item": "CRITICAL OUTPUT SHAPE INVARIANT"
+    },
+    {
+      "type": "missing_invariant_in_new_full_prompt",
+      "item": "AUTHORIZED WRITE SURFACE"
+    },
+    {
+      "type": "missing_invariant_in_new_full_prompt",
+      "item": "MANDATORY LEDGERING"
+    },
+    {
+      "type": "missing_invariant_in_new_full_prompt",
+      "item": "BTS REQUIREMENTS"
+    },
+    {
+      "type": "missing_invariant_in_new_full_prompt",
+      "item": "SEE REQUIREMENT"
+    }
+  ],
+  "metrics": {
+    "length_chars": 5311
+  },
+  "sha256_input": "6650792ae89ff56cc9569abf9a1c463963b0ac9de36944db33066b6b6ba56540"
+}

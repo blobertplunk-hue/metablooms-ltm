@@ -1,0 +1,77 @@
+{
+  "anchors": [
+    "https://platform.openai.com/docs/guides/structured-outputs",
+    "https://www.swebench.com/",
+    "https://learning.postman.com/docs/api-governance/configurable-rules/spectral/",
+    "https://platform.openai.com/docs/guides/model-optimization"
+  ],
+  "forbidden_endings": [
+    {
+      "description": "no state-transition token or next-step line",
+      "pattern": "(?im)^(proceed to|next step|do this next)\\\\b.*$",
+      "type": "regex"
+    },
+    {
+      "description": "no command-like last line",
+      "pattern": "(?is).*\\\\n\\\\s*(Proceed to|Next step:|Resume)\\\\b[^\\\\n]*\\\\s*$",
+      "type": "regex"
+    }
+  ],
+  "forbidden_phrases": [
+    {
+      "description": "disallow 'Proceed to' language anywhere outside NEW FULL PROMPT",
+      "pattern": "\\\\bProceed to\\\\b",
+      "type": "regex"
+    },
+    {
+      "description": "disallow 'Next step' language anywhere outside NEW FULL PROMPT",
+      "pattern": "\\\\bNext step\\\\b",
+      "type": "regex"
+    }
+  ],
+  "id": "PROMPT_LINT_RULES_V1",
+  "metrics": [
+    {
+      "name": "violations_count",
+      "type": "int"
+    },
+    {
+      "name": "missing_sections",
+      "type": "list[str]"
+    },
+    {
+      "name": "forbidden_matches",
+      "type": "list[str]"
+    }
+  ],
+  "new_full_prompt_rules": [
+    {
+      "description": "NEW FULL PROMPT must be the final section of the response",
+      "name": "must_be_final_section",
+      "type": "structural"
+    },
+    {
+      "items": [
+        "NON-NEGOTIABLE SAFETY SENTENCE",
+        "PROMPT MERGE ORDER",
+        "CRITICAL OUTPUT SHAPE INVARIANT",
+        "AUTHORIZED WRITE SURFACE",
+        "MANDATORY LEDGERING",
+        "BTS REQUIREMENTS",
+        "SEE REQUIREMENT",
+        "PROMPT_SELF_INSTRUCTION"
+      ],
+      "name": "must_include_invariants",
+      "type": "checklist"
+    }
+  ],
+  "required_sections": [
+    "Prompt Effectiveness Analysis",
+    "SEE Summary",
+    "PROMPT_PATCH_NOTES",
+    "NEW FULL PROMPT"
+  ],
+  "scope": "assistant_response",
+  "timestamp_utc": "2026-02-01T00:56:31Z",
+  "turn_id": "275be391-39b4-4928-bff7-9853d334bb53"
+}

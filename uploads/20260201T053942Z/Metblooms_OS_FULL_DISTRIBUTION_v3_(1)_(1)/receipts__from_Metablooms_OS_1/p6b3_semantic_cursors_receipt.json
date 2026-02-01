@@ -1,0 +1,8 @@
+{
+  "phase": "P6-B.3",
+  "timestamp_utc": "2026-01-30T13:22:03Z",
+  "cursor_type": "keyword",
+  "cursor_count": 41586,
+  "shards": 31032,
+  "merkle_root": "5815a66662eabdfc5d084fdca8e07cae94e9035ec8b1446c19297d9756895ed6"
+}

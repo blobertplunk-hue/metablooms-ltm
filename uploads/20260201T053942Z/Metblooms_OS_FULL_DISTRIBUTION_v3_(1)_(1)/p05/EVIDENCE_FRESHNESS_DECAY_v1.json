@@ -1,0 +1,9 @@
+{
+  "freshness_score": "exp(-lambda * age_days)",
+  "decay_lambda": 0.01,
+  "recalc_on": [
+    "evidence_update",
+    "scheduled_review"
+  ],
+  "created_utc": "2026-01-31T16:50:17Z"
+}

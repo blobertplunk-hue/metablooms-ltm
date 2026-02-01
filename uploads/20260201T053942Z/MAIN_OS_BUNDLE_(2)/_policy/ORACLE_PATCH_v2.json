@@ -1,0 +1,27 @@
+{
+  "turn_id": "741c182d-f073-4cce-bd91-d5a7c0ad3c01",
+  "timestamp": "2026-02-01T00:00:07Z",
+  "patch_version": "v2",
+  "model": {
+    "baseline_establishment": {
+      "allow_first_write": [
+        "_roez/PAIN_POINTS_LEDGER.ndjson"
+      ],
+      "comparison": "none"
+    },
+    "steady_state_verification": {
+      "include": [
+        "_bts",
+        "_state",
+        "_policy",
+        "_deployment",
+        "_integrity"
+      ],
+      "exclude": [
+        "_roez/PAIN_POINTS_LEDGER.ndjson"
+      ],
+      "comparison": "sha256"
+    }
+  },
+  "rationale": "Separate baseline archival from comparative verification to avoid false oracle failures."
+}

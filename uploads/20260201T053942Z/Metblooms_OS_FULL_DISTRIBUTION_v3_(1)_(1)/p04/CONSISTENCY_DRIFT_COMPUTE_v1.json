@@ -1,0 +1,8 @@
+{
+  "metrics": {
+    "contradiction_rate": "contradicting_edges/total_edges",
+    "overlap_score": "overlapping_claims/total_claims",
+    "drift_score": "delta(authority_scores)"
+  },
+  "created_utc": "2026-01-31T16:48:07Z"
+}

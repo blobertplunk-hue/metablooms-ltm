@@ -1,0 +1,8 @@
+{
+  "fields": [
+    "total_cost",
+    "roi_score",
+    "threshold_status"
+  ],
+  "created_utc": "2026-01-31T16:56:30Z"
+}

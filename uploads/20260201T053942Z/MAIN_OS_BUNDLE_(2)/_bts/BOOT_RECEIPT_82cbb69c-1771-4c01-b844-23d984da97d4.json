@@ -1,0 +1,10 @@
+{
+  "turn_id": "82cbb69c-1771-4c01-b844-23d984da97d4",
+  "timestamp": "2026-01-31T23:58:06Z",
+  "canonical_root": "/mnt/data/Metblooms_OS",
+  "status": "BOOT_OK",
+  "phase": "P9.2_OPTION_A_REATTEMPT",
+  "phase_guard": "OPTION_A_ONLY",
+  "mode": "FAIL\u2192FIX",
+  "zoop": "ENABLED"
+}

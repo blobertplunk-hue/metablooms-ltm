@@ -1,0 +1,20 @@
+{
+  "artifact": "ZIP_ROOT_POLICY_v1",
+  "canonical_root_dirname": "Metblooms_OS",
+  "allow_single_wrapper_dirnames": [
+    "Metblooms_OS"
+  ],
+  "auto_flatten_single_wrapper": true,
+  "deny_shadow_roots": [
+    "Metablooms_OS",
+    "MetaBlooms_OS",
+    "metablooms_os",
+    "METABLOOMS_OS",
+    "Metabooms_OS",
+    "Metabloom_OS",
+    "MetabloomsOS"
+  ],
+  "refuse_noncanonical_extract_target": true,
+  "canonical_extract_target": "/mnt/data/Metblooms_OS",
+  "receipt_schema": "ZOOP_GUARD_RECEIPT_v1"
+}

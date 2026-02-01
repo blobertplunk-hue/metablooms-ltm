@@ -1,0 +1,15 @@
+{
+  "schema_id": "EVIDENCE_LIFECYCLE_SCHEMA_v1",
+  "states": [
+    "FRESH",
+    "AGING",
+    "STALE",
+    "REVOKED"
+  ],
+  "triggers": [
+    "time_decay",
+    "newer_evidence",
+    "authority_change"
+  ],
+  "created_utc": "2026-01-31T16:50:17Z"
+}

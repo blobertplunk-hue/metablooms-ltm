@@ -1,0 +1,54 @@
+{
+  "artifact": "ZOOP_GUARD_RECEIPT_SCHEMA_v1",
+  "type": "object",
+  "required": [
+    "artifact",
+    "timestamp_utc",
+    "status",
+    "canonical_root",
+    "zip_path",
+    "zip_sha256",
+    "extract_target",
+    "checks",
+    "actions",
+    "errors"
+  ],
+  "properties": {
+    "artifact": {
+      "const": "ZOOP_GUARD_RECEIPT_v1"
+    },
+    "timestamp_utc": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "PASS",
+        "FAIL"
+      ]
+    },
+    "canonical_root": {
+      "type": "string"
+    },
+    "zip_path": {
+      "type": "string"
+    },
+    "zip_sha256": {
+      "type": "string"
+    },
+    "extract_target": {
+      "type": "string"
+    },
+    "checks": {
+      "type": "object"
+    },
+    "actions": {
+      "type": "array"
+    },
+    "errors": {
+      "type": "array"
+    },
+    "hashes": {
+      "type": "object"
+    }
+  }
+}

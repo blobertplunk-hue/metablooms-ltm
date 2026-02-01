@@ -1,0 +1,16 @@
+{
+  "artifact": "P00_BOOT_GATE_CHECK_v2.json",
+  "timestamp_utc": "2026-01-31T16:19:30Z",
+  "canonical_root": "/mnt/data/Metblooms_OS",
+  "required": {
+    "patch_application_receipt": "/mnt/data/Metblooms_OS/receipts/PATCH_APPLICATION_RECEIPT_v1.json",
+    "boot_receipt": "/mnt/data/Metblooms_OS/receipts/BOOT_RECEIPT_v1.json"
+  },
+  "observed": {
+    "patch_application_status": "PASS",
+    "boot_receipt_present": true,
+    "boot_receipt_status": "PASS",
+    "shadow_root_present": false
+  },
+  "status": "PASS"
+}

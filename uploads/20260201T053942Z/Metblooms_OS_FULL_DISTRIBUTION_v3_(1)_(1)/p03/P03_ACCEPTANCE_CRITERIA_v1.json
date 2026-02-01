@@ -1,0 +1,7 @@
+{
+  "accept_if": [
+    "avg_authority>=0.7",
+    "high_dissent_count==0"
+  ],
+  "created_utc": "2026-01-31T16:40:42Z"
+}

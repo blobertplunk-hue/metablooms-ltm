@@ -1,0 +1,12 @@
+{
+  "artifact": "P09_META_AUDIT_REPORT_v1",
+  "timestamp_utc": "2026-01-31T17:17:36Z",
+  "checks": {
+    "p08_present": true,
+    "p08_sha256": "257143a812d1021a3cc6a9eac1151c5362e33f24a5e9e2d0ce06ab437d5852eb",
+    "p07_present": true,
+    "bts_canonical_present": true,
+    "waivers_used": false
+  },
+  "status": "PASS"
+}

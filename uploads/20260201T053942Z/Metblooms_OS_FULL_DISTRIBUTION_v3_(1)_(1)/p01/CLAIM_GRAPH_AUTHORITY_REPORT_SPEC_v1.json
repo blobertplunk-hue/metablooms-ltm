@@ -1,0 +1,69 @@
+{
+  "spec_id": "CLAIM_GRAPH_AUTHORITY_REPORT_SPEC_v1",
+  "version": "1.0.0",
+  "created_utc": "2026-01-31T16:31:17Z",
+  "description": "Aggregation logic for Claim Graph Authority Report",
+  "inputs": {
+    "claim_nodes": "CLAIM",
+    "validation_rules": "CLAIM_AUTHORITY_VALIDATION_RULES_v1",
+    "edges": [
+      "SUPPORTS",
+      "CONTRADICTS",
+      "QUALIFIES"
+    ],
+    "dissent_nodes": "DISSENT"
+  },
+  "aggregation_steps": [
+    {
+      "step": "per_claim_evaluation",
+      "logic": "Apply authority validation rules to each CLAIM node",
+      "outputs": [
+        "authority_satisfied",
+        "authority_score",
+        "reasons"
+      ]
+    },
+    {
+      "step": "graph_rollup",
+      "logic": "Aggregate per-claim results across the graph",
+      "metrics": [
+        "total_claims",
+        "claims_pass",
+        "claims_fail",
+        "claims_by_authority_level",
+        "average_authority_score"
+      ]
+    },
+    {
+      "step": "dissent_coverage",
+      "logic": "Compute dissent coverage statistics",
+      "metrics": [
+        "claims_with_dissent",
+        "claims_without_dissent",
+        "high_severity_dissent_count"
+      ]
+    }
+  ],
+  "report_fields": {
+    "overall_status": "PASS if all MUST claims pass; else FAIL",
+    "claim_summaries": [
+      "claim_id",
+      "authority_level",
+      "authority_satisfied",
+      "authority_score",
+      "dissent_present"
+    ],
+    "graph_metrics": [
+      "total_claims",
+      "claims_pass",
+      "claims_fail",
+      "average_authority_score"
+    ],
+    "dissent_metrics": [
+      "claims_with_dissent",
+      "claims_without_dissent",
+      "high_severity_dissent_count"
+    ]
+  },
+  "fail_closed": true
+}

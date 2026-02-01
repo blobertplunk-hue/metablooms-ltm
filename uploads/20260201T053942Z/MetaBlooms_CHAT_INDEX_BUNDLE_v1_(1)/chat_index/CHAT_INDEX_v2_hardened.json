@@ -1,0 +1,6 @@
+{
+  "version": "v2",
+  "root": "5815a66662eabdfc5d084fdca8e07cae94e9035ec8b1446c19297d9756895ed6",
+  "shards": 31032,
+  "note": "hardened ingestion; text-chunked"
+}

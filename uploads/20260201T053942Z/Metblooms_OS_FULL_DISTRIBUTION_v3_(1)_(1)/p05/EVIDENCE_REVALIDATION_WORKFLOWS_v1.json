@@ -1,0 +1,12 @@
+{
+  "workflow_steps": [
+    "fetch_update",
+    "re-score",
+    "rebind_claims"
+  ],
+  "required_checks": [
+    "source_valid",
+    "no_retraction"
+  ],
+  "created_utc": "2026-01-31T16:50:17Z"
+}

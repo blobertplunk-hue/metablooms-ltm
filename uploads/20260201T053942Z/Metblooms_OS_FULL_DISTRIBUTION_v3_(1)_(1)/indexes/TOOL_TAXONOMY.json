@@ -1,0 +1,62 @@
+{
+  "version": "v1",
+  "generated_utc": "2026-01-30T14:37:21Z",
+  "task_classes": {
+    "file_packaging": {
+      "best_tool": "container.exec",
+      "instinct_tool": "python_user_visible"
+    },
+    "hashing_manifest": {
+      "best_tool": "container.exec",
+      "instinct_tool": "python_user_visible"
+    },
+    "artifact_generation_binary": {
+      "best_tool": "python_user_visible",
+      "instinct_tool": "inline prose"
+    },
+    "internal_analysis_only": {
+      "best_tool": "python",
+      "instinct_tool": "python_user_visible"
+    },
+    "corpus_lookup_uploaded": {
+      "best_tool": "file_search",
+      "instinct_tool": "memory recall"
+    },
+    "fresh_specs_or_policy": {
+      "best_tool": "web.run",
+      "instinct_tool": "avoid web"
+    },
+    "parse_pdf_with_tables_or_figures": {
+      "best_tool": "web.screenshot + python",
+      "instinct_tool": "text reasoning"
+    },
+    "parse_large_text_or_logs_ndjson": {
+      "best_tool": "python",
+      "instinct_tool": "manual scanning"
+    },
+    "parse_docx_or_pptx": {
+      "best_tool": "python (python-docx/pptx libs)",
+      "instinct_tool": "text reasoning"
+    },
+    "build_search_index": {
+      "best_tool": "python",
+      "instinct_tool": "ad-hoc notes"
+    },
+    "dedupe_and_normalize_filenames": {
+      "best_tool": "python or container.exec",
+      "instinct_tool": "manual heuristics"
+    },
+    "migrate_bundle_into_canonical_layout": {
+      "best_tool": "container.exec + checks",
+      "instinct_tool": "python scripts"
+    },
+    "wire_registry_append_only": {
+      "best_tool": "python + container.exec",
+      "instinct_tool": "edit by hand"
+    }
+  },
+  "source": "/mnt/data/BTS_AUDIT_EXPANDED_HARDGATES_20260129T194922Z.xlsx",
+  "notes": [
+    "extracted from sheet: Audit_Comparison_Expanded"
+  ]
+}

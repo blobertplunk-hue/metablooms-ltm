@@ -1,0 +1,7 @@
+{
+  "accept_if": [
+    "total_cost<=max_cost",
+    "roi_score>=min_roi"
+  ],
+  "created_utc": "2026-01-31T16:56:30Z"
+}

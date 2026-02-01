@@ -1,0 +1,68 @@
+{
+  "schema_id": "CLAIM_GRAPH_SCHEMA_v1",
+  "version": "1.0.0",
+  "created_utc": "2026-01-31T16:26:01Z",
+  "description": "Canonical Claim Graph schema for MetaBlooms P-01",
+  "node_types": {
+    "CLAIM": {
+      "fields": [
+        "claim_id",
+        "text",
+        "authority_level",
+        "domain",
+        "status"
+      ],
+      "authority_levels": [
+        "MUST",
+        "SHOULD",
+        "MAY"
+      ]
+    },
+    "EVIDENCE": {
+      "fields": [
+        "evidence_id",
+        "source",
+        "url",
+        "source_type",
+        "published_date",
+        "confidence"
+      ]
+    },
+    "DISSENT": {
+      "fields": [
+        "dissent_id",
+        "text",
+        "source",
+        "severity"
+      ]
+    }
+  },
+  "edge_types": {
+    "SUPPORTS": {
+      "from": "EVIDENCE",
+      "to": "CLAIM"
+    },
+    "CONTRADICTS": {
+      "from": [
+        "EVIDENCE",
+        "DISSENT"
+      ],
+      "to": "CLAIM"
+    },
+    "QUALIFIES": {
+      "from": "CLAIM",
+      "to": "CLAIM"
+    }
+  },
+  "evidence_binding_rules": {
+    "min_sources": 3,
+    "diversity_required": true,
+    "allowed_source_types": [
+      "academic",
+      "industry",
+      "standards",
+      "government"
+    ],
+    "dissent_capture_required": true
+  }
+}

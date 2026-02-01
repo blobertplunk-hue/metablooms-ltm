@@ -1,0 +1,1 @@
+{"source_bundle": "MetaBlooms_DELTA_PARSING_MBML_20260129T031133Z (1).zip", "path": "Metablooms_OS/Execution_Telemetry_Spec.txt", "chunk": 0, "content": "EXECUTION TELEMETRY\n\nCompare:\n- Planned tools (from plan)\n- Actual tools (observed)\n\nDetect:\n- Drift\n- Unauthorized escalation\n", "sha256": "0e1d57ffffcf986a430e4abe5ef1c793e77fbc4267322db26566ba6be287ac38"}

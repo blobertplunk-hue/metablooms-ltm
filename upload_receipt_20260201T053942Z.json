@@ -1,0 +1,51 @@
+{
+  "repo": "https://github.com/blobertplunk-hue/metablooms-ltm",
+  "inputs": [
+    {
+      "sha256": "159A99B0D84177CF4DE3E2E9E5438B6CF721BF2A6D55BEB9BCC4846E2524C151",
+      "path": "C:\\Users\\User\\Downloads\\HANGING_THREADS (1).md",
+      "bytes": 1106
+    },
+    {
+      "sha256": "850168E01B29ABC50CA142F5CA3F8D834480F2B69CBDC925870AFB8A434DB5D7",
+      "path": "C:\\Users\\User\\Downloads\\CHAT_INDEX_BUNDLE (2).zip",
+      "bytes": 1541
+    }
+  ],
+  "timestamp_utc": "20260201T053942Z",
+  "lfs_tracked": [],
+  "commit": "f2ac46d4872059c197e508a234cb13440f2d1073",
+  "branch": "upload/20260201T053942Z",
+  "outputs": [
+    {
+      "sha256": "1F3C5820EBFEFE1E89F83B3E1798F784680375E83B94E69A191260815628AD7B",
+      "bytes": 204,
+      "repo_path": "uploads\\20260201T053942Z\\CHAT_INDEX_BUNDLE_(2)\\mnt\\data\\MERKLE_ROOT_MANIFEST.json",
+      "lfs": false
+    },
+    {
+      "sha256": "5AA388462315CD90FA84D056DF3018C5F63E1CF560CC2D837FC245E7C1EAC3E6",
+      "bytes": 378,
+      "repo_path": "uploads\\20260201T053942Z\\CHAT_INDEX_BUNDLE_(2)\\mnt\\data\\MERKLE_ROOT_MANIFEST.zip",
+      "lfs": false
+    },
+    {
+      "sha256": "98E60D3068C2DF5DA1A8B8F0689F58C60AB384580CAAC4D2251F66926903BE0E",
+      "bytes": 352,
+      "repo_path": "uploads\\20260201T053942Z\\CHAT_INDEX_BUNDLE_(2)\\mnt\\data\\VAULT_CONSISTENCY_RECEIPT.json",
+      "lfs": false
+    },
+    {
+      "sha256": "1F3C5820EBFEFE1E89F83B3E1798F784680375E83B94E69A191260815628AD7B",
+      "bytes": 204,
+      "repo_path": "uploads\\20260201T053942Z\\CHAT_INDEX_BUNDLE_(2)\\mnt\\data\\Metblooms_OS\\_deployment\\_merkle\\MERKLE_ROOT_MANIFEST.json",
+      "lfs": false
+    },
+    {
+      "sha256": "159A99B0D84177CF4DE3E2E9E5438B6CF721BF2A6D55BEB9BCC4846E2524C151",
+      "bytes": 1106,
+      "repo_path": "uploads\\20260201T053942Z\\HANGING_THREADS_(1)\\HANGING_THREADS (1).md",
+      "lfs": false
+    }
+  ]
+}

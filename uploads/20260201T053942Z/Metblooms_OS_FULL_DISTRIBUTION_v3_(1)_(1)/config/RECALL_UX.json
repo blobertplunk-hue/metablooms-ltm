@@ -1,0 +1,27 @@
+{
+  "version": "v1",
+  "utc": "2026-01-30T15:56:14Z",
+  "syntax": {
+    "prefixes": [
+      "recall:",
+      "remember:",
+      "find:"
+    ],
+    "examples": [
+      "recall: supabase url not reachable",
+      "remember: when boot refused to run",
+      "find: merkle chat index drift"
+    ],
+    "filters": {
+      "chat_id": "chat_id:<id>",
+      "after": "after:YYYY-MM-DD",
+      "before": "before:YYYY-MM-DD",
+      "tool": "tool:<tool_name>",
+      "role": "role:user|assistant|tool"
+    }
+  },
+  "notes": [
+    "In-Chat UI cannot add native filter widgets; this provides a stable query language for the recall engine.",
+    "External UI can be built from exported chat_store + indexes shipped as zips."
+  ]
+}

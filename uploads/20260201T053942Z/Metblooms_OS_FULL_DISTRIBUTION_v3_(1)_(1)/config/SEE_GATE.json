@@ -1,0 +1,12 @@
+{
+  "see_required_for_intents": [
+    "research",
+    "analysis",
+    "market",
+    "benchmark",
+    "survey",
+    "comparison"
+  ],
+  "require_web_citations": true,
+  "fail_closed_if_no_web": true
+}

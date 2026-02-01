@@ -1,0 +1,1 @@
+{"source_bundle": "MetaBlooms_OS_SHIPPED_PATCHED_20260130T003500Z.zip", "path": "payload/mbml_sensors/pylint/sensor_contract.json", "chunk": 0, "content": "{\n  \"sensor\": \"pylint\",\n  \"row_type\": \"lint_violation\",\n  \"non_blocking\": true,\n  \"degrade_reason\": \"missing_tool\"\n}", "sha256": "873f749c7e2daaee8b43e43ad7938325c90ee0bd02f278274af687ce637aadf2"}

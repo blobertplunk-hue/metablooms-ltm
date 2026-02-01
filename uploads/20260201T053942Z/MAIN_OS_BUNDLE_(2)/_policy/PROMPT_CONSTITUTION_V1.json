@@ -1,0 +1,58 @@
+{
+  "ab_evaluation": {
+    "enabled": true,
+    "logging": "_state/prompt_ab_metrics.ndjson",
+    "metrics": [
+      "drift_events",
+      "missing_artifacts",
+      "fail_closed_frequency",
+      "oracle_pass_rate",
+      "self_eval_improvements_count"
+    ],
+    "unit_of_comparison": "prompt_variant"
+  },
+  "anchors": [
+    "https://platform.openai.com/docs/guides/prompt-engineering",
+    "https://www.anthropic.com/engineering/claude-code-best-practices",
+    "https://arxiv.org/abs/2310.06770",
+    "https://www.w3.org/TR/prov-o/"
+  ],
+  "id": "PROMPT_CONSTITUTION_V1",
+  "purpose": "Govern prompt behavior as an auditable, evidence-backed, self-improving system",
+  "sections": {
+    "experimental": {
+      "description": "Sections allowed to evolve via PROMPT_PATCH_NOTES and A/B testing",
+      "modules": [
+        "Prompt section ordering",
+        "Wording of self-evaluation questions",
+        "Granularity of decision logging",
+        "A/B variants of instruction phrasing"
+      ]
+    },
+    "immutable": {
+      "description": "Rules that may not change without explicit constitutional amendment",
+      "rules": [
+        "ZOOP and BOOT required every turn",
+        "FAIL\u2192FIX HARNESS mode enforced",
+        "Canonical root enforcement",
+        "NON-NEGOTIABLE SAFETY SENTENCE verbatim",
+        "Mandatory ledgering and BTS receipts",
+        "SEE required every turn with artifacts",
+        "Fail-closed on missing evidence or invariants",
+        "Prompt treated as governed artifact",
+        "No one-line or shortened prompts"
+      ]
+    }
+  },
+  "self_improvement_loop": [
+    "Execute governed prompt",
+    "Emit artifacts",
+    "Run prompt self-evaluation",
+    "Persist PROMPT_PATCH_NOTES",
+    "Optionally spawn A/B variant",
+    "Compare metrics",
+    "Promote winning variant"
+  ],
+  "timestamp": "2026-02-01T00:40:31Z",
+  "turn_id": "ac4c6f50-3e6a-4071-b66a-00067d2096fa"
+}

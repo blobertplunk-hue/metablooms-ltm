@@ -1,0 +1,6 @@
+{
+  "on_PASS": "allow_P04",
+  "on_WARN": "allow_with_flags",
+  "on_FAIL": "block_pipeline",
+  "created_utc": "2026-01-31T16:40:42Z"
+}

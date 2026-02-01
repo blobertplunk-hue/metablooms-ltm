@@ -1,0 +1,37 @@
+{
+  "mpp_autostart_on_intents": [
+    "implement",
+    "create",
+    "modify",
+    "patch",
+    "build",
+    "plan",
+    "ingest",
+    "index",
+    "export",
+    "migrate",
+    "refactor",
+    "wire",
+    "bind",
+    "enforce",
+    "audit"
+  ],
+  "bypass_phrases": [
+    "bypass mpp",
+    "skip mpp",
+    "override mpp"
+  ],
+  "required_phases_default": [
+    "P1_SEE",
+    "P2_CORROBORATION",
+    "P3_MMD",
+    "P4_PLAN",
+    "P5_PREFLIGHT"
+  ],
+  "allow_phase_subset_if_user_requests": true,
+  "fail_closed_if_missing_mpp_receipts": true,
+  "required_artifacts": [
+    "receipts/mpp_start_receipt_<UTC>.json",
+    "receipts/mpp_phase_receipts.ndjson"
+  ]
+}

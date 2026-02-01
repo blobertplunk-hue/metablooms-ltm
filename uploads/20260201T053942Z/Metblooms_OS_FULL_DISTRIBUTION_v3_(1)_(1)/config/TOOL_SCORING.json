@@ -1,0 +1,63 @@
+{
+  "version": "v1",
+  "utc": "2026-01-30T17:26:21Z",
+  "rules": [
+    {
+      "if_contains": [
+        "latest",
+        "today",
+        "verify",
+        "look up",
+        "research",
+        "citations",
+        "news"
+      ],
+      "boost": {
+        "web.run": 5
+      }
+    },
+    {
+      "if_contains": [
+        "uploaded",
+        "bundle",
+        "ndjson",
+        "chat_store",
+        "chat index",
+        "in the file"
+      ],
+      "boost": {
+        "file_search.msearch": 5
+      }
+    },
+    {
+      "if_contains": [
+        "zip",
+        "export",
+        "download",
+        "manifest",
+        "sha256"
+      ],
+      "boost": {
+        "container.exec": 4,
+        "python_user_visible.exec": 3
+      }
+    },
+    {
+      "if_contains": [
+        "image",
+        "edit image",
+        "generate image"
+      ],
+      "boost": {
+        "image_gen": 5
+      }
+    }
+  ],
+  "base_scores": {
+    "web.run": 0,
+    "file_search.msearch": 0,
+    "container.exec": 0,
+    "python_user_visible.exec": 0,
+    "image_gen": 0
+  }
+}

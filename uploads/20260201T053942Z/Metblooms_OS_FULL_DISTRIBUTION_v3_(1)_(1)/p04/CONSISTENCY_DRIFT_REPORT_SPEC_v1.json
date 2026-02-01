@@ -1,0 +1,14 @@
+{
+  "report_id": "CONSISTENCY_DRIFT_REPORT_v1",
+  "states": [
+    "PASS",
+    "WARN",
+    "FAIL"
+  ],
+  "fields": [
+    "contradiction_rate",
+    "overlap_score",
+    "drift_score"
+  ],
+  "created_utc": "2026-01-31T16:48:07Z"
+}

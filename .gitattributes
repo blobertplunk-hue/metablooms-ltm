@@ -1,0 +1,3 @@
+uploads/20260201T053942Z/Metblooms_OS_FULL_DISTRIBUTION_v3_(1)_(1)/chat_index/CHAT_INDEX_v2_semantic.json filter=lfs diff=lfs merge=lfs -text
+uploads/20260201T053942Z/MetaBlooms_CHAT_INDEX_BUNDLE_v1_(1)/chat_index/CHAT_INDEX_v2_semantic.json filter=lfs diff=lfs merge=lfs -text
+uploads/20260201T053942Z/_original_zips/MetaBlooms_CHAT_INDEX_BUNDLE_v1[[:space:]](1).zip filter=lfs diff=lfs merge=lfs -text

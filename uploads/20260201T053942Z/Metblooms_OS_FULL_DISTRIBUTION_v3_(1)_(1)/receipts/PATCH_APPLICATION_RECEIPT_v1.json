@@ -1,0 +1,30 @@
+{
+  "artifact": "PATCH_APPLICATION_RECEIPT_v1",
+  "timestamp_utc": "2026-01-31T16:19:15Z",
+  "canonical_root": "/mnt/data/Metblooms_OS",
+  "shadow_root_disallowed": "/mnt/data/Metablooms_OS",
+  "shadow_root_present": false,
+  "inputs": {
+    "ZOOP_GUARD_PATCH_v1.zip": "/mnt/data/ZOOP_GUARD_PATCH_v1.zip",
+    "BOOT_AUTOMATION_PATCH_v1_1.zip": "/mnt/data/BOOT_AUTOMATION_PATCH_v1_1.zip"
+  },
+  "hashes": {
+    "ZOOP_GUARD_PATCH_v1.zip": "8f8bd0fceb4e97283deed6566d10c95d3ed447c465ef6f1181bcdcfe643b51a0",
+    "BOOT_AUTOMATION_PATCH_v1_1.zip": "d3ed55e3428d9ef31d68db752fa6d27afcc927d101a6087df0f1740a060ebaf3"
+  },
+  "applied_files": {
+    "zoop_patch": [
+      "/mnt/data/Metblooms_OS/config/zoop/ZIP_ROOT_POLICY_v1.json",
+      "/mnt/data/Metblooms_OS/config/zoop/ZOOP_GUARD_RECEIPT_SCHEMA_v1.json",
+      "/mnt/data/Metblooms_OS/tools/zoop/zoop_guard.py",
+      "/mnt/data/Metblooms_OS/tools/zoop/zoop_run.sh"
+    ],
+    "boot_patch": [
+      "/mnt/data/Metblooms_OS/config/boot/BOOT_GATE_v1.json",
+      "/mnt/data/Metblooms_OS/tools/boot/canonical_root_integrity_check.py",
+      "/mnt/data/Metblooms_OS/tools/boot/boot_orchestrator.py"
+    ]
+  },
+  "status": "PASS",
+  "errors": []
+}

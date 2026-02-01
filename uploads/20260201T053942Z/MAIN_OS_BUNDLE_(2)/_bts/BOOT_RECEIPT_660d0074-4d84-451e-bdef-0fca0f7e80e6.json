@@ -1,0 +1,10 @@
+{
+  "turn_id": "660d0074-4d84-451e-bdef-0fca0f7e80e6",
+  "timestamp": "2026-01-31T23:48:17Z",
+  "canonical_root": "/mnt/data/Metblooms_OS",
+  "status": "BOOT_OK",
+  "phase": "P1_PAIN_POINT_COLLECTION_ONLY",
+  "phase_guard": "FAIL_CLOSED_ON_ROEZ_WRITE",
+  "mode": "FAIL\u2192FIX",
+  "zoop": "ENABLED"
+}

@@ -1,0 +1,14 @@
+{
+  "schema_id": "EVIDENCE_AUTHORITY_DISSENT_SCHEMA_v1",
+  "authority_scores": [
+    "credibility",
+    "methodology",
+    "recency"
+  ],
+  "dissent_fields": [
+    "severity",
+    "basis",
+    "confidence"
+  ],
+  "created_utc": "2026-01-31T16:40:42Z"
+}

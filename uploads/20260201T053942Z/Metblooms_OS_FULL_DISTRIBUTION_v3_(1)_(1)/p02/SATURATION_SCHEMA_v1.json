@@ -1,0 +1,15 @@
+{
+  "schema_id": "SATURATION_SCHEMA_v1",
+  "metrics": [
+    "novelty_curve",
+    "coverage_estimate",
+    "yield_rate",
+    "redundancy_rate"
+  ],
+  "stop_conditions": [
+    "novelty_plateau",
+    "coverage>=threshold",
+    "roi_floor_reached"
+  ],
+  "created_utc": "2026-01-31T16:36:01Z"
+}

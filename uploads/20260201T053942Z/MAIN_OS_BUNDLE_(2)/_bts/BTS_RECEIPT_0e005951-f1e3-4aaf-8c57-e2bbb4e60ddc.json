@@ -1,0 +1,42 @@
+{
+  "turn_id": "0e005951-f1e3-4aaf-8c57-e2bbb4e60ddc",
+  "timestamp": "2026-01-31T23:41:06Z",
+  "tool_calls_logged": [
+    {
+      "tool": "python_user_visible.exec",
+      "inputs": [
+        "walk canonical root",
+        "assert absence of chat index artifacts"
+      ],
+      "outputs": {
+        "checked_files": 13,
+        "violations": []
+      }
+    }
+  ],
+  "decisions": [
+    {
+      "id": "DEC-OS-EXPORT-PROOF",
+      "decision": "Assert OS free of chat index",
+      "rationale": "Guarantee clean main OS export",
+      "constraints": [
+        "fail if any chat corpus present"
+      ]
+    }
+  ],
+  "constraints_logged": [
+    "chat index must not be embedded in OS export"
+  ],
+  "artifacts_emitted": [
+    {
+      "path": "/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_0e005951-f1e3-4aaf-8c57-e2bbb4e60ddc.json",
+      "bytes": 298,
+      "sha256": "c8ca3e1fc156ca29453091fbc3c68dced544c1b7ee6d6ccd5594b39e9bdc981a"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/_deployment/OS_EXPORT_PROOF.json",
+      "bytes": 233,
+      "sha256": "db6b4e20f65a6bb41a5788f6c2acc3f9b18851615be51b8c0e5be73b67ef57f9"
+    }
+  ]
+}

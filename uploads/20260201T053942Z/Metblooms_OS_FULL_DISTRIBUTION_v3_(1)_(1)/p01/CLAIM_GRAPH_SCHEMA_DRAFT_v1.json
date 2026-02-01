@@ -1,0 +1,20 @@
+{
+  "schema_id": "CLAIM_GRAPH_SCHEMA_DRAFT_v1",
+  "created_utc": "2026-01-31T16:22:41Z",
+  "node_types": [
+    "CLAIM",
+    "EVIDENCE",
+    "DISSENT"
+  ],
+  "edge_types": [
+    "SUPPORTS",
+    "CONTRADICTS",
+    "QUALIFIES"
+  ],
+  "authority_levels": [
+    "MUST",
+    "SHOULD",
+    "MAY"
+  ],
+  "status": "DRAFT"
+}

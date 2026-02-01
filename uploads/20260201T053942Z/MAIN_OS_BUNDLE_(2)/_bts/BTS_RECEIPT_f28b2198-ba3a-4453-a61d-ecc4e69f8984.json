@@ -1,0 +1,67 @@
+{
+  "artifacts_emitted": [
+    {
+      "bytes": 243,
+      "path": "/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_f28b2198-ba3a-4453-a61d-ecc4e69f8984.json",
+      "sha256": "a509e0fafe7c1cda62498950bb01e0db7dcfda8d2a13da6c20de382c33eaca79"
+    },
+    {
+      "bytes": 2764,
+      "path": "/mnt/data/Metblooms_OS/_see/SEE_SOURCES_P1_1b.json",
+      "sha256": "dd05882e39e3c2fd33928a374823c1164e9394c35e97f0c56d102b37bae58a14"
+    },
+    {
+      "bytes": 3162,
+      "path": "/mnt/data/Metblooms_OS/_see/SEE_NOTES_P1_1b.ndjson",
+      "sha256": "94f799a503695d63273ebc778052d29669ba3c5c5a1fba187d8ac599b6acb92d"
+    },
+    {
+      "bytes": 696,
+      "path": "/mnt/data/Metblooms_OS/_see/SEE_RECEIPT_P1_1b.json",
+      "sha256": "1cedf0509b57d520031df1a4506a872b31a0aa8d6dc7008111be446066985c29"
+    }
+  ],
+  "constraints_logged": [
+    "SEE must run every turn",
+    "Fail-closed if P1.1b claims lack external anchor"
+  ],
+  "decisions": [
+    {
+      "constraints": [
+        "SEE every turn",
+        "quotes <=25 words",
+        "emit artifacts"
+      ],
+      "decision": "Anchor P1.1b baseline stabilization with external determinism + provenance guidance",
+      "id": "DEC-SEE-001",
+      "rationale": "Prevent winging it; constrain oracle and baseline scope using external sources."
+    }
+  ],
+  "timestamp": "2026-02-01T00:27:20Z",
+  "tool_calls_logged": [
+    {
+      "function": "search_query",
+      "returned_refs": [
+        "turn0search0",
+        "turn0search4",
+        "turn0search3",
+        "turn0search2",
+        "turn0search10",
+        "turn0search17",
+        "turn0search15"
+      ],
+      "tool": "web.run"
+    },
+    {
+      "function": "exec",
+      "tool": "python_user_visible.exec",
+      "writes": [
+        "/mnt/data/Metblooms_OS/_see/SEE_SOURCES_P1_1b.json",
+        "/mnt/data/Metblooms_OS/_see/SEE_NOTES_P1_1b.ndjson",
+        "/mnt/data/Metblooms_OS/_see/SEE_RECEIPT_P1_1b.json",
+        "/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_f28b2198-ba3a-4453-a61d-ecc4e69f8984.json"
+      ]
+    }
+  ],
+  "turn_id": "f28b2198-ba3a-4453-a61d-ecc4e69f8984"
+}

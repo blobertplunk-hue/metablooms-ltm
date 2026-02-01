@@ -1,0 +1,21 @@
+{
+  "version": "v1",
+  "baseline": "indexes/BASELINE_HASHES.json",
+  "monitored_paths": [
+    "config/",
+    "tools/",
+    "indexes/",
+    "chat_store/"
+  ],
+  "ignore_paths": [
+    "receipts/",
+    "reports/",
+    "_bts/",
+    "boot/",
+    "bts/",
+    "freeze/"
+  ],
+  "auto_run_on_boot": true,
+  "action_on_drift": "FAIL_CLOSED",
+  "fail_closed_if_enforced": true
+}

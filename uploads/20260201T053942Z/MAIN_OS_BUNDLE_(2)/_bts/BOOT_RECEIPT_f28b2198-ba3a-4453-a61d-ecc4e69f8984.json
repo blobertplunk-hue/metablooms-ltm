@@ -1,0 +1,9 @@
+{
+  "canonical_root": "/mnt/data/Metblooms_OS",
+  "mode": "FAIL\u2192FIX",
+  "phase": "P1.SEE_P1_1b_ONLY",
+  "status": "BOOT_OK",
+  "timestamp": "2026-02-01T00:27:20Z",
+  "turn_id": "f28b2198-ba3a-4453-a61d-ecc4e69f8984",
+  "zoop": "ENABLED"
+}

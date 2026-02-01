@@ -1,0 +1,87 @@
+{
+  "version": "v1.1",
+  "intents": {
+    "reasoning_only": {
+      "description": "Explanation, reflection, questions, diagnostics, status checks",
+      "patterns": [
+        "analyze logs",
+        "are we",
+        "audit",
+        "confirm",
+        "did we",
+        "explain",
+        "help me understand",
+        "how does",
+        "is it",
+        "review",
+        "status",
+        "summarize",
+        "verify",
+        "what happened",
+        "why"
+      ],
+      "mpp_required": false
+    },
+    "planning": {
+      "description": "Designing plans or strategies without execution",
+      "patterns": [
+        "approach",
+        "architecture",
+        "compare approaches",
+        "decide",
+        "design",
+        "option",
+        "plan",
+        "proposal",
+        "roadmap",
+        "tradeoffs"
+      ],
+      "mpp_required": true
+    },
+    "implementation": {
+      "description": "Creating, modifying, or wiring systems",
+      "patterns": [
+        "add",
+        "bind",
+        "build",
+        "code",
+        "create",
+        "enforce",
+        "fix",
+        "generate",
+        "hook",
+        "implement",
+        "integrate",
+        "lock",
+        "patch",
+        "remove",
+        "script",
+        "wire",
+        "write"
+      ],
+      "mpp_required": true
+    },
+    "research": {
+      "description": "External research and evidence gathering",
+      "patterns": [
+        "benchmark",
+        "best practices",
+        "citations",
+        "compare",
+        "evidence",
+        "find sources",
+        "literature",
+        "research",
+        "sources",
+        "survey"
+      ],
+      "mpp_required": true
+    }
+  },
+  "precedence": [
+    "research",
+    "implementation",
+    "planning",
+    "reasoning_only"
+  ]
+}

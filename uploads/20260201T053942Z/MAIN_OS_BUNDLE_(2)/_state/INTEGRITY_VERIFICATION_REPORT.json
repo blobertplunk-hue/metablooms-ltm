@@ -1,0 +1,15 @@
+{
+  "turn_id": "6323fec6-a055-4f42-92c3-fd3292894d36",
+  "timestamp": "2026-02-01T00:16:31Z",
+  "baseline": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "verify": {
+    "exit": 1,
+    "stdout": "{\n  \"mismatches\": [\n    {\n      \"mismatch\": \"/mnt/data/Metblooms_OS/_harness/ORACLE_BASELINE_v1.json\"\n    }\n  ],\n  \"result\": \"FAIL\"\n}\n",
+    "stderr": ""
+  },
+  "re_seal": "OK"
+}

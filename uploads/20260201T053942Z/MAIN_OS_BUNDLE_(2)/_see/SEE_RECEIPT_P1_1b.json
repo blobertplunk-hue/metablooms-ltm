@@ -1,0 +1,26 @@
+{
+  "artifacts_emitted": [
+    {
+      "bytes": 2764,
+      "path": "/mnt/data/Metblooms_OS/_see/SEE_SOURCES_P1_1b.json",
+      "sha256": "dd05882e39e3c2fd33928a374823c1164e9394c35e97f0c56d102b37bae58a14"
+    },
+    {
+      "bytes": 3162,
+      "path": "/mnt/data/Metblooms_OS/_see/SEE_NOTES_P1_1b.ndjson",
+      "sha256": "94f799a503695d63273ebc778052d29669ba3c5c5a1fba187d8ac599b6acb92d"
+    }
+  ],
+  "phase": "P1.SEE_P1_1b_ONLY",
+  "timestamp": "2026-02-01T00:27:20Z",
+  "turn_id": "f28b2198-ba3a-4453-a61d-ecc4e69f8984",
+  "web_sources_used": [
+    "turn0search0",
+    "turn0search4",
+    "turn0search3",
+    "turn0search2",
+    "turn0search10",
+    "turn0search17",
+    "turn0search15"
+  ]
+}

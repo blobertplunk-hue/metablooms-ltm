@@ -1,0 +1,7 @@
+{
+  "version": "v1",
+  "generated_utc": "2026-01-30T14:55:41Z",
+  "preferred_invocation": "wrapper_first",
+  "wrappers_dir": "tools/wrappers",
+  "notes": "Use wrappers to auto-set MB_TOOL_USED before tool execution."
+}

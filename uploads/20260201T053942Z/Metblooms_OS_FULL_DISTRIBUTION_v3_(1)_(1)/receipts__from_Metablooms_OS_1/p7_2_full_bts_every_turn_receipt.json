@@ -1,0 +1,12 @@
+{
+  "phase": "P7.2",
+  "utc": "2026-01-30T13:53:09Z",
+  "changes": {
+    "bts_policy": "config/BTS_POLICY.json",
+    "boot_patch": "tools/boot/mb_bootstrap.sh"
+  },
+  "sha256": {
+    "config/BTS_POLICY.json": "ca1e8c5898bbc3a6eaceb3a091778139a0df538fa7b2ec392fd945f2454c09bd",
+    "tools/boot/mb_bootstrap.sh": "00a2c9d5b8453921544671af544d4de81491ddbbcd2dcf2f86c7226b831b11d9"
+  }
+}

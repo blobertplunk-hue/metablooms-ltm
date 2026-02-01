@@ -1,0 +1,96 @@
+{
+  "artifacts_emitted": [
+    {
+      "bytes": 333,
+      "path": "/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_aa842471-99f7-4625-b2ee-b3a3535d221d.json",
+      "sha256": "55057c81bf3597f98e3a101a32f274a237af31b911634024916cc635c8c34f86"
+    },
+    {
+      "bytes": 1591,
+      "path": "/mnt/data/Metblooms_OS/_see/SEE_SOURCES_aa842471-99f7-4625-b2ee-b3a3535d221d.json",
+      "sha256": "d948834e9a86d93dc5bea75969fc7441db08539fd4155b5ed71a03c9cda53b19"
+    },
+    {
+      "bytes": 1272,
+      "path": "/mnt/data/Metblooms_OS/_see/SEE_NOTES_aa842471-99f7-4625-b2ee-b3a3535d221d.ndjson",
+      "sha256": "350a19d2e8be11f3b7c153e9ccb0d31260062e6c81352c6d521df4c84c4043ce"
+    },
+    {
+      "bytes": 264,
+      "path": "/mnt/data/Metblooms_OS/_see/SEE_RECEIPT_aa842471-99f7-4625-b2ee-b3a3535d221d.json",
+      "sha256": "b77734a26f89bc6cee8f477149339eb4861cf4662d47eee070c252378b268777"
+    },
+    {
+      "bytes": 2091,
+      "path": "/mnt/data/Metblooms_OS/_policy/PROMPT_CONSTITUTION_V1_2.json",
+      "sha256": "bca7a29c40b0dcf8347dea9ea0a4f9eb9446aaab4f26d9c7486d3eb6f1bb06be"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/_state/chat_ledger.ndjson",
+      "sha256": "a19171603daf090ab2a7152c89022929db66cf2ccc0ea8fdb433b43d8dd9ef81"
+    }
+  ],
+  "constraints_logged": [
+    "canonical root /mnt/data/Metblooms_OS",
+    "writes restricted to _policy/_bts/_state/_see",
+    "SEE required every turn",
+    "no one-line endings; must emit NEW_FULL_PROMPT"
+  ],
+  "decisions": [
+    {
+      "constraints": [
+        "no prompt shortening",
+        "fail-closed on missing next-prompt",
+        "SEE-every-turn"
+      ],
+      "id": "D1",
+      "rationale": "User requires no one-line endings; full contracts reduce omission/drift; codifies prompt-as-artifact workflow.",
+      "text": "Adopt self-propagating prompt output shape: always emit full next-turn prompt as final section; prohibit state-transition token endings."
+    },
+    {
+      "constraints": [
+        "repo-resident in _policy",
+        "turn prompts are deltas"
+      ],
+      "id": "D2",
+      "rationale": "Prevent recurrence and perceived blame; make requirements mechanically enforceable.",
+      "text": "Amend constitution to encode Output Shape Invariant + Non-Blame Communication rule as immutable governance."
+    }
+  ],
+  "failfix": [],
+  "timestamp_utc": "2026-02-01T00:49:24Z",
+  "tool_calls_logged": [
+    {
+      "function": "search_query",
+      "inputs": {
+        "queries": [
+          "Anthropic Claude Code best practices repository rules prompt instructions structured workflow",
+          "OpenAI prompt engineering guide explicit instructions format constraints",
+          "SWE-bench evaluation guide execution-based evaluation tests harness",
+          "Reproducible Builds deterministic build systems timestamps metadata"
+        ],
+        "recency_days": [
+          30,
+          3650,
+          3650,
+          3650
+        ]
+      },
+      "outputs": {
+        "refs": [
+          "turn0search0",
+          "turn0search1",
+          "turn0search2",
+          "turn0search3",
+          "turn0search5",
+          "turn0search7",
+          "turn0search10",
+          "turn0search12",
+          "turn0search21"
+        ]
+      },
+      "tool": "web.run"
+    }
+  ],
+  "turn_id": "aa842471-99f7-4625-b2ee-b3a3535d221d"
+}

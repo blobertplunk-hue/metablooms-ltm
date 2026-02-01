@@ -1,0 +1,18 @@
+{
+  "artifact": "P07_BTS_FINALIZATION_RECEIPT_v1",
+  "timestamp_utc": "2026-01-31T17:16:34Z",
+  "phase": "P-07",
+  "status": "PASS",
+  "bts_paths": {
+    "canonical_record": "/mnt/data/Metblooms_OS/bts/BTS_CANONICAL_RECORD_v1.json",
+    "receipt_index": "/mnt/data/Metblooms_OS/bts/BTS_PHASE_RECEIPT_INDEX_v1.json",
+    "artifact_manifest": "/mnt/data/Metblooms_OS/bts/BTS_ARTIFACT_MANIFEST_v1.json",
+    "execution_ledger": "/mnt/data/Metblooms_OS/bts/BTS_EXECUTION_LEDGER_v1.json"
+  },
+  "sha256": {
+    "canonical_record": "2d6f17ea2badfdc8cbb6b999453060c52de4c3f6683b8a95673ef4541db49bae",
+    "receipt_index": "b5c8cf50f9a5b9bce96c9a9f3457141cd102aeb88c57e14dab191711395d23a3",
+    "artifact_manifest": "988e51cd38fbc19707bcaa12479859c498dc93b4fe02ab6fa5d00e91be9075b9",
+    "execution_ledger": "d7d4ceee44270915a6f24641734c4cc372955ce10eba7bc39a8bc3bd1c06f584"
+  }
+}

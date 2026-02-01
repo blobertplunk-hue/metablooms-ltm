@@ -1,0 +1,14 @@
+{
+  "schema_id": "CROSS_CLAIM_CONSISTENCY_SCHEMA_v1",
+  "consistency_checks": [
+    "contradiction",
+    "scope_overlap",
+    "term_conflict"
+  ],
+  "drift_triggers": [
+    "new_claim",
+    "authority_change",
+    "evidence_update"
+  ],
+  "created_utc": "2026-01-31T16:48:07Z"
+}

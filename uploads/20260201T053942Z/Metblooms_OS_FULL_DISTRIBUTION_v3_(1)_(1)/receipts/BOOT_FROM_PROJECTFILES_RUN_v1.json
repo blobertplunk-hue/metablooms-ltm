@@ -1,0 +1,11 @@
+{
+  "artifact": "BOOT_FROM_PROJECTFILES_RUN_v1",
+  "timestamp_utc": "2026-01-31T16:19:15Z",
+  "status": "PASS",
+  "errors": [],
+  "orchestrator": "/mnt/data/Metblooms_BOOTSTRAP/tools/boot/boot_orchestrator_bootstrap.py",
+  "rc": 0,
+  "stdout_tail": "BOOT_ORCHESTRATOR_BOOTSTRAP_v1 -> PASS :: /mnt/data/Metblooms_OS/receipts/BOOT_RECEIPT_v1.json\n",
+  "stderr_tail": "",
+  "boot_receipt_path": "/mnt/data/Metblooms_OS/receipts/BOOT_RECEIPT_v1.json"
+}

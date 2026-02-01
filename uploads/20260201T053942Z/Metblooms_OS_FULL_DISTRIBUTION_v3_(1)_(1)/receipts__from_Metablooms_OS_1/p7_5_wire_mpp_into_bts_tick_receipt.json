@@ -1,0 +1,13 @@
+{
+  "phase": "P7.5",
+  "utc": "2026-01-30T14:09:37Z",
+  "changes": {
+    "bts_tick_runner": "tools/bts/bts_tick_runner.py",
+    "bootstrap_patch": "tools/boot/mb_bootstrap.sh"
+  },
+  "sha256": {
+    "tools/bts/bts_tick_runner.py": "1ad158f2293d7432408c6d25abd8aad85b9cefb77fb6ff4b524a39ae07a73f91",
+    "tools/boot/mb_bootstrap.sh": "e1f8db2e8eae08c08df68af8c0a7cc7a001445c68aaded89263aeec3cf4f240a"
+  },
+  "status": "OK"
+}

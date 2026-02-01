@@ -1,0 +1,25 @@
+{
+  "baseline": {
+    "cmd": [
+      "/opt/pyvenv/bin/python",
+      "/mnt/data/Metblooms_OS/_harness/check_integrity.py",
+      "--baseline"
+    ],
+    "code": 0,
+    "stderr": "",
+    "stdout": ""
+  },
+  "phase": "P1.1b",
+  "status": "FAIL_CLOSED",
+  "timestamp": "2026-02-01T00:34:57Z",
+  "turn_id": "cbfd656b-2fdd-45b5-8e32-d96f72abb44e",
+  "verify": {
+    "cmd": [
+      "/opt/pyvenv/bin/python",
+      "/mnt/data/Metblooms_OS/_harness/check_integrity.py"
+    ],
+    "code": 1,
+    "stderr": "",
+    "stdout": "{\n  \"mismatches\": [\n    {\n      \"mismatch\": \"/mnt/data/Metblooms_OS/_harness/ORACLE_BASELINE_v1.json\"\n    }\n  ],\n  \"result\": \"FAIL\"\n}\n"
+  }
+}

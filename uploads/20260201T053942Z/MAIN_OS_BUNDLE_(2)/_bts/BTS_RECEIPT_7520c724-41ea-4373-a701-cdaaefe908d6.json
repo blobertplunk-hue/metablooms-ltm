@@ -1,0 +1,46 @@
+{
+  "turn_id": "7520c724-41ea-4373-a701-cdaaefe908d6",
+  "timestamp": "2026-01-31T23:51:51Z",
+  "failfix": [
+    {
+      "stage": "R1_LOCATE",
+      "locked": true,
+      "timestamp": "2026-01-31T23:51:51Z"
+    },
+    {
+      "stage": "R2_RECONSTRUCT",
+      "result": "OK",
+      "timestamp": "2026-01-31T23:51:51Z"
+    },
+    {
+      "stage": "RE-SEAL",
+      "result": "OK",
+      "timestamp": "2026-01-31T23:51:51Z"
+    },
+    {
+      "stage": "VERIFY",
+      "exit": 2,
+      "stdout": "",
+      "stderr": "python3: can't open file '/mnt/data/Metblooms_OS/_harness/check_integrity.py': [Errno 2] No such file or directory\n"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "DEC-ORACLE-FAIL",
+      "decision": "Fail-closed",
+      "rationale": "Integrity oracle mismatch"
+    }
+  ],
+  "artifacts_emitted": [
+    {
+      "path": "/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_7520c724-41ea-4373-a701-cdaaefe908d6.json",
+      "bytes": 301,
+      "sha256": "2b76dce609b3d55d7a84611592eea09df77a15aa1d839590d261f94d0e6479ae"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/_roez/PAIN_POINTS_LEDGER.ndjson",
+      "bytes": 1563,
+      "sha256": "122cdbcffc7b7d9f36eca02ffb2934df3cba16accce69e88d58bdfcc21ad3143"
+    }
+  ]
+}

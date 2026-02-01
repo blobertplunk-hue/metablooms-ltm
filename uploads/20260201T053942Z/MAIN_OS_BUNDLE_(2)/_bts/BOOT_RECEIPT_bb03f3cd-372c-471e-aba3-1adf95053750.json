@@ -1,0 +1,10 @@
+{
+  "turn_id": "bb03f3cd-372c-471e-aba3-1adf95053750",
+  "timestamp": "2026-01-31T23:51:22Z",
+  "canonical_root": "/mnt/data/Metblooms_OS",
+  "status": "BOOT_OK",
+  "phase": "P1_OPTION_A_ROEZ_REOPEN_ONLY",
+  "phase_guard": "NO_ADVANCE_BEYOND_OPTION_A",
+  "mode": "FAIL\u2192FIX",
+  "zoop": "ENABLED"
+}

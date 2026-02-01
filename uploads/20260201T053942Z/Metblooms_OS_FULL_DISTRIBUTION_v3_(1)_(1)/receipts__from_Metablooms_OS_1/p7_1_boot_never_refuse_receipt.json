@@ -1,0 +1,12 @@
+{
+  "phase": "P7.1",
+  "utc": "2026-01-30T13:33:37Z",
+  "changes": {
+    "patched_boot_entrypoint": "tools/boot/mb_bootstrap.sh",
+    "boot_policy": "config/BOOT_POLICY.json"
+  },
+  "sha256": {
+    "tools/boot/mb_bootstrap.sh": "3b643c9d8d78ee6b717a06b341c65a09106692a8d7212082d4dbeb59552f6648",
+    "config/BOOT_POLICY.json": "ed7c37b38de68cbd69386c4d0cb05b6681a295fe865ae77d79ccda0cb4efee9a"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "phase": "P7.9",
+  "utc": "2026-01-30T14:40:48Z",
+  "turn_id": "20260130T144048Z",
+  "artifacts": {
+    "task_class_rules": "config/TASK_CLASS_RULES.json",
+    "task_classifier": "tools/bts/classify_task_class.py",
+    "action_wrapper_cfg": "config/ACTION_WRAPPER.json",
+    "action_wrapper": "tools/bts/mb_action_wrapper.py",
+    "runner_patched": "tools/bts/bts_tick_runner.py"
+  },
+  "sha256": {
+    "config/TASK_CLASS_RULES.json": "2296cb6d9f41e65f4f49872a1c7088a577aa00e9b22e5f1d18146957df0295a3",
+    "tools/bts/classify_task_class.py": "677d8c43ee6486221d4605e22de915d1afa80befb8630b76a86dd618516b60ed",
+    "config/ACTION_WRAPPER.json": "ba40b89f6d7c4b64d50b9da5aa24583ddbf4805067d0bd6651f8789787ea3344",
+    "tools/bts/mb_action_wrapper.py": "154f0418410245f376a655ccef0298e8895570a4d97d15135664f1b9a0d911b6",
+    "tools/bts/bts_tick_runner.py": "2862b4dfabeb2b176c5e4c0bd17668282f01a06bce5432d2adabc4772ed9995d"
+  },
+  "status": "OK"
+}

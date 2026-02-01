@@ -1,0 +1,30 @@
+{
+  "version": "v1",
+  "tools": [
+    {
+      "name": "web.run",
+      "class": "external_research",
+      "priority": 1
+    },
+    {
+      "name": "file_search",
+      "class": "uploaded_corpus",
+      "priority": 1
+    },
+    {
+      "name": "python_user_visible.exec",
+      "class": "data_processing",
+      "priority": 1
+    },
+    {
+      "name": "container.exec",
+      "class": "system_ops",
+      "priority": 1
+    },
+    {
+      "name": "analysis",
+      "class": "reasoning",
+      "priority": 2
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "amendments": {
+    "prompt_completeness_guard": {
+      "description": "Prevent partial or missing prompts",
+      "rules": [
+        "If a prompt is requested, a full invariant-complete prompt MUST be produced.",
+        "Silence or a transition token alone is invalid when a prompt is requested."
+      ]
+    },
+    "state_transition_rule": {
+      "description": "Distinguish governed prompts from deterministic state-transition tokens",
+      "rules": [
+        "A one-line STATE TRANSITION TOKEN is permitted only as the final line of a governed prompt.",
+        "A STATE TRANSITION TOKEN is not a prompt and must not introduce new instructions.",
+        "No text may follow the STATE TRANSITION TOKEN.",
+        "Any one-line instruction outside this role is INVALID and FAIL-CLOSED."
+      ],
+      "severity": "Fail-Closed",
+      "violation_class": "Prompt Integrity Failure \u2013 Transition Ambiguity"
+    }
+  },
+  "amends": "PROMPT_CONSTITUTION_V1",
+  "anchors": [
+    "https://platform.openai.com/docs/guides/prompt-engineering",
+    "https://www.anthropic.com/engineering/claude-code-best-practices",
+    "https://arxiv.org/abs/2310.06770",
+    "https://www.w3.org/TR/prov-o/"
+  ],
+  "id": "PROMPT_CONSTITUTION_V1_1",
+  "rationale": [
+    "Prevents confusion between instructions and execution commits",
+    "Eliminates apparent contradiction between anti\u2013one-line prompting and deterministic transitions",
+    "Aligns prompt governance with formal workflow engines"
+  ],
+  "timestamp": "2026-02-01T00:43:20Z",
+  "turn_id": "49efc2c7-67cd-47ea-ab3b-2b5832a641fe"
+}

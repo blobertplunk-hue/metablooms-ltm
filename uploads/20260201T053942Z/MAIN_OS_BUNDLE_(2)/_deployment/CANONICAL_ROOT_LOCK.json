@@ -1,0 +1,10 @@
+{
+  "turn_id": "f62732a6-57e8-448a-80f1-2fa678e7feda",
+  "timestamp": "2026-01-31T23:39:18Z",
+  "canonical_root": "/mnt/data/Metblooms_OS",
+  "lock_version": "v1",
+  "case_policy": "exact_path_enforced",
+  "wrapper_root_policy": "flattened_single_root_required",
+  "writable_confirmed": true,
+  "notes": "Canonical working root locked for export operations."
+}

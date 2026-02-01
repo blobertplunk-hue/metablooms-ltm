@@ -1,0 +1,29 @@
+{
+  "phase": "P7.7+P7.8",
+  "utc": "2026-01-30T14:37:21Z",
+  "turn_id": "20260130T143721Z",
+  "artifacts": {
+    "intent_rules_v2": "config/INTENT_RULES_v2.json",
+    "intent_active_ptr": "config/INTENT_RULES_ACTIVE.json",
+    "intent_derivation_report": "reports/p7_7_intent_derivation_20260130T143721Z.json",
+    "tool_universe": "indexes/TOOL_UNIVERSE.json",
+    "tool_taxonomy": "indexes/TOOL_TAXONOMY.json",
+    "tool_choice_gate": "config/TOOL_CHOICE_GATE.json",
+    "tool_choice_evaluator": "tools/bts/evaluate_tool_choice.py",
+    "runner_patched": "tools/bts/bts_tick_runner.py"
+  },
+  "sha256": {
+    "config/INTENT_RULES_v2.json": "16ef4dc11b80af450ad1276886d0b425d76c9a41c858b746295b5a2239c2f859",
+    "config/INTENT_RULES_ACTIVE.json": "4bb4ee8bb77e164eadc67d134683131d01eaee0d47f3859b9aaf0687b73da553",
+    "indexes/TOOL_UNIVERSE.json": "e8715387ada20d471c1a3ee48bb85a191553b6c2adfa7677d7dab20c96cc522e",
+    "indexes/TOOL_TAXONOMY.json": "216b0d72a8fd2e52f28b28162cd350d919eaf0f8d5301816672693d9c62b6981",
+    "config/TOOL_CHOICE_GATE.json": "cbff262fc5392f152f0df2b21a86d1e1e5e8256a2fa060df558feffe2e323648",
+    "tools/bts/evaluate_tool_choice.py": "b02d3085e3e32fa0efcdf35267db3bceddcde8cea7d700d2d527fdeae82741a9",
+    "tools/bts/bts_tick_runner.py": "c227b01807ecd7e7e0f17c6e356274296074a96290e89fa3ee46db1fa79547e8"
+  },
+  "notes": {
+    "intent_derivation_rows_used": 23,
+    "taxonomy_extraction_count": 13
+  },
+  "status": "OK_WARN_ONLY_TOOL_CHOICE"
+}

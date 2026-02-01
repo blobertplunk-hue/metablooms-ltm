@@ -1,0 +1,10 @@
+{
+  "phase": "P8",
+  "utc": "2026-01-30T14:06:04Z",
+  "changes": {
+    "mpp_policy": "config/MPP_POLICY.json"
+  },
+  "sha256": {
+    "config/MPP_POLICY.json": "b15f16a67a932fc814792558408dd1ae07f19297279267c652493d2e3b99e07c"
+  }
+}

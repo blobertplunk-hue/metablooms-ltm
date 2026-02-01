@@ -1,0 +1,27 @@
+{
+  "amends": [
+    "PROMPT_CONSTITUTION_V1_2"
+  ],
+  "anchors": [
+    "https://www.anthropic.com/engineering/claude-code-best-practices",
+    "https://learning.postman.com/docs/api-governance/configurable-rules/spectral/",
+    "https://platform.openai.com/docs/guides/model-optimization"
+  ],
+  "id": "PROMPT_CONSTITUTION_V1_3",
+  "immutable_additions": {
+    "auto_suggestion_assimilation": [
+      "If assistant proposes a governance suggestion, it MUST be incorporated into NEW FULL PROMPT as a required action by default.",
+      "If not incorporated, emit FAIL-CLOSED with explanation and patch note."
+    ],
+    "lint_spec_binding": [
+      "Automated Prompt Linter rules MUST be loaded from _policy/PROMPT_LINT_RULES.json (no ad-hoc lint definitions)."
+    ]
+  },
+  "patch_notes": [
+    "Auto-assimilate actionable suggestions into the NEXT prompt as mandatory items (unless explicitly rejected by user).",
+    "Require materialization of conceptual governance suggestions into repo-resident spec files when feasible (e.g., PROMPT_LINT_RULES.json).",
+    "Bind prompt linting to repo-resident spec PROMPT_LINT_RULES.json (policy-as-code)."
+  ],
+  "timestamp_utc": "2026-02-01T00:56:31Z",
+  "turn_id": "275be391-39b4-4928-bff7-9853d334bb53"
+}

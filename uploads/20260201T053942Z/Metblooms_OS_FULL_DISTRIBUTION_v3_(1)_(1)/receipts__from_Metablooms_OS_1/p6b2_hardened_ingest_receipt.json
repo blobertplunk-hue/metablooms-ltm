@@ -1,0 +1,13 @@
+{
+  "phase": "P6-B.2",
+  "timestamp_utc": "2026-01-30T13:19:40Z",
+  "bundles": [
+    "bundle_16 (2).zip",
+    "Metablooms_STATE_DRYRUN_20260129T054927Z.zip",
+    "MetaBlooms_DELTA_PARSING_MBML_20260129T031133Z (1).zip",
+    "MetaBlooms_OS_SHIPPED_PATCHED_20260130T003500Z.zip",
+    "MB-DELTA-MERKLE-CHATINDEXV2-BTS-0001_20260129T203511Z.zip"
+  ],
+  "hardened_shards": 31032,
+  "merkle_root": "5815a66662eabdfc5d084fdca8e07cae94e9035ec8b1446c19297d9756895ed6"
+}

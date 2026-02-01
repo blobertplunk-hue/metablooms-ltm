@@ -1,0 +1,22 @@
+{
+  "sources": [
+    {
+      "ref": "rb-determinism",
+      "url": "https://reproducible-builds.org/docs/deterministic-build-systems/"
+    },
+    {
+      "ref": "rb-timestamps",
+      "url": "https://reproducible-builds.org/docs/timestamps/"
+    },
+    {
+      "ref": "prov-o",
+      "url": "https://www.w3.org/TR/prov-o/"
+    },
+    {
+      "ref": "nist-1800-25",
+      "url": "https://csrc.nist.gov/pubs/sp/1800/25/final"
+    }
+  ],
+  "timestamp": "2026-02-01T00:34:57Z",
+  "turn_id": "cbfd656b-2fdd-45b5-8e32-d96f72abb44e"
+}

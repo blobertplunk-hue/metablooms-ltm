@@ -1,0 +1,14 @@
+{
+  "turn_id": "2522389d-d7a7-4539-9282-5f4f90387770",
+  "timestamp": "2026-02-01T00:08:59Z",
+  "canonical_root": "/mnt/data/Metblooms_OS",
+  "status": "BOOT_OK",
+  "phase": "P9.0_ORACLE_MATERIALIZATION_ONLY",
+  "phase_guard": "WRITE_ONLY__harness_plus_bts_state",
+  "mode": "FAIL\u2192FIX",
+  "zoop": "ENABLED",
+  "precondition": {
+    "oracle_existed": false,
+    "missing_classification": "governance_gap"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "turn_id": "24f529b6-127d-4782-875a-3bedee92409c",
+  "timestamp": "2026-01-31T23:54:59Z",
+  "canonical_root": "/mnt/data/Metblooms_OS",
+  "status": "BOOT_OK",
+  "phase": "P9.2_OPTION1_ORACLE_RECONCILIATION",
+  "phase_guard": "ORACLE_RECONCILIATION_ONLY",
+  "mode": "FAIL\u2192FIX",
+  "zoop": "ENABLED"
+}

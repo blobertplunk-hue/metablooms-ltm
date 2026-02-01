@@ -1,0 +1,7 @@
+{
+  "accept_if": [
+    "revoked_count==0",
+    "fresh_count>=threshold"
+  ],
+  "created_utc": "2026-01-31T16:50:17Z"
+}

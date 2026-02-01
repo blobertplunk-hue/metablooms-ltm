@@ -1,0 +1,14 @@
+{
+  "external_research": {
+    "must_use": "web.run"
+  },
+  "uploaded_corpus": {
+    "must_use": "file_search"
+  },
+  "data_processing": {
+    "prefer": "python_user_visible.exec"
+  },
+  "system_ops": {
+    "must_use": "container.exec"
+  }
+}

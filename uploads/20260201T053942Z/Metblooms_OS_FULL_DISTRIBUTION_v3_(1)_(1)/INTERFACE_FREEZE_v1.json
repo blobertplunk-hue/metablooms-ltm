@@ -1,0 +1,15 @@
+{
+  "artifact": "INTERFACE_FREEZE_v1",
+  "timestamp_utc": "2026-01-31T17:19:24Z",
+  "frozen_components": [
+    "SEE",
+    "MMD",
+    "PLAN",
+    "PREFLIGHT",
+    "EXECUTE",
+    "BTS",
+    "RECURSION",
+    "ECL"
+  ],
+  "policy": "No breaking changes without version bump + audit"
+}

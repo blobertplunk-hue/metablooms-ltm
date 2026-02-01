@@ -1,0 +1,79 @@
+{
+  "artifacts_emitted": [
+    {
+      "bytes": 237,
+      "path": "/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_58417c88-6655-4da6-984d-2a84bc83f878.json",
+      "sha256": "7ca6c778438a9275572e3d6190b7547b85868a7ef7b75776ed2561f37fc4ccc4"
+    },
+    {
+      "bytes": 2007,
+      "path": "/mnt/data/Metblooms_OS/_see/SEE_SOURCES_58417c88-6655-4da6-984d-2a84bc83f878.json",
+      "sha256": "f06d48623224b03c5394cd302aec6d1c7418f930fe221327c54a333645d8d3e9"
+    },
+    {
+      "bytes": 1483,
+      "path": "/mnt/data/Metblooms_OS/_see/SEE_NOTES_58417c88-6655-4da6-984d-2a84bc83f878.ndjson",
+      "sha256": "4bce921ecbe22d51011fab041f983e64c76ddd48317b64d4acf71153881ab3f1"
+    },
+    {
+      "bytes": 799,
+      "path": "/mnt/data/Metblooms_OS/_see/SEE_RECEIPT_58417c88-6655-4da6-984d-2a84bc83f878.json",
+      "sha256": "de92394bf8d28bb46e1b3eebeba02aea49a0f41b011ee0f3cb4c61b577f643a6"
+    }
+  ],
+  "constraints_logged": [
+    "SEE must run every turn",
+    "No short continuation prompts (drift risk)",
+    "Prefer execution-based proof over narrative compliance"
+  ],
+  "decisions": [
+    {
+      "constraints": [
+        "SEE every turn",
+        "prevent drift",
+        "execution-based proof"
+      ],
+      "decision": "Use full-contract prompts as a checklist/constitution, but keep stable rules repo-resident to avoid token bloat.",
+      "id": "DEC-PROMPT-001",
+      "rationale": "Structured prompts improve adherence; verification still requires oracle/harness."
+    },
+    {
+      "constraints": [
+        "append-only ledger",
+        "fail-closed on missing artifacts"
+      ],
+      "decision": "Add per-turn prompt self-evaluation + patch-notes to harden prompts against shortening/omissions.",
+      "id": "DEC-PROMPT-002",
+      "rationale": "Creates feedback loop and enforces completeness."
+    }
+  ],
+  "timestamp": "2026-02-01T00:33:33Z",
+  "tool_calls_logged": [
+    {
+      "function": "search_query",
+      "returned_refs": [
+        "turn0search3",
+        "turn0search7",
+        "turn0search2",
+        "turn0search6",
+        "turn0search4",
+        "turn0search11",
+        "turn0search1",
+        "turn1search1",
+        "turn1search0"
+      ],
+      "tool": "web.run"
+    },
+    {
+      "function": "exec",
+      "tool": "python_user_visible.exec",
+      "writes": [
+        "/mnt/data/Metblooms_OS/_see/SEE_SOURCES_58417c88-6655-4da6-984d-2a84bc83f878.json",
+        "/mnt/data/Metblooms_OS/_see/SEE_NOTES_58417c88-6655-4da6-984d-2a84bc83f878.ndjson",
+        "/mnt/data/Metblooms_OS/_see/SEE_RECEIPT_58417c88-6655-4da6-984d-2a84bc83f878.json",
+        "/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_58417c88-6655-4da6-984d-2a84bc83f878.json"
+      ]
+    }
+  ],
+  "turn_id": "58417c88-6655-4da6-984d-2a84bc83f878"
+}

@@ -1,0 +1,15 @@
+{"turn_id": "bb03f3cd-372c-471e-aba3-1adf95053750", "timestamp": "2026-01-31T23:51:22Z", "id": "PP-BOOT-AMB", "desc": "Boot ambiguity", "gate": "CANONICAL_ROOT_LOCK + BOOT_RECEIPT"}
+{"turn_id": "bb03f3cd-372c-471e-aba3-1adf95053750", "timestamp": "2026-01-31T23:51:22Z", "id": "PP-STATE-VOL", "desc": "State volatility", "gate": "Append-only ledger + Merkle binding"}
+{"turn_id": "bb03f3cd-372c-471e-aba3-1adf95053750", "timestamp": "2026-01-31T23:51:22Z", "id": "PP-NONPROV", "desc": "Non-provable work", "gate": "BTS receipts + Merkle root"}
+{"turn_id": "bb03f3cd-372c-471e-aba3-1adf95053750", "timestamp": "2026-01-31T23:51:22Z", "id": "PP-PERM", "desc": "Permission confusion", "gate": "ROEZ hardware write block"}
+{"turn_id": "bb03f3cd-372c-471e-aba3-1adf95053750", "timestamp": "2026-01-31T23:51:22Z", "id": "PP-PHASE", "desc": "Phase drift", "gate": "Phase guards + receipts"}
+{"turn_id": "7520c724-41ea-4373-a701-cdaaefe908d6", "timestamp": "2026-01-31T23:51:51Z", "id": "PP-BOOT-AMB", "gate": "CANONICAL_ROOT_LOCK"}
+{"turn_id": "7520c724-41ea-4373-a701-cdaaefe908d6", "timestamp": "2026-01-31T23:51:51Z", "id": "PP-STATE-VOL", "gate": "APPEND_ONLY_LEDGER"}
+{"turn_id": "7520c724-41ea-4373-a701-cdaaefe908d6", "timestamp": "2026-01-31T23:51:51Z", "id": "PP-NONPROV", "gate": "MERKLE_ROOT"}
+{"turn_id": "7520c724-41ea-4373-a701-cdaaefe908d6", "timestamp": "2026-01-31T23:51:51Z", "id": "PP-PERM", "gate": "ROEZ_WRITE_BLOCK"}
+{"turn_id": "7520c724-41ea-4373-a701-cdaaefe908d6", "timestamp": "2026-01-31T23:51:51Z", "id": "PP-PHASE", "gate": "PHASE_GUARDS"}
+{"turn_id": "82cbb69c-1771-4c01-b844-23d984da97d4", "timestamp": "2026-01-31T23:58:06Z", "id": "PP-BOOT-AMB", "desc": "Boot ambiguity", "gate": "CANONICAL_ROOT_LOCK"}
+{"turn_id": "82cbb69c-1771-4c01-b844-23d984da97d4", "timestamp": "2026-01-31T23:58:06Z", "id": "PP-STATE-VOL", "desc": "State volatility", "gate": "APPEND_ONLY_LEDGER"}
+{"turn_id": "82cbb69c-1771-4c01-b844-23d984da97d4", "timestamp": "2026-01-31T23:58:06Z", "id": "PP-NONPROV", "desc": "Non-provable work", "gate": "BTS+MERKLE"}
+{"turn_id": "82cbb69c-1771-4c01-b844-23d984da97d4", "timestamp": "2026-01-31T23:58:06Z", "id": "PP-PERM", "desc": "Permission confusion", "gate": "ROEZ_WRITE_BLOCK"}
+{"turn_id": "82cbb69c-1771-4c01-b844-23d984da97d4", "timestamp": "2026-01-31T23:58:06Z", "id": "PP-PHASE", "desc": "Phase drift", "gate": "PHASE_GUARDS"}

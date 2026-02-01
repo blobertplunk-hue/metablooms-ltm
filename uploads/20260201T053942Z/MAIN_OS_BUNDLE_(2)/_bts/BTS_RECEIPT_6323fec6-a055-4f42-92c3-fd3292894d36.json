@@ -1,0 +1,38 @@
+{
+  "turn_id": "6323fec6-a055-4f42-92c3-fd3292894d36",
+  "timestamp": "2026-02-01T00:16:31Z",
+  "tool_calls": [
+    "python_user_visible.exec"
+  ],
+  "failfix": [
+    {
+      "R1_LOCATE": "identified ROEZ exclusion lines",
+      "lines": [
+        "- Excludes ROEZ (/mnt/data/Metblooms_OS/_roez) permanently",
+        "    os.path.join(ROOT, \"_roez\"),"
+      ]
+    },
+    {
+      "R2_RECONSTRUCT": "added --baseline include ROEZ once",
+      "result": "OK"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "/mnt/data/Metblooms_OS/_harness/check_integrity.py",
+      "sha256": "4098b82fd35375850fc9f7237b61c3894b3ebe1d9f17e38932d50b29ea134512"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/_state/INTEGRITY_VERIFICATION_REPORT.json",
+      "sha256": "3d66b7a841ed34fa9c9d25b329740b83eeeafbb158822754a39755aaa735a331"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_6323fec6-a055-4f42-92c3-fd3292894d36.json",
+      "sha256": "fb57ef565528488f2841d08c43e9af1e191648dbdce8dd13a2b28be174c2d2aa"
+    }
+  ],
+  "oracle_results": {
+    "baseline_exit": 0,
+    "verify_exit": 1
+  }
+}

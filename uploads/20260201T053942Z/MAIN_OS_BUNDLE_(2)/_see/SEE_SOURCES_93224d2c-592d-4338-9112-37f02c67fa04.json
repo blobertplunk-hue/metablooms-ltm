@@ -1,0 +1,16 @@
+{
+  "sources": [
+    {
+      "topic": "control mapping",
+      "url": "https://csrc.nist.gov/pubs/sp/800/53/r5/final"
+    },
+    {
+      "topic": "provenance",
+      "url": "https://www.w3.org/TR/prov-o/"
+    },
+    {
+      "topic": "determinism",
+      "url": "https://reproducible-builds.org/docs/"
+    }
+  ]
+}

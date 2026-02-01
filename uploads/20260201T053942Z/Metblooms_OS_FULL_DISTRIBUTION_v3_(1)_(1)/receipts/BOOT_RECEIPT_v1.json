@@ -1,0 +1,28 @@
+{
+  "artifact": "BOOT_RECEIPT_v1",
+  "timestamp_utc": "2026-01-31T16:19:15Z",
+  "status": "PASS",
+  "os_zip": "/mnt/data/MetaBlooms_OS_V1_FROZEN_CANONICAL_20260130T172729Z.zip",
+  "canonical_root": "/mnt/data/Metblooms_OS",
+  "steps": [
+    {
+      "step": "ZOOP_GUARD_v1",
+      "rc": 0,
+      "stdout": "ZOOP_GUARD_v1_1 -> PASS :: /mnt/data/Metblooms_OS/receipts/ZOOP_GUARD_RECEIPT_v1.json\n",
+      "stderr": ""
+    },
+    {
+      "step": "CANONICAL_ROOT_INTEGRITY_CHECK",
+      "rc": 0,
+      "stdout": "CANONICAL_ROOT_INTEGRITY_CHECK -> PASS :: /mnt/data/Metblooms_OS/receipts/CANONICAL_ROOT_INTEGRITY_RECEIPT_v1.json\n",
+      "stderr": ""
+    },
+    {
+      "step": "REAPPLY_PATCHES_INTO_OS",
+      "rc": 0,
+      "stdout": "applied zoop+boot patches",
+      "stderr": ""
+    }
+  ],
+  "errors": []
+}

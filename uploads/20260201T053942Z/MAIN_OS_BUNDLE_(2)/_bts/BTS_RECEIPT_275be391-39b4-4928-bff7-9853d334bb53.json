@@ -1,0 +1,122 @@
+{
+  "artifacts_emitted": [
+    {
+      "bytes": 379,
+      "path": "/mnt/data/Metblooms_OS/_bts/BOOT_RECEIPT_275be391-39b4-4928-bff7-9853d334bb53.json",
+      "sha256": "507d8407595f3ed9fffb7f5c3c7a1d2f33fb5b56db666b2ecb64f582ed58e8b7"
+    },
+    {
+      "bytes": 1742,
+      "path": "/mnt/data/Metblooms_OS/_see/SEE_SOURCES_275be391-39b4-4928-bff7-9853d334bb53.json",
+      "sha256": "d5774a2b7147f67aea9c58e181a7b023dfcaadb289facc63ef027dad07f578f7"
+    },
+    {
+      "bytes": 1603,
+      "path": "/mnt/data/Metblooms_OS/_see/SEE_NOTES_275be391-39b4-4928-bff7-9853d334bb53.ndjson",
+      "sha256": "1711f85b8b28ee33c50377d72a2cc88f70ffe72d52b7ca965a8671c06684fe70"
+    },
+    {
+      "bytes": 263,
+      "path": "/mnt/data/Metblooms_OS/_see/SEE_RECEIPT_275be391-39b4-4928-bff7-9853d334bb53.json",
+      "sha256": "d4ced3d503fd7e7b92332f674ac7d77816565a1ceb6cbfb41648641dbf0515d0"
+    },
+    {
+      "bytes": 2102,
+      "path": "/mnt/data/Metblooms_OS/_policy/PROMPT_LINT_RULES.json",
+      "sha256": "e83ef79b488ebbfc49f948039bcf5a3c5ad53c9db1a5e12a3cbd66d5c53a232b"
+    },
+    {
+      "bytes": 1249,
+      "path": "/mnt/data/Metblooms_OS/_policy/PROMPT_CONSTITUTION_V1_3.json",
+      "sha256": "47a779d6cc8b3711d437e294e1eef289166751bfd1fb1da719cdda977e53b77f"
+    },
+    {
+      "path": "/mnt/data/Metblooms_OS/_state/chat_ledger.ndjson",
+      "sha256": "a77dcc4505124e5896f656c1ba0649fbd6ba8ae11c24d9548f656d5baf4290d6"
+    }
+  ],
+  "constraints_logged": [
+    "NO PROMPT SHORTENING",
+    "NEW FULL PROMPT must be final section",
+    "Authorized writes only: _policy/_bts/_state/_see",
+    "SEE required every turn; decisions must be externally anchored"
+  ],
+  "decisions": [
+    {
+      "anchors": [
+        "S7",
+        "S2"
+      ],
+      "constraints": [
+        "authorized write surface only",
+        "no prompt shortening"
+      ],
+      "id": "D1",
+      "rationale": "Makes linting testable and repeatable (policy-as-code).",
+      "text": "Materialize prompt linter rules as repo-resident spec file PROMPT_LINT_RULES.json."
+    },
+    {
+      "anchors": [
+        "S3",
+        "S9"
+      ],
+      "constraints": [
+        "non-blame invariant",
+        "patch via _policy"
+      ],
+      "id": "D2",
+      "rationale": "Prevents suggestion drift and ensures continuous hardening.",
+      "text": "Auto-assimilate governance suggestions into the next prompt by default."
+    },
+    {
+      "anchors": [
+        "S7"
+      ],
+      "constraints": [
+        "repo-resident rules"
+      ],
+      "id": "D3",
+      "rationale": "Ensures determinism and avoids silent rule changes.",
+      "text": "Bind linter to repo spec only; prohibit ad-hoc lint definitions."
+    }
+  ],
+  "failfix": [],
+  "timestamp_utc": "2026-02-01T00:56:31Z",
+  "tool_calls_logged": [
+    {
+      "function": "search_query",
+      "inputs": {
+        "q_set": "(see citations in response)"
+      },
+      "outputs": {
+        "refs": [
+          "turn0search0",
+          "turn0search1",
+          "turn0search2",
+          "turn0search5",
+          "turn0search7",
+          "turn0search9",
+          "turn0search10"
+        ]
+      },
+      "tool": "web.run"
+    },
+    {
+      "function": "file_writes",
+      "inputs": {
+        "paths": [
+          "_policy/PROMPT_LINT_RULES.json",
+          "_policy/PROMPT_CONSTITUTION_V1_3.json",
+          "_see/*",
+          "_bts/*",
+          "_state/chat_ledger.ndjson"
+        ]
+      },
+      "outputs": {
+        "status": "ok"
+      },
+      "tool": "python.exec"
+    }
+  ],
+  "turn_id": "275be391-39b4-4928-bff7-9853d334bb53"
+}

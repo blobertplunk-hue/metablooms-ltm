@@ -1,0 +1,1 @@
+{"source_bundle": "MetaBlooms_OS_SHIPPED_PATCHED_20260130T003500Z.zip", "path": "README.md", "chunk": 0, "content": "# MBML DIP Delta\n\nThis pack wraps MBML_FULL_SYSTEM_BUNDLE as an additive-only DIP delta.\n\n- dst_prefix: metablooms/mbml/\n- no_overwrite: true (collision fails)\n", "sha256": "fc4d3bab109ebeedadbf370d20d413f16eaeb8882959e6925739f6d8fbbdb5d7"}
