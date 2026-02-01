@@ -1,0 +1,11 @@
+{
+  "turn_id": "20260131T223214Z",
+  "phase": "P9.3_PROMOTION_GATE",
+  "total_bundles": 22,
+  "promoted": 22,
+  "equivalence_level": "E0",
+  "integrity_level": "FORENSIC_VAULT",
+  "citation": "[343]",
+  "canonical_manifest_sha256": "c747b7d07f0a6acfb35f0acee43bda0b4ba1b21feaa1ca71b2911202ca802bd3",
+  "verified_at_utc": "2026-01-31T22:32:14.284947Z"
+}
