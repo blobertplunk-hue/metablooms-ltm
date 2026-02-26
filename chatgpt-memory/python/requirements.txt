@@ -1,0 +1,27 @@
+# ChatGPT Memory Pipeline — Python dependencies
+# Install: pip install -r requirements.txt
+
+# Streaming JSON parse (essential for 3.8 GB files)
+ijson==3.3.0
+
+# Data processing
+pandas==2.2.3
+pyarrow==17.0.0       # Parquet read/write
+duckdb==1.1.3         # Analytical SQL over parquet
+
+# NLP
+vaderSentiment==3.3.2 # Sentiment analysis (fast, no GPU)
+# spacy==3.8.2        # Optional: NER, specificity scoring
+# python -m spacy download en_core_web_sm
+
+# Embeddings + vector search (optional; enable for Phase 3 semantic search)
+# sentence-transformers==3.3.1
+# faiss-cpu==1.9.0
+
+# Database
+# SQLite is built-in to Python
+
+# Utilities
+tqdm==4.67.1          # Progress bars
+click==8.1.7          # CLI argument parsing
+jsonschema==4.23.0    # Schema validation

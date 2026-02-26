@@ -1,0 +1,46 @@
+{
+  "version": "1.0.0",
+  "description": "PII and sensitive content patterns for Invoke-Redact.ps1. Edit to match your privacy requirements.",
+  "patterns": [
+    {
+      "type": "EMAIL",
+      "regex": "[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}",
+      "description": "Email addresses"
+    },
+    {
+      "type": "PHONE_US",
+      "regex": "(?:\\+1[\\s\\-.])?(?:\\(?[2-9]\\d{2}\\)?[\\s\\-.]){1}[2-9]\\d{2}[\\s\\-.]\\d{4}",
+      "description": "US phone numbers"
+    },
+    {
+      "type": "SSN",
+      "regex": "\\b\\d{3}[\\s\\-]\\d{2}[\\s\\-]\\d{4}\\b",
+      "description": "US Social Security Numbers"
+    },
+    {
+      "type": "CREDIT_CARD",
+      "regex": "\\b(?:4\\d{3}|5[1-5]\\d{2}|6011|3[47]\\d{2})[\\s\\-]?\\d{4}[\\s\\-]?\\d{4}[\\s\\-]?\\d{3,4}\\b",
+      "description": "Credit card numbers (Visa, MC, Amex, Discover)"
+    },
+    {
+      "type": "IP_ADDRESS",
+      "regex": "\\b(?:(?:25[0-5]|2[0-4]\\d|[01]?\\d\\d?)\\.){3}(?:25[0-5]|2[0-4]\\d|[01]?\\d\\d?)\\b",
+      "description": "IPv4 addresses"
+    },
+    {
+      "type": "API_KEY",
+      "regex": "(?:sk-|api[_\\-]?key[_\\-]?)[a-zA-Z0-9]{20,}",
+      "description": "Common API key patterns (OpenAI, generic)"
+    },
+    {
+      "type": "BEARER_TOKEN",
+      "regex": "(?:Bearer|bearer)\\s+[a-zA-Z0-9\\-._~+/]+=*",
+      "description": "HTTP Bearer tokens"
+    }
+  ],
+  "notes": [
+    "Proper name redaction is NOT included by default — enable at your discretion and test for false positives.",
+    "Company name redaction is NOT included by default — too many false positives in technical text.",
+    "Redaction map is written locally by Invoke-Redact.ps1. Never upload the redaction map."
+  ]
+}

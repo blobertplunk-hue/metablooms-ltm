@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Feature Table Row",
+  "description": "One row per conversation in the feature-table.parquet / feature-table.jsonl.",
+  "type": "object",
+  "required": ["conv_id", "create_time", "computed_at"],
+  "additionalProperties": false,
+  "properties": {
+    "conv_id":                    { "type": "string" },
+    "create_time":                { "type": "number", "description": "Unix epoch" },
+    "model":                      { "type": ["string", "null"] },
+    "computed_at":                { "type": "number", "description": "Unix epoch of feature computation" },
+
+    "prompt_token_est":           { "type": ["integer", "null"], "minimum": 0 },
+    "response_token_est":         { "type": ["integer", "null"], "minimum": 0 },
+    "turn_count":                 { "type": ["integer", "null"], "minimum": 0 },
+    "avg_response_length":        { "type": ["number", "null"] },
+
+    "has_system_instruction":     { "type": ["boolean", "null"] },
+    "has_explicit_constraints":   { "type": ["boolean", "null"] },
+    "has_numbered_steps":         { "type": ["boolean", "null"] },
+    "has_role_assignment":        { "type": ["boolean", "null"] },
+    "question_count":             { "type": ["integer", "null"] },
+    "specificity_score":          { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+    "prompt_archetype":           { "type": ["string", "null"], "enum": ["instruction", "question", "creative", "code", "chat", null] },
+    "prompt_archetype_method":    { "type": ["string", "null"], "enum": ["llm", "heuristic", null] },
+
+    "code_block_count":           { "type": ["integer", "null"], "minimum": 0 },
+    "code_line_count":            { "type": ["integer", "null"], "minimum": 0 },
+    "tool_call_count":            { "type": ["integer", "null"], "minimum": 0 },
+    "multi_step_plan_detected":   { "type": ["boolean", "null"] },
+    "branching_depth":            { "type": ["integer", "null"], "minimum": 0 },
+
+    "prompt_sentiment":           { "type": ["number", "null"], "minimum": -1, "maximum": 1 },
+    "urgency_signal":             { "type": ["boolean", "null"] },
+    "frustration_signal":         { "type": ["boolean", "null"] },
+    "gratitude_signal":           { "type": ["boolean", "null"] },
+    "conflict_signal":            { "type": ["boolean", "null"] },
+
+    "rework_loop_count":          { "type": ["integer", "null"], "minimum": 0 },
+    "correction_count":           { "type": ["integer", "null"], "minimum": 0 },
+    "success_signal":             { "type": ["boolean", "null"] },
+    "conversation_abandoned":     { "type": ["boolean", "null"] },
+    "regression_count":           { "type": ["integer", "null"], "minimum": 0 },
+    "time_to_resolution":         { "type": ["number", "null"], "description": "Minutes; null if no success signal" },
+
+    "has_citations":              { "type": ["boolean", "null"] },
+    "explicit_assumptions":       { "type": ["boolean", "null"] },
+    "fail_closed_language":       { "type": ["boolean", "null"] },
+    "confidence_qualifier":       { "type": ["boolean", "null"] },
+
+    "refusal_detected":           { "type": ["boolean", "null"] },
+    "policy_boundary_hit":        { "type": ["boolean", "null"] },
+    "content_warning_present":    { "type": ["boolean", "null"] }
+  }
+}

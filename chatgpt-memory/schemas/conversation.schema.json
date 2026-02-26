@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Normalized Conversation Record",
+  "description": "Canonical record for a single ChatGPT conversation after parsing and normalization.",
+  "type": "object",
+  "required": ["conv_id", "source_id", "title", "create_time", "update_time", "model", "turn_count", "message_ids", "shard_file", "shard_line"],
+  "additionalProperties": false,
+  "properties": {
+    "conv_id": {
+      "type": "string",
+      "description": "Deterministic ID: conv_{sha256(source_id)[:8]}_{int(create_time)}",
+      "pattern": "^conv_[a-f0-9]{8}_[0-9]+$"
+    },
+    "source_id": {
+      "type": "string",
+      "description": "Original conversation UUID from the export."
+    },
+    "title": {
+      "type": ["string", "null"],
+      "description": "Conversation title as set by the user or auto-generated."
+    },
+    "create_time": {
+      "type": "number",
+      "description": "Unix epoch float of conversation creation."
+    },
+    "update_time": {
+      "type": "number",
+      "description": "Unix epoch float of last message."
+    },
+    "model": {
+      "type": ["string", "null"],
+      "description": "Model slug used in this conversation, e.g. 'gpt-4', 'gpt-4o'.",
+      "examples": ["gpt-4", "gpt-4o", "gpt-3.5-turbo", "text-davinci-003"]
+    },
+    "turn_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of user+assistant turn pairs."
+    },
+    "message_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Ordered list of msg_ids in this conversation."
+    },
+    "has_system_message": {
+      "type": "boolean",
+      "description": "True if a system-role message is present."
+    },
+    "plugin_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Any plugin/tool namespaces referenced."
+    },
+    "shard_file": {
+      "type": "string",
+      "description": "Filename of the shard JSONL containing this conversation."
+    },
+    "shard_line": {
+      "type": "integer",
+      "description": "0-based line number within the shard file."
+    }
+  }
+}

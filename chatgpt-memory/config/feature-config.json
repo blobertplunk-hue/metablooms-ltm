@@ -1,0 +1,42 @@
+{
+  "version": "1.0.0",
+  "description": "Feature engineering parameters for feature_engineer.py",
+  "token_estimate": {
+    "words_to_tokens_multiplier": 1.3,
+    "note": "GPT tokenizer approximation. For exact counts use tiktoken (adds ~2s per conversation)."
+  },
+  "shard_target_mb": 8,
+  "sentiment": {
+    "engine": "vader",
+    "note": "VADER is fast and license-free. For higher accuracy on technical text, use a transformer model."
+  },
+  "specificity": {
+    "method": "unique_word_ratio",
+    "note": "Proxy metric only. Higher = more varied vocabulary = more specific (correlated, not causal)."
+  },
+  "success_signal": {
+    "method": "regex",
+    "look_at_last_n_chars": 500,
+    "note": "Regex on last 500 chars of user text. LLM-assisted labeling on a 500-conversation sample yields ~3x recall."
+  },
+  "rework_loop": {
+    "correction_regex_phrases": [
+      "that's wrong", "not what i meant", "try again",
+      "incorrect", "that is wrong", "no,", "wrong,"
+    ]
+  },
+  "llm_assisted_features": {
+    "prompt_archetype": {
+      "enabled": false,
+      "sample_size": 500,
+      "labels": ["instruction", "question", "creative", "code", "chat"],
+      "note": "Run manually: upload redacted sample + feature-table to LLM, request archetype labels, merge back."
+    }
+  },
+  "embeddings": {
+    "enabled": false,
+    "model": "all-MiniLM-L6-v2",
+    "field": "first_user_message_text",
+    "note": "Enable after Phase 3 MVP is working. Adds ~1 hour for 50k conversations on CPU."
+  }
+}

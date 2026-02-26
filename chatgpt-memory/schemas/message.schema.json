@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Normalized Message Record",
+  "description": "Canonical record for a single message within a conversation.",
+  "type": "object",
+  "required": ["msg_id", "source_id", "conv_id", "role", "content_type", "create_time", "turn_index"],
+  "additionalProperties": false,
+  "properties": {
+    "msg_id": {
+      "type": "string",
+      "description": "Deterministic ID: msg_{sha256(conv.source_id)[:8]}_{turn_index:04d}_{role[:3]}",
+      "pattern": "^msg_[a-f0-9]{8}_[0-9]{4}_[a-z]{3}$"
+    },
+    "source_id": {
+      "type": "string",
+      "description": "Original message UUID from the export mapping."
+    },
+    "conv_id": {
+      "type": "string",
+      "description": "Parent conversation ID (conv_* format)."
+    },
+    "role": {
+      "type": "string",
+      "enum": ["user", "assistant", "tool", "system"],
+      "description": "Author role."
+    },
+    "content_type": {
+      "type": "string",
+      "enum": ["text", "code", "tether_browsing_display", "tether_quote", "multimodal_text", "tool_result", "tool_use", "unknown"],
+      "description": "Primary content type of this message."
+    },
+    "text": {
+      "type": ["string", "null"],
+      "description": "Extracted plain text of the message. Null if non-text content only."
+    },
+    "token_est": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "description": "Estimated token count: ceil(word_count * 1.3)."
+    },
+    "create_time": {
+      "type": ["number", "null"],
+      "description": "Unix epoch float. May be null for some synthetic messages."
+    },
+    "turn_index": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "0-based position in the linearised conversation."
+    },
+    "parent_msg_id": {
+      "type": ["string", "null"],
+      "description": "msg_id of parent message in the mapping tree. Null for root."
+    },
+    "tool_events": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/tool_event_ref" },
+      "description": "Tool calls or results embedded in this message."
+    },
+    "attachments": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/attachment_ref" },
+      "description": "File attachments referenced in this message."
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Raw metadata from the export (model_slug, finish_details, etc.).",
+      "additionalProperties": true
+    }
+  },
+  "$defs": {
+    "tool_event_ref": {
+      "type": "object",
+      "required": ["tool_id", "tool_name"],
+      "properties": {
+        "tool_id": { "type": "string" },
+        "tool_name": { "type": "string" },
+        "input_summary": { "type": ["string", "null"] },
+        "output_summary": { "type": ["string", "null"] }
+      }
+    },
+    "attachment_ref": {
+      "type": "object",
+      "required": ["att_id"],
+      "properties": {
+        "att_id": { "type": "string" },
+        "filename": { "type": ["string", "null"] },
+        "mime_type": { "type": ["string", "null"] },
+        "size_bytes": { "type": ["integer", "null"] }
+      }
+    }
+  }
+}
