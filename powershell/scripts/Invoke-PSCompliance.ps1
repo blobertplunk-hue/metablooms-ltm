@@ -35,6 +35,7 @@
 
 Set-StrictMode -Version 3.0
 $ErrorActionPreference = 'Stop'
+$InformationPreference = 'Continue'
 
 [CmdletBinding()]
 param(
@@ -68,30 +69,42 @@ $ModuleHeaders = @(
 # ---------------------------------------------------------------------------
 
 function Write-Finding {
+    [CmdletBinding()]
     param(
+        [Parameter(Mandatory)]
         [string]$File,
+
+        [Parameter(Mandatory)]
         [string]$Severity,
+
+        [Parameter(Mandatory)]
         [string]$Rule,
+
+        [Parameter(Mandatory)]
         [string]$Message,
+
         [int]$Line = 0
     )
 
-    $lineInfo = if ($Line -gt 0) { ":$Line" } else { '' }
-    $label    = $Severity.ToUpper().PadRight(7)
+    $lineInfo  = if ($Line -gt 0) { ":$Line" } else { '' }
+    $label     = $Severity.ToUpper().PadRight(7)
+    $color     = switch ($Severity) {
+        'Error'   { $PSStyle.Foreground.BrightRed    }
+        'Warning' { $PSStyle.Foreground.BrightYellow }
+        default   { $PSStyle.Foreground.Cyan         }
+    }
 
-    Write-Host "[$label] $File$lineInfo — $Rule" -ForegroundColor $(
-        switch ($Severity) {
-            'Error'       { 'Red'    }
-            'Warning'     { 'Yellow' }
-            default       { 'Cyan'   }
-        }
-    )
-    Write-Host "         $Message"
+    Write-Information "${color}[$label] $File$lineInfo — $Rule$($PSStyle.Reset)"
+    Write-Information "         $Message"
 }
 
 function Test-RequiredHeaders {
+    [CmdletBinding()]
     param(
+        [Parameter(Mandatory)]
         [string]$FilePath,
+
+        [Parameter(Mandatory)]
         [string[]]$RequiredPrefixes
     )
 
@@ -131,17 +144,22 @@ elseif (Test-Path -LiteralPath $resolvedPath -PathType Leaf) {
     $psFiles = @(Get-Item -LiteralPath $resolvedPath)
 }
 else {
-    Write-Error "Path not found: $resolvedPath"
-    exit 1
+    $record = [System.Management.Automation.ErrorRecord]::new(
+        [System.IO.DirectoryNotFoundException]::new("Path not found: $resolvedPath"),
+        'PathNotFound',
+        [System.Management.Automation.ErrorCategory]::ObjectNotFound,
+        $resolvedPath
+    )
+    $PSCmdlet.ThrowTerminatingError($record)
 }
 
 if ($psFiles.Count -eq 0) {
-    Write-Host "No PowerShell files found at: $resolvedPath" -ForegroundColor Yellow
+    Write-Information "$($PSStyle.Foreground.BrightYellow)No PowerShell files found at: $resolvedPath$($PSStyle.Reset)"
     exit 0
 }
 
-Write-Host "`nPS7 Compliance Check — $($psFiles.Count) file(s)" -ForegroundColor Cyan
-Write-Host "Settings: $SettingsFile`n"
+Write-Information "`n$($PSStyle.Foreground.Cyan)PS7 Compliance Check — $($psFiles.Count) file(s)$($PSStyle.Reset)"
+Write-Information "Settings: $SettingsFile`n"
 
 # ---------------------------------------------------------------------------
 # Check 1: Required headers
@@ -170,9 +188,9 @@ if (-not (Get-Module -ListAvailable -Name PSScriptAnalyzer)) {
 }
 else {
     $pssaParams = @{
-        Path      = $resolvedPath
-        Recurse   = (Test-Path -LiteralPath $resolvedPath -PathType Container)
-        Severity  = $Severity
+        Path        = $resolvedPath
+        Recurse     = (Test-Path -LiteralPath $resolvedPath -PathType Container)
+        Severity    = $Severity
         ErrorAction = 'Stop'
     }
 
@@ -206,7 +224,7 @@ $errorCount   = ($allFindings | Where-Object Severity -eq 'Error').Count
 $warningCount = ($allFindings | Where-Object Severity -eq 'Warning').Count
 
 if ($allFindings.Count -eq 0) {
-    Write-Host "PASS — No findings." -ForegroundColor Green
+    Write-Information "$($PSStyle.Foreground.BrightGreen)PASS — No findings.$($PSStyle.Reset)"
     exit 0
 }
 
@@ -214,5 +232,5 @@ foreach ($f in $allFindings | Sort-Object File, Line) {
     Write-Finding -File $f.File -Severity $f.Severity -Rule $f.Rule -Message $f.Message -Line $f.Line
 }
 
-Write-Host "`nSummary: $errorCount error(s), $warningCount warning(s) across $($psFiles.Count) file(s)" -ForegroundColor Red
+Write-Information "`n$($PSStyle.Foreground.BrightRed)Summary: $errorCount error(s), $warningCount warning(s) across $($psFiles.Count) file(s)$($PSStyle.Reset)"
 exit 1

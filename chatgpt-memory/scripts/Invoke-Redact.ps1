@@ -14,6 +14,14 @@
     The replacement tokens preserve approximate token count and allow
     the LLM to reason about redacted content without seeing the values.
 
+    Defect fixes applied:
+      - Single-pass, non-overlapping match collection eliminates the
+        double-redaction problem that arose when a replacement token
+        matched a subsequent pattern.
+      - $matches (PS automatic variable) renamed to $foundMatches to
+        prevent automatic-variable shadowing.
+      - Write-Host replaced with Write-Information ($PSStyle colours).
+
 .PARAMETER InputPath
     File to redact (JSONL, JSON, or plain text).
 
@@ -36,6 +44,7 @@
 
 Set-StrictMode -Version 3.0
 $ErrorActionPreference = 'Stop'
+$InformationPreference = 'Continue'
 
 [CmdletBinding(SupportsShouldProcess)]
 param(
@@ -86,6 +95,22 @@ $patternConfig = Get-Content -LiteralPath $resolvedPatterns -Encoding UTF8 | Con
 Write-Verbose "Loaded $($patternConfig.patterns.Count) redaction pattern(s)"
 
 # ---------------------------------------------------------------------------
+# Pre-compile regexes once (avoids repeated compilation inside the line loop)
+# ---------------------------------------------------------------------------
+
+$compiledPatterns = [System.Collections.Generic.List[pscustomobject]]::new()
+foreach ($p in $patternConfig.patterns) {
+    $compiledPatterns.Add([pscustomobject]@{
+        Type  = $p.type
+        Regex = [System.Text.RegularExpressions.Regex]::new(
+            $p.regex,
+            [System.Text.RegularExpressions.RegexOptions]::IgnoreCase -bor
+            [System.Text.RegularExpressions.RegexOptions]::Compiled
+        )
+    })
+}
+
+# ---------------------------------------------------------------------------
 # Build redaction state
 # ---------------------------------------------------------------------------
 
@@ -97,7 +122,14 @@ foreach ($p in $patternConfig.patterns) {
 }
 
 function Get-RedactionToken {
-    param([string]$Type, [string]$OriginalValue)
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory)]
+        [string]$Type,
+
+        [Parameter(Mandatory)]
+        [string]$OriginalValue
+    )
 
     if ($redactionMap.ContainsKey($OriginalValue)) {
         return $redactionMap[$OriginalValue]
@@ -111,7 +143,13 @@ function Get-RedactionToken {
 }
 
 # ---------------------------------------------------------------------------
-# Process file line by line (streaming — works on large JSONL)
+# Process file line by line (streaming — works on large JSONL).
+#
+# Single-pass strategy: for each line, collect ALL match spans from ALL
+# patterns before making any substitution. After removing overlapping spans
+# (keep earliest start), apply replacements right-to-left so earlier string
+# positions remain valid. This prevents a replacement token from being
+# matched and re-redacted by a subsequent pattern.
 # ---------------------------------------------------------------------------
 
 $totalReplacements = 0
@@ -128,18 +166,46 @@ if ($PSCmdlet.ShouldProcess($resolvedOutput, 'Write redacted file')) {
                 $line = $reader.ReadLine()
                 $processedLines++
 
-                foreach ($pattern in $patternConfig.patterns) {
-                    $regex   = [System.Text.RegularExpressions.Regex]::new(
-                        $pattern.regex,
-                        [System.Text.RegularExpressions.RegexOptions]::IgnoreCase
-                    )
-                    $matches = $regex.Matches($line)
+                # --- Collect all match spans from all patterns ---
+                $candidates = [System.Collections.Generic.List[pscustomobject]]::new()
 
-                    foreach ($m in $matches) {
-                        $token = Get-RedactionToken -Type $pattern.type -OriginalValue $m.Value
-                        $line  = $line.Replace($m.Value, $token)
-                        $totalReplacements++
+                foreach ($cp in $compiledPatterns) {
+                    $foundMatches = $cp.Regex.Matches($line)
+                    foreach ($m in $foundMatches) {
+                        $candidates.Add([pscustomobject]@{
+                            Start         = $m.Index
+                            End           = $m.Index + $m.Length
+                            OriginalValue = $m.Value
+                            PatternType   = $cp.Type
+                        })
                     }
+                }
+
+                if ($candidates.Count -eq 0) {
+                    $writer.WriteLine($line)
+                    continue
+                }
+
+                # --- Remove overlapping spans: sort by start, keep earliest ---
+                $sorted = $candidates | Sort-Object Start
+
+                $nonOverlapping = [System.Collections.Generic.List[pscustomobject]]::new()
+                $currentEnd = -1
+
+                foreach ($r in $sorted) {
+                    if ($r.Start -ge $currentEnd) {
+                        $nonOverlapping.Add($r)
+                        $currentEnd = $r.End
+                    }
+                }
+
+                # --- Apply right-to-left so earlier positions stay valid ---
+                $nonOverlapping.Reverse()
+
+                foreach ($r in $nonOverlapping) {
+                    $token = Get-RedactionToken -Type $r.PatternType -OriginalValue $r.OriginalValue
+                    $line  = $line.Substring(0, $r.Start) + $token + $line.Substring($r.End)
+                    $totalReplacements++
                 }
 
                 $writer.WriteLine($line)
@@ -164,11 +230,11 @@ if (-not (Test-Path -LiteralPath $mapDir)) {
 }
 
 $mapObject = [pscustomobject]@{
-    generated_at    = (Get-Date -Format 'o')
-    source_file     = $resolvedInput
-    redacted_file   = $resolvedOutput
+    generated_at     = (Get-Date -Format 'o')
+    source_file      = $resolvedInput
+    redacted_file    = $resolvedOutput
     total_redactions = $totalReplacements
-    map             = $redactionMap
+    map              = $redactionMap
 }
 
 $mapObject | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath $resolvedMapPath -Encoding UTF8
@@ -177,16 +243,16 @@ $mapObject | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath $resolvedMapPath
 # Summary
 # ---------------------------------------------------------------------------
 
-Write-Host "Redaction complete." -ForegroundColor Green
-Write-Host "  Lines processed   : $processedLines"
-Write-Host "  Replacements made : $totalReplacements"
-Write-Host "  Redacted output   : $resolvedOutput"
-Write-Host "  Redaction map     : $resolvedMapPath (LOCAL ONLY — do not upload)"
+Write-Information "$($PSStyle.Foreground.BrightGreen)Redaction complete.$($PSStyle.Reset)"
+Write-Information "  Lines processed   : $processedLines"
+Write-Information "  Replacements made : $totalReplacements"
+Write-Information "  Redacted output   : $resolvedOutput"
+Write-Information "  Redaction map     : $resolvedMapPath $($PSStyle.Foreground.BrightYellow)(LOCAL ONLY — do not upload)$($PSStyle.Reset)"
 
 [pscustomobject]@{
-    InputPath         = $resolvedInput
-    OutputPath        = $resolvedOutput
-    LinesProcessed    = $processedLines
-    TotalReplacements = $totalReplacements
+    InputPath            = $resolvedInput
+    OutputPath           = $resolvedOutput
+    LinesProcessed       = $processedLines
+    TotalReplacements    = $totalReplacements
     UniqueValuesRedacted = $redactionMap.Count
 }
