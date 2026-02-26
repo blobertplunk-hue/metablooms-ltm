@@ -1,0 +1,92 @@
+#!/usr/bin/env bash
+# .githooks/pre-commit
+# Runs PS7 compliance checks on staged PowerShell files before every commit.
+#
+# Install once:
+#   bash .githooks/setup.sh
+#
+# Skip (only when absolutely necessary):
+#   git commit --no-verify
+
+set -euo pipefail
+
+# ---------------------------------------------------------------------------
+# Find staged PS files
+# ---------------------------------------------------------------------------
+
+STAGED=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(ps1|psm1|psd1)$' || true)
+
+if [[ -z "$STAGED" ]]; then
+    exit 0   # No PS files staged — nothing to check.
+fi
+
+echo ""
+echo "=== Pre-commit: PowerShell compliance check ==="
+echo ""
+
+# ---------------------------------------------------------------------------
+# Check pwsh is available
+# ---------------------------------------------------------------------------
+
+if ! command -v pwsh &>/dev/null; then
+    echo "[WARN] pwsh not found — skipping PS compliance check."
+    echo "       Install PowerShell 7: https://aka.ms/install-powershell"
+    echo ""
+    exit 0
+fi
+
+# ---------------------------------------------------------------------------
+# Check PSScriptAnalyzer is installed
+# ---------------------------------------------------------------------------
+
+if ! pwsh -NoProfile -NonInteractive -Command \
+    "if (-not (Get-Module -ListAvailable PSScriptAnalyzer)) { exit 1 }" 2>/dev/null; then
+    echo "[INFO] Installing PSScriptAnalyzer..."
+    pwsh -NoProfile -NonInteractive -Command \
+        "Install-Module PSScriptAnalyzer -Force -Scope CurrentUser -ErrorAction Stop"
+fi
+
+# ---------------------------------------------------------------------------
+# Write staged files to a temp directory and run compliance check
+# ---------------------------------------------------------------------------
+
+TMPDIR=$(mktemp -d)
+trap 'rm -rf "$TMPDIR"' EXIT
+
+COMPLIANCE_SCRIPT="powershell/scripts/Invoke-PSCompliance.ps1"
+FOUND_ISSUES=0
+
+for FILE in $STAGED; do
+    if [[ ! -f "$FILE" ]]; then
+        continue   # File was deleted, skip.
+    fi
+
+    # Copy the staged version (not the working tree version) to tmp.
+    TMPFILE="$TMPDIR/$(basename "$FILE")"
+    git show ":$FILE" > "$TMPFILE"
+
+    echo "Checking: $FILE"
+
+    if ! pwsh -NoProfile -NonInteractive -File "$COMPLIANCE_SCRIPT" -Path "$TMPFILE"; then
+        echo "[FAIL] $FILE"
+        FOUND_ISSUES=1
+    fi
+done
+
+echo ""
+
+if [[ $FOUND_ISSUES -ne 0 ]]; then
+    echo "=== COMMIT BLOCKED: Fix compliance findings above. ==="
+    echo ""
+    echo "Run to check your files:"
+    echo "  pwsh powershell/scripts/Invoke-PSCompliance.ps1 -Path <file>"
+    echo ""
+    echo "To force-commit anyway (not recommended):"
+    echo "  git commit --no-verify"
+    echo ""
+    exit 1
+fi
+
+echo "=== PS compliance: PASS ==="
+echo ""
+exit 0
